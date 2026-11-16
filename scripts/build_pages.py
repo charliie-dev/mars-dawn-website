@@ -5156,15 +5156,76 @@ HOME_TRAITS = ["native", "yours", "pay-once", "features"]
 # feature each, in reading order. Each is (page its title links to, image stem, files as (width, ext),
 # the platform word printed on the picture). The shots are crops of the existing Mac screenshots and
 # of the iPhone capture (#329); see public/assets/screens/card-*. Titles and lines are the site's
-# existing strings (home_card_copy), no new copy.
+# approved copy (HOME_CARD_COPY); the alt text is still the existing strings (home_card_copy).
+# Card 1's title links here. Daphne / Ray: to change the link, change this one line.
+HOME_CARD1_TARGET = "mermaid-preview-mac"
 HOME_CARDS = [
-    ("native", "card-mermaid", {"files": [(624, "png")], "size": (624, 468)}, "Mac"),
+    (HOME_CARD1_TARGET, "card-mermaid", {"files": [(624, "png")], "size": (624, 468)}, "Mac"),
     ("pdf", "card-pdf", {"files": [(665, "png")], "size": (665, 499)}, "Mac"),
     # PLACEHOLDER: the Quick Look shot (Finder, Space) isn't taken yet. Until it is, the Vivid theme's
     # preview, cropped by the same rule as the first card, stands in and the title links to /themes/.
     ("themes", "card-vivid", {"files": [(624, "png")], "size": (624, 468)}, "Mac"),
     ("features#iphone-ipad", "card-iphone", {"files": [(472, "webp"), (944, "webp")], "size": (944, 708)}, "iPhone"),
 ]
+# The feature cards' approved copy (#332, Ray: "#332 文案 ok"): {card: {locale: (title, line)}}, plain text (home_card_copy
+# escapes it). Source: https://github.com/redtear1115/mars-dawn-website/issues/332#issuecomment-6918281641 ; applied by a script, not typed.
+HOME_CARD_COPY = {
+    "iphone": {
+        "en": ("Read on iPhone and iPad", "On iPhone and iPad, MarsDawn is for reading only and doesn't edit. Editing stays on the Mac."),
+        "zh-hant": ("在 iPhone 和 iPad 上閱讀", "在 iPhone 和 iPad 上，MarsDawn 只能閱讀，不能編輯。要修改，回到 Mac 上做。"),
+        "zh-hans": ("在 iPhone 和 iPad 上阅读", "在 iPhone 和 iPad 上，MarsDawn 只能阅读，不能编辑。要修改，回到 Mac 上操作。"),
+        "ja": ("iPhone と iPad で読む", "iPhone と iPad の MarsDawn は閲覧専用で、編集はできません。編集は Mac で行います。"),
+        "ko": ("iPhone과 iPad에서 읽기", "iPhone과 iPad의 MarsDawn은 읽기 전용이라 편집할 수 없습니다. 편집은 Mac에서 합니다."),
+        "de": ("Auf iPhone und iPad lesen", "Auf iPhone und iPad ist MarsDawn nur zum Lesen da, nicht zum Bearbeiten. Das geht am Mac."),
+        "fr": ("Lire sur iPhone et iPad", "Sur iPhone et iPad, MarsDawn sert uniquement à lire, pas à modifier. Modifiez sur votre Mac."),
+        "es": ("Leer en iPhone y iPad", "En iPhone y iPad, MarsDawn solo sirve para leer, no para editar. Para editar, vuelve a tu Mac."),
+    },
+    "mermaid": {
+        "en": ("Mermaid diagrams and code", "The preview draws the diagram and highlights the code, right next to your source."),
+        "zh-hant": ("Mermaid 圖表和程式碼", "預覽會把圖表畫出來、程式碼上色，就在原始碼旁邊。"),
+        "zh-hans": ("Mermaid 图表和代码", "预览会把图表画出来、代码高亮，就在源代码旁边。"),
+        "ja": ("Mermaid 図とコード", "プレビューが図を描き、コードをハイライトします。ソースのすぐ隣で。"),
+        "ko": ("Mermaid 다이어그램과 코드", "소스 옆 미리보기에서 다이어그램이 그려지고 코드가 하이라이트됩니다."),
+        "de": ("Mermaid-Diagramme und Code", "Die Vorschau zeichnet das Diagramm und hebt den Code hervor, direkt neben dem Quelltext."),
+        "fr": ("Diagrammes Mermaid et code", "L’aperçu dessine le diagramme et colore le code, juste à côté de la source."),
+        "es": ("Diagramas Mermaid y código", "La vista previa dibuja el diagrama y resalta el código, junto al código fuente."),
+    },
+    "pdf": {
+        "en": ("PDF export", "Mermaid diagrams, drawn into the PDF. Code keeps its highlighting."),
+        "zh-hant": ("輸出 PDF", "Mermaid 圖表直接畫進 PDF。程式碼保留語法上色。"),
+        "zh-hans": ("导出 PDF", "Mermaid 图表直接画进 PDF。代码保留语法高亮。"),
+        "ja": ("PDF 書き出し", "Mermaid 図は PDF に描き込まれます。コードはハイライトを保ちます。"),
+        "ko": ("PDF 내보내기", "Mermaid 다이어그램이 PDF 안에 그려집니다. 코드는 하이라이트를 유지합니다."),
+        "de": ("PDF-Export", "Mermaid-Diagramme, ins PDF gezeichnet. Code behält seine Hervorhebung."),
+        "fr": ("Export PDF", "Les diagrammes Mermaid, dessinés dans le PDF. Le code garde sa coloration."),
+        "es": ("Exportación a PDF", "Diagramas Mermaid, dibujados dentro del PDF. El código conserva su resaltado."),
+    },
+    "themes": {
+        "en": ("Themes", "Four themes built in. More in the gallery."),
+        "zh-hant": ("主題", "內建四種主題，主題庫裡還有更多。"),
+        "zh-hans": ("主题", "内置四种主题，主题图库里还有更多。"),
+        "ja": ("テーマ", "4種類のテーマを内蔵。ギャラリーにはさらに多く。"),
+        "ko": ("테마", "기본 테마 네 가지. 갤러리에 더 있습니다."),
+        "de": ("Themen", "Vier Themen integriert. Mehr in der Galerie."),
+        "fr": ("Thèmes", "Quatre thèmes intégrés. D’autres dans la galerie."),
+        "es": ("Temas", "Cuatro temas integrados. Más en la galería."),
+    },
+}
+
+# NOT IN USE: card 3's approved copy for the Quick Look shot, same shape. When that shot lands, point the third card at
+# "quicklook" and read this table instead of HOME_CARD_COPY["themes"].
+HOME_CARD3_QUICKLOOK_COPY = {
+    "quicklook": {
+        "en": ("Quick Look for Markdown", "Select a Markdown file in Finder and press Space."),
+        "zh-hant": ("Markdown 快速查看", "在 Finder 選取 Markdown 檔案，按空白鍵。"),
+        "zh-hans": ("Markdown 快速查看", "在访达选取 Markdown 文件，按空格键。"),
+        "ja": ("Markdown のクイックルック", "Finder で Markdown ファイルを選んでスペースキーを押します。"),
+        "ko": ("Markdown 훑어보기", "Finder에서 Markdown 파일을 선택하고 스페이스 바를 누르세요."),
+        "de": ("Übersicht für Markdown", "Wähle im Finder eine Markdown-Datei aus und drücke die Leertaste."),
+        "fr": ("Coup d’œil pour Markdown", "Sélectionnez un fichier Markdown dans le Finder et appuyez sur Espace."),
+        "es": ("Vista Rápida para Markdown", "Selecciona un archivo Markdown en el Finder y presiona la barra espaciadora."),
+    },
+}
 HOME = {
     "en": {
         "cta_cli": "Install the free CLI",
@@ -5479,14 +5540,13 @@ def _home_sections_for_twin(locale: str) -> str:
 
 
 def home_card_copy(locale: str, target: str) -> tuple:
-    """(title, line, alt) of one feature card, all from strings the site already carries: the trait
-    links, the themes link, the home iPhone steps' link and limit line, the screenshots' and the iPhone's alt.
-    The iPhone card's two strings are placeholders until its copy is approved (#332)."""
-    if target in ("native", "pdf"):
-        return (*TRAIT_LINK[locale][target], FIGURES[target]["alt"][locale])
-    if target == "themes":
-        return (*HOME_THEMES_LINK[locale], FIGURES["pay-once"]["alt"][locale])
-    return xml_escape(HOME_IPHONE_STEPS_MORE[locale]), xml_escape(HOME_IPHONE_STEPS[locale]["limits"]), HERO_PHONE_ALT[locale]
+    """(title, line, alt) of one feature card. Title and line are the approved copy (HOME_CARD_COPY, plain text,
+    escaped here); alt is still the site's existing strings until its own copy is proposed (#332)."""
+    card = {HOME_CARD1_TARGET: "mermaid", "pdf": "pdf", "themes": "themes"}.get(target, "iphone")
+    title, line = HOME_CARD_COPY[card][locale]
+    alt = {"mermaid": lambda: FIGURES["native"]["alt"][locale], "pdf": lambda: FIGURES["pdf"]["alt"][locale],
+           "themes": lambda: FIGURES["pay-once"]["alt"][locale], "iphone": lambda: HERO_PHONE_ALT[locale]}[card]()
+    return xml_escape(title), xml_escape(line), alt
 
 
 def home_card_href(locale: str, target: str) -> str:
