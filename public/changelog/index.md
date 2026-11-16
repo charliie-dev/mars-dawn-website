@@ -1,10 +1,19 @@
 # Changelog
 
-What changed in each version of the MarsDawn app on the Mac App Store and the free marsdawn command-line tool. App dates are the day the version appeared on the Mac App Store.
+What changed in each version of the MarsDawn app for Mac, iPhone and iPad, and of the free marsdawn command-line tool. App dates are the day the version appeared on the App Store.
 
 What's coming next is on the [roadmap](/roadmap/).
 
-## MarsDawn app
+## MarsDawn for Mac
+
+### MarsDawn 1.2.2
+
+14 November 2026
+
+- File > Print... and File > Export as PDF... now open a Print & Export sheet with a preview of the PDF. Choose Document, Handbook or Handout, then print it or save it as a PDF. Printing is no longer limited to Document.
+- Fixed: text typed right after an autosave could be replaced, and scrolling right after switching back to Split could jump back.
+- When you choose Handbook, the Print & Export sheet shows what will go on the cover, and you can add the Mars Sunrise cover image. Print & Export can also be added to the toolbar.
+- File > Add Claude Code Plans... adds the folder where Claude Code saves its plans to the Files sidebar, newest first. The sidebar's sort menu has a new option, Show Only Files MarsDawn Can Open, which you set for each folder.
 
 ### MarsDawn 1.2.1
 
@@ -63,6 +72,21 @@ What's coming next is on the [roadmap](/roadmap/).
 5 October 2026
 
 First release.
+
+## MarsDawn for iPhone and iPad
+
+### MarsDawn 1.0.2
+
+13 November 2026
+
+- Open PDFs and find text in them. A PDF with a password asks for it first.
+- Open JSON and YAML files as read-only documents, with a tree preview.
+- Open Markdown, text, PDF, JSON and YAML files from Files, Mail and other apps.
+- Find text in the preview (⌘F on a keyboard). Appearance and Theme has a new setting: Keep single line breaks.
+- Share the file from the toolbar, or print it.
+- On iPad and an unfolded iPhone Duo, the outline is now a sidebar that shows where you are. PDF bookmarks appear there too.
+
+Versions before 1.0.2 are not listed.
 
 ## marsdawn command-line tool
 

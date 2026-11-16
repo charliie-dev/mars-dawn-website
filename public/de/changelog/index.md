@@ -1,10 +1,19 @@
 # Änderungsprotokoll
 
-Was sich in jeder Version der MarsDawn-App aus dem Mac App Store und des kostenlosen Befehlszeilenprogramms marsdawn geändert hat. Bei der App ist das Datum der Tag, an dem die Version im Mac App Store erschien.
+Was sich in jeder Version der MarsDawn-App für Mac, iPhone und iPad und des kostenlosen Befehlszeilenprogramms marsdawn geändert hat. Bei der App ist das Datum der Tag, an dem die Version im App Store erschien.
 
 Was als Nächstes kommt, steht in der [Roadmap](/de/roadmap/).
 
-## MarsDawn-App
+## MarsDawn für den Mac
+
+### MarsDawn 1.2.2
+
+14. November 2026
+
+- Ablage > „Drucken …“ und Ablage > „Als PDF exportieren …“ öffnen jetzt das Blatt „Drucken und Exportieren“ mit einer PDF-Vorschau. Wähle „Dokument“, „Handbuch“ oder „Handout“ und drucke oder sichere dann als PDF. Drucken ist nicht mehr auf „Dokument“ beschränkt.
+- Behoben: Text, der direkt nach dem automatischen Sichern getippt wurde, konnte ersetzt werden, und Scrollen direkt nach dem Wechsel zurück zu „Geteilt“ konnte zurückspringen.
+- Bei „Handbuch“ zeigt das Blatt „Drucken und Exportieren“, was auf das Deckblatt kommt, und du kannst das Deckblattbild „Sonnenaufgang auf dem Mars“ hinzufügen. „Drucken und Exportieren“ lässt sich auch zur Symbolleiste hinzufügen.
+- Ablage > „Claude-Code-Pläne hinzufügen …“ fügt den Ordner, in dem Claude Code seine Pläne sichert, zur Seitenleiste „Dateien“ hinzu, die neuesten zuerst. Das Sortiermenü der Seitenleiste hat eine neue Option, „Nur Dateien anzeigen, die MarsDawn öffnen kann“, die du für jeden Ordner einzeln einstellst.
 
 ### MarsDawn 1.2.1
 
@@ -17,18 +26,18 @@ Was als Nächstes kommt, steht in der [Roadmap](/de/roadmap/).
 
 27. Oktober 2026
 
-- Eine Formatleiste über dem Editor und das neue Menü „Format“ fügen Fett (⌘B), Kursiv (⌘I), Durchgestrichen (⇧⌘X), Überschriften H1–H6 (⌥⌘1–⌥⌘6), Code, Zitate, Aufzählungs-, nummerierte und Checklisten, Links (⌘K), „Bild …“, Tabellen, Trennlinien, Mermaid-Diagramme und Formeln ein. Standardmäßig aktiv; umschaltbar über Darstellung > „Formatleiste ausblenden“ oder Einstellungen > Erscheinungsbild.
+- Eine Formatleiste über dem Editor und das neue Menü „Format“ fügen Fett (⌘B), Kursiv (⌘I), Durchgestrichen (⇧⌘X), Überschriften H1–H6 (⌥⌘1–⌥⌘6), Code, Zitate, Aufzählungs-, nummerierte und Checklisten, Links (⌘K), „Bild …“, Tabellen, Trennlinien, Mermaid-Diagramme und Formeln ein. Standardmäßig aktiv; umschaltbar über Darstellung > „Formatleiste ausblenden“ oder Einstellungen > Erscheinungsbild.
 - Darstellung > Nur Quelltext > „Markdown-Syntax ausblenden“ (⌘/) blendet Markdown-Zeichen unter „Nur Quelltext“ aus (die Cursorzeile bleibt reines Markdown) und merkt sich die Einstellung.
 - Ablage > „Neu aus der Zwischenablage“ (⌥⌘V) öffnet Text aus der Zwischenablage als neues Dokument. JSON-maskierter KI-Text (etwa \n) wird einmal zum Lesen umgewandelt; über eine Leiste lässt sich der Originaltext behalten.
-- Text im Editor oder in der Vorschau auswählen und im Kontextmenü „Senden an …“ wählen, um Claude oder ChatGPT mit Prompt, Auswahl, relativem Dateipfad (oder Dateinamen) und Zeilennummern zu öffnen. Beim ersten Mal wird nachgefragt; bei zu langer Auswahl wird das Kopieren angeboten.
+- Text im Editor oder in der Vorschau auswählen und im Kontextmenü „Senden an …“ wählen, um Claude oder ChatGPT mit Prompt, Auswahl, relativem Dateipfad (oder Dateinamen) und Zeilennummern zu öffnen. Beim ersten Mal wird nachgefragt; bei zu langer Auswahl wird das Kopieren angeboten.
 - Bearbeiten > „Als Rich Text kopieren“ kopiert die gewählten Blöcke oder das ganze Dokument als formatierten Text für Mail, Pages, Google Docs oder Notion, samt Markdown als reinem Text.
-- Hilfe > „Befehlszeilentool und Agent-Skill installieren …“ öffnet ein Fenster mit dem Installationsbefehl und kopierbaren Anleitungen für KI-Agenten; es installiert selbst nichts.
-- Ablage > „Als PDF exportieren …“ bietet im Menü „Layout“ drei gemerkte Optionen für jedes Theme: „Standard“, „Handbuch“ (Deckblatt aus dem front matter, nummeriertes Inhaltsverzeichnis, Kapitel auf neuer Seite, Fußzeile „n / N“, PDF-Lesezeichen, Bundsteg) und „Handout“ (rechte Notizspalte, Titelkopf auf Seite 1, Fußzeile „Name · Datum · n / N“, breite Tabellen bis in die Notizspalte). „Drucken …“ nutzt immer „Standard“.
+- Hilfe > „Befehlszeilentool und Agent-Skill installieren …“ öffnet ein Fenster mit dem Installationsbefehl und kopierbaren Anleitungen für KI-Agenten; es installiert selbst nichts.
+- Ablage > „Als PDF exportieren …“ bietet im Menü „Layout“ drei gemerkte Optionen für jedes Theme: „Standard“, „Handbuch“ (Deckblatt aus dem front matter, nummeriertes Inhaltsverzeichnis, Kapitel auf neuer Seite, Fußzeile „n / N“, PDF-Lesezeichen, Bundsteg) und „Handout“ (rechte Notizspalte, Titelkopf auf Seite 1, Fußzeile „Name · Datum · n / N“, breite Tabellen bis in die Notizspalte). „Drucken …“ nutzt immer „Standard“.
 - Mit ⌘F in „Nur Vorschau“ oder auf der Vorschauseite von „Geteilt“ öffnet sich die Suchleiste: ⌘G und ⇧⌘G springen umlaufend durch Treffer, ⌘E übernimmt die Auswahl als Suchbegriff, und Treffer werden gelb markiert. Unter „Geteilt“ wird auf der fokussierten Seite gesucht.
 - Text zwischen einzelnen Tilden ohne Leerzeichen, etwa ~x~, erscheint jetzt wie in HackMD tiefgestellt. Für durchgestrichenen Text zwei Tilden verwenden: ~~x~~. Das gilt für die Vorschau, „Als PDF exportieren“ und die Übersicht.
 - MarsDawn versteht jetzt auch mehr HackMD-Syntax: ==Hervorhebung==, ^Hochgestellt^, ein Inhaltsverzeichnis mit [TOC], Bildgrößen wie =300x200 und Einbettungen wie {%youtube %}, die als Links erscheinen.
 - „Einzelne Zeilenumbrüche beibehalten“ unter Einstellungen > Erscheinungsbild erhält jeden Zeilenumbruch im Quelltext wie in HackMD auch in der Vorschau, bei „Als PDF exportieren“, beim Drucken und in der Übersicht.
-- Anders kodierte Markdown-Dateien (etwa Big5) öffnen sich schreibgeschützt mit einer Kodierungsleiste für „Als UTF-8 sichern …“. „Als PDF exportieren …“ und „Drucken …“ funktionieren wie gewohnt.
+- Anders kodierte Markdown-Dateien (etwa Big5) öffnen sich schreibgeschützt mit einer Kodierungsleiste für „Als UTF-8 sichern …“. „Als PDF exportieren …“ und „Drucken …“ funktionieren wie gewohnt.
 - Bei Dokumenten über 16 MiB zeigt die Seitenleiste „Gliederung“ jetzt „Dieses Dokument ist zu groß, um eine Gliederung anzuzeigen.“ statt „Keine Überschriften“.
 - Die Wortzählung ignoriert Codeblöcke in eingeklappten details-Abschnitten, und Fußnotenverweise direkt über einer Tabelle erscheinen jetzt als Link.
 
@@ -36,12 +45,27 @@ Was als Nächstes kommt, steht in der [Roadmap](/de/roadmap/).
 
 15. Oktober 2026
 
-- Auf Deutsch, Japanisch, Spanisch und Französisch zeigt Einstellungen > Erscheinungsbild > „Weitere Themes laden …“ den Szenario-Filter jetzt als Einblendmenü mit der Beschriftung „Szenario“, damit die fünf Optionen Platz haben. Auf Englisch, Koreanisch und Chinesisch bleibt es beim segmentierten Steuerelement.
-- Wenn ein Theme aus der Galerie zurückgezogen wird, nennt der Hinweis in „Weitere Themes laden …“ jetzt den Namen des Themes (zum Beispiel Inkwell Ivory) statt seiner internen ID.
+- Auf Deutsch, Japanisch, Spanisch und Französisch zeigt Einstellungen > Erscheinungsbild > „Weitere Themes laden …“ den Szenario-Filter jetzt als Einblendmenü mit der Beschriftung „Szenario“, damit die fünf Optionen Platz haben. Auf Englisch, Koreanisch und Chinesisch bleibt es beim segmentierten Steuerelement.
+- Wenn ein Theme aus der Galerie zurückgezogen wird, nennt der Hinweis in „Weitere Themes laden …“ jetzt den Namen des Themes (zum Beispiel Inkwell Ivory) statt seiner internen ID.
 - Ausklappbare details-Abschnitte im GitHub-Stil beginnen in der Vorschau und in der Übersicht jetzt eingeklappt mit sichtbarer Zusammenfassung und öffnen sich per Klick. Der PDF-Export druckt weiterhin den Inhalt aller Abschnitte.
-- Dokumente, die du aus dem Finder, dem Dock, über Ablage > „Öffnen …“ oder mit dem Befehl marsdawn open öffnest, öffnen sich jetzt als Tabs im vordersten Fenster, ebenso neue Dokumente. Um das bisherige Verhalten beizubehalten, wähle „Systemeinstellung folgen“ unter Einstellungen > Erscheinungsbild.
+- Dokumente, die du aus dem Finder, dem Dock, über Ablage > „Öffnen …“ oder mit dem Befehl marsdawn open öffnest, öffnen sich jetzt als Tabs im vordersten Fenster, ebenso neue Dokumente. Um das bisherige Verhalten beizubehalten, wähle „Systemeinstellung folgen“ unter Einstellungen > Erscheinungsbild.
 
 Frühere Versionen sind nur auf Englisch beschrieben: [zum englischen Änderungsprotokoll](/changelog/).
+
+## MarsDawn für iPhone und iPad
+
+### MarsDawn 1.0.2
+
+13. November 2026
+
+- Öffne PDFs und suche Text darin. Bei einem PDF mit Passwort wirst du zuerst danach gefragt.
+- Öffne JSON- und YAML-Dateien als schreibgeschützte Dokumente, mit einer Baumvorschau.
+- Öffne Markdown-, Text-, PDF-, JSON- und YAML-Dateien aus Dateien, Mail und anderen Apps.
+- Suche Text in der Vorschau (mit Tastatur ⌘F). „Erscheinungsbild und Thema“ hat eine neue Einstellung: „Einzelne Zeilenumbrüche beibehalten“.
+- Teile die Datei über die Symbolleiste oder drucke sie.
+- Auf dem iPad und dem aufgeklappten iPhone Duo ist die Gliederung jetzt eine Seitenleiste, die zeigt, wo du gerade bist. Dort erscheinen auch PDF-Lesezeichen.
+
+Versionen vor 1.0.2 sind nicht aufgeführt.
 
 ## Befehlszeilenprogramm marsdawn
 
