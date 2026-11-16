@@ -28,29 +28,29 @@ On iPhone and iPad, MarsDawn is for reading only. It opens Markdown, text, PDF, 
 
 [How to review what your agent hands back](/reading-agent-output/) · [How to open a .md file on a Mac](/view-markdown-on-mac/)
 
-## The app, as it is
+## Features
 
 ### [Mermaid diagrams and code](/mermaid-preview-mac/)
 
-![MarsDawn in split view: the Markdown source on the left, the rendered page on the right.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
+![A flowchart with a check and a resend loop, above a code block.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
 
 The preview draws the diagram and highlights the code, right next to your source.
 
 ### [PDF export](/pdf/)
 
-![A PDF exported from MarsDawn, open in its PDF viewer with page thumbnails.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
+![The top of a page: a title, a short paragraph and a flowchart.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
 
-Mermaid diagrams, drawn into the PDF. Code keeps its highlighting.
+Mermaid diagrams, drawn into the PDF.
 
 ### [Themes](/themes/)
 
-![MarsDawn in the Vivid theme, with Markdown source on the left and the rendered page on the right.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![A page with purple headings, a flowchart with pink arrows, and a code block on a light purple background.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
 Four themes built in. More in the gallery.
 
 ### [Read on iPhone and iPad](/features/#iphone-ipad)
 
-![MarsDawn on iPhone showing an agent's checkout plan with a Mermaid flowchart, in the Dawn theme, light](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
+![A checkout flowchart, above the start of a code block.](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
 
 On iPhone and iPad, MarsDawn is for reading only and doesn't edit. Editing stays on the Mac.
 

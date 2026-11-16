@@ -28,29 +28,29 @@ Auf iPhone und iPad ist MarsDawn nur zum Lesen da und öffnet Markdown, Text, PD
 
 [So prüfst du, was dein Agent zurückgibt](/de/reading-agent-output/) · [So öffnest du .md-Dateien auf dem Mac](/de/view-markdown-on-mac/)
 
-## Die App, wie sie ist
+## Funktionen
 
 ### [Mermaid-Diagramme und Code](/de/mermaid-preview-mac/)
 
-![MarsDawn in geteilter Ansicht: links der Markdown-Quelltext, rechts die gerenderte Seite.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
+![Flussdiagramm mit einer Prüfung und einer Schleife zum erneuten Senden, darunter ein Codeblock.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
 
 Die Vorschau zeichnet das Diagramm und hebt den Code hervor, direkt neben dem Quelltext.
 
 ### [PDF-Export](/de/pdf/)
 
-![Ein aus MarsDawn exportiertes PDF, geöffnet in seinem PDF-Viewer mit Seitenminiaturen.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
+![Seitenanfang: ein Titel, ein kurzer Absatz und ein Flussdiagramm.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
 
-Mermaid-Diagramme, ins PDF gezeichnet. Code behält seine Hervorhebung.
+Mermaid-Diagramme, ins PDF gezeichnet.
 
 ### [Themen](/de/themes/)
 
-![MarsDawn im Thema Lebhaft, links der Markdown-Quelltext, rechts die gerenderte Seite.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![Violette Überschriften, ein Flussdiagramm mit rosa Pfeilen und ein Codeblock auf hellviolettem Hintergrund.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
 Vier Themen integriert. Mehr in der Galerie.
 
 ### [Auf iPhone und iPad lesen](/de/features/#iphone-ipad)
 
-![MarsDawn auf dem iPhone mit dem Checkout-Plan eines Agents und einem Mermaid-Flussdiagramm, Thema Morgenrot, hell](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
+![Ein Checkout-Flussdiagramm, darunter der Anfang eines Codeblocks.](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
 
 Auf iPhone und iPad ist MarsDawn nur zum Lesen da, nicht zum Bearbeiten. Das geht am Mac.
 

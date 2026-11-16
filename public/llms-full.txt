@@ -34,29 +34,29 @@ On iPhone and iPad, MarsDawn is for reading only. It opens Markdown, text, PDF, 
 
 [How to review what your agent hands back](/reading-agent-output/) · [How to open a .md file on a Mac](/view-markdown-on-mac/)
 
-## The app, as it is
+## Features
 
 ### [Mermaid diagrams and code](/mermaid-preview-mac/)
 
-![MarsDawn in split view: the Markdown source on the left, the rendered page on the right.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
+![A flowchart with a check and a resend loop, above a code block.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
 
 The preview draws the diagram and highlights the code, right next to your source.
 
 ### [PDF export](/pdf/)
 
-![A PDF exported from MarsDawn, open in its PDF viewer with page thumbnails.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
+![The top of a page: a title, a short paragraph and a flowchart.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
 
-Mermaid diagrams, drawn into the PDF. Code keeps its highlighting.
+Mermaid diagrams, drawn into the PDF.
 
 ### [Themes](/themes/)
 
-![MarsDawn in the Vivid theme, with Markdown source on the left and the rendered page on the right.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![A page with purple headings, a flowchart with pink arrows, and a code block on a light purple background.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
 Four themes built in. More in the gallery.
 
 ### [Read on iPhone and iPad](/features/#iphone-ipad)
 
-![MarsDawn on iPhone showing an agent's checkout plan with a Mermaid flowchart, in the Dawn theme, light](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
+![A checkout flowchart, above the start of a code block.](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
 
 On iPhone and iPad, MarsDawn is for reading only and doesn't edit. Editing stays on the Mac.
 
@@ -3664,29 +3664,29 @@ MarsDawn 是讀、檢查 Markdown 的 Mac 原生 app，有分割即時預覽、M
 
 [如何審閱 agent 交回來的東西](/zh-hant/reading-agent-output/) · [Mac 怎麼開 md 檔](/zh-hant/view-markdown-on-mac/)
 
-## App 實際的樣子
+## 功能
 
 ### [Mermaid 圖表和程式碼](/zh-hant/mermaid-preview-mac/)
 
-![MarsDawn 的並排版面：左邊是 Markdown 原始碼，右邊是排版後的頁面。](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
+![流程圖含檢查步驟和重送迴圈，下方是程式碼區塊。](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
 
 預覽會把圖表畫出來、程式碼上色，就在原始碼旁邊。
 
 ### [輸出 PDF](/zh-hant/pdf/)
 
-![用 MarsDawn 輸出的 PDF，在內建的 PDF 檢視器中開啟，旁邊有頁面縮圖。](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
+![頁面頂部：標題、一小段文字和一張流程圖。](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
 
-Mermaid 圖表直接畫進 PDF。程式碼保留語法上色。
+Mermaid 圖表直接畫進 PDF。
 
 ### [主題](/zh-hant/themes/)
 
-![MarsDawn 使用活潑主題，左邊是 Markdown 原始碼，右邊是排版後的頁面。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![紫色標題、粉紅箭頭的流程圖，以及淺紫色底的程式碼區塊。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
 內建四種主題，主題庫裡還有更多。
 
 ### [在 iPhone 和 iPad 上閱讀](/zh-hant/features/#iphone-ipad)
 
-![iPhone 上的 MarsDawn，顯示 agent 寫的結帳計畫和一張 Mermaid 流程圖，黎明主題淺色](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
+![結帳流程圖，下方是程式碼區塊的開頭。](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
 
 在 iPhone 和 iPad 上，MarsDawn 只能閱讀，不能編輯。要修改，回到 Mac 上做。
 
@@ -7333,29 +7333,29 @@ MarsDawn 是读、检查 Markdown 的 Mac 原生 app，有分栏实时预览、M
 
 [如何审阅代理交回来的东西](/zh-hans/reading-agent-output/) · [Mac 上怎么打开 md 文件](/zh-hans/view-markdown-on-mac/)
 
-## App 实际的样子
+## 功能
 
 ### [Mermaid 图表和代码](/zh-hans/mermaid-preview-mac/)
 
-![MarsDawn 的并排布局：左边是 Markdown 源代码，右边是排版后的页面。](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
+![流程图含检查步骤和重发循环，下方是代码块。](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
 
 预览会把图表画出来、代码高亮，就在源代码旁边。
 
 ### [导出 PDF](/zh-hans/pdf/)
 
-![用 MarsDawn 导出的 PDF，在内置的 PDF 查看器中打开，旁边有页面缩略图。](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
+![页面顶部：标题、一小段文字和一张流程图。](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
 
-Mermaid 图表直接画进 PDF。代码保留语法高亮。
+Mermaid 图表直接画进 PDF。
 
 ### [主题](/zh-hans/themes/)
 
-![MarsDawn 使用活泼主题，左边是 Markdown 源代码，右边是排版后的页面。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![紫色标题、粉色箭头的流程图，以及浅紫色底的代码块。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
 内置四种主题，主题图库里还有更多。
 
 ### [在 iPhone 和 iPad 上阅读](/zh-hans/features/#iphone-ipad)
 
-![iPhone 上的 MarsDawn，显示代理写的结账计划和一张 Mermaid 流程图，黎明主题浅色](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
+![结账流程图，下方是代码块的开头。](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
 
 在 iPhone 和 iPad 上，MarsDawn 只能阅读，不能编辑。要修改，回到 Mac 上操作。
 
@@ -10994,29 +10994,29 @@ iPhone と iPad では閲覧専用で、Markdown、テキスト、PDF、JSON、Y
 
 [エージェントが返してくるものをどう確認するか](/ja/reading-agent-output/) · [Mac で .md ファイルを開く方法](/ja/view-markdown-on-mac/)
 
-## 実際のアプリ画面
+## 機能
 
 ### [Mermaid 図とコード](/ja/mermaid-preview-mac/)
 
-![MarsDawn の分割ビュー：左が Markdown のソース、右がレンダリングされたページ。](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
+![確認と再送のループがあるフローチャートと、その下のコードブロック。](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
 
 プレビューが図を描き、コードをハイライトします。ソースのすぐ隣で。
 
 ### [PDF 書き出し](/ja/pdf/)
 
-![MarsDawn から書き出した PDF を、ページのサムネイル付きの PDF ビューアで開いたところ。](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
+![ページの上部：タイトル、短い段落、フローチャート。](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
 
-Mermaid 図は PDF に描き込まれます。コードはハイライトを保ちます。
+Mermaid 図は PDF に描き込まれます。
 
 ### [テーマ](/ja/themes/)
 
-![MarsDawn がビビッドテーマで、左に Markdown のソース、右にレンダリングされたページを表示している。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![紫の見出し、ピンクの矢印のフローチャート、薄紫の背景のコードブロック。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
 4種類のテーマを内蔵。ギャラリーにはさらに多く。
 
 ### [iPhone と iPad で読む](/ja/features/#iphone-ipad)
 
-![iPhone の MarsDawn に、エージェントが書いたチェックアウトの計画書と Mermaid のフローチャートを表示（夜明けテーマ、ライト）](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
+![チェックアウトのフローチャートと、その下のコードブロックの冒頭。](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
 
 iPhone と iPad の MarsDawn は閲覧専用で、編集はできません。編集は Mac で行います。
 
@@ -14654,29 +14654,29 @@ Auf iPhone und iPad ist MarsDawn nur zum Lesen da und öffnet Markdown, Text, PD
 
 [So prüfst du, was dein Agent zurückgibt](/de/reading-agent-output/) · [So öffnest du .md-Dateien auf dem Mac](/de/view-markdown-on-mac/)
 
-## Die App, wie sie ist
+## Funktionen
 
 ### [Mermaid-Diagramme und Code](/de/mermaid-preview-mac/)
 
-![MarsDawn in geteilter Ansicht: links der Markdown-Quelltext, rechts die gerenderte Seite.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
+![Flussdiagramm mit einer Prüfung und einer Schleife zum erneuten Senden, darunter ein Codeblock.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
 
 Die Vorschau zeichnet das Diagramm und hebt den Code hervor, direkt neben dem Quelltext.
 
 ### [PDF-Export](/de/pdf/)
 
-![Ein aus MarsDawn exportiertes PDF, geöffnet in seinem PDF-Viewer mit Seitenminiaturen.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
+![Seitenanfang: ein Titel, ein kurzer Absatz und ein Flussdiagramm.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
 
-Mermaid-Diagramme, ins PDF gezeichnet. Code behält seine Hervorhebung.
+Mermaid-Diagramme, ins PDF gezeichnet.
 
 ### [Themen](/de/themes/)
 
-![MarsDawn im Thema Lebhaft, links der Markdown-Quelltext, rechts die gerenderte Seite.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![Violette Überschriften, ein Flussdiagramm mit rosa Pfeilen und ein Codeblock auf hellviolettem Hintergrund.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
 Vier Themen integriert. Mehr in der Galerie.
 
 ### [Auf iPhone und iPad lesen](/de/features/#iphone-ipad)
 
-![MarsDawn auf dem iPhone mit dem Checkout-Plan eines Agents und einem Mermaid-Flussdiagramm, Thema Morgenrot, hell](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
+![Ein Checkout-Flussdiagramm, darunter der Anfang eines Codeblocks.](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
 
 Auf iPhone und iPad ist MarsDawn nur zum Lesen da, nicht zum Bearbeiten. Das geht am Mac.
 
@@ -18255,29 +18255,29 @@ Sur iPhone et iPad, MarsDawn sert uniquement à lire et ouvre les fichiers Markd
 
 [Comment relire ce que votre agent vous rend](/fr/reading-agent-output/) · [Ouvrir un fichier .md sur Mac](/fr/view-markdown-on-mac/)
 
-## L’app, telle qu’elle est
+## Fonctionnalités
 
 ### [Diagrammes Mermaid et code](/fr/mermaid-preview-mac/)
 
-![MarsDawn en vue partagée : la source Markdown à gauche, la page mise en forme à droite.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
+![Un organigramme avec une vérification et une boucle de renvoi, au-dessus d’un bloc de code.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
 
 L’aperçu dessine le diagramme et colore le code, juste à côté de la source.
 
 ### [Export PDF](/fr/pdf/)
 
-![Un PDF exporté depuis MarsDawn, ouvert dans sa visionneuse PDF avec les vignettes des pages.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
+![Le haut d’une page : un titre, un court paragraphe et un organigramme.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
 
-Les diagrammes Mermaid, dessinés dans le PDF. Le code garde sa coloration.
+Les diagrammes Mermaid, dessinés dans le PDF.
 
 ### [Thèmes](/fr/themes/)
 
-![MarsDawn avec le thème Vif, la source Markdown à gauche et la page mise en forme à droite.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![Titres violets, organigramme aux flèches roses et bloc de code sur fond violet clair.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
 Quatre thèmes intégrés. D’autres dans la galerie.
 
 ### [Lire sur iPhone et iPad](/fr/features/#iphone-ipad)
 
-![MarsDawn sur iPhone affichant le plan de paiement d’un agent avec un organigramme Mermaid, thème Aube, clair](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
+![Un organigramme du paiement, au-dessus du début d’un bloc de code.](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
 
 Sur iPhone et iPad, MarsDawn sert uniquement à lire, pas à modifier. Modifiez sur votre Mac.
 
@@ -21856,29 +21856,29 @@ En iPhone y iPad, MarsDawn solo sirve para leer y abre archivos Markdown, de tex
 
 [Cómo revisar lo que te devuelve tu agente](/es/reading-agent-output/) · [Cómo abrir archivos .md en Mac](/es/view-markdown-on-mac/)
 
-## La app, tal como es
+## Funciones
 
 ### [Diagramas Mermaid y código](/es/mermaid-preview-mac/)
 
-![MarsDawn en vista dividida: el código Markdown a la izquierda y la página renderizada a la derecha.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
+![Un diagrama de flujo con una comprobación y un bucle de reenvío, sobre un bloque de código.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
 
 La vista previa dibuja el diagrama y resalta el código, junto al código fuente.
 
 ### [Exportación a PDF](/es/pdf/)
 
-![Un PDF exportado desde MarsDawn, abierto en su visor de PDF con miniaturas de las páginas.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
+![Parte superior de una página: un título, un párrafo breve y un diagrama de flujo.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
 
-Diagramas Mermaid, dibujados dentro del PDF. El código conserva su resaltado.
+Diagramas Mermaid, dibujados dentro del PDF.
 
 ### [Temas](/es/themes/)
 
-![MarsDawn con el tema Vívido, con el código Markdown a la izquierda y la página renderizada a la derecha.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![Títulos morados, un diagrama de flujo con flechas rosas y un bloque de código sobre fondo morado claro.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
 Cuatro temas integrados. Más en la galería.
 
 ### [Leer en iPhone y iPad](/es/features/#iphone-ipad)
 
-![MarsDawn en iPhone mostrando el plan de pago de un agente con un diagrama de flujo de Mermaid, tema Amanecer, claro](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
+![Un diagrama de flujo del pago, sobre el inicio de un bloque de código.](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
 
 En iPhone y iPad, MarsDawn solo sirve para leer, no para editar. Para editar, vuelve a tu Mac.
 
@@ -25457,29 +25457,29 @@ iPhone과 iPad에서는 읽기 전용이며, Markdown, 텍스트, PDF, JSON, YAM
 
 [에이전트가 돌려준 결과를 검토하는 방법](/ko/reading-agent-output/) · [Mac에서 .md 파일 여는 방법](/ko/view-markdown-on-mac/)
 
-## 앱의 실제 모습
+## 기능
 
 ### [Mermaid 다이어그램과 코드](/ko/mermaid-preview-mac/)
 
-![분할 보기의 MarsDawn: 왼쪽은 Markdown 소스, 오른쪽은 렌더링된 페이지.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
+![확인 단계와 재전송 루프가 있는 순서도, 그 아래에 코드 블록.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
 
 소스 옆 미리보기에서 다이어그램이 그려지고 코드가 하이라이트됩니다.
 
 ### [PDF 내보내기](/ko/pdf/)
 
-![MarsDawn에서 내보낸 PDF를 페이지 축소판과 함께 PDF 뷰어로 연 모습.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
+![페이지 상단: 제목, 짧은 문단, 순서도.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
 
-Mermaid 다이어그램이 PDF 안에 그려집니다. 코드는 하이라이트를 유지합니다.
+Mermaid 다이어그램이 PDF 안에 그려집니다.
 
 ### [테마](/ko/themes/)
 
-![비비드 테마의 MarsDawn. 왼쪽은 Markdown 소스, 오른쪽은 렌더링된 페이지.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![보라색 제목, 분홍색 화살표가 있는 순서도, 연보라색 배경의 코드 블록.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
 기본 테마 네 가지. 갤러리에 더 있습니다.
 
 ### [iPhone과 iPad에서 읽기](/ko/features/#iphone-ipad)
 
-![iPhone의 MarsDawn에서 에이전트가 쓴 결제 계획서와 Mermaid 순서도를 표시한 화면(새벽 테마, 라이트)](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
+![결제 순서도, 그 아래에 코드 블록의 시작 부분.](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
 
 iPhone과 iPad의 MarsDawn은 읽기 전용이라 편집할 수 없습니다. 편집은 Mac에서 합니다.
 

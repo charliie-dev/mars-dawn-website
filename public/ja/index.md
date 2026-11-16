@@ -28,29 +28,29 @@ iPhone と iPad では閲覧専用で、Markdown、テキスト、PDF、JSON、Y
 
 [エージェントが返してくるものをどう確認するか](/ja/reading-agent-output/) · [Mac で .md ファイルを開く方法](/ja/view-markdown-on-mac/)
 
-## 実際のアプリ画面
+## 機能
 
 ### [Mermaid 図とコード](/ja/mermaid-preview-mac/)
 
-![MarsDawn の分割ビュー：左が Markdown のソース、右がレンダリングされたページ。](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
+![確認と再送のループがあるフローチャートと、その下のコードブロック。](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
 
 プレビューが図を描き、コードをハイライトします。ソースのすぐ隣で。
 
 ### [PDF 書き出し](/ja/pdf/)
 
-![MarsDawn から書き出した PDF を、ページのサムネイル付きの PDF ビューアで開いたところ。](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
+![ページの上部：タイトル、短い段落、フローチャート。](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
 
-Mermaid 図は PDF に描き込まれます。コードはハイライトを保ちます。
+Mermaid 図は PDF に描き込まれます。
 
 ### [テーマ](/ja/themes/)
 
-![MarsDawn がビビッドテーマで、左に Markdown のソース、右にレンダリングされたページを表示している。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![紫の見出し、ピンクの矢印のフローチャート、薄紫の背景のコードブロック。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
 4種類のテーマを内蔵。ギャラリーにはさらに多く。
 
 ### [iPhone と iPad で読む](/ja/features/#iphone-ipad)
 
-![iPhone の MarsDawn に、エージェントが書いたチェックアウトの計画書と Mermaid のフローチャートを表示（夜明けテーマ、ライト）](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
+![チェックアウトのフローチャートと、その下のコードブロックの冒頭。](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
 
 iPhone と iPad の MarsDawn は閲覧専用で、編集はできません。編集は Mac で行います。
 

@@ -28,29 +28,29 @@ MarsDawn 是讀、檢查 Markdown 的 Mac 原生 app，有分割即時預覽、M
 
 [如何審閱 agent 交回來的東西](/zh-hant/reading-agent-output/) · [Mac 怎麼開 md 檔](/zh-hant/view-markdown-on-mac/)
 
-## App 實際的樣子
+## 功能
 
 ### [Mermaid 圖表和程式碼](/zh-hant/mermaid-preview-mac/)
 
-![MarsDawn 的並排版面：左邊是 Markdown 原始碼，右邊是排版後的頁面。](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
+![流程圖含檢查步驟和重送迴圈，下方是程式碼區塊。](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
 
 預覽會把圖表畫出來、程式碼上色，就在原始碼旁邊。
 
 ### [輸出 PDF](/zh-hant/pdf/)
 
-![用 MarsDawn 輸出的 PDF，在內建的 PDF 檢視器中開啟，旁邊有頁面縮圖。](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
+![頁面頂部：標題、一小段文字和一張流程圖。](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
 
-Mermaid 圖表直接畫進 PDF。程式碼保留語法上色。
+Mermaid 圖表直接畫進 PDF。
 
 ### [主題](/zh-hant/themes/)
 
-![MarsDawn 使用活潑主題，左邊是 Markdown 原始碼，右邊是排版後的頁面。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![紫色標題、粉紅箭頭的流程圖，以及淺紫色底的程式碼區塊。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
 內建四種主題，主題庫裡還有更多。
 
 ### [在 iPhone 和 iPad 上閱讀](/zh-hant/features/#iphone-ipad)
 
-![iPhone 上的 MarsDawn，顯示 agent 寫的結帳計畫和一張 Mermaid 流程圖，黎明主題淺色](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
+![結帳流程圖，下方是程式碼區塊的開頭。](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
 
 在 iPhone 和 iPad 上，MarsDawn 只能閱讀，不能編輯。要修改，回到 Mac 上做。
 

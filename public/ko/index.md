@@ -28,29 +28,29 @@ iPhone과 iPad에서는 읽기 전용이며, Markdown, 텍스트, PDF, JSON, YAM
 
 [에이전트가 돌려준 결과를 검토하는 방법](/ko/reading-agent-output/) · [Mac에서 .md 파일 여는 방법](/ko/view-markdown-on-mac/)
 
-## 앱의 실제 모습
+## 기능
 
 ### [Mermaid 다이어그램과 코드](/ko/mermaid-preview-mac/)
 
-![분할 보기의 MarsDawn: 왼쪽은 Markdown 소스, 오른쪽은 렌더링된 페이지.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
+![확인 단계와 재전송 루프가 있는 순서도, 그 아래에 코드 블록.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
 
 소스 옆 미리보기에서 다이어그램이 그려지고 코드가 하이라이트됩니다.
 
 ### [PDF 내보내기](/ko/pdf/)
 
-![MarsDawn에서 내보낸 PDF를 페이지 축소판과 함께 PDF 뷰어로 연 모습.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
+![페이지 상단: 제목, 짧은 문단, 순서도.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
 
-Mermaid 다이어그램이 PDF 안에 그려집니다. 코드는 하이라이트를 유지합니다.
+Mermaid 다이어그램이 PDF 안에 그려집니다.
 
 ### [테마](/ko/themes/)
 
-![비비드 테마의 MarsDawn. 왼쪽은 Markdown 소스, 오른쪽은 렌더링된 페이지.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![보라색 제목, 분홍색 화살표가 있는 순서도, 연보라색 배경의 코드 블록.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
 기본 테마 네 가지. 갤러리에 더 있습니다.
 
 ### [iPhone과 iPad에서 읽기](/ko/features/#iphone-ipad)
 
-![iPhone의 MarsDawn에서 에이전트가 쓴 결제 계획서와 Mermaid 순서도를 표시한 화면(새벽 테마, 라이트)](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
+![결제 순서도, 그 아래에 코드 블록의 시작 부분.](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
 
 iPhone과 iPad의 MarsDawn은 읽기 전용이라 편집할 수 없습니다. 편집은 Mac에서 합니다.
 
