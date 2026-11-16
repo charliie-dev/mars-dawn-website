@@ -614,7 +614,7 @@ In this screenshot:
 ### Devices and people
 
 - **Sync:** MarsDawn doesn't sync your documents. They stay where you save them, so to use one on another Mac, keep it in a folder you already sync.
-- **iPhone and iPad:** MarsDawn is for reading only. It opens Markdown, text, PDF, JSON and YAML files but doesn't edit them. You can share, print or save a PDF, but links in a PDF saved there don't work. It reads the files you keep in iCloud Drive or open from other apps; MarsDawn has no cloud service of its own.
+- **iPhone and iPad:** MarsDawn is for reading only. It opens Markdown, text, PDF, JSON and YAML files but doesn't edit them. You can share, print or save a PDF, but links in a PDF saved there don't work. JSON and YAML files can be shared, but not printed or saved as a PDF. It reads the files you keep in iCloud Drive or open from other apps; MarsDawn has no cloud service of its own.
 - **Sharing:** there are no accounts and no shared editing, because MarsDawn is for one person on their own Mac.
 - **System:** MarsDawn needs macOS 26 or later on the Mac, and iOS 26 or iPadOS 26 or later on iPhone and iPad.
 
@@ -4171,7 +4171,7 @@ Source: https://marsdawn.southern-light.dev/zh-hant/limits/
 ### 裝置與使用的人
 
 - **同步：**MarsDawn 不會同步文件，文件存在哪裡就留在哪裡；要在另一台 Mac 上使用，請放在你原本就會同步的資料夾。
-- **iPhone 和 iPad：**MarsDawn 只能閱讀，能開 Markdown、純文字、PDF、JSON 和 YAML 檔，但不能編輯。可以分享、列印或存成 PDF，但在這裡存成的 PDF，裡面的連結不能點。它讀的是你放在 iCloud 雲碟裡、或從其他 App 打開的檔案，MarsDawn 本身沒有雲端服務。
+- **iPhone 和 iPad：**MarsDawn 只能閱讀，能開 Markdown、純文字、PDF、JSON 和 YAML 檔，但不能編輯。可以分享、列印或存成 PDF，但在這裡存成的 PDF，裡面的連結不能點。JSON 和 YAML 檔只能分享，不能列印或存成 PDF。它讀的是你放在 iCloud 雲碟裡、或從其他 App 打開的檔案，MarsDawn 本身沒有雲端服務。
 - **分享：**沒有帳號，也不能共同編輯，因為 MarsDawn 是給一個人在自己的 Mac 上用的。
 - **系統：**MarsDawn 在 Mac 上需要 macOS 26 以上，在 iPhone 和 iPad 上需要 iOS 26 或 iPadOS 26 以上。
 
@@ -7767,7 +7767,7 @@ Source: https://marsdawn.southern-light.dev/zh-hans/limits/
 ### 设备与使用的人
 
 - **同步：**MarsDawn 不会同步文稿，文稿存在哪里就留在哪里；要在另一台 Mac 上使用，请放在你原本就会同步的文件夹。
-- **iPhone 和 iPad：**MarsDawn 只能阅读，可以打开 Markdown、纯文本、PDF、JSON 和 YAML 文件，但不能编辑。可以共享、打印或存储为 PDF，但在这里存储的 PDF，里面的链接不能点按。它读的是你放在 iCloud 云盘里、或从其他 App 打开的文件，MarsDawn 本身没有云端服务。
+- **iPhone 和 iPad：**MarsDawn 只能阅读，可以打开 Markdown、纯文本、PDF、JSON 和 YAML 文件，但不能编辑。可以共享、打印或存储为 PDF，但在这里存储的 PDF，里面的链接不能点按。JSON 和 YAML 文件只能共享，不能打印或存储为 PDF。它读的是你放在 iCloud 云盘里、或从其他 App 打开的文件，MarsDawn 本身没有云端服务。
 - **分享：**没有账户，也不能共同编辑，因为 MarsDawn 是给一个人在自己的 Mac 上用的。
 - **系统：**MarsDawn 在 Mac 上需要 macOS 26 以上，在 iPhone 和 iPad 上需要 iOS 26 或 iPadOS 26 以上。
 
@@ -11355,7 +11355,7 @@ Source: https://marsdawn.southern-light.dev/ja/limits/
 ### デバイスと使う人
 
 - **同期：**MarsDawn は文書を同期しません。文書は保存した場所にそのまま残るので、別の Mac でも使いたい場合は、すでに同期しているフォルダに保存してください。
-- **iPhone と iPad：**MarsDawn は閲覧専用です。Markdown、テキスト、PDF、JSON、YAML のファイルを開けますが、編集はできません。共有、プリント、PDF として保存はできますが、ここで保存した PDF のリンクは機能しません。読むのは iCloud Drive に置いたファイルか、ほかの App から開いたファイルで、MarsDawn 自体にはクラウドサービスがありません。
+- **iPhone と iPad：**MarsDawn は閲覧専用です。Markdown、テキスト、PDF、JSON、YAML のファイルを開けますが、編集はできません。共有、プリント、PDF として保存はできますが、ここで保存した PDF のリンクは機能しません。JSON と YAML のファイルは共有のみで、プリントや PDF として保存はできません。読むのは iCloud Drive に置いたファイルか、ほかの App から開いたファイルで、MarsDawn 自体にはクラウドサービスがありません。
 - **共有：**アカウントも共同編集もありません。MarsDawn は自分の Mac で使う一人のためのものです。
 - **システム：**MarsDawn には、Mac では macOS 26 以降、iPhone と iPad では iOS 26 または iPadOS 26 以降が必要です。
 
@@ -14942,7 +14942,7 @@ Auf diesem Bildschirmfoto:
 ### Geräte und Personen
 
 - **Synchronisierung:** MarsDawn synchronisiert deine Dokumente nicht. Sie bleiben dort, wo du sie sicherst. Um eines auf einem anderen Mac zu verwenden, lege es in einen Ordner, den du ohnehin synchronisierst.
-- **iPhone und iPad:** MarsDawn ist dort nur zum Lesen da. Es öffnet Markdown, Text, PDF, JSON und YAML, bearbeitet aber nichts. Teilen, Drucken und Sichern als PDF gehen, aber Links in einem dort gesicherten PDF funktionieren nicht. Es liest die Dateien, die du in iCloud Drive ablegst oder aus einer anderen App öffnest; eine eigene Cloud hat MarsDawn nicht.
+- **iPhone und iPad:** MarsDawn ist dort nur zum Lesen da. Es öffnet Markdown, Text, PDF, JSON und YAML, bearbeitet aber nichts. Teilen, Drucken und Sichern als PDF gehen, aber Links in einem dort gesicherten PDF funktionieren nicht. JSON- und YAML-Dateien lassen sich nur teilen, nicht drucken oder als PDF sichern. Es liest die Dateien, die du in iCloud Drive ablegst oder aus einer anderen App öffnest; eine eigene Cloud hat MarsDawn nicht.
 - **Teilen:** Es gibt keine Konten und keine gemeinsame Bearbeitung, denn MarsDawn ist für eine Person an ihrem eigenen Mac.
 - **System:** MarsDawn benötigt auf dem Mac macOS 26 oder neuer und auf iPhone und iPad iOS 26 bzw. iPadOS 26 oder neuer.
 
@@ -18470,7 +18470,7 @@ Sur cette capture d’écran :
 ### Appareils et personnes
 
 - **Synchronisation :** MarsDawn ne synchronise pas vos documents. Ils restent là où vous les enregistrez ; pour en utiliser un sur un autre Mac, gardez-le dans un dossier que vous synchronisez déjà.
-- **iPhone et iPad :** MarsDawn y sert uniquement à lire. Il ouvre les fichiers Markdown, texte, PDF, JSON et YAML, sans modification. Vous pouvez partager, imprimer ou enregistrer en PDF, mais les liens d’un PDF enregistré depuis l’app ne fonctionnent pas. Il lit les fichiers que vous gardez dans iCloud Drive ou ouvrez depuis une autre app ; MarsDawn n’a pas de cloud à lui.
+- **iPhone et iPad :** MarsDawn y sert uniquement à lire. Il ouvre les fichiers Markdown, texte, PDF, JSON et YAML, sans modification. Vous pouvez partager, imprimer ou enregistrer en PDF, mais les liens d’un PDF enregistré depuis l’app ne fonctionnent pas. Les fichiers JSON et YAML peuvent seulement être partagés, pas imprimés ni enregistrés en PDF. Il lit les fichiers que vous gardez dans iCloud Drive ou ouvrez depuis une autre app ; MarsDawn n’a pas de cloud à lui.
 - **Partage :** il n’y a ni comptes ni édition partagée, car MarsDawn est conçu pour une personne, sur son propre Mac.
 - **Système :** MarsDawn nécessite macOS 26 ou version ultérieure sur Mac, et iOS 26 ou iPadOS 26 ou version ultérieure sur iPhone et iPad.
 
@@ -21998,7 +21998,7 @@ En esta captura de pantalla:
 ### Dispositivos y personas
 
 - **Sincronización:** MarsDawn no sincroniza tus documentos. Se quedan donde los guardas; para usar uno en otro Mac, guárdalo en una carpeta que ya sincronices.
-- **iPhone y iPad:** Allí, MarsDawn es solo para leer. Abre archivos Markdown, de texto, PDF, JSON y YAML, pero no los edita. Puedes compartir, imprimir o guardar como PDF, pero los enlaces de un PDF guardado desde ahí no funcionan. Lee los archivos que guardas en iCloud Drive o abres desde otra app; MarsDawn no tiene nube propia.
+- **iPhone y iPad:** Allí, MarsDawn es solo para leer. Abre archivos Markdown, de texto, PDF, JSON y YAML, pero no los edita. Puedes compartir, imprimir o guardar como PDF, pero los enlaces de un PDF guardado desde ahí no funcionan. Los archivos JSON y YAML solo se pueden compartir; no se pueden imprimir ni guardar como PDF. Lee los archivos que guardas en iCloud Drive o abres desde otra app; MarsDawn no tiene nube propia.
 - **Compartir:** no hay cuentas ni edición compartida, porque MarsDawn es para una persona en su propio Mac.
 - **Sistema:** MarsDawn necesita macOS 26 o posterior en la Mac, y iOS 26 o iPadOS 26 o posterior en iPhone y iPad.
 
@@ -25526,7 +25526,7 @@ Source: https://marsdawn.southern-light.dev/ko/limits/
 ### 기기와 사람
 
 - **동기화:** MarsDawn은 문서를 동기화하지 않습니다. 문서는 저장한 곳에 있으므로, 다른 Mac에서 쓰려면 이미 동기화하고 있는 폴더에 두세요.
-- **iPhone과 iPad:** MarsDawn은 읽기 전용입니다. Markdown, 텍스트, PDF, JSON, YAML 파일을 열 수 있지만 편집은 할 수 없습니다. 공유, 프린트, PDF로 저장은 할 수 있지만, 여기서 저장한 PDF의 링크는 작동하지 않습니다. iCloud Drive에 둔 파일이나 다른 앱에서 연 파일을 읽으며, MarsDawn 자체에는 클라우드 서비스가 없습니다.
+- **iPhone과 iPad:** MarsDawn은 읽기 전용입니다. Markdown, 텍스트, PDF, JSON, YAML 파일을 열 수 있지만 편집은 할 수 없습니다. 공유, 프린트, PDF로 저장은 할 수 있지만, 여기서 저장한 PDF의 링크는 작동하지 않습니다. JSON과 YAML 파일은 공유만 할 수 있고, 프린트하거나 PDF로 저장할 수는 없습니다. iCloud Drive에 둔 파일이나 다른 앱에서 연 파일을 읽으며, MarsDawn 자체에는 클라우드 서비스가 없습니다.
 - **공유:** MarsDawn은 자기 Mac을 쓰는 한 사람을 위한 앱이라 계정도 공동 편집도 없습니다.
 - **시스템:** MarsDawn은 Mac에서는 macOS 26 이상, iPhone과 iPad에서는 iOS 26 또는 iPadOS 26 이상이 필요합니다.
 

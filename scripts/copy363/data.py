@@ -7,13 +7,19 @@ SOURCES = {'A': {'id': 6800152890,
  'decision': {'id': 6801523231,
               'issue': 363,
               'sha256': 'd54b239f7961f3900f360592bd6287a4e895771c683c62834df71b559fea837b',
-              'updated_at': '2026-11-11T16:37:40Z'}}
+              'updated_at': '2026-11-11T16:37:40Z'},
+ 'sentence': {'id': 6835867929,
+              'issue': 371,
+              'kind': 'pull',
+              'sha256': '3618b69c786786ae371808df5916e2b6e0c71646b6a01649ee33717c3971bf48',
+              'updated_at': '2026-11-12T21:03:01Z'}}
 
 DATA = {'de': {'features_other_last': 'Auf iPhone und iPad öffnen sich JSON und YAML schreibgeschützt, mit '
                                'Baumvorschau.',
         'limits_ios': '- **iPhone und iPad:** MarsDawn ist dort nur zum Lesen da. Es öffnet Markdown, Text, '
                       'PDF, JSON und YAML, bearbeitet aber nichts. Teilen, Drucken und Sichern als PDF '
-                      'gehen, aber Links in einem dort gesicherten PDF funktionieren nicht. Es liest die '
+                      'gehen, aber Links in einem dort gesicherten PDF funktionieren nicht. JSON- und '
+                      'YAML-Dateien lassen sich nur teilen, nicht drucken oder als PDF sichern. Es liest die '
                       'Dateien, die du in iCloud Drive ablegst oder aus einer anderen App öffnest; eine '
                       'eigene Cloud hat MarsDawn nicht.',
         'limits_other': '- **Andere Dateien:** PDFs und Textdateien in anderen Kodierungen als UTF-8 öffnen '
@@ -27,8 +33,9 @@ DATA = {'de': {'features_other_last': 'Auf iPhone und iPad öffnen sich JSON und
  'en': {'features_other_last': 'On iPhone and iPad, JSON and YAML open read-only, with a tree preview.',
         'limits_ios': '- **iPhone and iPad:** MarsDawn is for reading only. It opens Markdown, text, PDF, '
                       "JSON and YAML files but doesn't edit them. You can share, print or save a PDF, but "
-                      "links in a PDF saved there don't work. It reads the files you keep in iCloud Drive or "
-                      'open from other apps; MarsDawn has no cloud service of its own.',
+                      "links in a PDF saved there don't work. JSON and YAML files can be shared, but not "
+                      'printed or saved as a PDF. It reads the files you keep in iCloud Drive or open from '
+                      'other apps; MarsDawn has no cloud service of its own.',
         'limits_other': '- **Other files:** PDFs open read-only, and so do text files in encodings other '
                         'than UTF-8. On the Mac, JSON and YAML open as editable documents with a tree '
                         'preview; on iPhone and iPad, they open read-only, also with a tree preview.',
@@ -40,8 +47,10 @@ DATA = {'de': {'features_other_last': 'Auf iPhone und iPad öffnen sich JSON und
                                'vista previa en árbol.',
         'limits_ios': '- **iPhone y iPad:** Allí, MarsDawn es solo para leer. Abre archivos Markdown, de '
                       'texto, PDF, JSON y YAML, pero no los edita. Puedes compartir, imprimir o guardar como '
-                      'PDF, pero los enlaces de un PDF guardado desde ahí no funcionan. Lee los archivos que '
-                      'guardas en iCloud Drive o abres desde otra app; MarsDawn no tiene nube propia.',
+                      'PDF, pero los enlaces de un PDF guardado desde ahí no funcionan. Los archivos JSON y '
+                      'YAML solo se pueden compartir; no se pueden imprimir ni guardar como PDF. Lee los '
+                      'archivos que guardas en iCloud Drive o abres desde otra app; MarsDawn no tiene nube '
+                      'propia.',
         'limits_other': '- **Otros archivos:** los PDF y los archivos de texto con una codificación distinta '
                         'de UTF-8 se abren en modo de solo lectura. En el Mac, JSON y YAML se abren como '
                         'documentos editables con vista previa en árbol; en el iPhone y el iPad se abren en '
@@ -55,8 +64,9 @@ DATA = {'de': {'features_other_last': 'Auf iPhone und iPad öffnen sich JSON und
         'limits_ios': '- **iPhone et iPad\xa0:** MarsDawn y sert uniquement à lire. Il ouvre les fichiers '
                       'Markdown, texte, PDF, JSON et YAML, sans modification. Vous pouvez partager, imprimer '
                       'ou enregistrer en PDF, mais les liens d’un PDF enregistré depuis l’app ne '
-                      'fonctionnent pas. Il lit les fichiers que vous gardez dans iCloud Drive ou ouvrez '
-                      'depuis une autre app\xa0; MarsDawn n’a pas de cloud à lui.',
+                      'fonctionnent pas. Les fichiers JSON et YAML peuvent seulement être partagés, pas '
+                      'imprimés ni enregistrés en PDF. Il lit les fichiers que vous gardez dans iCloud Drive '
+                      'ou ouvrez depuis une autre app\xa0; MarsDawn n’a pas de cloud à lui.',
         'limits_other': '- **Autres fichiers\xa0:** les PDF et les fichiers texte dans un autre encodage que '
                         'l’UTF-8 s’ouvrent en lecture seule. Sur Mac, JSON et YAML s’ouvrent comme des '
                         'documents modifiables avec un aperçu en arbre\xa0; sur iPhone et iPad, ils '
@@ -67,8 +77,9 @@ DATA = {'de': {'features_other_last': 'Auf iPhone und iPad öffnen sich JSON und
                         'liens d’un PDF enregistré depuis l’app ne fonctionnent pas.'},
  'ja': {'features_other_last': 'iPhone と iPad では、JSON と YAML を読み出し専用で開き、ツリープレビューで表示できます。',
         'limits_ios': '- **iPhone と iPad：**MarsDawn は閲覧専用です。Markdown、テキスト、PDF、JSON、YAML '
-                      'のファイルを開けますが、編集はできません。共有、プリント、PDF として保存はできますが、ここで保存した PDF のリンクは機能しません。読むのは iCloud '
-                      'Drive に置いたファイルか、ほかの App から開いたファイルで、MarsDawn 自体にはクラウドサービスがありません。',
+                      'のファイルを開けますが、編集はできません。共有、プリント、PDF として保存はできますが、ここで保存した PDF のリンクは機能しません。JSON と YAML '
+                      'のファイルは共有のみで、プリントや PDF として保存はできません。読むのは iCloud Drive に置いたファイルか、ほかの App '
+                      'から開いたファイルで、MarsDawn 自体にはクラウドサービスがありません。',
         'limits_other': '- **その他のファイル：**PDF と、UTF-8 以外のエンコーディングのテキストファイルは読み出し専用で開きます。Mac では JSON と YAML '
                         'を書類として開いて編集でき、ツリープレビューも表示されます。iPhone と iPad では読み出し専用で開き、ツリープレビューも表示されます。',
         'payonce_ios': 'iPhone と iPad では閲覧専用で、編集はできません。',
@@ -76,8 +87,9 @@ DATA = {'de': {'features_other_last': 'Auf iPhone und iPad öffnen sich JSON und
         'vs_lacks_ios': 'iPhone と iPad では閲覧専用で、編集はできません。そこで保存した PDF のリンクは機能しません。'},
  'ko': {'features_other_last': 'iPhone과 iPad에서는 JSON과 YAML을 읽기 전용으로 열 수 있으며, 트리 미리보기가 표시됩니다.',
         'limits_ios': '- **iPhone과 iPad:** MarsDawn은 읽기 전용입니다. Markdown, 텍스트, PDF, JSON, YAML 파일을 열 수 있지만 '
-                      '편집은 할 수 없습니다. 공유, 프린트, PDF로 저장은 할 수 있지만, 여기서 저장한 PDF의 링크는 작동하지 않습니다. iCloud Drive에 둔 '
-                      '파일이나 다른 앱에서 연 파일을 읽으며, MarsDawn 자체에는 클라우드 서비스가 없습니다.',
+                      '편집은 할 수 없습니다. 공유, 프린트, PDF로 저장은 할 수 있지만, 여기서 저장한 PDF의 링크는 작동하지 않습니다. JSON과 YAML 파일은 '
+                      '공유만 할 수 있고, 프린트하거나 PDF로 저장할 수는 없습니다. iCloud Drive에 둔 파일이나 다른 앱에서 연 파일을 읽으며, MarsDawn '
+                      '자체에는 클라우드 서비스가 없습니다.',
         'limits_other': '- **기타 파일:** PDF와 UTF-8이 아닌 인코딩의 텍스트 파일은 읽기 전용으로 열립니다. Mac에서는 JSON과 YAML을 편집 가능한 '
                         '문서로 열 수 있고 트리 미리보기도 표시됩니다. iPhone과 iPad에서는 읽기 전용으로 열리며 트리 미리보기도 표시됩니다.',
         'payonce_ios': 'iPhone과 iPad에서는 읽기 전용이라 편집할 수 없습니다.',
@@ -85,8 +97,8 @@ DATA = {'de': {'features_other_last': 'Auf iPhone und iPad öffnen sich JSON und
         'vs_lacks_ios': 'iPhone과 iPad에서는 읽기 전용이라 편집할 수 없고, 거기서 저장한 PDF의 링크는 작동하지 않습니다.'},
  'zh-hans': {'features_other_last': '在 iPhone 和 iPad 上，JSON 和 YAML 以只读方式打开，并有树状预览。',
              'limits_ios': '- **iPhone 和 iPad：**MarsDawn 只能阅读，可以打开 Markdown、纯文本、PDF、JSON 和 YAML '
-                           '文件，但不能编辑。可以共享、打印或存储为 PDF，但在这里存储的 PDF，里面的链接不能点按。它读的是你放在 iCloud 云盘里、或从其他 App '
-                           '打开的文件，MarsDawn 本身没有云端服务。',
+                           '文件，但不能编辑。可以共享、打印或存储为 PDF，但在这里存储的 PDF，里面的链接不能点按。JSON 和 YAML 文件只能共享，不能打印或存储为 '
+                           'PDF。它读的是你放在 iCloud 云盘里、或从其他 App 打开的文件，MarsDawn 本身没有云端服务。',
              'limits_other': '- **其他文件：**PDF 以只读方式打开，不是 UTF-8 编码的文本文件也是。在 Mac 上，JSON 和 YAML '
                              '可以作为文稿打开并编辑，并有树状预览；在 iPhone 和 iPad 上则以只读方式打开，也有树状预览。',
              'payonce_ios': '在 iPhone 和 iPad 上只能阅读，不能编辑。',
@@ -94,8 +106,8 @@ DATA = {'de': {'features_other_last': 'Auf iPhone und iPad öffnen sich JSON und
              'vs_lacks_ios': '在 iPhone 和 iPad 上只能阅读，不能编辑；在那里存储的 PDF，里面的链接不能点按。'},
  'zh-hant': {'features_other_last': '在 iPhone 和 iPad 上，JSON 和 YAML 以唯讀方式打開，並有樹狀預覽。',
              'limits_ios': '- **iPhone 和 iPad：**MarsDawn 只能閱讀，能開 Markdown、純文字、PDF、JSON 和 YAML '
-                           '檔，但不能編輯。可以分享、列印或存成 PDF，但在這裡存成的 PDF，裡面的連結不能點。它讀的是你放在 iCloud 雲碟裡、或從其他 App '
-                           '打開的檔案，MarsDawn 本身沒有雲端服務。',
+                           '檔，但不能編輯。可以分享、列印或存成 PDF，但在這裡存成的 PDF，裡面的連結不能點。JSON 和 YAML 檔只能分享，不能列印或存成 '
+                           'PDF。它讀的是你放在 iCloud 雲碟裡、或從其他 App 打開的檔案，MarsDawn 本身沒有雲端服務。',
              'limits_other': '- **其他檔案：**PDF 以唯讀方式開啟，不是 UTF-8 編碼的文字檔也是。在 Mac 上，JSON 和 YAML '
                              '可以當成文件打開來編輯，並有樹狀預覽；在 iPhone 和 iPad 上則以唯讀方式打開，也有樹狀預覽。',
              'payonce_ios': '在 iPhone 和 iPad 上只能閱讀，不能編輯。',

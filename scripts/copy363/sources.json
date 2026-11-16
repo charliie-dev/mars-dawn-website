@@ -17,6 +17,16 @@
    "updated_at": "2026-11-11T16:37:40Z",
    "sha256": "d54b239f7961f3900f360592bd6287a4e895771c683c62834df71b559fea837b",
    "chars": 165
+  },
+  "sentence": {
+   "issue": 371,
+   "kind": "pull",
+   "id": 6835867929,
+   "what": "Aria's one new sentence for limits_ios, one row per locale in the table under '## 加的那一句'; the comment is on PR #371, not on #363",
+   "created_at": "2026-11-12T21:03:01Z",
+   "updated_at": "2026-11-12T21:03:01Z",
+   "sha256": "3618b69c786786ae371808df5916e2b6e0c71646b6a01649ee33717c3971bf48",
+   "chars": 2237
   }
  }
 }
