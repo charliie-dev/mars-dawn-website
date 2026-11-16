@@ -42,11 +42,11 @@ Die Vorschau zeichnet das Diagramm und hebt den Code hervor, direkt neben dem Qu
 
 Mermaid-Diagramme, ins PDF gezeichnet.
 
-### [Themen](/de/themes/)
+### [Übersicht für Markdown](/de/quicklook/)
 
-![Violette Überschriften, ein Flussdiagramm mit rosa Pfeilen und ein Codeblock auf hellviolettem Hintergrund.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![Ein Vorschaufenster mit der gerenderten Seite: ein Titel, ein kurzer Absatz und ein Flussdiagramm.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
-Vier Themen integriert. Mehr in der Galerie.
+Wähle im Finder eine Markdown-Datei aus und drücke die Leertaste.
 
 ### [Auf iPhone und iPad lesen](/de/features/#iphone-ipad)
 

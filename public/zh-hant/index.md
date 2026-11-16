@@ -42,11 +42,11 @@ MarsDawn 是讀、檢查 Markdown 的 Mac 原生 app，有分割即時預覽、M
 
 Mermaid 圖表直接畫進 PDF。
 
-### [主題](/zh-hant/themes/)
+### [Markdown 快速查看](/zh-hant/quicklook/)
 
-![紫色標題、粉紅箭頭的流程圖，以及淺紫色底的程式碼區塊。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![預覽視窗顯示排版後的頁面：標題、一小段文字和一張流程圖。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
-內建四種主題，主題庫裡還有更多。
+在 Finder 選取 Markdown 檔案，按空白鍵。
 
 ### [在 iPhone 和 iPad 上閱讀](/zh-hant/features/#iphone-ipad)
 

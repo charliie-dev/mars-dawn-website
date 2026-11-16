@@ -42,11 +42,11 @@ The preview draws the diagram and highlights the code, right next to your source
 
 Mermaid diagrams, drawn into the PDF.
 
-### [Themes](/themes/)
+### [Quick Look for Markdown](/quicklook/)
 
-![A page with purple headings, a flowchart with pink arrows, and a code block on a light purple background.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![A preview window showing a rendered page: a title, a short paragraph and a flowchart.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
-Four themes built in. More in the gallery.
+Select a Markdown file in Finder and press Space.
 
 ### [Read on iPhone and iPad](/features/#iphone-ipad)
 

@@ -48,11 +48,11 @@ The preview draws the diagram and highlights the code, right next to your source
 
 Mermaid diagrams, drawn into the PDF.
 
-### [Themes](/themes/)
+### [Quick Look for Markdown](/quicklook/)
 
-![A page with purple headings, a flowchart with pink arrows, and a code block on a light purple background.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![A preview window showing a rendered page: a title, a short paragraph and a flowchart.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
-Four themes built in. More in the gallery.
+Select a Markdown file in Finder and press Space.
 
 ### [Read on iPhone and iPad](/features/#iphone-ipad)
 
@@ -3678,11 +3678,11 @@ MarsDawn 是讀、檢查 Markdown 的 Mac 原生 app，有分割即時預覽、M
 
 Mermaid 圖表直接畫進 PDF。
 
-### [主題](/zh-hant/themes/)
+### [Markdown 快速查看](/zh-hant/quicklook/)
 
-![紫色標題、粉紅箭頭的流程圖，以及淺紫色底的程式碼區塊。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![預覽視窗顯示排版後的頁面：標題、一小段文字和一張流程圖。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
-內建四種主題，主題庫裡還有更多。
+在 Finder 選取 Markdown 檔案，按空白鍵。
 
 ### [在 iPhone 和 iPad 上閱讀](/zh-hant/features/#iphone-ipad)
 
@@ -7347,11 +7347,11 @@ MarsDawn 是读、检查 Markdown 的 Mac 原生 app，有分栏实时预览、M
 
 Mermaid 图表直接画进 PDF。
 
-### [主题](/zh-hans/themes/)
+### [Markdown 快速查看](/zh-hans/quicklook/)
 
-![紫色标题、粉色箭头的流程图，以及浅紫色底的代码块。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![预览窗口显示排版后的页面：标题、一小段文字和一张流程图。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
-内置四种主题，主题图库里还有更多。
+在访达选取 Markdown 文件，按空格键。
 
 ### [在 iPhone 和 iPad 上阅读](/zh-hans/features/#iphone-ipad)
 
@@ -11008,11 +11008,11 @@ iPhone と iPad では閲覧専用で、Markdown、テキスト、PDF、JSON、Y
 
 Mermaid 図は PDF に描き込まれます。
 
-### [テーマ](/ja/themes/)
+### [Markdown のクイックルック](/ja/quicklook/)
 
-![紫の見出し、ピンクの矢印のフローチャート、薄紫の背景のコードブロック。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![描画されたページを表示するプレビューウインドウ：タイトル、短い段落、フローチャート。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
-4種類のテーマを内蔵。ギャラリーにはさらに多く。
+Finder で Markdown ファイルを選んでスペースキーを押します。
 
 ### [iPhone と iPad で読む](/ja/features/#iphone-ipad)
 
@@ -14668,11 +14668,11 @@ Die Vorschau zeichnet das Diagramm und hebt den Code hervor, direkt neben dem Qu
 
 Mermaid-Diagramme, ins PDF gezeichnet.
 
-### [Themen](/de/themes/)
+### [Übersicht für Markdown](/de/quicklook/)
 
-![Violette Überschriften, ein Flussdiagramm mit rosa Pfeilen und ein Codeblock auf hellviolettem Hintergrund.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![Ein Vorschaufenster mit der gerenderten Seite: ein Titel, ein kurzer Absatz und ein Flussdiagramm.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
-Vier Themen integriert. Mehr in der Galerie.
+Wähle im Finder eine Markdown-Datei aus und drücke die Leertaste.
 
 ### [Auf iPhone und iPad lesen](/de/features/#iphone-ipad)
 
@@ -18269,11 +18269,11 @@ L’aperçu dessine le diagramme et colore le code, juste à côté de la source
 
 Les diagrammes Mermaid, dessinés dans le PDF.
 
-### [Thèmes](/fr/themes/)
+### [Coup d’œil pour Markdown](/fr/quicklook/)
 
-![Titres violets, organigramme aux flèches roses et bloc de code sur fond violet clair.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![Une fenêtre d’aperçu avec la page mise en forme : un titre, un court paragraphe et un organigramme.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
-Quatre thèmes intégrés. D’autres dans la galerie.
+Sélectionnez un fichier Markdown dans le Finder et appuyez sur Espace.
 
 ### [Lire sur iPhone et iPad](/fr/features/#iphone-ipad)
 
@@ -21870,11 +21870,11 @@ La vista previa dibuja el diagrama y resalta el código, junto al código fuente
 
 Diagramas Mermaid, dibujados dentro del PDF.
 
-### [Temas](/es/themes/)
+### [Vista Rápida para Markdown](/es/quicklook/)
 
-![Títulos morados, un diagrama de flujo con flechas rosas y un bloque de código sobre fondo morado claro.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![Una ventana de vista previa con la página renderizada: un título, un párrafo breve y un diagrama de flujo.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
-Cuatro temas integrados. Más en la galería.
+Selecciona un archivo Markdown en el Finder y presiona la barra espaciadora.
 
 ### [Leer en iPhone y iPad](/es/features/#iphone-ipad)
 
@@ -25471,11 +25471,11 @@ iPhone과 iPad에서는 읽기 전용이며, Markdown, 텍스트, PDF, JSON, YAM
 
 Mermaid 다이어그램이 PDF 안에 그려집니다.
 
-### [테마](/ko/themes/)
+### [Markdown 훑어보기](/ko/quicklook/)
 
-![보라색 제목, 분홍색 화살표가 있는 순서도, 연보라색 배경의 코드 블록.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![렌더링된 페이지를 보여 주는 미리보기 창: 제목, 짧은 문단, 순서도.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
-기본 테마 네 가지. 갤러리에 더 있습니다.
+Finder에서 Markdown 파일을 선택하고 스페이스 바를 누르세요.
 
 ### [iPhone과 iPad에서 읽기](/ko/features/#iphone-ipad)
 

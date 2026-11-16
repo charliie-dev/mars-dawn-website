@@ -42,11 +42,11 @@ iPhone と iPad では閲覧専用で、Markdown、テキスト、PDF、JSON、Y
 
 Mermaid 図は PDF に描き込まれます。
 
-### [テーマ](/ja/themes/)
+### [Markdown のクイックルック](/ja/quicklook/)
 
-![紫の見出し、ピンクの矢印のフローチャート、薄紫の背景のコードブロック。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![描画されたページを表示するプレビューウインドウ：タイトル、短い段落、フローチャート。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
-4種類のテーマを内蔵。ギャラリーにはさらに多く。
+Finder で Markdown ファイルを選んでスペースキーを押します。
 
 ### [iPhone と iPad で読む](/ja/features/#iphone-ipad)
 

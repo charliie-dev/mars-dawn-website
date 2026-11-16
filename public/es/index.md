@@ -42,11 +42,11 @@ La vista previa dibuja el diagrama y resalta el código, junto al código fuente
 
 Diagramas Mermaid, dibujados dentro del PDF.
 
-### [Temas](/es/themes/)
+### [Vista Rápida para Markdown](/es/quicklook/)
 
-![Títulos morados, un diagrama de flujo con flechas rosas y un bloque de código sobre fondo morado claro.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![Una ventana de vista previa con la página renderizada: un título, un párrafo breve y un diagrama de flujo.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
-Cuatro temas integrados. Más en la galería.
+Selecciona un archivo Markdown en el Finder y presiona la barra espaciadora.
 
 ### [Leer en iPhone y iPad](/es/features/#iphone-ipad)
 

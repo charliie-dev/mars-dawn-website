@@ -42,11 +42,11 @@ iPhone과 iPad에서는 읽기 전용이며, Markdown, 텍스트, PDF, JSON, YAM
 
 Mermaid 다이어그램이 PDF 안에 그려집니다.
 
-### [테마](/ko/themes/)
+### [Markdown 훑어보기](/ko/quicklook/)
 
-![보라색 제목, 분홍색 화살표가 있는 순서도, 연보라색 배경의 코드 블록.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![렌더링된 페이지를 보여 주는 미리보기 창: 제목, 짧은 문단, 순서도.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
-기본 테마 네 가지. 갤러리에 더 있습니다.
+Finder에서 Markdown 파일을 선택하고 스페이스 바를 누르세요.
 
 ### [iPhone과 iPad에서 읽기](/ko/features/#iphone-ipad)
 

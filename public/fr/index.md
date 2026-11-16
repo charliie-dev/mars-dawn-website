@@ -42,11 +42,11 @@ L’aperçu dessine le diagramme et colore le code, juste à côté de la source
 
 Les diagrammes Mermaid, dessinés dans le PDF.
 
-### [Thèmes](/fr/themes/)
+### [Coup d’œil pour Markdown](/fr/quicklook/)
 
-![Titres violets, organigramme aux flèches roses et bloc de code sur fond violet clair.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+![Une fenêtre d’aperçu avec la page mise en forme : un titre, un court paragraphe et un organigramme.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
 
-Quatre thèmes intégrés. D’autres dans la galerie.
+Sélectionnez un fichier Markdown dans le Finder et appuyez sur Espace.
 
 ### [Lire sur iPhone et iPad](/fr/features/#iphone-ipad)
 
