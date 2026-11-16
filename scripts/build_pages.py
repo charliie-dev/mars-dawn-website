@@ -5152,7 +5152,19 @@ def all_pages_en() -> dict:
 # The home page after the hero (owner's IA, 2026-09-21): the loop, then one thing to do today
 # (the free CLI), three reasons for the app, one line on its limits, and the app as it is.
 HOME_TRAITS = ["native", "yours", "pay-once", "features"]
-HOME_PROOF = ["native", "pdf"]
+# The feature cards (#332), between the loop's three steps and the plan loop: four 4:3 shots, one
+# feature each, in reading order. Each is (page its title links to, image stem, files as (width, ext),
+# the platform word printed on the picture). The shots are crops of the existing Mac screenshots and
+# of the iPhone capture (#329); see public/assets/screens/card-*. Titles and lines are the site's
+# existing strings (home_card_copy), no new copy.
+HOME_CARDS = [
+    ("native", "card-mermaid", {"files": [(624, "png")], "size": (624, 468)}, "Mac"),
+    ("pdf", "card-pdf", {"files": [(665, "png")], "size": (665, 499)}, "Mac"),
+    # PLACEHOLDER: the Quick Look shot (Finder, Space) isn't taken yet. Until it is, the Vivid theme's
+    # preview, cropped by the same rule as the first card, stands in and the title links to /themes/.
+    ("themes", "card-vivid", {"files": [(624, "png")], "size": (624, 468)}, "Mac"),
+    ("features#iphone-ipad", "card-iphone", {"files": [(472, "webp"), (944, "webp")], "size": (944, 708)}, "iPhone"),
+]
 HOME = {
     "en": {
         "cta_cli": "Install the free CLI",
@@ -5466,13 +5478,56 @@ def _home_sections_for_twin(locale: str) -> str:
     return out.replace("</a><span>", f"</a>{colon}<span>")
 
 
-def home_proof(locale: str, figure) -> list:
-    """The app as it is: a heading, then each proof shot under its page's name. `figure` draws
-    one shot, as HTML for the page or as Markdown for its twin."""
-    return [f'<h2>{HOME[locale]["proof_h"]}</h2>'] + [
-        part for slug in HOME_PROOF
-        for part in (f'<h3><a href="{page_path(locale, slug)}">{TRAIT_LINK[locale][slug][0]}</a></h3>', figure(locale, slug))
-    ]
+def home_card_copy(locale: str, target: str) -> tuple:
+    """(title, line, alt) of one feature card, all from strings the site already carries: the trait
+    links, the themes link, the home iPhone steps' link and limit line, the screenshots' and the iPhone's alt.
+    The iPhone card's two strings are placeholders until its copy is approved (#332)."""
+    if target in ("native", "pdf"):
+        return (*TRAIT_LINK[locale][target], FIGURES[target]["alt"][locale])
+    if target == "themes":
+        return (*HOME_THEMES_LINK[locale], FIGURES["pay-once"]["alt"][locale])
+    return xml_escape(HOME_IPHONE_STEPS_MORE[locale]), xml_escape(HOME_IPHONE_STEPS[locale]["limits"]), HERO_PHONE_ALT[locale]
+
+
+def home_card_href(locale: str, target: str) -> str:
+    slug, _, anchor = target.partition("#")
+    return page_path(locale, slug) + (f"#{anchor}" if anchor else "")
+
+
+def home_cards_html(locale: str) -> str:
+    """The feature cards: a 2x2 grid from 992px, one column below. Each is a figure, the picture
+    (width and height, lazy, alt) with its platform word, and a caption: the title as the link, one line."""
+    figures = []
+    for target, stem, spec, platform in HOME_CARDS:
+        title, line, alt = home_card_copy(locale, target)
+        width, height = spec["size"]
+        files = [f"/assets/screens/{stem}-{w}.{ext}" for w, ext in spec["files"]]
+        srcset = ""
+        if len(files) > 1:
+            srcset = " srcset=\"" + ", ".join(f"{f} {w}w" for f, (w, _) in zip(files, spec["files"])) + "\" sizes=\"(min-width: 992px) 472px, min(100vw - 32px, 560px)\""
+        figures.append(
+            '<figure class="feature-card">\n'
+            f'  <div class="feature-card-shot"><img src="{files[-1]}"{srcset} width="{width}" height="{height}" '
+            f'alt="{xml_escape(alt, {chr(34): "&quot;"})}" loading="lazy" decoding="async">'
+            f'<span class="feature-card-os" aria-hidden="true">{platform}</span></div>\n'
+            f'  <figcaption><a href="{home_card_href(locale, target)}">{title}</a><span>{line}</span></figcaption>\n'
+            '</figure>')
+    return ('<section class="feature-cards" aria-labelledby="feature-cards-title">\n'
+            f'<h2 class="visually-hidden" id="feature-cards-title">{HOME[locale]["proof_h"]}</h2>\n'
+            '<div class="feature-cards-grid">\n' + "\n".join(figures) + "\n</div>\n</section>")
+
+
+def home_cards_markdown(locale: str) -> list:
+    """The same cards for the home page's Markdown twin: the section's heading, then each card's title
+    (linked), picture and line."""
+    parts = [html_to_markdown(f'<h2>{HOME[locale]["proof_h"]}</h2>').rstrip()]
+    for target, stem, spec, _ in HOME_CARDS:
+        title, line, alt = home_card_copy(locale, target)
+        width, ext = spec["files"][-1]
+        parts += [html_to_markdown(f'<h3><a href="{home_card_href(locale, target)}">{title}</a></h3>').rstrip(),
+                  f"![{alt}]({abs_url(f'/assets/screens/{stem}-{width}.{ext}')})",
+                  html_to_markdown(f"<p>{line}</p>").rstrip()]
+    return parts
 
 
 # The comparison pages set their facts side by side in tables, one per marker, instead of in prose
@@ -5922,8 +5977,6 @@ def page_markdown(pages: dict, locale: str, slug: str) -> str:
     if "intro" not in page:
         return html_to_markdown(page["body"])
     if slug == "index":
-        proof = [html_to_markdown(part).rstrip() if part.startswith("<h") else part
-                 for part in home_proof(locale, figure_markdown)]
         home_body, home_faq = split_faq(page["body"])
         return "\n\n".join([
             html_to_markdown(page["intro"]).rstrip(),
@@ -5931,11 +5984,11 @@ def page_markdown(pages: dict, locale: str, slug: str) -> str:
             # Twins carry the plain listing URL, never a campaign one (check_store_links R4).
             html_to_markdown(home_steps_html(locale).replace(campaign_url(HOME_IPHONE_CAMPAIGN).replace("&", "&amp;"), LISTING_URL)).rstrip(),
             html_to_markdown(home_body).rstrip(),
+            *home_cards_markdown(locale),
             html_to_markdown("\n".join(plan_loop_parts(locale))).rstrip(),
             html_to_markdown(_home_sections_for_twin(locale)).rstrip(),
             *([html_to_markdown(page["after"]).rstrip()] if page.get("after") else []),
             html_to_markdown(home_faq).rstrip(),
-            *proof,
         ])
     if slug == "features":
         return "\n\n".join([
@@ -7468,11 +7521,10 @@ def render(locale: str, slug: str, page: dict) -> str:
             f'<p class="close-next">{closing_cta_html(locale)}</p>\n'
             "</section>"
         )
-        proof_html = '<section class="proof">\n' + "\n".join(home_proof(locale, figure_html)) + "\n</section>"
         # The FAQ is written with the page's body but belongs after the install block and the traits.
         home_body, home_faq = split_faq(page["body"])
-        main_html = "\n".join(part for part in (hero_html, home_steps_html(locale), brand_film.film_html(locale), home_body.strip(), *plan_loop_parts_with(locale),
-                                                 home_sections_html(locale), page.get("after", "").strip(), home_faq, proof_html, closing_html)
+        main_html = "\n".join(part for part in (hero_html, home_steps_html(locale), brand_film.film_html(locale), home_body.strip(), home_cards_html(locale),
+                                                 *plan_loop_parts_with(locale), home_sections_html(locale), page.get("after", "").strip(), home_faq, closing_html)
                               if part)
     elif slug == "features":
         # The overview page: its two screenshots are the native and PDF pages', and it is the hub, so
