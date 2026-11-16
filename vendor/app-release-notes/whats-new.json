@@ -20,11 +20,11 @@
     }
    }
   ],
-  "asc_read": "2026-11-06T02:25:44.604821+00:00",
+  "asc_read": "2026-11-16T04:12:42.723252+00:00",
   "dates": "https://apps.apple.com/us/app/id6812925073?platform=mac",
-  "dates_read": "2026-11-06",
+  "dates_read": "2026-11-16",
   "ios_dates": "https://apps.apple.com/us/app/id6812925073?platform=iphone",
-  "ios_dates_read": null
+  "ios_dates_read": "2026-11-16"
  },
  "locale_map": {
   "en-US": "en",
@@ -39,10 +39,9 @@
  "versions": [
   {
    "version": "1.2.2",
-   "asc_version_id": null,
-   "released": "2026-11-23",
-   "released_at_store": null,
-   "pending": true,
+   "asc_version_id": "97f9b5d8-9ad1-4120-9579-9081c5ea5f32",
+   "released": "2026-11-14",
+   "released_at_store": "Sat Nov 14 2026 19:38:36 GMT+0000 (Coordinated Universal Time)",
    "whatsNew": {
     "de-DE": "- Ablage > „Drucken …“ und Ablage > „Als PDF exportieren …“ öffnen jetzt das Blatt „Drucken und Exportieren“ mit einer PDF-Vorschau. Wähle „Dokument“, „Handbuch“ oder „Handout“ und drucke oder sichere dann als PDF. Drucken ist nicht mehr auf „Dokument“ beschränkt.\n- Behoben: Text, der direkt nach dem automatischen Sichern getippt wurde, konnte ersetzt werden, und Scrollen direkt nach dem Wechsel zurück zu „Geteilt“ konnte zurückspringen.\n- Bei „Handbuch“ zeigt das Blatt „Drucken und Exportieren“, was auf das Deckblatt kommt, und du kannst das Deckblattbild „Sonnenaufgang auf dem Mars“ hinzufügen. „Drucken und Exportieren“ lässt sich auch zur Symbolleiste hinzufügen.\n- Ablage > „Claude-Code-Pläne hinzufügen …“ fügt den Ordner, in dem Claude Code seine Pläne sichert, zur Seitenleiste „Dateien“ hinzu, die neuesten zuerst. Das Sortiermenü der Seitenleiste hat eine neue Option, „Nur Dateien anzeigen, die MarsDawn öffnen kann“, die du für jeden Ordner einzeln einstellst.",
     "en-US": "- File > Print... and File > Export as PDF... now open a Print & Export sheet with a preview of the PDF. Choose Document, Handbook or Handout, then print it or save it as a PDF. Printing is no longer limited to Document.\n- Fixed: text typed right after an autosave could be replaced, and scrolling right after switching back to Split could jump back.\n- When you choose Handbook, the Print & Export sheet shows what will go on the cover, and you can add the Mars Sunrise cover image. Print & Export can also be added to the toolbar.\n- File > Add Claude Code Plans... adds the folder where Claude Code saves its plans to the Files sidebar, newest first. The sidebar's sort menu has a new option, Show Only Files MarsDawn Can Open, which you set for each folder.",
@@ -143,9 +142,8 @@
   "versions": [
    {
     "version": "1.0.2",
-    "released": "2026-11-23",
-    "released_at_store": null,
-    "pending": true,
+    "released": "2026-11-13",
+    "released_at_store": "Fri Nov 13 2026 23:04:15 GMT+0000 (Coordinated Universal Time)",
     "whatsNew": {
      "de-DE": "- Öffne PDFs und suche Text darin. Bei einem PDF mit Passwort wirst du zuerst danach gefragt.\n- Öffne JSON- und YAML-Dateien als schreibgeschützte Dokumente, mit einer Baumvorschau.\n- Öffne Markdown-, Text-, PDF-, JSON- und YAML-Dateien aus Dateien, Mail und anderen Apps.\n- Suche Text in der Vorschau (mit Tastatur ⌘F). „Erscheinungsbild und Thema“ hat eine neue Einstellung: „Einzelne Zeilenumbrüche beibehalten“.\n- Teile die Datei über die Symbolleiste oder drucke sie.\n- Auf dem iPad und dem aufgeklappten iPhone Duo ist die Gliederung jetzt eine Seitenleiste, die zeigt, wo du gerade bist. Dort erscheinen auch PDF-Lesezeichen.",
      "en-US": "- Open PDFs and find text in them. A PDF with a password asks for it first.\n- Open JSON and YAML files as read-only documents, with a tree preview.\n- Open Markdown, text, PDF, JSON and YAML files from Files, Mail and other apps.\n- Find text in the preview (⌘F on a keyboard). Appearance and Theme has a new setting: Keep single line breaks.\n- Share the file from the toolbar, or print it.\n- On iPad and an unfolded iPhone Duo, the outline is now a sidebar that shows where you are. PDF bookmarks appear there too.",
