@@ -5156,7 +5156,7 @@ HOME_TRAITS = ["native", "yours", "pay-once", "features"]
 # feature each, in reading order. Each is (page its title links to, image stem, files as (width, ext),
 # the platform word printed on the picture). The shots are crops of the existing Mac screenshots and
 # of the iPhone capture (#329); see public/assets/screens/card-*. Titles and lines are the site's
-# approved copy (HOME_CARD_COPY); the alt text is still the existing strings (home_card_copy).
+# approved copy (HOME_CARD_COPY), the alt text too (HOME_CARD_ALT).
 # Card 1's title links here. Daphne / Ray: to change the link, change this one line.
 HOME_CARD1_TARGET = "mermaid-preview-mac"
 HOME_CARDS = [
@@ -5191,14 +5191,14 @@ HOME_CARD_COPY = {
         "es": ("Diagramas Mermaid y código", "La vista previa dibuja el diagrama y resalta el código, junto al código fuente."),
     },
     "pdf": {
-        "en": ("PDF export", "Mermaid diagrams, drawn into the PDF. Code keeps its highlighting."),
-        "zh-hant": ("輸出 PDF", "Mermaid 圖表直接畫進 PDF。程式碼保留語法上色。"),
-        "zh-hans": ("导出 PDF", "Mermaid 图表直接画进 PDF。代码保留语法高亮。"),
-        "ja": ("PDF 書き出し", "Mermaid 図は PDF に描き込まれます。コードはハイライトを保ちます。"),
-        "ko": ("PDF 내보내기", "Mermaid 다이어그램이 PDF 안에 그려집니다. 코드는 하이라이트를 유지합니다."),
-        "de": ("PDF-Export", "Mermaid-Diagramme, ins PDF gezeichnet. Code behält seine Hervorhebung."),
-        "fr": ("Export PDF", "Les diagrammes Mermaid, dessinés dans le PDF. Le code garde sa coloration."),
-        "es": ("Exportación a PDF", "Diagramas Mermaid, dibujados dentro del PDF. El código conserva su resaltado."),
+        "en": ("PDF export", "Mermaid diagrams, drawn into the PDF."),
+        "zh-hant": ("輸出 PDF", "Mermaid 圖表直接畫進 PDF。"),
+        "zh-hans": ("导出 PDF", "Mermaid 图表直接画进 PDF。"),
+        "ja": ("PDF 書き出し", "Mermaid 図は PDF に描き込まれます。"),
+        "ko": ("PDF 내보내기", "Mermaid 다이어그램이 PDF 안에 그려집니다."),
+        "de": ("PDF-Export", "Mermaid-Diagramme, ins PDF gezeichnet."),
+        "fr": ("Export PDF", "Les diagrammes Mermaid, dessinés dans le PDF."),
+        "es": ("Exportación a PDF", "Diagramas Mermaid, dibujados dentro del PDF."),
     },
     "themes": {
         "en": ("Themes", "Four themes built in. More in the gallery."),
@@ -5209,6 +5209,52 @@ HOME_CARD_COPY = {
         "de": ("Themen", "Vier Themen integriert. Mehr in der Galerie."),
         "fr": ("Thèmes", "Quatre thèmes intégrés. D’autres dans la galerie."),
         "es": ("Temas", "Cuatro temas integrados. Más en la galería."),
+    },
+}
+
+# The feature cards' approved alt text (#332, Ray: "#332 alt ok"): {card: {locale: alt}}, plain text (home_cards_html escapes it).
+# Source: https://github.com/redtear1115/mars-dawn-website/issues/332#issuecomment-6921274799 ; applied by a script, not typed.
+# "themes" is the placeholder crop's alt (card 3); it is replaced with the card, when the Quick Look shot lands.
+HOME_CARD_ALT = {
+    "iphone": {
+        "en": "A checkout flowchart, above the start of a code block.",
+        "zh-hant": "結帳流程圖，下方是程式碼區塊的開頭。",
+        "zh-hans": "结账流程图，下方是代码块的开头。",
+        "ja": "チェックアウトのフローチャートと、その下のコードブロックの冒頭。",
+        "ko": "결제 순서도, 그 아래에 코드 블록의 시작 부분.",
+        "de": "Ein Checkout-Flussdiagramm, darunter der Anfang eines Codeblocks.",
+        "fr": "Un organigramme du paiement, au-dessus du début d’un bloc de code.",
+        "es": "Un diagrama de flujo del pago, sobre el inicio de un bloque de código.",
+    },
+    "mermaid": {
+        "en": "A flowchart with a check and a resend loop, above a code block.",
+        "zh-hant": "流程圖含檢查步驟和重送迴圈，下方是程式碼區塊。",
+        "zh-hans": "流程图含检查步骤和重发循环，下方是代码块。",
+        "ja": "確認と再送のループがあるフローチャートと、その下のコードブロック。",
+        "ko": "확인 단계와 재전송 루프가 있는 순서도, 그 아래에 코드 블록.",
+        "de": "Flussdiagramm mit einer Prüfung und einer Schleife zum erneuten Senden, darunter ein Codeblock.",
+        "fr": "Un organigramme avec une vérification et une boucle de renvoi, au-dessus d’un bloc de code.",
+        "es": "Un diagrama de flujo con una comprobación y un bucle de reenvío, sobre un bloque de código.",
+    },
+    "pdf": {
+        "en": "The top of a page: a title, a short paragraph and a flowchart.",
+        "zh-hant": "頁面頂部：標題、一小段文字和一張流程圖。",
+        "zh-hans": "页面顶部：标题、一小段文字和一张流程图。",
+        "ja": "ページの上部：タイトル、短い段落、フローチャート。",
+        "ko": "페이지 상단: 제목, 짧은 문단, 순서도.",
+        "de": "Seitenanfang: ein Titel, ein kurzer Absatz und ein Flussdiagramm.",
+        "fr": "Le haut d’une page : un titre, un court paragraphe et un organigramme.",
+        "es": "Parte superior de una página: un título, un párrafo breve y un diagrama de flujo.",
+    },
+    "themes": {
+        "en": "A page with purple headings, a flowchart with pink arrows, and a code block on a light purple background.",
+        "zh-hant": "紫色標題、粉紅箭頭的流程圖，以及淺紫色底的程式碼區塊。",
+        "zh-hans": "紫色标题、粉色箭头的流程图，以及浅紫色底的代码块。",
+        "ja": "紫の見出し、ピンクの矢印のフローチャート、薄紫の背景のコードブロック。",
+        "ko": "보라색 제목, 분홍색 화살표가 있는 순서도, 연보라색 배경의 코드 블록.",
+        "de": "Violette Überschriften, ein Flussdiagramm mit rosa Pfeilen und ein Codeblock auf hellviolettem Hintergrund.",
+        "fr": "Titres violets, organigramme aux flèches roses et bloc de code sur fond violet clair.",
+        "es": "Títulos morados, un diagrama de flujo con flechas rosas y un bloque de código sobre fondo morado claro.",
     },
 }
 
@@ -5238,7 +5284,7 @@ HOME = {
             "<code>marsdawn open</code> opens files in the MarsDawn app for you to review.",
             "<code>--json</code> gives scripts and agents results they can parse.",
         ],
-        "proof_h": "The app, as it is",
+        "proof_h": "Features",
     },
     "zh-hant": {
         "cta_cli": "安裝免費的 CLI",
@@ -5251,7 +5297,7 @@ HOME = {
             "<code>marsdawn open</code> 在 MarsDawn app 裡開啟檔案，讓你審閱。",
             "<code>--json</code> 回傳腳本和 agent 能解析的結果。",
         ],
-        "proof_h": "App 實際的樣子",
+        "proof_h": "功能",
     },
     "zh-hans": {
         "cta_cli": "安装免费的 CLI",
@@ -5264,7 +5310,7 @@ HOME = {
             "<code>marsdawn open</code> 在 MarsDawn app 里打开文件，让你审阅。",
             "<code>--json</code> 返回脚本和代理能解析的结果。",
         ],
-        "proof_h": "App 实际的样子",
+        "proof_h": "功能",
     },
     "ja": {
         "cta_cli": "無料の CLI をインストール",
@@ -5277,7 +5323,7 @@ HOME = {
             "<code>marsdawn open</code> はファイルを MarsDawn アプリで開き、確認できるようにします。",
             "<code>--json</code> は、スクリプトやエージェントが解析できる結果を返します。",
         ],
-        "proof_h": "実際のアプリ画面",
+        "proof_h": "機能",
     },
 }
 HOME_CLI_LINKS = ["cli", "agents", "skill", "mcp"]
@@ -5540,12 +5586,11 @@ def _home_sections_for_twin(locale: str) -> str:
 
 
 def home_card_copy(locale: str, target: str) -> tuple:
-    """(title, line, alt) of one feature card. Title and line are the approved copy (HOME_CARD_COPY, plain text,
-    escaped here); alt is still the site's existing strings until its own copy is proposed (#332)."""
+    """(title, line, alt) of one feature card. Title, line and alt are the approved copy (HOME_CARD_COPY, HOME_CARD_ALT, plain
+    text; title and line are escaped here, alt where it is written)."""
     card = {HOME_CARD1_TARGET: "mermaid", "pdf": "pdf", "themes": "themes"}.get(target, "iphone")
     title, line = HOME_CARD_COPY[card][locale]
-    alt = {"mermaid": lambda: FIGURES["native"]["alt"][locale], "pdf": lambda: FIGURES["pdf"]["alt"][locale],
-           "themes": lambda: FIGURES["pay-once"]["alt"][locale], "iphone": lambda: HERO_PHONE_ALT[locale]}[card]()
+    alt = HOME_CARD_ALT[card][locale]
     return xml_escape(title), xml_escape(line), alt
 
 
