@@ -5154,17 +5154,17 @@ def all_pages_en() -> dict:
 HOME_TRAITS = ["native", "yours", "pay-once", "features"]
 # The feature cards (#332), between the loop's three steps and the plan loop: four 4:3 shots, one
 # feature each, in reading order. Each is (page its title links to, image stem, files as (width, ext),
-# the platform word printed on the picture). The shots are crops of the existing Mac screenshots and
-# of the iPhone capture (#329); see public/assets/screens/card-*. Titles and lines are the site's
+# the platform word printed on the picture). The shots are crops of the existing Mac screenshots, a scaled-down
+# Quick Look window (card 3) and a crop of the iPhone capture (#329); see public/assets/screens/card-*. Titles and lines are the site's
 # approved copy (HOME_CARD_COPY), the alt text too (HOME_CARD_ALT).
 # Card 1's title links here. Daphne / Ray: to change the link, change this one line.
 HOME_CARD1_TARGET = "mermaid-preview-mac"
 HOME_CARDS = [
     (HOME_CARD1_TARGET, "card-mermaid", {"files": [(624, "png")], "size": (624, 468)}, "Mac"),
     ("pdf", "card-pdf", {"files": [(665, "png")], "size": (665, 499)}, "Mac"),
-    # PLACEHOLDER: the Quick Look shot (Finder, Space) isn't taken yet. Until it is, the Vivid theme's
-    # preview, cropped by the same rule as the first card, stands in and the title links to /themes/.
-    ("themes", "card-vivid", {"files": [(624, "png")], "size": (624, 468)}, "Mac"),
+    # Card 3: the Quick Look window (Finder, Space), Dawn light, scaled to half size (1248x936 -> 624x468), not cropped.
+    # The file keeps the name card-vivid-624.png from the placeholder it replaced.
+    ("quicklook", "card-vivid", {"files": [(624, "png")], "size": (624, 468)}, "Mac"),
     ("features#iphone-ipad", "card-iphone", {"files": [(472, "webp"), (944, "webp")], "size": (944, 708)}, "iPhone"),
 ]
 # The feature cards' approved copy (#332, Ray: "#332 文案 ok"): {card: {locale: (title, line)}}, plain text (home_card_copy
@@ -5200,21 +5200,12 @@ HOME_CARD_COPY = {
         "fr": ("Export PDF", "Les diagrammes Mermaid, dessinés dans le PDF."),
         "es": ("Exportación a PDF", "Diagramas Mermaid, dibujados dentro del PDF."),
     },
-    "themes": {
-        "en": ("Themes", "Four themes built in. More in the gallery."),
-        "zh-hant": ("主題", "內建四種主題，主題庫裡還有更多。"),
-        "zh-hans": ("主题", "内置四种主题，主题图库里还有更多。"),
-        "ja": ("テーマ", "4種類のテーマを内蔵。ギャラリーにはさらに多く。"),
-        "ko": ("테마", "기본 테마 네 가지. 갤러리에 더 있습니다."),
-        "de": ("Themen", "Vier Themen integriert. Mehr in der Galerie."),
-        "fr": ("Thèmes", "Quatre thèmes intégrés. D’autres dans la galerie."),
-        "es": ("Temas", "Cuatro temas integrados. Más en la galería."),
-    },
 }
 
 # The feature cards' approved alt text (#332, Ray: "#332 alt ok"): {card: {locale: alt}}, plain text (home_cards_html escapes it).
 # Source: https://github.com/redtear1115/mars-dawn-website/issues/332#issuecomment-6921274799 ; applied by a script, not typed.
-# "themes" is the placeholder crop's alt (card 3); it is replaced with the card, when the Quick Look shot lands.
+# "quicklook" (card 3) is still the placeholder picture's alt and does not describe the Quick Look window; it is replaced
+# when Aria's alt for that picture is approved.
 HOME_CARD_ALT = {
     "iphone": {
         "en": "A checkout flowchart, above the start of a code block.",
@@ -5246,7 +5237,7 @@ HOME_CARD_ALT = {
         "fr": "Le haut d’une page : un titre, un court paragraphe et un organigramme.",
         "es": "Parte superior de una página: un título, un párrafo breve y un diagrama de flujo.",
     },
-    "themes": {
+    "quicklook": {
         "en": "A page with purple headings, a flowchart with pink arrows, and a code block on a light purple background.",
         "zh-hant": "紫色標題、粉紅箭頭的流程圖，以及淺紫色底的程式碼區塊。",
         "zh-hans": "紫色标题、粉色箭头的流程图，以及浅紫色底的代码块。",
@@ -5258,8 +5249,8 @@ HOME_CARD_ALT = {
     },
 }
 
-# NOT IN USE: card 3's approved copy for the Quick Look shot, same shape. When that shot lands, point the third card at
-# "quicklook" and read this table instead of HOME_CARD_COPY["themes"].
+# Card 3's approved copy (the Quick Look shot), same shape as HOME_CARD_COPY. Source: the same comment as HOME_CARD_COPY,
+# its card 3 Quick Look table; applied by a script, not typed.
 HOME_CARD3_QUICKLOOK_COPY = {
     "quicklook": {
         "en": ("Quick Look for Markdown", "Select a Markdown file in Finder and press Space."),
@@ -5588,8 +5579,8 @@ def _home_sections_for_twin(locale: str) -> str:
 def home_card_copy(locale: str, target: str) -> tuple:
     """(title, line, alt) of one feature card. Title, line and alt are the approved copy (HOME_CARD_COPY, HOME_CARD_ALT, plain
     text; title and line are escaped here, alt where it is written)."""
-    card = {HOME_CARD1_TARGET: "mermaid", "pdf": "pdf", "themes": "themes"}.get(target, "iphone")
-    title, line = HOME_CARD_COPY[card][locale]
+    card = {HOME_CARD1_TARGET: "mermaid", "pdf": "pdf", "quicklook": "quicklook"}.get(target, "iphone")
+    title, line = (HOME_CARD3_QUICKLOOK_COPY if card == "quicklook" else HOME_CARD_COPY)[card][locale]
     alt = HOME_CARD_ALT[card][locale]
     return xml_escape(title), xml_escape(line), alt
 
