@@ -2954,7 +2954,7 @@ Source: https://marsdawn.southern-light.dev/roadmap/
 
 What we're building next, by version. There are no dates: a version ships when it's ready.
 
-Last updated: 24 November 2026
+Last updated: 16 November 2026
 
 Plans can change: an item may move to another version or be dropped.
 
@@ -6540,7 +6540,7 @@ Source: https://marsdawn.southern-light.dev/zh-hant/roadmap/
 
 依版本列出我們接下來要做的事。不寫日期：版本做好了才會推出。
 
-最後更新：2026 年 11 月 24 日
+最後更新：2026 年 11 月 16 日
 
 計畫可能會調整：項目可能移到別的版本，也可能取消。
 
@@ -10152,7 +10152,7 @@ Source: https://marsdawn.southern-light.dev/zh-hans/roadmap/
 
 按版本列出我们接下来要做的事。不写日期：版本做好了才会推出。
 
-最后更新：2026 年 11 月 24 日
+最后更新：2026 年 11 月 16 日
 
 计划可能会调整：项目可能移到别的版本，也可能取消。
 
@@ -13763,7 +13763,7 @@ Source: https://marsdawn.southern-light.dev/ja/roadmap/
 
 これから作るものを、バージョンごとにまとめています。日付は書きません。準備ができたバージョンから公開します。
 
-最終更新：2026年11月24日
+最終更新：2026年11月16日
 
 計画は変わることがあります。項目が別のバージョンに移ったり、取りやめになったりすることもあります。
 
@@ -17349,7 +17349,7 @@ Source: https://marsdawn.southern-light.dev/de/roadmap/
 
 Woran wir als Nächstes arbeiten, nach Version. Es gibt keine Termine: Eine Version erscheint, wenn sie fertig ist.
 
-Zuletzt aktualisiert: 24. November 2026
+Zuletzt aktualisiert: 16. November 2026
 
 Pläne können sich ändern: Ein Punkt kann in eine andere Version wandern oder wegfallen.
 
@@ -20901,7 +20901,7 @@ Source: https://marsdawn.southern-light.dev/fr/roadmap/
 
 Ce que nous préparons, version par version. Pas de dates : une version sort quand elle est prête.
 
-Dernière mise à jour : 24 novembre 2026
+Dernière mise à jour : 16 novembre 2026
 
 Les plans peuvent changer : un élément peut passer à une autre version ou être abandonné.
 
@@ -24453,7 +24453,7 @@ Source: https://marsdawn.southern-light.dev/es/roadmap/
 
 Lo que vamos a hacer a continuación, por versión. No hay fechas: una versión sale cuando está lista.
 
-Última actualización: 24 de noviembre de 2026
+Última actualización: 16 de noviembre de 2026
 
 Los planes pueden cambiar: un elemento puede pasar a otra versión o descartarse.
 
@@ -28005,7 +28005,7 @@ Source: https://marsdawn.southern-light.dev/ko/roadmap/
 
 다음에 만들 것을 버전별로 정리했습니다. 날짜는 적지 않습니다. 준비가 끝난 버전부터 내놓습니다.
 
-마지막 업데이트: 2026년 11월 24일
+마지막 업데이트: 2026년 11월 16일
 
 계획은 바뀔 수 있습니다. 항목이 다른 버전으로 옮겨지거나 취소될 수도 있습니다.
 
