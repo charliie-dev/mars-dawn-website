@@ -5204,8 +5204,8 @@ HOME_CARD_COPY = {
 
 # The feature cards' approved alt text (#332, Ray: "#332 alt ok"): {card: {locale: alt}}, plain text (home_cards_html escapes it).
 # Source: https://github.com/redtear1115/mars-dawn-website/issues/332#issuecomment-6921274799 ; applied by a script, not typed.
-# "quicklook" (card 3) is still the placeholder picture's alt and does not describe the Quick Look window; it is replaced
-# when Aria's alt for that picture is approved.
+# "quicklook" (card 3): https://github.com/redtear1115/mars-dawn-website/issues/332#issuecomment-6930374222 (Aria's alt for the
+# Quick Look picture; Ray agreed, recorded by Paula in comment 6930450616); applied by a script, not typed.
 HOME_CARD_ALT = {
     "iphone": {
         "en": "A checkout flowchart, above the start of a code block.",
@@ -5238,14 +5238,14 @@ HOME_CARD_ALT = {
         "es": "Parte superior de una página: un título, un párrafo breve y un diagrama de flujo.",
     },
     "quicklook": {
-        "en": "A page with purple headings, a flowchart with pink arrows, and a code block on a light purple background.",
-        "zh-hant": "紫色標題、粉紅箭頭的流程圖，以及淺紫色底的程式碼區塊。",
-        "zh-hans": "紫色标题、粉色箭头的流程图，以及浅紫色底的代码块。",
-        "ja": "紫の見出し、ピンクの矢印のフローチャート、薄紫の背景のコードブロック。",
-        "ko": "보라색 제목, 분홍색 화살표가 있는 순서도, 연보라색 배경의 코드 블록.",
-        "de": "Violette Überschriften, ein Flussdiagramm mit rosa Pfeilen und ein Codeblock auf hellviolettem Hintergrund.",
-        "fr": "Titres violets, organigramme aux flèches roses et bloc de code sur fond violet clair.",
-        "es": "Títulos morados, un diagrama de flujo con flechas rosas y un bloque de código sobre fondo morado claro.",
+        "en": "A preview window showing a rendered page: a title, a short paragraph and a flowchart.",
+        "zh-hant": "預覽視窗顯示排版後的頁面：標題、一小段文字和一張流程圖。",
+        "zh-hans": "预览窗口显示排版后的页面：标题、一小段文字和一张流程图。",
+        "ja": "描画されたページを表示するプレビューウインドウ：タイトル、短い段落、フローチャート。",
+        "ko": "렌더링된 페이지를 보여 주는 미리보기 창: 제목, 짧은 문단, 순서도.",
+        "de": "Ein Vorschaufenster mit der gerenderten Seite: ein Titel, ein kurzer Absatz und ein Flussdiagramm.",
+        "fr": "Une fenêtre d’aperçu avec la page mise en forme : un titre, un court paragraphe et un organigramme.",
+        "es": "Una ventana de vista previa con la página renderizada: un título, un párrafo breve y un diagrama de flujo.",
     },
 }
 
