@@ -2,7 +2,7 @@
 
 Woran wir als Nächstes arbeiten, nach Version. Es gibt keine Termine: Eine Version erscheint, wenn sie fertig ist.
 
-Zuletzt aktualisiert: 24. November 2026
+Zuletzt aktualisiert: 16. November 2026
 
 Pläne können sich ändern: Ein Punkt kann in eine andere Version wandern oder wegfallen.
 

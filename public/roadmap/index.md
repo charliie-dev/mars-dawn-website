@@ -2,7 +2,7 @@
 
 What we're building next, by version. There are no dates: a version ships when it's ready.
 
-Last updated: 24 November 2026
+Last updated: 16 November 2026
 
 Plans can change: an item may move to another version or be dropped.
 

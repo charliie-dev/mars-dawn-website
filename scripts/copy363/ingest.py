@@ -16,6 +16,9 @@ program, never typed. Each comment is fetched by id with `gh api` and held to th
   build_pages.py's _COPY363_SENTENCE_END. The checks that stop the run are in parse_sentence() and
   insert_sentence(): the table, the locales, the zh-Hant junction taken from the heading's 「…」 anchors, the en
   line the comment gives for the result, and U+00A0.
+- "date", #363 (the id in sources.json; Ray's go-ahead of 2026-11-16 is #363 6908334791): roadmap_updated per locale as
+  the one ```json block under the heading that starts "## 決定（資料）". It replaces A's roadmap_updated, which
+  names the estimated launch day; parse_date() holds it to the same rules as A.
 
 Writes scripts/copy363/data.py, which scripts/build_pages.py reads as copy363_data.
 
@@ -106,6 +109,29 @@ def parse_a(body: str) -> dict:
             if not BULLET.fullmatch(d[key]):
                 raise Stop(f"A {locale} {key}: not a one-line '- **Label:** rest' bullet: {d[key]!r}")
     return data
+
+
+def parse_date(body: str, data: dict) -> dict:
+    """data with roadmap_updated of each locale replaced by the "## 決定（資料）" JSON block's string."""
+    sections = [part for part in re.split(r"(?m)^(?=## )", body) if part.startswith("## 決定（資料）")]
+    if len(sections) != 1:
+        raise Stop(f'date: {len(sections)} "## 決定（資料）" sections, expected 1')
+    found = re.findall(r"(?ms)^```json\n(.*?)\n```$", sections[0])
+    if len(found) != 1:
+        raise Stop(f'date: {len(found)} json blocks under "## 決定（資料）", expected 1')
+    got = json.loads(found[0])
+    if sorted(got) != sorted(LOCALES):
+        raise Stop(f"date: locales {sorted(got)}")
+    out = {locale: dict(d) for locale, d in data.items()}
+    for locale in LOCALES:
+        if list(got[locale]) != ["roadmap_updated"]:
+            raise Stop(f"date {locale}: keys {sorted(got[locale])}, expected only roadmap_updated")
+        value = got[locale]["roadmap_updated"]
+        want = NBSP_FR["roadmap_updated"] if locale == "fr" else 0
+        if not isinstance(value, str) or "\r" in value or value.count("\xa0") != want:
+            raise Stop(f"date {locale}: not a one-line string with {want} U+00A0: {value!r}")
+        out[locale]["roadmap_updated"] = value
+    return out
 
 
 def sentence_rule_is_build_pages() -> None:
@@ -224,6 +250,7 @@ def build() -> dict:
     fetch(c["decision"])
     data = parse_a(fetch(c["A"]))
     data = insert_sentence(data, parse_sentence(fetch(c["sentence"])))
+    data = parse_date(fetch(c["date"]), data)
     return {locale: {k: data[locale][k] for k in KEYS} for locale in LOCALES}
 
 
