@@ -62,14 +62,14 @@
   ]
  },
  "asc": {
-  "what": "App Store Connect read, GET only, of every Mac version's localizations and What's New (tools/release/asc.py, 2026-11-06, #266)",
-  "fetched_at": "2026-11-06T02:25:44.604821+00:00",
-  "sha256": "40d40d6470880a005d1ffeaf82f48e7e9031b140294c0a8e564cb30ac4c055e5"
+  "what": "App Store Connect read, GET only, of every Mac version's localizations and What's New (tools/release/asc.py, 2026-11-16, #266, #368)",
+  "fetched_at": "2026-11-16T04:12:42.723252+00:00",
+  "sha256": "445863faee7cbd642bcca89be8913fa96df099382412bc1a22a4a877493e7a5b"
  },
  "first_version": "1.0.0",
  "dates": {
   "url": "https://apps.apple.com/us/app/id6812925073?platform=mac",
-  "read": "2026-11-06",
+  "read": "2026-11-16",
   "rule": "the date the App Store's version history gives (its <time datetime>, the UTC date of the timestamp below); the tw storefront gives the same dates"
  },
  "versions": [
@@ -79,17 +79,17 @@
   {"version": "1.1.1", "released": "2026-10-15", "released_at_store": "Thu Oct 15 2026 20:36:01 GMT+0000 (Coordinated Universal Time)"},
   {"version": "1.2.0", "released": "2026-10-27", "released_at_store": "Tue Oct 27 2026 17:08:18 GMT+0000 (Coordinated Universal Time)"},
   {"version": "1.2.1", "released": "2026-11-03", "released_at_store": "Tue Nov 03 2026 19:21:37 GMT+0000 (Coordinated Universal Time)"},
-  {"version": "1.2.2", "pending": true, "released": "2026-11-23"}
+  {"version": "1.2.2", "released": "2026-11-14", "released_at_store": "Sat Nov 14 2026 19:38:36 GMT+0000 (Coordinated Universal Time)"}
  ],
  "ios": {
   "_pending": "A pending version is not on the App Store yet: its What's New is the release-notes file at the pin (sha256 held) and its date is 'released' here, the due date of the milestone 'Mac 1.2.2 + iOS 1.0.2 live' until the day it ships (then set the real date). The ASC read and the public page are not consulted. The build, the Markdown twins, llms.txt, llms-full.txt and the home page's softwareVersion leave a pending version out: it appears nowhere in public/ (check_app_changelog.py --no-pending-in-public). To ship: drop 'pending', set 'released' to the App Store's UTC date, add released_at_store, run the ingester, rebuild; an iOS version then takes its date from ios.dates.url, as a Mac one does from dates.url. The steps are in scripts/tmde130/ingest.py's docstring.",
   "dates": {
    "url": "https://apps.apple.com/us/app/id6812925073?platform=iphone",
-   "read": null,
+   "read": "2026-11-16",
    "rule": "the same as the Mac page's; no iOS version has been read from it yet (1.0.0 and 1.0.1 are on the page but not listed on /changelog/)"
   },
   "versions": [
-   {"version": "1.0.2", "pending": true, "released": "2026-11-23"}
+   {"version": "1.0.2", "released": "2026-11-13", "released_at_store": "Fri Nov 13 2026 23:04:15 GMT+0000 (Coordinated Universal Time)"}
   ]
  }
 }
