@@ -40,7 +40,7 @@ DURATION_ISO = "PT18S"
 NAME = "Copy for AI | MarsDawn"
 # Planned go-live (the milestone's due date), a placeholder: set it to the real time the page reaches
 # production when it is merged. Google wants a full ISO 8601 datetime with an offset (brand_film_themes.py, #256).
-UPLOAD_DATE = "2026-11-17T10:00:00+08:00"
+UPLOAD_DATE = "2026-11-16T18:00:00+08:00"
 MARK = "<!--film-copy-for-ai-->"
 
 # Text for a browser that cannot play the film: the same words the other films use (brand_film_mac.COPY).

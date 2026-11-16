@@ -2,7 +2,7 @@
 
 Copier pour l’IA copie votre sélection avec son chemin de fichier et ses numéros de ligne, sans IDE ni plug-in. Collez-la dans n’importe quel agent.
 
-Ce que vous collez :
+Ce que vous collez :
 
 ````
 docs/plan.md:42-43

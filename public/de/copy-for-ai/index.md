@@ -20,9 +20,9 @@ Danach letzte gesicherte Kopie zeigen.
 2. Wähle Bearbeiten ▸ Für KI kopieren, drücke ⌃⌥⌘C oder öffne das Kontextmenü der Auswahl.
 3. Füge es in den Chat deines Agenten ein.
 
-## Für KI kopieren oder Senden an …
+## Für KI kopieren oder Senden an …
 
-|  | Für KI kopieren | Senden an … |
+|  | Für KI kopieren | Senden an … |
 |---|---|---|
 | Ergebnis | In der Zwischenablage, du fügst selbst ein | Öffnet Claude oder ChatGPT mit einem Prompt |
 | Pfad | Relativ im Projekt, außerhalb der volle Pfad | Relativer Pfad oder Dateiname, nie der volle Pfad |
