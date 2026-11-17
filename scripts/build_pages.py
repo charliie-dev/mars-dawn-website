@@ -5601,11 +5601,12 @@ def home_cards_html(locale: str) -> str:
         srcset = ""
         if len(files) > 1:
             srcset = " srcset=\"" + ", ".join(f"{f} {w}w" for f, (w, _) in zip(files, spec["files"])) + "\" sizes=\"(min-width: 992px) 472px, min(100vw - 32px, 560px)\""
+        os_class = "feature-card-os feature-card-os-end" if target == "quicklook" else "feature-card-os"
         figures.append(
             '<figure class="feature-card">\n'
             f'  <div class="feature-card-shot"><img src="{files[-1]}"{srcset} width="{width}" height="{height}" '
             f'alt="{xml_escape(alt, {chr(34): "&quot;"})}" loading="lazy" decoding="async">'
-            f'<span class="feature-card-os" aria-hidden="true">{platform}</span></div>\n'
+            f'<span class="{os_class}" aria-hidden="true">{platform}</span></div>\n'
             f'  <figcaption><a href="{home_card_href(locale, target)}">{title}</a><span>{line}</span></figcaption>\n'
             '</figure>')
     return ('<section class="feature-cards" aria-labelledby="feature-cards-title">\n'
