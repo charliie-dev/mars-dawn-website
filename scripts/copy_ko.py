@@ -333,7 +333,8 @@ OPEN_MD = {'title': 'Mac에서 .md 파일 여는 방법 · MarsDawn',
  'next_items_html': ['명령줄 도구의 모든 옵션: <a href="/ko/cli/">명령줄</a>.',
                      'MarsDawn이 하지 않는 일: <a href="/ko/limits/">목록</a>.',
                      'VS Code, 브라우저, Claude Desktop에서 Markdown을 읽는 경우: <a '
-                     'href="/ko/vs/markdown-preview-tools/">비교해 보기</a>.']}
+                     'href="/ko/vs/markdown-preview-tools/">비교해 보기</a>.',
+                     'HackMD에 보관 중인 노트: <a href="/ko/from-hackmd/">HackMD에서 Mac으로</a>.']}
 
 MERMAID = {'title': 'Mac에서 Mermaid 미리보기, Markdown 바로 옆에서 · MarsDawn',
  'description': 'Mac에서 Mermaid 다이어그램을 Markdown 옆에 그려서 보세요: 실시간 미리보기, 훑어보기, PDF 내보내기. 다이어그램에 오류가 있으면 오류와 해당 '

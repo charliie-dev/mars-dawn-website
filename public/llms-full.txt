@@ -852,6 +852,7 @@ Yes, that is what MarsDawn is built for. Open the file and read the rendered pag
 - Every option of the command-line tool: [Command Line](/cli/).
 - What MarsDawn doesn't do: [the list](/limits/).
 - Reading Markdown in VS Code, a browser or Claude Desktop instead: [how they compare](/vs/markdown-preview-tools/).
+- Notes you keep on HackMD: [Move from HackMD to your Mac](/from-hackmd/).
 - Diagrams in a Markdown file: [Mermaid preview on Mac](/mermaid-preview-mac/).
 
 ---
@@ -1013,6 +1014,107 @@ In a Git checkout MarsDawn can access, or a sidebar folder, the path is relative
 
 - [Reviewing an agent plan in five minutes](/reviewing-agent-plans/)
 - [All features](/features/)
+
+---
+
+## Move from HackMD to your Mac
+
+Source: https://marsdawn.southern-light.dev/from-hackmd/
+
+# Move from HackMD to your Mac
+
+Your notes are already Markdown, so there's nothing to convert. Pick a route below by how much you're moving. Images need their own step, so read that section before you delete anything on HackMD.
+
+We tested this on a free HackMD account in November 2026. HackMD can change, and we didn't test paid plans or team workspaces.
+
+| You want to | Take this route |
+|---|---|
+| Move all your notes | Download all notes |
+| Move notes that are already on GitHub | Clone the repo |
+| Move one or two notes | Download one note |
+
+## Download all notes
+
+HackMD's note settings have Download all notes, for personal and team workspaces. You get one .zip with a .md file for each note, named after its title.
+
+- Folders aren't kept. Every note lands at the top level.
+- Images aren't included. The .md files still point to them by URL.
+- The option to include title and tags is on by default and adds a front matter block to each note. Turn it off to get each note exactly as written.
+
+Unzip it, then choose File ▸ Open Folder… in MarsDawn to open that folder.
+
+## Clone the repo
+
+HackMD's GitHub sync links one note to one file, so a note you've pushed is already in the repo. Clone it and open the folder with File ▸ Open Folder…. The sidebar shows the repo and its branch.
+
+If your notes aren't on GitHub yet, you don't need to start for this move. Each note has to be linked on its own, and the free plan allows 20 pushes a month. On a free personal account we found no way to push a whole workspace at once.
+
+After the move, treat the repo as the original. A push from HackMD replaces what's on GitHub, even if GitHub has newer content, and it doesn't warn you.
+
+## Download one note
+
+The note menu downloads a note as .md or .html. Choose .md and open the file in MarsDawn.
+
+## Images
+
+Images you uploaded to HackMD live at `https://hackmd.io/_uploads/...`. Who can see them follows the note's permission.
+
+| Your note is | What happens on your Mac | What to do |
+|---|---|---|
+| Public | The image loads from HackMD | Click Load Images in the preview, or turn on Settings ▸ Images ▸ Load remote images automatically |
+| Private | The image returns an error, because MarsDawn isn't signed in to HackMD | Save the image from a signed-in browser, put it next to the .md file and change the path. Or make the note public, if everyone may read it |
+
+- **Older notes** may use `i.imgur.com` addresses instead.
+- **Deleting a note deletes its images.** Their addresses stop working, so move the images first.
+
+If MarsDawn can't reach an image next to your file, use the button in the preview to give it access to the folder.
+
+## How your notes will look
+
+Most of HackMD's syntax reads the same: `==highlight==`, `^superscript^`, `~subscript~`, `[TOC]`, image sizes such as `=300x200`, Mermaid and KaTeX. `{%youtube %}` shows as a link. To keep every line break as HackMD does, turn on Settings ▸ Appearance ▸ Keep single line breaks.
+
+A few things look different:
+
+- `++inserted++` and emoji codes such as `:sparkles:` show as you typed them.
+- `{%hackmd id %}` isn't expanded.
+- `<i class="fa ...">` icons don't appear.
+
+## For scripts: hackmd-cli
+
+`hackmd-cli` has no command that exports everything at once. It exports one note and prints it, so you list your notes first and loop over them. You need Node.js, `jq` and an API token from your HackMD settings. If you don't need a script, Download all notes is simpler.
+
+```
+npm install -g @hackmd/hackmd-cli
+export HMD_API_ACCESS_TOKEN=<your token>
+hackmd-cli notes --output json | jq -r '.[].id' | while read -r id; do
+  hackmd-cli export --noteId="$id" > "$id.md"
+done
+```
+
+- **Folders don't come across.** The note list doesn't say which folder a note is in, so every file lands in one place.
+- **Images stay as `hackmd.io` links.** Handle them as in the Images section above.
+- **File names are note IDs,** not titles.
+- **The free plan allows 400 API calls every 30 days.** This uses one call for the list and one for each note.
+
+We tried this on an account with only a few notes, so we don't know how a very long list behaves. Delete the token in your HackMD settings when you're done.
+
+## Writing together
+
+MarsDawn has no shared editing. If you need to write together live, keep using HackMD. If your team keeps documents in git, each person can open the same repo in their own MarsDawn and finish the document together. See Review documents as a team, with git.
+
+## Questions
+
+### Can I download all my HackMD notes at once?
+
+Yes. Download all notes gives you one .zip of .md files. It doesn't keep folders or include images.
+
+### Why are my images missing in MarsDawn?
+
+MarsDawn holds back web images until you click Load Images. If the note is private, the image can't load at all, so save it next to your file.
+
+### Do I have to leave HackMD?
+
+No. HackMD stays the better choice for writing together. MarsDawn is for reading and reviewing on your Mac.
 
 ---
 
@@ -4482,6 +4584,7 @@ open notes.pdf
 - 命令列工具的所有選項：[命令列工具](/zh-hant/cli/)。
 - MarsDawn 做不到的事：[這份清單](/zh-hant/limits/)。
 - 改用 VS Code、瀏覽器或 Claude Desktop 看 Markdown：[比較一下](/zh-hant/vs/markdown-preview-tools/)。
+- 放在 HackMD 的筆記：[從 HackMD 搬到 Mac](/zh-hant/from-hackmd/)。
 - Markdown 檔裡的圖表：[在 Mac 上預覽 Mermaid](/zh-hant/mermaid-preview-mac/)。
 
 ---
@@ -4643,6 +4746,107 @@ docs/plan.md:42-43
 
 - [五分鐘審完一份 agent 計畫](/zh-hant/reviewing-agent-plans/)
 - [所有功能](/zh-hant/features/)
+
+---
+
+## 從 HackMD 搬到 Mac
+
+Source: https://marsdawn.southern-light.dev/zh-hant/from-hackmd/
+
+# 從 HackMD 搬到 Mac
+
+你的筆記本來就是 Markdown，不用轉檔。看你要搬多少，選一條路。圖片要另外處理，刪 HackMD 上的東西之前，請先讀「圖片」那段。
+
+這頁是 2026 年 11 月用 HackMD 免費帳號實測的。HackMD 可能會變，付費方案和團隊工作區我們沒測。
+
+| 你想要 | 走這條 |
+|---|---|
+| 搬全部筆記 | 下載所有筆記 |
+| 搬已經在 GitHub 的筆記 | clone repo |
+| 搬一兩篇 | 下載單篇 |
+
+## 下載所有筆記
+
+HackMD 的筆記設定裡有「下載所有筆記」，個人和團隊空間都有。下載下來是一個 .zip，一篇筆記一個 .md，檔名是筆記標題。
+
+- 資料夾不會保留，所有筆記都在最上層。
+- 圖片不在裡面，.md 裡仍然是網址。
+- 「包含標題和標籤」預設打開，會在每篇最前面加一段 front matter。關掉就和筆記原文相同。
+
+解壓縮後，在 MarsDawn 選「檔案 ▸ 打開資料夾⋯」打開那個資料夾。
+
+## clone repo
+
+HackMD 的 GitHub 同步是一篇筆記對一個檔案，所以推送過的筆記已經在 repo 裡。clone 下來，用「檔案 ▸ 打開資料夾⋯」打開，側邊欄會顯示 repo 和分支。
+
+還沒接 GitHub 的筆記，不用為了搬家特地接。每篇都要各自綁定，免費版每月可以推送 20 次。在免費個人帳號上，我們沒看到一次推送整個工作區的入口。
+
+搬完之後，以 repo 為正本。從 HackMD 推送會直接蓋掉 GitHub 上的內容，就算 GitHub 比較新也一樣，而且不會警告。
+
+## 下載單篇
+
+筆記選單可以下載 .md 或 .html。選 .md，再用 MarsDawn 打開。
+
+## 圖片
+
+上傳到 HackMD 的圖片，網址是 `https://hackmd.io/_uploads/...`。誰看得到，跟著筆記的權限走。
+
+| 你的筆記是 | 搬到 Mac 後 | 怎麼處理 |
+|---|---|---|
+| 公開 | 圖片從 HackMD 載入 | 在預覽按「載入圖片」，或打開「設定 ▸ 圖片 ▸ 自動載入網路圖片」 |
+| 私人 | 圖片會回錯誤，因為 MarsDawn 沒有登入 HackMD | 在登入的瀏覽器把圖片存下來，放在 .md 旁邊，再改路徑。或把筆記改成公開，前提是所有人都可以看 |
+
+- **舊筆記** 的圖片可能是 `i.imgur.com` 網址。
+- **刪筆記，圖片也會失效。** 網址之後打不開，所以先搬好圖片再刪。
+
+如果 MarsDawn 讀不到檔案旁邊的圖片，用預覽裡的按鈕授權那個資料夾。
+
+## 讀起來的樣子
+
+HackMD 的語法大多照樣能讀：`==螢光==`、`^上標^`、`~下標~`、`[TOC]`、`=300x200` 這類圖片尺寸、Mermaid 和 KaTeX。`{%youtube %}` 會顯示成連結。想和 HackMD 一樣保留每個換行，請打開「設定 ▸ 外觀 ▸ 保留單一換行」。
+
+有幾個地方不一樣：
+
+- `++底線++` 和 `:sparkles:` 這類 emoji 代碼會照原文顯示。
+- `{%hackmd id %}` 不會展開。
+- `<i class="fa ...">` 圖示不會出現。
+
+## 給腳本用：hackmd-cli
+
+`hackmd-cli` 沒有一次匯出全部的指令。它一次匯出一篇，內容印在畫面上，所以要先列出筆記，再逐篇跑迴圈。你需要 Node.js、`jq`，以及在 HackMD 設定頁建立的 API token。不需要腳本的話，「下載所有筆記」比較簡單。
+
+```
+npm install -g @hackmd/hackmd-cli
+export HMD_API_ACCESS_TOKEN=<你的 token>
+hackmd-cli notes --output json | jq -r '.[].id' | while read -r id; do
+  hackmd-cli export --noteId="$id" > "$id.md"
+done
+```
+
+- **資料夾帶不過來。** 筆記清單沒有寫筆記在哪個資料夾，所以檔案都會放在同一層。
+- **圖片仍是 `hackmd.io` 連結。** 請照上面「圖片」那段處理。
+- **檔名是筆記 ID，** 不是標題。
+- **免費版每 30 天可以呼叫 API 400 次。** 列清單 1 次，每篇筆記再 1 次。
+
+我們只在筆記很少的帳號上試過，不知道清單很長時會怎樣。用完請到 HackMD 設定頁刪掉 token。
+
+## 一起寫的話
+
+MarsDawn 沒有多人同時編輯。需要共筆的話，繼續用 HackMD。團隊把文件放在 git 的話，每個人都能用自己的 MarsDawn 打開同一個 repo，一起完成同一份文件。請看團隊用 git 一起審文件。
+
+## 常見問題
+
+### 可以一次下載全部 HackMD 筆記嗎？
+
+可以。「下載所有筆記」會給你一個 .zip，裡面都是 .md。資料夾不會保留，也不含圖片。
+
+### 為什麼在 MarsDawn 看不到圖片？
+
+MarsDawn 預設不載入網路圖片，要按「載入圖片」。如果是私人筆記，圖片載不到，請存到檔案旁邊。
+
+### 一定要離開 HackMD 嗎？
+
+不用。要一起寫，HackMD 還是比較好的選擇。MarsDawn 是讓你在 Mac 上讀和審。
 
 ---
 
@@ -8150,6 +8354,7 @@ open notes.pdf
 
 - 命令行工具的所有选项：[命令行工具](/zh-hans/cli/)。
 - MarsDawn 做不到的事：[这份清单](/zh-hans/limits/)。
+- 放在 HackMD 的笔记：[从 HackMD 搬到 Mac](/zh-hans/from-hackmd/)。
 - Markdown 文件里的图表：[在 Mac 上预览 Mermaid](/zh-hans/mermaid-preview-mac/)。
 
 ---
@@ -8311,6 +8516,107 @@ docs/plan.md:42-43
 
 - [五分钟审完一份代理计划](/zh-hans/reviewing-agent-plans/)
 - [所有功能](/zh-hans/features/)
+
+---
+
+## 从 HackMD 搬到 Mac
+
+Source: https://marsdawn.southern-light.dev/zh-hans/from-hackmd/
+
+# 从 HackMD 搬到 Mac
+
+你的笔记本来就是 Markdown，不用转换。看你要搬多少，选一条路。图片要另外处理，删除 HackMD 上的内容之前，请先读“图片”那一段。
+
+这一页是 2026 年 11 月用 HackMD 免费账户实测的。HackMD 可能会变，付费方案和团队工作区我们没有测。
+
+| 你想要 | 走这条 |
+|---|---|
+| 搬全部笔记 | 下载所有笔记 |
+| 搬已经在 GitHub 上的笔记 | clone 仓库 |
+| 搬一两篇 | 下载单篇 |
+
+## 下载所有笔记
+
+HackMD 的笔记设置里有 Download all notes，个人和团队空间都有。下载下来是一个 .zip，一篇笔记一个 .md，文件名是笔记标题。
+
+- 文件夹不会保留，所有笔记都在最上层。
+- 图片不在里面，.md 里仍然是网址。
+- 包含标题和标签的选项默认打开，会在每篇最前面加一段 front matter。关掉后就和笔记原文相同。
+
+解压缩后，在 MarsDawn 选择“文件 ▸ 打开文件夹…”，打开那个文件夹。
+
+## clone 仓库
+
+HackMD 的 GitHub 同步是一篇笔记对一个文件，所以推送过的笔记已经在仓库里。clone 下来，用“文件 ▸ 打开文件夹…”打开，边栏会显示仓库和分支。
+
+还没接 GitHub 的笔记，不用为了搬家特地接。每篇都要各自绑定，免费版每月可以推送 20 次。在免费个人账户上，我们没看到一次推送整个工作区的入口。
+
+搬完之后，以仓库为准。从 HackMD 推送会直接覆盖 GitHub 上的内容，就算 GitHub 上的比较新也一样，而且不会警告。
+
+## 下载单篇
+
+笔记菜单可以下载 .md 或 .html。选择 .md，再用 MarsDawn 打开。
+
+## 图片
+
+上传到 HackMD 的图片，网址是 `https://hackmd.io/_uploads/...`。谁看得到，跟着笔记的权限走。
+
+| 你的笔记是 | 搬到 Mac 后 | 怎么处理 |
+|---|---|---|
+| 公开 | 图片从 HackMD 载入 | 在预览中点按“载入图像”，或打开“设置 ▸ 图像 ▸ 自动载入网络图像” |
+| 私人 | 图片会返回错误，因为 MarsDawn 没有登录 HackMD | 在已登录的浏览器里把图片存下来，放在 .md 旁边，再改路径。或者把笔记改成公开，前提是所有人都可以看 |
+
+- **旧笔记** 的图片可能是 `i.imgur.com` 网址。
+- **删除笔记，图片也会失效。** 网址之后打不开，所以先搬好图片再删除。
+
+如果 MarsDawn 读不到文件旁边的图片，用预览里的按钮授权那个文件夹。
+
+## 读起来的样子
+
+HackMD 的语法大多照样能读：`==高亮==`、`^上标^`、`~下标~`、`[TOC]`、`=300x200` 这类图片尺寸、Mermaid 和 KaTeX。`{%youtube %}` 会显示成链接。想和 HackMD 一样保留每个换行，请打开“设置 ▸ 外观 ▸ 保留单个换行”。
+
+有几个地方不一样：
+
+- `++下划线++` 和 `:sparkles:` 这类 emoji 代码会按原文显示。
+- `{%hackmd id %}` 不会展开。
+- `<i class="fa ...">` 图标不会出现。
+
+## 给脚本用：hackmd-cli
+
+`hackmd-cli` 没有一次导出全部的命令。它一次导出一篇，内容打印在屏幕上，所以要先列出笔记，再逐篇跑循环。你需要 Node.js、`jq`，以及在 HackMD 设置页创建的 API token。不需要脚本的话，Download all notes 比较简单。
+
+```
+npm install -g @hackmd/hackmd-cli
+export HMD_API_ACCESS_TOKEN=<你的 token>
+hackmd-cli notes --output json | jq -r '.[].id' | while read -r id; do
+  hackmd-cli export --noteId="$id" > "$id.md"
+done
+```
+
+- **文件夹带不过来。** 笔记列表没有写笔记在哪个文件夹，所以文件都会放在同一层。
+- **图片仍是 `hackmd.io` 链接。** 请按上面“图片”那一段处理。
+- **文件名是笔记 ID，** 不是标题。
+- **免费版每 30 天可以调用 API 400 次。** 列表 1 次，每篇笔记再 1 次。
+
+我们只在笔记很少的账户上试过，不知道列表很长时会怎样。用完请到 HackMD 设置页删除 token。
+
+## 一起写的话
+
+MarsDawn 没有多人同时编辑。需要共同编写的话，继续用 HackMD。团队把文稿放在 git 的话，每个人都能用自己的 MarsDawn 打开同一个仓库，一起完成同一份文稿。请看团队用 git 一起审文稿。
+
+## 常见问题
+
+### 可以一次下载全部 HackMD 笔记吗？
+
+可以。Download all notes 会给你一个 .zip，里面都是 .md。文件夹不会保留，也不含图片。
+
+### 为什么在 MarsDawn 看不到图片？
+
+MarsDawn 默认不载入网络图片，要点按“载入图像”。如果是私人笔记，图片载入不了，请存到文件旁边。
+
+### 一定要离开 HackMD 吗？
+
+不用。要一起写，HackMD 还是比较好的选择。MarsDawn 是让你在 Mac 上读和审。
 
 ---
 
@@ -11811,6 +12117,7 @@ open notes.pdf
 
 - コマンドラインツールのすべてのオプション：[コマンドライン](/ja/cli/)。
 - MarsDawn ができないこと：[一覧はこちら](/ja/limits/)。
+- HackMD に保存しているノート：[HackMD から Mac へ](/ja/from-hackmd/)。
 - Markdown ファイルの中の図：[Mac で Mermaid をプレビューする](/ja/mermaid-preview-mac/)。
 
 ---
@@ -11972,6 +12279,107 @@ MarsDawn がアクセスできる git チェックアウトやサイドバーの
 
 - [エージェントの計画を 5 分でレビューする](/ja/reviewing-agent-plans/)
 - [すべての機能](/ja/features/)
+
+---
+
+## HackMD から Mac へ
+
+Source: https://marsdawn.southern-light.dev/ja/from-hackmd/
+
+# HackMD から Mac へ
+
+ノートはもともと Markdown なので、変換はいりません。移す量に合わせて、方法を選んでください。画像は別の作業が必要です。HackMD の内容を削除する前に「画像」の節を読んでください。
+
+このページは、2026年11月に HackMD の無料アカウントで確かめた内容です。HackMD は変わることがあります。有料プランとチームワークスペースは試していません。
+
+| やりたいこと | 方法 |
+|---|---|
+| ノートをすべて移す | すべてのノートをダウンロード |
+| GitHub にあるノートを移す | リポジトリを clone |
+| 1、2 件だけ移す | 1 件ずつダウンロード |
+
+## すべてのノートをダウンロード
+
+HackMD のノート設定に Download all notes があります。個人とチームのどちらのワークスペースでも使えます。ノートごとの .md が 1 つの .zip にまとまり、ファイル名はノートのタイトルになります。
+
+- フォルダは保たれません。すべてのノートが最上位に入ります。
+- 画像は含まれません。.md の中は URL のままです。
+- タイトルとタグを含めるオプションは初期状態でオンで、各ノートの先頭に front matter を追加します。オフにすると、ノートの原文のままになります。
+
+展開したら、MarsDawn で「ファイル ▸ フォルダを開く…」を選び、そのフォルダを開きます。
+
+## リポジトリを clone
+
+HackMD の GitHub 同期は 1 つのノートを 1 つのファイルに対応させます。プッシュ済みのノートは、すでにリポジトリにあります。clone して「ファイル ▸ フォルダを開く…」で開くと、サイドバーにリポジトリとブランチが表示されます。
+
+まだ GitHub につないでいないノートは、移行のためにつなぐ必要はありません。ノートごとに設定が必要で、無料プランのプッシュは月 20 回までです。無料の個人アカウントでは、ワークスペース全体を一度にプッシュする入口は見当たりませんでした。
+
+移行したあとは、リポジトリを正本にしてください。HackMD からプッシュすると、GitHub の内容をそのまま上書きします。GitHub のほうが新しくても同じで、警告は出ません。
+
+## 1 件ずつダウンロード
+
+ノートのメニューから .md か .html をダウンロードできます。.md を選び、MarsDawn で開きます。
+
+## 画像
+
+HackMD にアップロードした画像の URL は `https://hackmd.io/_uploads/...` です。誰が見られるかは、ノートの権限に従います。
+
+| ノート | Mac に移したあと | 対処 |
+|---|---|---|
+| 公開 | 画像は HackMD から読み込まれます | プレビューで「イメージを読み込む」をクリックするか、「設定 ▸ イメージ ▸ リモートイメージを自動的に読み込む」をオンにします |
+| 非公開 | MarsDawn は HackMD にログインしていないので、画像はエラーになります | ログインしたブラウザで画像を保存し、.md の横に置いてパスを書き換えます。全員に見られてもよければ、ノートを公開にする方法もあります |
+
+- **古いノート** の画像は `i.imgur.com` の URL のことがあります。
+- **ノートを削除すると、画像も使えなくなります。** URL が開けなくなるので、画像を移してから削除してください。
+
+ファイルの横の画像を MarsDawn が読めないときは、プレビューのボタンでそのフォルダへのアクセスを許可します。
+
+## ノートの見え方
+
+HackMD の記法はほとんどそのまま読めます。`==ハイライト==`、`^上付き^`、`~下付き~`、`[TOC]`、`=300x200` のような画像サイズ、Mermaid、KaTeX に対応しています。`{%youtube %}` はリンクになります。HackMD と同じようにすべての改行を保つには、「設定 ▸ 外観モード ▸ 単一の改行を保持」をオンにします。
+
+いくつか違う点があります。
+
+- `++下線++` と `:sparkles:` のような絵文字コードは、書いたまま表示されます。
+- `{%hackmd id %}` は展開されません。
+- `<i class="fa ...">` のアイコンは表示されません。
+
+## スクリプトで：hackmd-cli
+
+`hackmd-cli` には、すべてを一度に書き出すコマンドはありません。1 回に 1 件を書き出して表示するので、ノートを一覧にしてからループで回します。Node.js、`jq`、HackMD の設定で作った API トークンが必要です。スクリプトが必要なければ、Download all notes のほうが簡単です。
+
+```
+npm install -g @hackmd/hackmd-cli
+export HMD_API_ACCESS_TOKEN=<あなたのトークン>
+hackmd-cli notes --output json | jq -r '.[].id' | while read -r id; do
+  hackmd-cli export --noteId="$id" > "$id.md"
+done
+```
+
+- **フォルダは引き継がれません。** ノートの一覧にはどのフォルダにあるかが含まれないので、ファイルはすべて同じ場所に入ります。
+- **画像は `hackmd.io` のリンクのままです。** 上の「画像」の節のとおりに対処してください。
+- **ファイル名はノートの ID です。** タイトルではありません。
+- **無料プランの API は 30 日で 400 回までです。** 一覧に 1 回、ノート 1 件ごとに 1 回使います。
+
+ノートが少ないアカウントでしか試していないので、一覧がとても長いときの動きはわかりません。終わったら、HackMD の設定でトークンを削除してください。
+
+## 一緒に書くなら
+
+MarsDawn に複数人の同時編集はありません。共同で書くなら、HackMD を使い続けてください。チームが書類を git で管理しているなら、それぞれが自分の MarsDawn で同じリポジトリを開いて、ひとつの書類を一緒に仕上げられます。チームで git を使って書類をレビューするをご覧ください。
+
+## よくある質問
+
+### HackMD のノートをまとめてダウンロードできますか？
+
+はい。Download all notes で、.md が入った .zip を 1 つダウンロードできます。フォルダは保たれず、画像も含まれません。
+
+### MarsDawn で画像が表示されないのはなぜですか？
+
+MarsDawn は Web の画像を初期状態では読み込みません。「イメージを読み込む」をクリックしてください。非公開のノートの画像は読み込めないので、ファイルの横に保存してください。
+
+### HackMD をやめる必要はありますか？
+
+ありません。一緒に書くなら、HackMD のほうが向いています。MarsDawn は Mac で読んでレビューするためのアプリです。
 
 ---
 
@@ -15472,6 +15880,7 @@ Ja, dafür ist MarsDawn gebaut. Öffne die Datei und lies die gerenderte Seite n
 - Alle Optionen des Befehlszeilenwerkzeugs: [Befehlszeile](/de/cli/).
 - Was MarsDawn nicht kann: [die Liste](/de/limits/).
 - Markdown stattdessen in VS Code, im Browser oder in Claude Desktop lesen: [der Vergleich](/de/vs/markdown-preview-tools/).
+- Notizen, die auf HackMD liegen: [Von HackMD auf den Mac](/de/from-hackmd/).
 - Diagramme in einer Markdown-Datei: [Mermaid-Vorschau auf dem Mac](/de/mermaid-preview-mac/).
 
 ---
@@ -15633,6 +16042,107 @@ In einem Git-Checkout, auf den MarsDawn zugreifen kann, oder einem Ordner der Se
 
 - [Einen Agentenplan in fünf Minuten prüfen](/de/reviewing-agent-plans/)
 - [Alle Funktionen](/de/features/)
+
+---
+
+## Von HackMD auf den Mac
+
+Source: https://marsdawn.southern-light.dev/de/from-hackmd/
+
+# Von HackMD auf den Mac
+
+Deine Notizen sind schon Markdown, du musst also nichts umwandeln. Wähle unten einen Weg, je nachdem, wie viel du mitnimmst. Bilder brauchen einen eigenen Schritt. Lies diesen Abschnitt, bevor du auf HackMD etwas löschst.
+
+Wir haben das im November 2026 mit einem kostenlosen HackMD-Konto geprüft. HackMD kann sich ändern, und Bezahlpläne und Team-Workspaces haben wir nicht getestet.
+
+| Du möchtest | Dein Weg |
+|---|---|
+| Alle Notizen mitnehmen | Alle Notizen herunterladen |
+| Notizen mitnehmen, die schon auf GitHub liegen | Repository klonen |
+| Ein oder zwei Notizen mitnehmen | Eine Notiz herunterladen |
+
+## Alle Notizen herunterladen
+
+In den Notizeinstellungen von HackMD gibt es Download all notes, für persönliche und Team-Workspaces. Du bekommst eine .zip-Datei mit einer .md-Datei pro Notiz, benannt nach ihrem Titel.
+
+- Ordner bleiben nicht erhalten. Alle Notizen liegen auf der obersten Ebene.
+- Bilder sind nicht enthalten. Die .md-Dateien verweisen weiter per URL auf sie.
+- Die Option für Titel und Tags ist standardmäßig an und fügt jeder Notiz einen Front-Matter-Block hinzu. Schalte sie aus, um jede Notiz genau wie geschrieben zu bekommen.
+
+Entpacke die Datei und wähle in MarsDawn Ablage ▸ Ordner öffnen …, um den Ordner zu öffnen.
+
+## Repository klonen
+
+HackMDs GitHub-Synchronisierung verbindet eine Notiz mit einer Datei. Eine Notiz, die du gepusht hast, liegt also schon im Repository. Klone es und öffne den Ordner mit Ablage ▸ Ordner öffnen …. Die Seitenleiste zeigt das Repository und seinen Branch.
+
+Notizen, die noch nicht auf GitHub liegen, musst du dafür nicht erst verbinden. Jede Notiz muss einzeln verknüpft werden, und der kostenlose Plan erlaubt 20 Pushes im Monat. Mit einem kostenlosen persönlichen Konto haben wir keinen Weg gefunden, einen ganzen Workspace auf einmal zu pushen.
+
+Behandle das Repository nach dem Umzug als Original. Ein Push von HackMD ersetzt, was auf GitHub liegt, auch wenn GitHub neuere Inhalte hat, und warnt dich nicht.
+
+## Eine Notiz herunterladen
+
+Das Notizmenü lädt eine Notiz als .md oder .html herunter. Wähle .md und öffne die Datei in MarsDawn.
+
+## Bilder
+
+Bilder, die du auf HackMD hochgeladen hast, liegen unter `https://hackmd.io/_uploads/...`. Wer sie sehen darf, richtet sich nach der Berechtigung der Notiz.
+
+| Deine Notiz ist | Das passiert auf deinem Mac | Das ist zu tun |
+|---|---|---|
+| Öffentlich | Das Bild wird von HackMD geladen | Klicke in der Vorschau auf „Bilder laden“ oder schalte Einstellungen ▸ Bilder ▸ Bilder aus dem Web automatisch laden ein |
+| Privat | Das Bild liefert einen Fehler, weil MarsDawn nicht bei HackMD angemeldet ist | Sichere das Bild in einem angemeldeten Browser, lege es neben die .md-Datei und ändere den Pfad. Oder mach die Notiz öffentlich, wenn sie jeder lesen darf |
+
+- **Ältere Notizen** verwenden eventuell stattdessen `i.imgur.com`-Adressen.
+- **Wenn du eine Notiz löschst, sind auch ihre Bilder weg.** Ihre Adressen funktionieren nicht mehr, sichere die Bilder also vorher.
+
+Wenn MarsDawn ein Bild neben deiner Datei nicht erreicht, gib ihm mit der Taste in der Vorschau Zugriff auf den Ordner.
+
+## So sehen deine Notizen aus
+
+Der Großteil der HackMD-Syntax liest sich gleich: `==Hervorhebung==`, `^hochgestellt^`, `~tiefgestellt~`, `[TOC]`, Bildgrößen wie `=300x200`, Mermaid und KaTeX. `{%youtube %}` erscheint als Link. Um wie bei HackMD jeden Zeilenumbruch zu behalten, schalte Einstellungen ▸ Erscheinungsbild ▸ Einzelne Zeilenumbrüche beibehalten ein.
+
+Ein paar Dinge sehen anders aus:
+
+- `++eingefügt++` und Emoji-Codes wie `:sparkles:` erscheinen so, wie du sie getippt hast.
+- `{%hackmd id %}` wird nicht aufgelöst.
+- `<i class="fa ...">`-Symbole erscheinen nicht.
+
+## Für Skripte: hackmd-cli
+
+`hackmd-cli` hat keinen Befehl, der alles auf einmal exportiert. Es exportiert eine Notiz und gibt sie aus. Du listest also zuerst deine Notizen auf und gehst sie in einer Schleife durch. Du brauchst Node.js, `jq` und einen API-Token aus deinen HackMD-Einstellungen. Wenn du kein Skript brauchst, ist Download all notes einfacher.
+
+```
+npm install -g @hackmd/hackmd-cli
+export HMD_API_ACCESS_TOKEN=<dein Token>
+hackmd-cli notes --output json | jq -r '.[].id' | while read -r id; do
+  hackmd-cli export --noteId="$id" > "$id.md"
+done
+```
+
+- **Ordner kommen nicht mit.** Die Notizliste sagt nicht, in welchem Ordner eine Notiz liegt, also landen alle Dateien an einem Ort.
+- **Bilder bleiben `hackmd.io`-Links.** Behandle sie wie oben im Abschnitt „Bilder“.
+- **Die Dateinamen sind Notiz-IDs,** keine Titel.
+- **Der kostenlose Plan erlaubt 400 API-Aufrufe alle 30 Tage.** Die Liste braucht einen Aufruf, jede Notiz einen weiteren.
+
+Wir haben das nur mit einem Konto mit wenigen Notizen ausprobiert. Wie sich eine sehr lange Liste verhält, wissen wir nicht. Lösche den Token danach in deinen HackMD-Einstellungen.
+
+## Gemeinsam schreiben
+
+MarsDawn hat kein gemeinsames Bearbeiten. Wenn ihr live zusammen schreibt, bleib bei HackMD. Wenn dein Team Dokumente in git hält, kann jede Person dasselbe Repository in ihrem eigenen MarsDawn öffnen, und ihr stellt das Dokument gemeinsam fertig. Siehe Dokumente im Team mit git prüfen.
+
+## Fragen
+
+### Kann ich alle meine HackMD-Notizen auf einmal herunterladen?
+
+Ja. Download all notes liefert dir eine .zip-Datei mit .md-Dateien. Ordner bleiben nicht erhalten, und Bilder sind nicht enthalten.
+
+### Warum fehlen meine Bilder in MarsDawn?
+
+MarsDawn hält Bilder aus dem Web zurück, bis du auf „Bilder laden“ klickst. Ist die Notiz privat, lässt sich das Bild gar nicht laden. Sichere es dann neben deiner Datei.
+
+### Muss ich HackMD verlassen?
+
+Nein. Zum gemeinsamen Schreiben bleibt HackMD die bessere Wahl. MarsDawn ist zum Lesen und Prüfen auf deinem Mac da.
 
 ---
 
@@ -19073,6 +19583,7 @@ Oui, c’est pour cela que MarsDawn est conçu. Ouvrez le fichier et lisez la pa
 - Toutes les options de l’outil en ligne de commande : [Ligne de commande](/fr/cli/).
 - Ce que MarsDawn ne fait pas : [la liste](/fr/limits/).
 - Lire du Markdown plutôt dans VS Code, un navigateur ou Claude Desktop : [la comparaison](/fr/vs/markdown-preview-tools/).
+- Les notes que vous gardez sur HackMD : [Passer de HackMD à votre Mac](/fr/from-hackmd/).
 - Les diagrammes dans un fichier Markdown : [Aperçu Mermaid sur Mac](/fr/mermaid-preview-mac/).
 
 ---
@@ -19234,6 +19745,107 @@ Dans un checkout Git accessible à MarsDawn, ou un dossier de la barre latérale
 
 - [Relire le plan d’un agent en cinq minutes](/fr/reviewing-agent-plans/)
 - [Toutes les fonctionnalités](/fr/features/)
+
+---
+
+## Passer de HackMD à votre Mac
+
+Source: https://marsdawn.southern-light.dev/fr/from-hackmd/
+
+# Passer de HackMD à votre Mac
+
+Vos notes sont déjà en Markdown, il n’y a rien à convertir. Choisissez une voie selon ce que vous déplacez. Les images demandent une étape à part : lisez cette section avant de supprimer quoi que ce soit sur HackMD.
+
+Nous avons vérifié tout cela avec un compte HackMD gratuit en novembre 2026. HackMD peut évoluer, et nous n’avons testé ni les offres payantes ni les espaces d’équipe.
+
+| Vous voulez | Votre voie |
+|---|---|
+| Déplacer toutes vos notes | Télécharger toutes les notes |
+| Déplacer des notes déjà sur GitHub | Cloner le dépôt |
+| Déplacer une ou deux notes | Télécharger une note |
+
+## Télécharger toutes les notes
+
+Les réglages de notes de HackMD proposent Download all notes, pour les espaces personnels et d’équipe. Vous obtenez un .zip avec un fichier .md par note, nommé d’après son titre.
+
+- Les dossiers ne sont pas conservés. Toutes les notes arrivent au premier niveau.
+- Les images ne sont pas incluses. Les fichiers .md y renvoient toujours par URL.
+- L’option qui inclut le titre et les tags est activée par défaut et ajoute un bloc de front matter à chaque note. Désactivez-la pour obtenir chaque note telle qu’elle a été écrite.
+
+Décompressez le fichier, puis choisissez Fichier ▸ Ouvrir un dossier… dans MarsDawn pour ouvrir ce dossier.
+
+## Cloner le dépôt
+
+La synchronisation GitHub de HackMD relie une note à un fichier. Une note que vous avez envoyée est donc déjà dans le dépôt. Clonez-le et ouvrez le dossier avec Fichier ▸ Ouvrir un dossier…. La barre latérale affiche le dépôt et sa branche.
+
+Si vos notes ne sont pas encore sur GitHub, inutile de commencer pour ce déplacement. Chaque note doit être reliée séparément, et l’offre gratuite permet 20 envois par mois. Avec un compte personnel gratuit, nous n’avons trouvé aucun moyen d’envoyer tout un espace de travail d’un coup.
+
+Après le déplacement, considérez le dépôt comme l’original. Un envoi depuis HackMD remplace ce qui se trouve sur GitHub, même si GitHub a un contenu plus récent, et il ne vous avertit pas.
+
+## Télécharger une note
+
+Le menu de la note la télécharge en .md ou en .html. Choisissez .md et ouvrez le fichier dans MarsDawn.
+
+## Images
+
+Les images que vous avez importées sur HackMD se trouvent à l’adresse `https://hackmd.io/_uploads/...`. Qui peut les voir dépend de l’autorisation de la note.
+
+| Votre note est | Ce qui se passe sur votre Mac | Que faire |
+|---|---|---|
+| Publique | L’image se charge depuis HackMD | Cliquez sur Charger les images dans l’aperçu, ou activez Réglages ▸ Images ▸ Charger automatiquement les images distantes |
+| Privée | L’image renvoie une erreur, car MarsDawn n’est pas connecté à HackMD | Enregistrez l’image depuis un navigateur connecté, placez-la à côté du fichier .md et modifiez le chemin. Ou rendez la note publique, si tout le monde peut la lire |
+
+- **Les anciennes notes** peuvent utiliser des adresses `i.imgur.com`.
+- **Supprimer une note supprime ses images.** Leurs adresses ne fonctionnent plus, alors déplacez d’abord les images.
+
+Si MarsDawn n’atteint pas une image à côté de votre fichier, utilisez le bouton de l’aperçu pour lui donner accès au dossier.
+
+## L’apparence de vos notes
+
+La plupart de la syntaxe HackMD se lit de la même façon : `==surligné==`, `^exposant^`, `~indice~`, `[TOC]`, les tailles d’image comme `=300x200`, Mermaid et KaTeX. `{%youtube %}` s’affiche comme un lien. Pour garder chaque saut de ligne comme dans HackMD, activez Réglages ▸ Apparence ▸ Conserver les sauts de ligne simples.
+
+Quelques éléments changent :
+
+- `++inséré++` et les codes emoji comme `:sparkles:` s’affichent tels que vous les avez tapés.
+- `{%hackmd id %}` n’est pas développé.
+- Les icônes `<i class="fa ...">` n’apparaissent pas.
+
+## Pour les scripts : hackmd-cli
+
+`hackmd-cli` n’a pas de commande qui exporte tout d’un coup. Il exporte une note et l’affiche : il faut donc lister vos notes, puis les parcourir en boucle. Il vous faut Node.js, `jq` et un jeton API créé dans vos réglages HackMD. Si vous n’avez pas besoin de script, Download all notes est plus simple.
+
+```
+npm install -g @hackmd/hackmd-cli
+export HMD_API_ACCESS_TOKEN=<votre jeton>
+hackmd-cli notes --output json | jq -r '.[].id' | while read -r id; do
+  hackmd-cli export --noteId="$id" > "$id.md"
+done
+```
+
+- **Les dossiers ne suivent pas.** La liste des notes n’indique pas leur dossier, donc tous les fichiers arrivent au même endroit.
+- **Les images restent des liens `hackmd.io`.** Traitez-les comme dans la section Images ci-dessus.
+- **Les noms de fichier sont les ID des notes,** pas leurs titres.
+- **L’offre gratuite permet 400 appels API tous les 30 jours.** La liste utilise un appel, puis chaque note un de plus.
+
+Nous n’avons essayé cela que sur un compte avec peu de notes, nous ne savons donc pas ce que donne une très longue liste. Supprimez le jeton dans vos réglages HackMD quand vous avez terminé.
+
+## Écrire ensemble
+
+MarsDawn n’a pas d’édition partagée. Si vous devez écrire ensemble en direct, gardez HackMD. Si votre équipe garde ses documents dans git, chacun peut ouvrir le même dépôt dans son propre MarsDawn, et vous finissez le document ensemble. Voir Relire des documents en équipe avec git.
+
+## Questions
+
+### Puis-je télécharger toutes mes notes HackMD d’un coup ?
+
+Oui. Download all notes vous donne un .zip de fichiers .md. Il ne conserve pas les dossiers et n’inclut pas les images.
+
+### Pourquoi mes images manquent-elles dans MarsDawn ?
+
+MarsDawn retient les images du web jusqu’à ce que vous cliquiez sur Charger les images. Si la note est privée, l’image ne peut pas se charger : enregistrez-la à côté de votre fichier.
+
+### Dois-je quitter HackMD ?
+
+Non. HackMD reste le meilleur choix pour écrire ensemble. MarsDawn sert à lire et à relire sur votre Mac.
 
 ---
 
@@ -22674,6 +23286,7 @@ Sí, para eso está hecho MarsDawn. Abre el archivo y lee la página renderizada
 - Todas las opciones de la herramienta de línea de comandos: [Línea de comandos](/es/cli/).
 - Lo que MarsDawn no hace: [la lista](/es/limits/).
 - Leer Markdown en VS Code, un navegador o Claude Desktop: [cómo se comparan](/es/vs/markdown-preview-tools/).
+- Notas que guardas en HackMD: [Pasar de HackMD a tu Mac](/es/from-hackmd/).
 - Diagramas en un archivo Markdown: [Vista previa de Mermaid en Mac](/es/mermaid-preview-mac/).
 
 ---
@@ -22835,6 +23448,107 @@ En un checkout de Git al que MarsDawn puede acceder, o en una carpeta de la barr
 
 - [Revisar el plan de un agente en cinco minutos](/es/reviewing-agent-plans/)
 - [Todas las funciones](/es/features/)
+
+---
+
+## Pasar de HackMD a tu Mac
+
+Source: https://marsdawn.southern-light.dev/es/from-hackmd/
+
+# Pasar de HackMD a tu Mac
+
+Tus notas ya son Markdown, así que no hay nada que convertir. Elige una vía según lo que vayas a mover. Las imágenes necesitan un paso aparte, así que lee esa sección antes de eliminar nada en HackMD.
+
+Lo comprobamos con una cuenta gratuita de HackMD en noviembre de 2026. HackMD puede cambiar, y no probamos los planes de pago ni los espacios de equipo.
+
+| Quieres | Tu vía |
+|---|---|
+| Mover todas tus notas | Descargar todas las notas |
+| Mover notas que ya están en GitHub | Clonar el repositorio |
+| Mover una o dos notas | Descargar una nota |
+
+## Descargar todas las notas
+
+Los ajustes de notas de HackMD tienen Download all notes, para espacios personales y de equipo. Obtienes un .zip con un archivo .md por nota, con el título de la nota como nombre.
+
+- Las carpetas no se conservan. Todas las notas quedan en el nivel superior.
+- Las imágenes no se incluyen. Los archivos .md siguen apuntando a ellas por URL.
+- La opción de incluir el título y las etiquetas está activada por defecto y añade un bloque de front matter a cada nota. Desactívala para obtener cada nota tal como se escribió.
+
+Descomprime el archivo y elige Archivo ▸ Abrir carpeta… en MarsDawn para abrir esa carpeta.
+
+## Clonar el repositorio
+
+La sincronización con GitHub de HackMD vincula una nota con un archivo, así que una nota que ya enviaste está en el repositorio. Clónalo y abre la carpeta con Archivo ▸ Abrir carpeta…. La barra lateral muestra el repositorio y su rama.
+
+Si tus notas aún no están en GitHub, no hace falta empezar ahora para esta mudanza. Cada nota se vincula por separado, y el plan gratuito permite 20 envíos al mes. En una cuenta personal gratuita no encontramos forma de enviar todo un espacio de trabajo de una vez.
+
+Después de la mudanza, trata el repositorio como el original. Un envío desde HackMD reemplaza lo que hay en GitHub, aunque GitHub tenga contenido más reciente, y no te avisa.
+
+## Descargar una nota
+
+El menú de la nota la descarga como .md o .html. Elige .md y abre el archivo en MarsDawn.
+
+## Imágenes
+
+Las imágenes que subiste a HackMD están en `https://hackmd.io/_uploads/...`. Quién puede verlas depende del permiso de la nota.
+
+| Tu nota es | Qué pasa en tu Mac | Qué hacer |
+|---|---|---|
+| Pública | La imagen se carga desde HackMD | Haz clic en Cargar imágenes en la vista previa, o activa Ajustes ▸ Imágenes ▸ Cargar imágenes remotas automáticamente |
+| Privada | La imagen devuelve un error, porque MarsDawn no ha iniciado sesión en HackMD | Guarda la imagen desde un navegador con sesión iniciada, ponla junto al archivo .md y cambia la ruta. O haz pública la nota, si todo el mundo puede leerla |
+
+- **Las notas antiguas** pueden usar direcciones `i.imgur.com`.
+- **Eliminar una nota elimina sus imágenes.** Sus direcciones dejan de funcionar, así que mueve antes las imágenes.
+
+Si MarsDawn no puede leer una imagen que está junto a tu archivo, usa el botón de la vista previa para darle acceso a la carpeta.
+
+## Cómo se verán tus notas
+
+La mayor parte de la sintaxis de HackMD se lee igual: `==resaltado==`, `^superíndice^`, `~subíndice~`, `[TOC]`, tamaños de imagen como `=300x200`, Mermaid y KaTeX. `{%youtube %}` se muestra como un enlace. Para conservar cada salto de línea como en HackMD, activa Ajustes ▸ Aspecto ▸ Mantener saltos de línea simples.
+
+Algunas cosas cambian:
+
+- `++insertado++` y los códigos de emoji como `:sparkles:` se muestran tal como los escribiste.
+- `{%hackmd id %}` no se expande.
+- Los iconos `<i class="fa ...">` no aparecen.
+
+## Para scripts: hackmd-cli
+
+`hackmd-cli` no tiene un comando que exporte todo de una vez. Exporta una nota y la imprime, así que primero listas tus notas y luego las recorres en un bucle. Necesitas Node.js, `jq` y un token de API creado en los ajustes de HackMD. Si no necesitas un script, Download all notes es más sencillo.
+
+```
+npm install -g @hackmd/hackmd-cli
+export HMD_API_ACCESS_TOKEN=<tu token>
+hackmd-cli notes --output json | jq -r '.[].id' | while read -r id; do
+  hackmd-cli export --noteId="$id" > "$id.md"
+done
+```
+
+- **Las carpetas no se trasladan.** La lista de notas no indica en qué carpeta está cada una, así que todos los archivos quedan en el mismo lugar.
+- **Las imágenes siguen siendo enlaces de `hackmd.io`.** Trátalas como en la sección Imágenes de arriba.
+- **Los nombres de archivo son los ID de las notas,** no sus títulos.
+- **El plan gratuito permite 400 llamadas a la API cada 30 días.** La lista usa una llamada, y cada nota una más.
+
+Solo lo probamos en una cuenta con pocas notas, así que no sabemos qué pasa con una lista muy larga. Elimina el token en los ajustes de HackMD cuando termines.
+
+## Escribir en equipo
+
+MarsDawn no tiene edición compartida. Si necesitas escribir con otras personas en directo, sigue usando HackMD. Si tu equipo guarda sus documentos en git, cada persona puede abrir el mismo repositorio en su propio MarsDawn y terminar el documento entre todos. Consulta Revisar documentos en equipo con git.
+
+## Preguntas
+
+### ¿Puedo descargar todas mis notas de HackMD de una vez?
+
+Sí. Download all notes te da un .zip de archivos .md. No conserva las carpetas ni incluye las imágenes.
+
+### ¿Por qué faltan mis imágenes en MarsDawn?
+
+MarsDawn retiene las imágenes de la web hasta que haces clic en Cargar imágenes. Si la nota es privada, la imagen no puede cargarse, así que guárdala junto a tu archivo.
+
+### ¿Tengo que dejar HackMD?
+
+No. Para escribir en equipo, HackMD sigue siendo la mejor opción. MarsDawn sirve para leer y revisar en tu Mac.
 
 ---
 
@@ -26275,6 +26989,7 @@ open notes.pdf
 - 명령줄 도구의 모든 옵션: [명령줄](/ko/cli/).
 - MarsDawn이 하지 않는 일: [목록](/ko/limits/).
 - VS Code, 브라우저, Claude Desktop에서 Markdown을 읽는 경우: [비교해 보기](/ko/vs/markdown-preview-tools/).
+- HackMD에 보관 중인 노트: [HackMD에서 Mac으로](/ko/from-hackmd/).
 - Markdown 파일 속 다이어그램: [Mac에서 Mermaid 미리보기](/ko/mermaid-preview-mac/).
 
 ---
@@ -26436,6 +27151,107 @@ MarsDawn이 접근할 수 있는 git 체크아웃이나 사이드바 폴더 안�
 
 - [에이전트의 계획을 5분 안에 검토하는 법](/ko/reviewing-agent-plans/)
 - [모든 기능](/ko/features/)
+
+---
+
+## HackMD에서 Mac으로
+
+Source: https://marsdawn.southern-light.dev/ko/from-hackmd/
+
+# HackMD에서 Mac으로
+
+노트는 이미 Markdown이므로 변환할 필요가 없습니다. 옮길 양에 맞춰 방법을 고르세요. 이미지는 따로 처리해야 하니, HackMD에서 무엇이든 삭제하기 전에 ‘이미지’ 부분을 읽어 보세요.
+
+이 페이지는 2026년 11월에 HackMD 무료 계정으로 확인한 내용입니다. HackMD는 바뀔 수 있으며, 유료 요금제와 팀 워크스페이스는 확인하지 않았습니다.
+
+| 하고 싶은 일 | 방법 |
+|---|---|
+| 노트를 모두 옮기기 | 모든 노트 다운로드 |
+| GitHub에 있는 노트 옮기기 | 저장소 clone |
+| 한두 개만 옮기기 | 노트 하나 다운로드 |
+
+## 모든 노트 다운로드
+
+HackMD의 노트 설정에 Download all notes가 있습니다. 개인 공간과 팀 공간 모두에서 쓸 수 있습니다. 노트마다 .md 파일이 하나씩 든 .zip 파일 하나를 받게 되며, 파일 이름은 노트 제목입니다.
+
+- 폴더는 유지되지 않습니다. 모든 노트가 최상위에 들어갑니다.
+- 이미지는 포함되지 않습니다. .md 안에는 URL이 그대로 남습니다.
+- 제목과 태그를 포함하는 옵션은 기본으로 켜져 있으며, 각 노트 맨 앞에 front matter 블록을 추가합니다. 끄면 노트 원문과 같습니다.
+
+압축을 푼 뒤 MarsDawn에서 파일 ▸ 폴더 열기…를 선택해 그 폴더를 엽니다.
+
+## 저장소 clone
+
+HackMD의 GitHub 동기화는 노트 하나를 파일 하나에 연결합니다. 푸시한 노트는 이미 저장소에 있습니다. clone한 뒤 파일 ▸ 폴더 열기…로 열면 사이드바에 저장소와 브랜치가 표시됩니다.
+
+아직 GitHub에 연결하지 않은 노트는 옮기려고 일부러 연결할 필요가 없습니다. 노트마다 따로 연결해야 하고, 무료 요금제의 푸시는 한 달에 20번까지입니다. 무료 개인 계정에서는 워크스페이스 전체를 한 번에 푸시하는 방법을 찾지 못했습니다.
+
+옮긴 뒤에는 저장소를 원본으로 삼으세요. HackMD에서 푸시하면 GitHub의 내용을 그대로 덮어씁니다. GitHub 쪽이 더 최신이어도 마찬가지이며, 경고도 없습니다.
+
+## 노트 하나 다운로드
+
+노트 메뉴에서 .md나 .html로 내려받을 수 있습니다. .md를 선택해 MarsDawn에서 여세요.
+
+## 이미지
+
+HackMD에 올린 이미지의 주소는 `https://hackmd.io/_uploads/...`입니다. 누가 볼 수 있는지는 노트의 권한을 따릅니다.
+
+| 노트 | Mac으로 옮긴 뒤 | 처리 방법 |
+|---|---|---|
+| 공개 | 이미지를 HackMD에서 불러옵니다 | 미리보기에서 이미지 불러오기를 클릭하거나, 설정 ▸ 이미지 ▸ 원격 이미지 자동으로 불러오기를 켜세요 |
+| 비공개 | MarsDawn이 HackMD에 로그인되어 있지 않아 이미지가 오류를 냅니다 | 로그인한 브라우저에서 이미지를 저장해 .md 옆에 두고 경로를 바꾸세요. 모두가 봐도 된다면 노트를 공개로 바꿔도 됩니다 |
+
+- **오래된 노트** 의 이미지는 `i.imgur.com` 주소일 수 있습니다.
+- **노트를 삭제하면 이미지도 쓸 수 없게 됩니다.** 주소가 더 이상 열리지 않으니, 이미지를 먼저 옮기세요.
+
+파일 옆의 이미지를 MarsDawn이 읽지 못하면, 미리보기의 버튼으로 그 폴더에 접근을 허용하세요.
+
+## 어떻게 보이나요
+
+HackMD 문법은 대부분 그대로 읽을 수 있습니다. `==강조==`, `^위첨자^`, `~아래첨자~`, `[TOC]`, `=300x200` 같은 이미지 크기, Mermaid, KaTeX를 지원합니다. `{%youtube %}`는 링크로 표시됩니다. HackMD처럼 모든 줄바꿈을 유지하려면 설정 ▸ 화면 모드 ▸ 단일 줄 바꿈 유지를 켜세요.
+
+몇 가지는 다르게 보입니다.
+
+- `++밑줄++`과 `:sparkles:` 같은 이모지 코드는 쓴 그대로 표시됩니다.
+- `{%hackmd id %}`는 펼쳐지지 않습니다.
+- `<i class="fa ...">` 아이콘은 표시되지 않습니다.
+
+## 스크립트로: hackmd-cli
+
+`hackmd-cli`에는 모든 노트를 한 번에 내보내는 명령이 없습니다. 한 번에 노트 하나를 내보내 화면에 출력하므로, 노트 목록을 뽑은 뒤 반복문을 돌려야 합니다. Node.js, `jq`, HackMD 설정에서 만든 API 토큰이 필요합니다. 스크립트가 필요 없다면 Download all notes가 더 간단합니다.
+
+```
+npm install -g @hackmd/hackmd-cli
+export HMD_API_ACCESS_TOKEN=<내 토큰>
+hackmd-cli notes --output json | jq -r '.[].id' | while read -r id; do
+  hackmd-cli export --noteId="$id" > "$id.md"
+done
+```
+
+- **폴더는 옮겨지지 않습니다.** 노트 목록에 폴더 정보가 없어서 모든 파일이 한곳에 들어갑니다.
+- **이미지는 `hackmd.io` 링크 그대로입니다.** 위의 ‘이미지’ 부분대로 처리하세요.
+- **파일 이름은 노트 ID입니다.** 제목이 아닙니다.
+- **무료 요금제의 API는 30일에 400번까지입니다.** 목록에 1번, 노트 하나마다 1번 씁니다.
+
+노트가 적은 계정에서만 시도해 봤기 때문에, 목록이 아주 길 때 어떻게 되는지는 모릅니다. 끝나면 HackMD 설정에서 토큰을 삭제하세요.
+
+## 함께 쓰려면
+
+MarsDawn에는 여러 사람이 동시에 편집하는 기능이 없습니다. 함께 써야 한다면 HackMD를 계속 쓰세요. 팀이 문서를 git으로 관리한다면 각자 자기 MarsDawn으로 같은 저장소를 열어 같은 문서를 함께 완성할 수 있습니다. 팀이 git으로 문서 함께 검토하기를 참고하세요.
+
+## 자주 묻는 질문
+
+### HackMD 노트를 한 번에 모두 내려받을 수 있나요?
+
+네. Download all notes를 쓰면 .md 파일이 든 .zip 파일 하나를 받습니다. 폴더는 유지되지 않고 이미지도 포함되지 않습니다.
+
+### MarsDawn에서 이미지가 보이지 않는 이유는 무엇인가요?
+
+MarsDawn은 웹 이미지를 기본으로 불러오지 않습니다. 이미지 불러오기를 클릭하세요. 비공개 노트의 이미지는 불러올 수 없으니 파일 옆에 저장하세요.
+
+### HackMD를 꼭 떠나야 하나요?
+
+아닙니다. 함께 쓸 때는 HackMD가 여전히 더 좋은 선택입니다. MarsDawn은 Mac에서 읽고 검토하기 위한 앱입니다.
 
 ---
 

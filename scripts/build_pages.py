@@ -39,6 +39,7 @@ from ia247 import data as ia_data  # noqa: E402
 from tmde130 import data as changelog_data  # noqa: E402
 from cli254 import data as cli254_data  # noqa: E402
 from copy364 import data as copy364_data  # noqa: E402
+from copy278 import data as copy278_data  # noqa: E402
 from copy369 import data as copy369_data  # noqa: E402
 from copy363 import data as copy363_data  # noqa: E402
 
@@ -4514,7 +4515,8 @@ OPEN_MD_KEPT = {'en': {'opening_html': 'A <code>.md</code> file is plain text. T
         'next_items_html': ['Every option of the command-line tool: <a href="/cli/">Command Line</a>.',
                             'What MarsDawn doesn\'t do: <a href="/limits/">the list</a>.',
                             'Reading Markdown in VS Code, a browser or Claude Desktop instead: <a '
-                            'href="/vs/markdown-preview-tools/">how they compare</a>.']},
+                            'href="/vs/markdown-preview-tools/">how they compare</a>.',
+                            'Notes you keep on HackMD: <a href="/from-hackmd/">Move from HackMD to your Mac</a>.']},
  'zh-hant': {'opening_html': '<code>.md</code> 檔案是純文字。標題、粗體、表格和圖表，都是用記號寫成的：<code>#</code> '
                              '代表標題，<code>**</code> 包住粗體，直線符號畫出表格，<code>mermaid</code> '
                              '程式碼區塊則是一張圖。用純文字編輯器打開，看到的就是這些記號。想照作者的意思讀到排好的頁面，就需要有東西把它排版出來。',
@@ -4540,7 +4542,8 @@ OPEN_MD_KEPT = {'en': {'opening_html': 'A <code>.md</code> file is plain text. T
              'next_items_html': ['命令列工具的所有選項：<a href="/zh-hant/cli/">命令列工具</a>。',
                                  'MarsDawn 做不到的事：<a href="/zh-hant/limits/">這份清單</a>。',
                                  '改用 VS Code、瀏覽器或 Claude Desktop 看 Markdown：<a '
-                                 'href="/zh-hant/vs/markdown-preview-tools/">比較一下</a>。']}}
+                                 'href="/zh-hant/vs/markdown-preview-tools/">比較一下</a>。',
+                                 '放在 HackMD 的筆記：<a href="/zh-hant/from-hackmd/">從 HackMD 搬到 Mac</a>。']}}
 OPEN_MD = {loc: {**approved_copy.OPEN_MD[loc], **OPEN_MD_KEPT[loc]} for loc in OPEN_MD_KEPT}
 MERMAID = approved_copy.MERMAID
 # The kept list of "Next" links is as long as a locale's old page had it; it is not part of the shape.
@@ -6099,13 +6102,13 @@ def page_markdown(pages: dict, locale: str, slug: str) -> str:
         html_to_markdown(page["body"]).rstrip(),
     ])
 
-PAGE_ORDER = ["index", "features", "yours", "pay-once", "pdf", "native", "limits", "support", "privacy", "view-markdown-on-mac", "mermaid-preview-mac", "quicklook", "copy-for-ai", "markdown-to-pdf", "vs", "vs/macmd-viewer", "best-markdown-viewer-mac", "cli", "cli/agents", "cli/skill",
+PAGE_ORDER = ["index", "features", "yours", "pay-once", "pdf", "native", "limits", "support", "privacy", "view-markdown-on-mac", "mermaid-preview-mac", "quicklook", "copy-for-ai", "from-hackmd", "markdown-to-pdf", "vs", "vs/macmd-viewer", "best-markdown-viewer-mac", "cli", "cli/agents", "cli/skill",
               "cli/mcp", "token-efficient-review", "vs/markdown-preview-tools", "themes", "themes/new", "themes/agents", "themes/gallery", "sharing-exported-pdfs", "reviewing-ai-output",
               "reading-agent-output", "agent-transparency", "reviewing-agent-plans", "agent-design-patterns", "changelog", "roadmap",
               "reading-notes", "reading-notes/anthropic-building-effective-agents", "reading-notes/chip-huyen-agents", "reading-notes/lilian-weng-llm-agents", "reading-notes/harrison-chase-what-is-an-agent", "reading-notes/langchain-what-is-an-agent", "reading-notes/andrew-ng-design-patterns",
               *templates_pages.SLUGS]
 SLUG_TO_UI_KEY = {"index": "home", "features": "features", "support": "support", "privacy": "privacy", "cli": "cli", "cli/agents": "agents",
-                  "markdown-to-pdf": "markdown-to-pdf", "view-markdown-on-mac": "view-markdown-on-mac", "mermaid-preview-mac": "mermaid-preview-mac", "quicklook": "quicklook", "copy-for-ai": "copy-for-ai", "cli/skill": "skill",
+                  "markdown-to-pdf": "markdown-to-pdf", "view-markdown-on-mac": "view-markdown-on-mac", "mermaid-preview-mac": "mermaid-preview-mac", "quicklook": "quicklook", "copy-for-ai": "copy-for-ai", "from-hackmd": "from-hackmd", "cli/skill": "skill",
                   "yours": "yours", "pay-once": "pay-once", "pdf": "pdf", "native": "native", "limits": "limits",
                   "vs": "vs", "vs/macmd-viewer": "vs-macmd-viewer", "best-markdown-viewer-mac": "best-markdown-viewer-mac",
                   "cli/mcp": "mcp", "token-efficient-review": "token-efficient-review",
@@ -6168,8 +6171,8 @@ def all_pages() -> dict:
             body = "".join(pieces[:-2]) + brand_film_themes.MARK + "\n" + "".join(pieces[-2:])
         if body != page["body"]:
             merged[(locale, slug)] = {**page, "body": body}
-    return apply_copy_for_ai(apply_copy363(apply_copy369_pdf_pages(apply_app_changelog(apply_cli254(apply_best228(
-        apply_promo130(apply_seo_copy(merged))))))))
+    return apply_from_hackmd(apply_copy_for_ai(apply_copy363(apply_copy369_pdf_pages(apply_app_changelog(apply_cli254(
+        apply_best228(apply_promo130(apply_seo_copy(merged)))))))))
 
 
 # --- Search and answer-engine copy (scripts/promo130/data.py) ---------------------------------
@@ -6311,6 +6314,49 @@ def apply_copy_for_ai(merged: dict) -> dict:
                               page["body"], count=1, flags=re.S)
             assert n == 1, f"{locale}/{slug}: no sentence naming the feature"
             out[(locale, slug)] = {**page, "body": body}
+    return out
+
+
+def from_hackmd_page(copy: dict, linked: bool) -> dict:
+    """/from-hackmd/ (#278): Aria's approved copy, in the order she wrote it, rendered by block kind
+    (scripts/copy278/ingest.py). The link to the team-review guide (mars-dawn#636) is made only once that
+    page exists in the locale; until then its words stay and the anchor is left off, so no link is dead."""
+    blocks = iter(copy["blocks"])
+    parts = [f'<section class="intro">\n  <h1>{html_escape(next(blocks)[1], quote=False)}</h1>\n  <p>{next(blocks)[1]}</p>\n</section>']
+    for kind, *rest in blocks:
+        if kind == "p":
+            parts.append(f"<p>{rest[0]}</p>")
+        elif kind == "h2":
+            parts.append(f"<h2>{html_escape(rest[0], quote=False)}</h2>")
+        elif kind == "ul":
+            parts.append("<ul>\n" + "\n".join(f"  <li>{item}</li>" for item in rest[0]) + "\n</ul>")
+        elif kind == "pre":
+            parts.append(f"<pre><code>{html_escape(rest[0], quote=False)}</code></pre>")
+        elif kind == "table":
+            head, rows = rest
+            cols = "".join(f'<th scope="col">{cell}</th>' for cell in head)
+            trs = "\n".join(f'  <tr><th scope="row">{row[0]}</th>' + "".join(f"<td>{cell}</td>" for cell in row[1:]) + "</tr>"
+                            for row in rows)
+            parts.append(f'<div class="table-scroll"><table class="compare">\n<thead><tr>{cols}</tr></thead>\n<tbody>\n{trs}\n</tbody>\n</table></div>')
+        elif kind == "faq":
+            parts.append(faq_html(*rest))
+        else:
+            raise AssertionError(kind)
+    body = "\n".join(parts) + "\n"
+    if not linked:
+        body = re.sub(r'<a href="[^"]*/team-review/">(.*?)</a>', r"\1", body)
+    return {"title": f'{copy["title"]} · MarsDawn', "description": copy["description"], "body": body}
+
+
+def apply_from_hackmd(merged: dict) -> dict:
+    """The page (#278). It is not linked from any other page, the header or the footer: where it is entered
+    from is the owner's to decide."""
+    out = dict(merged)
+    for locale, copy in copy278_data.DATA.items():
+        if locale not in LOCALES or (locale, "index") not in out:
+            continue
+        UI[locale].setdefault("from-hackmd", _plain(copy["blocks"][0][1]))
+        out[(locale, "from-hackmd")] = from_hackmd_page(copy, (locale, "team-review") in out)
     return out
 
 
