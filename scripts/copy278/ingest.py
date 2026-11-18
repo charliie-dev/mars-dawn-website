@@ -7,11 +7,13 @@ source/ holds the two comments as posted: 6684344469 (en, zh-Hant, Ray approved 
     python3 -I -B scripts/copy278/ingest.py          # write data.py
     python3 -I -B scripts/copy278/ingest.py --check  # fail if data.py isn't what the sources give
 
-The one sentence still marked 【待定，#300】 (the `:::` blocks) is left out of data.py in every locale,
-with no place held for it. Aria's 6964983008 gives its words for en and zh-Hant, awaiting Ray's "#278 `:::` ok",
-and has not translated the other six; when they are approved, add that comment to source/ and put the
-sentence in where this file now drops it. Nothing else of 6964983008 changes the approved copy (its section 2
-corrects Aria's notes, not the page text), and its optional rows (section 3) are not applied.
+The `:::` sentence (Ray approved it on 2026-11-18, "#278 ::: ok", decision comment 6965143868) is put in by
+build(): the other two source files hold its words (6964983008 section 1 for en and zh-Hant, 6965344647 for the
+other six) and where it goes. In every locale the 【待定，#300】 line of 6684344469 / 6685163599 is taken out and
+the sentence stands as its own paragraph just before the "A few things look different" line. The "now" string
+the comment gives must be found exactly once in the locale's copy, and so must that line, or this stops.
+Nothing else of 6964983008 changes the approved copy (its section 2 corrects Aria's notes, not the page text),
+and its optional rows (section 3) are not applied.
 """
 import html
 import pprint
@@ -22,7 +24,8 @@ from pathlib import Path
 HERE = Path(__file__).parent
 SOURCES = {"6684344469-en-zh-hant.md": {"en": "en", "zh-Hant": "zh-hant"},
            "6685163599-six.md": {name: name for name in ("zh-hans", "ja", "ko", "de", "fr", "es")}}
-PENDING = "【待定"
+COLON_EN = "6964983008-colon-en-zh-hant.md"
+COLON_SIX = "6965344647-colon-six.md"
 
 
 def block(text: str, heading: str) -> str:
@@ -65,7 +68,7 @@ def parse(md: str) -> dict:
     description = re.search(r"^Meta description: (.+)$", md, re.M).group(1)
     lines = md.split("\n")
     i = next(n for n, line in enumerate(lines) if line.startswith("# "))
-    blocks, dropped = [], 0
+    blocks = []
     while i < len(lines):
         line = lines[i]
         if not line.strip(" "):
@@ -101,14 +104,9 @@ def parse(md: str) -> dict:
             while not code[-1].strip(" "):
                 code.pop()
             blocks.append(("pre", "\n".join(row[4:] for row in code)))
-        elif line.startswith(PENDING):
-            dropped += 1   # the `:::` sentence: no paragraph, no placeholder
-            i += 1
         else:
             blocks.append(("p", inline(line)))
             i += 1
-    if dropped != 1:
-        raise SystemExit(f"{title}: expected one {PENDING} line, found {dropped}")
     # the last h2 and what follows it are the FAQ: its heading, then h3, one paragraph, h3, one paragraph
     k = max(n for n, b in enumerate(blocks) if b[0] == "h2")
     faq = blocks[k + 1:]
@@ -118,14 +116,49 @@ def parse(md: str) -> dict:
     return {"title": title, "description": description, "blocks": blocks}
 
 
+def colon_copy() -> dict:
+    """Per locale (page key): the line to take out, the line to put the sentence before, the sentence. All read
+    from the two comments' text: the table cells "現在" and 「…」 in section 1 and the md code blocks."""
+    en_text = (HERE / "source" / COLON_EN).read_text(encoding="utf-8")
+    six_text = (HERE / "source" / COLON_SIX).read_text(encoding="utf-8")
+    out = {}
+    anchors = re.search(r"改放在「(.+?)」（zh-Hant 是「(.+?)」）之前", en_text)
+    en_md = re.findall(r"^```md\n(.*?)\n```$", en_text.split("給 Dev 複製的原文", 1)[1], re.S | re.M)[:2]
+    for n, (key, label) in enumerate((("en", "en"), ("zh-hant", "zh-Hant"))):
+        row = re.search(rf"^\| {label} 第 \d+ 行[^|]*\| (.+?) \| .+ \|$", en_text, re.M)
+        out[key] = {"now": row.group(1), "before": anchors.group(n + 1), "sentence": en_md[n]}
+    for locale in ("zh-hans", "ja", "ko", "de", "fr", "es"):
+        row = re.search(rf"^\| `## {locale}` 第 \d+ 行[^|]*\| ``(.+?)`` \|.*?在「(.+?)」（同則", six_text, re.M)
+        out[locale] = {"now": row.group(1), "before": row.group(2), "sentence": block(six_text, locale).rstrip("\n")}
+    return out
+
+
+def put_colon(md: str, locale: str, colon: dict) -> str:
+    """md with the 【待定，#300】 line out and the sentence in as its own paragraph before the "A few things" line."""
+    if md.count(colon["now"]) != 1:
+        raise SystemExit(f"{locale}: the 'now' string is found {md.count(colon['now'])} times, not once")
+    lines = md.split("\n")
+    gone = [n for n, line in enumerate(lines) if line == colon["now"]]
+    # the comment names the line to go before with an ordinary space where fr's page line has U+00A0: locate it ignoring that
+    before = [n for n, line in enumerate(lines) if line.replace("\u00a0", " ") == colon["before"]]
+    if len(gone) != 1 or len(before) != 1:
+        raise SystemExit(f"{locale}: the 'now' line is found {len(gone)} times and {colon['before']!r} {len(before)} times, not once each")
+    if before[0] > gone[0]:
+        raise SystemExit(f"{locale}: {colon['before']!r} comes after the 'now' line")
+    del lines[gone[0]]
+    lines[before[0]:before[0]] = [colon["sentence"], ""]
+    return "\n".join(lines)
+
+
 def build() -> dict:
+    colon = colon_copy()
     data = {}
     for name, locales in SOURCES.items():
         text = (HERE / "source" / name).read_text(encoding="utf-8")
         for heading, locale in locales.items():
-            data[locale] = parse(block(text, heading))
-    if any(PENDING in repr(copy) for copy in data.values()):
-        raise SystemExit(f"{PENDING} is still in the copy")
+            data[locale] = parse(put_colon(block(text, heading), locale, colon[locale]))
+    if any("【待定" in repr(copy) for copy in data.values()):
+        raise SystemExit("【待定 is still in the copy")
     return data
 
 
