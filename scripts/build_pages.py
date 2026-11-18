@@ -40,6 +40,7 @@ from tmde130 import data as changelog_data  # noqa: E402
 from cli254 import data as cli254_data  # noqa: E402
 from copy364 import data as copy364_data  # noqa: E402
 from copy369 import data as copy369_data  # noqa: E402
+from copy336 import data as copy336_data  # noqa: E402
 from copy363 import data as copy363_data  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -6506,11 +6507,13 @@ def best228_page(locale: str, d: dict) -> dict:
         for app in d["apps"])
     notfor = "\n".join(f"  <li>{item}</li>" for item in d["notfor"])
     faq = "\n".join(f"<h3>{q}</h3>\n<p>{a}</p>" for q, a in d["faq"])
+    intro = d.get("intro_html") or f'<p>{d["intro"]}</p>'
+    scenarios = d["scenarios_html"] + "\n" if d.get("scenarios_html") else ""
     body = f"""<section class="intro">
   <h1>{d["h1"]}</h1>
-  <p>{d["intro"]}</p>
+  {intro}
 </section>
-{sections}
+{scenarios}{sections}
 <h2 id="comparison">{d["cmp_h"]}</h2>
 {best228_table_html(d)}
 <h2 id="not-for">{d["notfor_h"]}</h2>
@@ -6533,6 +6536,8 @@ def apply_best228(merged: dict) -> dict:
         if (locale, "vs") not in out:
             continue
         d = best_data.DATA[locale]
+        if locale == "zh-hant":
+            d = copy336_data.merge(d)  # #336: this one locale's page is the Markdown-reader page (scripts/copy336)
         UI[locale].setdefault(BEST228_SLUG, _plain(d["h1"]))
         out[(locale, BEST228_SLUG)] = best228_page(locale, d)
         hub = out[(locale, "vs")]
