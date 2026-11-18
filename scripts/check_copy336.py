@@ -8,13 +8,17 @@ Usage:
 scripts/copy336/approved.md is Aria's comment on #336 (pinned in sources.json). This reads it, and the built
 public/zh-hant/best-markdown-viewer-mac/index.html and index.md, and fails unless the page holds, in its place:
 
-  1 verbatim      every line of Aria's fenced copy (opening, scenarios, the two new tools, not-for list, FAQ),
+  1 verbatim      every line of Aria's fenced copy, except the ones REPLACED and REMOVED (opening, scenarios, the two new tools, not-for list, FAQ),
                   title, h1 and description, as the text of one <h1>, <h2>, <h3>, <p> or <li>;
   2 filled        every {{placeholder}} filled the way scripts/copy336/data.py FILLS says, and no {{ left;
   3 cells         the two new table columns, cell by cell against Aria's table; a cell in CELLS_DIFFER has its
                   new value and not Aria's old one;
-  4 removed       the sentences in REMOVED are not on the page, and the rest of their line is (or the whole
-                  line is gone when drop_line says so);
+  4 removed       the sentences in REMOVED (now R3 only) are not on the page, and the rest of their line is (or
+                  the whole line is gone when drop_line says so);
+  4b replaced     the lines in REPLACED (R1, R2 with its opening-answer line, R4, R5: what Ray approved in another
+                  wording) are on the page word for word, in place, in html, md and the zh-hant part of
+                  llms-full.txt, and Aria's old line is in none of them (R4's old line also belongs to ColaMD, so
+                  it is held to the Chrome section only);
   and: the held FAQ question (iPhone, waits for #337) and its link are not on the page; the two new tools
   link to their official pages and the Chrome extension's Web Store ID is stated; the eight old tools'
   paragraphs, bullets and table cells are the ones scripts/best228/data.py has, apart from the MarsDawn price
@@ -23,8 +27,7 @@ public/zh-hant/best-markdown-viewer-mac/index.html and index.md, and fails unles
                   bullet and its table cell; QLMarkdown's price as 開源 in its bullet and its table cell; C5, the
                   FAQ answer about native Mac apps, which also has to be in the page's FAQPage JSON-LD and in
                   llms-full.txt): each has its new text on the page, in html and md, and its old text nowhere, and
-                  QLMarkdown's section and row do not say 免費. Aria's own not-for line "QLMarkdown 免費" is
-                  left as she wrote it (verbatim check 1; PR 待決定 R5), so it is the one place that may.
+                  QLMarkdown's section, row and not-for line (R5) do not say 免費.
   MarkEdit's 只讀 cell is data.MARKEDIT_READ_ONLY (cell check 3, in html and md), not Aria's 無 and not the first
   pass's 未記載，官方稱是編輯器 (an official-repo fact, see data.MARKEDIT_READ_ONLY_SOURCES).
   Every other locale's page does not carry any of this ticket's words.
@@ -141,6 +144,12 @@ def expected_lines(text: str) -> tuple:
                 continue
             line = plain(fill(ln))
             dropped = False
+            for rep_ in data.REPLACED:
+                only = rep_.get("only_after")
+                if (not only or h2 == only) and plain(ln) == rep_["old"]:
+                    line = rep_["new"]
+                    if not only:
+                        absent.append(rep_["old"])
             for rem in data.REMOVED:
                 sent = plain(rem["sentence"])
                 only = rem.get("only_after")
@@ -263,8 +272,8 @@ def page_problems(h: str, md: str, text: str, absent_extra=(), llms: str = "") -
             out.append(f"held/removed text is on the page: {a[:60]}")
     secs = sections(main)
     chrome = secs.get("Chrome 的 Markdown Reader 擴充功能", "")
-    if "價格：免費" in vis(chrome) or "iPhone 上的 Chrome" in vis(chrome):
-        out.append("html: a removed sentence is back in the Chrome section")
+    if "價格：免費。" in [vis(m.group(1)) for m in re.finditer(r"<li\b[^>]*>(.*?)</li>", chrome, re.S)] or "iPhone 上的 Chrome" in vis(chrome):
+        out.append("html: a removed or replaced sentence is back in the Chrome section")
 
     # 3 cells
     head, ids, rows = table_of(h)
@@ -363,8 +372,25 @@ def page_problems(h: str, md: str, text: str, absent_extra=(), llms: str = "") -
     ql_sec, ql_row = vis(secs.get("QLMarkdown", "")), rows.get("QLMarkdown", [""])[0]
     if "免費" in ql_sec or "免費" in ql_row:
         out.append("html: QLMarkdown's section or price cell still says 免費 (the official page states no price)")
-    if not any(t == data.KEPT_ARIA for _, t in els):
-        out.append(f"html: Aria's line {data.KEPT_ARIA!r} was changed; it stays as she wrote it (R5)")
+    # 4b replaced: the new line in all three outputs, Aria's old line in none (R4's only in the Chrome section)
+    zl = ws(plain_inline(zh_hant_llms(llms)))
+    md_chrome = md_plain[md_plain.find("Chrome 的 Markdown Reader 擴充功能"):md_plain.find("ColaMD")] if "ColaMD" in md_plain else md_plain
+    for r in data.REPLACED:
+        if not any(t == r["new"] for _, t in els):
+            out.append(f"html: replaced line {r['id']} is not on the page: {r['new'][:50]}")
+        if r["new"] not in md_plain:
+            out.append(f"md: replaced line {r['id']} is not in the twin: {r['new'][:50]}")
+        if r["new"] not in zl:
+            out.append(f"llms-full.txt: replaced line {r['id']} is not in the zh-hant part: {r['new'][:50]}")
+        if r.get("only_after"):
+            if r["old"] in vis(chrome):
+                out.append(f"html: Aria's line {r['id']} is back in the {r['only_after']} section: {r['old']}")
+            if r["old"] in md_chrome:
+                out.append(f"md: Aria's line {r['id']} is back in the {r['only_after']} section: {r['old']}")
+        else:
+            for where, body in (("html", vis(main)), ("md", md_plain), ("llms-full.txt", zl)):
+                if r["old"] in body:
+                    out.append(f"{where}: Aria's line {r['id']} is still there: {r['old'][:50]}")
     faq_h3 = [vis(x) for x in re.findall(r"<h3>(.*?)</h3>", faq.group(1), re.S)] if faq else []
     if faq_h3 != ["Mac 預設能開 .md 嗎？"] + [q for q, _ in old["faq"]]:
         out.append(f"html: FAQ questions are {faq_h3}")
@@ -456,7 +482,28 @@ def self_test(root: Path) -> int:
     plant("C3 bullet says 免費 again (md)", mm=sub(md, "價格：開源（GPL-3.0）。", "價格：免費（GPL-3.0）。"))
     plant("C4 table cell says 免費 again", hh=sub(h, "<td data-col=\"price\">開源（GPL-3.0）</td>", "<td data-col=\"price\">免費</td>"))
     plant("C4 table cell changed (md)", mm=sub(md, "| QLMarkdown | 開源（GPL-3.0） |", "| QLMarkdown | 開源 |"))
-    plant("Aria's QLMarkdown not-for line was edited", hh=sub(h, "你只想在 Finder 預覽。QLMarkdown 免費。", "你只想在 Finder 預覽。QLMarkdown 開源。"))
+    # REPLACED (R1, R2, R2-opening, R4, R5): the new line missing from one output, Aria's old line back, a word changed
+    llms_marker = "\nSource: https://marsdawn.southern-light.dev/" + PAGE + "/\n"
+
+    def probe(r, body):
+        """The part of r's new line that is plain text in `body` (the opening's bold lead-in has marks around it)."""
+        return r["new"] if r["new"] in body else r["new"].split("：", 1)[1]
+
+    for r in data.REPLACED:
+        rid, new_, old_ = r["id"], r["new"], r["old"]
+        for what, body in (("html", h), ("md", md), ("llms-full.txt", llms)):
+            pr = probe(r, body)
+            kw = {"html": "hh", "md": "mm", "llms-full.txt": "ll"}[what]
+            plant(f"{rid} new line missing ({what})", **{kw: sub(body, pr, "x")})
+            plant(f"{rid} new line has a changed word ({what})", **{kw: sub(body, pr, pr[:-3] + "xx。")})
+            if r.get("only_after"):
+                plant(f"{rid} Aria's old line is back ({what})", **{kw: sub(body, new_, old_)})
+            elif what == "html":
+                plant(f"{rid} Aria's old line is back ({what})", hh=sub(h, "</main>", f"<p>{old_}</p></main>"))
+            elif what == "md":
+                plant(f"{rid} Aria's old line is back ({what})", mm=md + "\n- " + old_ + "\n")
+            else:
+                plant(f"{rid} Aria's old line is back ({what})", ll=sub(llms, llms_marker, llms_marker + "- " + old_ + "\n"))
     # MarkEdit's 只讀 cell (P2-1)
     ro, old_ro = data.MARKEDIT_READ_ONLY, "未記載，官方稱是編輯器"
     me = "| MarkEdit | 免費 | 無 | " + ro + " |"
@@ -508,7 +555,8 @@ def main() -> int:
         print(f"{len(problems)} problems")
         return 1
     print("ok: #336 copy on /zh-hant/best-markdown-viewer-mac/ (html and md): verbatim lines, filled placeholders, "
-          f"{len(data.CELLS_DIFFER)} table cells that differ from Aria's, {len(data.REMOVED)} removed sentences, "
+          f"{len(data.CELLS_DIFFER)} table cells that differ from Aria's, {len(data.REMOVED)} removed sentence(s), "
+          f"{len(data.REPLACED)} replaced lines (R1, R2, R4, R5), "
           f"{len(data.CORRECTIONS)} old-text corrections (kind 5), other old text unchanged, held iPhone FAQ absent")
     return 0
 

@@ -178,7 +178,7 @@ MarsDawn 本身不傳送任何東西。skill 只是一份文字說明，marsdawn
 
 你可能不需要它。如果你主要寫自己的筆記，Obsidian 這類筆記 App 更適合。如果你整天待在 VS Code，它內建的預覽是免費的。如果你只想在 Finder 裡瞄一眼檔案，免費的快速查看擴充功能就夠了。MarsDawn 是用來閱讀和審閱 agent 寫的 Markdown：原始碼旁邊就是即時預覽，agent 的修改一步就能撤銷，檔案直接開到指定的那一行。如果它不合用，歡迎寫信告訴我們原因。
 
-詳見：[MarsDawn 與其他工具比較](/zh-hant/vs/) · [Mac Markdown 檢視器推薦](/zh-hant/best-markdown-viewer-mac/)
+詳見：[MarsDawn 與其他工具比較](/zh-hant/vs/) · [Markdown 閱讀器推薦](/zh-hant/best-markdown-viewer-mac/)
 
 ### MarsDawn 會持續維護嗎？
 

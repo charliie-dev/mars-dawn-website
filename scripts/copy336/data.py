@@ -2,21 +2,25 @@
 
 Hand-kept, unlike scripts/best228/data.py (that one is generated and `ingest.py --check` fails on a hand
 edit, so this module overrides it for zh-Hant only: merge() below). The words are Aria's, pinned in
-approved.md (comment 6560244450 on #336, see sources.json), apart from four kinds of difference, each
-listed here so scripts/check_copy336.py can hold the rendered page to them, and a fifth kind that is about
+approved.md (comment 6560244450 on #336, see sources.json), apart from five kinds of difference, each
+listed here so scripts/check_copy336.py can hold the rendered page to them, and a sixth kind that is about
 the old text, not Aria's:
 
   FILLS    a {{placeholder}} in Aria's text, filled from an official page on CHECK_DATE;
   CELLS    a table cell whose value is not the one Aria pre-filled, because an official page says otherwise;
   REMOVED  a sentence of Aria's that conflicts with what is shipped or that no official page backs: it is
-           left out and not rewritten (the PR lists it under 待決定);
+           left out and not rewritten (now only R3; the PR lists it under 待決定);
+  REPLACED a sentence of Aria's that Ray approved in another wording (R1, R2 and its opening-answer line, R4,
+           R5): the page has the new sentence word for word and not Aria's;
   ADDED    text the ticket asks for that Aria's copy does not have: the source links of the two new tools;
-  CORRECTIONS  (the fifth kind; C5 is a FAQ answer) a fact in the OLD text of two of the eight old tools that the official page no
+  CORRECTIONS  (the sixth kind; C5 is a FAQ answer) a fact in the OLD text of two of the eight old tools that the official page no
            longer backs on CHECK_DATE (Marked 3's price is a limited-time one; QLMarkdown's page states no
            price). Paula decided both on #336; they are not Aria's words and not new copy.
 
 Everything that says what MarsDawn does is Mac 1.2.2 and iOS 1.0.2 (shipped), nothing later.
 Other locales are not touched: merge() is called for zh-hant only (build_pages.apply_best228)."""
+
+import re
 
 CHECK_DATE = "2026-11-18"
 
@@ -35,12 +39,12 @@ INTRO_HTML = f"""<p>只想讀 Markdown、不想改的話，先看你在哪裡讀
   <ul>
     <li><strong>看 AI／agent 寫的計畫和報告</strong>：用 MarsDawn。agent 存檔時頁面會跟著更新，Mermaid 圖表和數學式都畫好。</li>
     <li><strong>在 iPhone 上看</strong>：MarsDawn 的 iPhone 版只能讀，不會誤改；Obsidian 能讀也能寫，但檔案要放在它的 vault 裡。</li>
-    <li><strong>看完要交 PDF，而且要頁碼</strong>：用 Typora 或 Marked 3。</li>
+    <li><strong>看完要交 PDF，而且要頁碼</strong>：用 Typora 或 Marked 3；MarsDawn 要選手冊或講義版面。</li>
   </ul>
   <p>市面上的比較文多半在比「編輯器」，比的是寫起來順不順手。這篇只比「讀」：打開後看到的是不是排好的頁面、會不會一不小心就改到檔案、手機上能不能看。以下 10 款依字母排序，每款都寫出適合誰、一個老實的缺點和價格。價格和功能的查證日期是 {CHECK_DATE}。</p>"""
 
-# The "依情境挑" block, before the per-app sections. Aria's closing line "MarsDawn 也能輸出 PDF，但沒有頁碼。"
-# is REMOVED[0].
+# The "依情境挑" block, before the per-app sections. Its closing line (a <p>, not a list item) is Aria's R1 in
+# the wording Ray approved (REPLACED).
 SCENARIOS_HTML = """<h2 id="scenarios">依情境挑</h2>
 <h3>看 AI／agent 產出的計畫</h3>
 <p>agent 寫的檔案很長，會一直被改寫，裡面常常有表格和 Mermaid 圖表。挑的時候，看三件事：檔案被改了會不會自動更新、圖表畫不畫得出來、能不能從終端機直接打開。</p>
@@ -57,7 +61,8 @@ SCENARIOS_HTML = """<h2 id="scenarios">依情境挑</h2>
 <ul>
   <li><strong>Typora</strong>：輸出 PDF 時，頁首或頁尾可以加頁碼。</li>
   <li><strong>Marked 3</strong>：專門用來預覽和列印，PDF 有分頁和頁碼。</li>
-</ul>"""
+</ul>
+<p>MarsDawn 也能輸出 PDF：手冊和講義版面有頁碼，預設的文件版面沒有。</p>"""
 
 # The two new tools, alphabetical, so they come before MacDown 3000. The last bullet of each is ADDED: the
 # page has to say which Chrome extension this is (the Web Store has several of the same name) and where
@@ -71,6 +76,7 @@ NEW_APPS = [
         "bullets": [
             "適合：不想多裝一個 App、本來就整天開著 Chrome 的人。",
             "缺點：要先在擴充功能設定裡打開「允許存取檔案網址」，才能讀本機檔案。",
+            "價格：免費版可以用，另有 Pro 訂閱。",
             (f"是哪一個：Chrome 線上應用程式商店裡的「Markdown Reader」（ID <code>medapdbncneneejhbgcjceippjlfkmkg</code>，"
              f"開發者網站 md-reader.github.io）。官方頁面：<a href=\"{_CHROME_STORE}\">商店頁</a>、"
              f"<a href=\"{_CHROME_SITE}\">官網</a>、<a href=\"{_CHROME_PRICING}\">價格頁</a>。查證日期 {CHECK_DATE}。"),
@@ -122,10 +128,11 @@ NEW_ROWS = {
 }
 
 NOTFOR = [
+    "你要的 PDF 得有頁碼，又不想換成手冊或講義版面。MarsDawn 預設的文件版面沒有頁碼；Typora 與 Marked 3 能加。",
     "想在 iPhone 或 iPad 上改檔案。MarsDawn 的 iPhone、iPad 版只能讀；要在手機上寫，Obsidian 可以。",
     "用 Windows 或 Linux。MarsDawn 只有 Mac、iPhone 和 iPad 版；ColaMD 三個平台都有。",
     "你在經營互相連結的個人筆記庫。Obsidian 就是為此打造的。",
-    "你只想在 Finder 預覽。QLMarkdown 免費。",
+    "你只想在 Finder 預覽。QLMarkdown 開源（GPL-3.0）。",
 ]
 
 # Aria's FAQ has two new questions; only this one goes on the page. The iPhone one waits for #337 (its
@@ -164,14 +171,10 @@ CORRECTIONS = [
     # MarkEdit: 原生（web view）; the rest: 原生). ColaMD's Electron: its GitHub README and package.json.
     {"id": "C5", "app": "FAQ", "where": "faq answer", "key": "哪些是原生 Mac App，不是 Electron？",
      "old": "除了 Obsidian 與 VS Code 都是。MarkEdit 是原生 App，編輯區用 web view。",
-     "new": ("Obsidian、VS Code 與 ColaMD 是 Electron，Chrome 的 Markdown Reader 是瀏覽器擴充功能，不是 Mac App；"
+     "new": ("Obsidian、VS Code 與 ColaMD 是 Electron，Chrome Markdown Reader 是瀏覽器擴充功能，不是 Mac App；"
              "其餘都是原生 Mac App。MarkEdit 是原生 App，編輯區用 web view。"),
      "source": _COLA_REPO, "date": CHECK_DATE},
 ]
-
-# Aria's line that now disagrees with C3/C4 and is left as she wrote it (PR 待決定 R5): the not-for list's last
-# bullet says "QLMarkdown 免費" while the corrected bullet and table cell do not.
-KEPT_ARIA = "你只想在 Finder 預覽。QLMarkdown 免費。"
 
 # --- what differs from approved.md (read by scripts/check_copy336.py) ----------------------------------------
 
@@ -191,13 +194,27 @@ CELLS_DIFFER = [
     ("Typora", "只讀（不會誤改）", "無，打開就是編輯", "未記載，官方稱是編輯器"),
 ]
 
-# Sentences of Aria's that are not on the page. `where` is a line of approved.md that holds it, `drop_line`
-# says the whole line goes (a bullet that would be left empty or would say the same thing by implication).
+# Sentences of Aria's that are not on the page. `drop_line` says the whole line goes (a bullet that would be
+# left empty or would say the same thing by implication). Only R3 is left: R1, R2 and R4 are REPLACED now.
 REMOVED = [
-    {"id": "R1", "sentence": "MarsDawn 也能輸出 PDF，但沒有頁碼。", "drop_line": True},
-    {"id": "R2", "sentence": "PDF 一定要有頁碼。Typora 與 Marked 3 能加，MarsDawn 不能。", "drop_line": True},
     {"id": "R3", "sentence": "iPhone 上的 Chrome 不能裝擴充功能。", "drop_line": False},
-    {"id": "R4", "sentence": "- 價格：免費。", "drop_line": True, "only_after": "Chrome 的 Markdown Reader 擴充功能"},
+]
+
+# Lines of approved.md that Ray approved in another wording (PR #389, Aria's proposal 6974263801 for R1, R2, R4;
+# R5 is Ray's own). `old` and `new` are the plain text of the whole line (Markdown marks removed); `where` is the
+# part of this module that holds `new` as HTML, so merge() can assert it is there and `old` is not. `only_after`
+# limits the rule to the section of that heading (R4's old line "價格：免費。" is also ColaMD's, which stays).
+REPLACED = [
+    {"id": "R1", "where": "scenarios", "old": "MarsDawn 也能輸出 PDF，但沒有頁碼。",
+     "new": "MarsDawn 也能輸出 PDF：手冊和講義版面有頁碼，預設的文件版面沒有。"},
+    {"id": "R2", "where": "notfor", "old": "PDF 一定要有頁碼。Typora 與 Marked 3 能加，MarsDawn 不能。",
+     "new": "你要的 PDF 得有頁碼，又不想換成手冊或講義版面。MarsDawn 預設的文件版面沒有頁碼；Typora 與 Marked 3 能加。"},
+    {"id": "R2-opening", "where": "intro", "old": "看完要交 PDF，而且要頁碼：用 Typora 或 Marked 3。",
+     "new": "看完要交 PDF，而且要頁碼：用 Typora 或 Marked 3；MarsDawn 要選手冊或講義版面。"},
+    {"id": "R4", "where": "chrome bullet", "old": "價格：免費。", "new": "價格：免費版可以用，另有 Pro 訂閱。",
+     "only_after": "Chrome 的 Markdown Reader 擴充功能"},
+    {"id": "R5", "where": "notfor", "old": "你只想在 Finder 預覽。QLMarkdown 免費。",
+     "new": "你只想在 Finder 預覽。QLMarkdown 開源（GPL-3.0）。"},
 ]
 
 # Text of Aria's that must not be on the page at all (the held FAQ question, and the old title it replaces).
@@ -238,6 +255,11 @@ def merge(base: dict) -> dict:
     new_rows = [[name, *cells] for name, cells in NEW_ROWS.items()]
     d["rows"] = new_rows + rows
     d["notfor"] = NOTFOR
+    held = {"intro": re.sub(r"<[^>]+>", "", INTRO_HTML), "scenarios": re.sub(r"<[^>]+>", "", SCENARIOS_HTML),
+            "notfor": "\n".join(NOTFOR), "chrome bullet": "\n".join(NEW_APPS[0]["bullets"])}
+    for r in REPLACED:
+        assert r["new"] in held[r["where"]], (r["id"], "new sentence is not in " + r["where"])
+        assert r["old"] not in held[r["where"]], (r["id"], "Aria's sentence is still in " + r["where"])
     faq = [list(q) for q in base["faq"]]
     for c in CORRECTIONS:
         if c["where"] == "faq answer":

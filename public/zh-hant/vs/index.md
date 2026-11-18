@@ -46,7 +46,7 @@ MarsDawn 沒有的東西。需要 macOS 26 以上。在 iPhone 和 iPad 上只�
 ## 什麼時候用不到 MarsDawn
 
 - 你整天待在 VS Code，預覽窗格就夠：它能畫 Mermaid、排 KaTeX，有 Markdown diff 預覽，也能用 code -g 跳到某一行。
-- 你只想在 Finder 按空白鍵預覽：QLMarkdown 是免費的 Markdown 快速查看延伸功能。
+- 你只想在 Finder 按空白鍵預覽：QLMarkdown 是開源（GPL-3.0）的 Markdown 快速查看延伸功能。
 - 你的 Mac 系統比較舊：QLMarkdown 需要 12.0 以上，LynxOffice 需要 13 以上。免費的 marsdawn 工具只要 macOS 15，不開 app 也能輸出 PDF。
 - 你用 vault 管理互相連結的筆記：Obsidian 就是為此而做。
 - 你需要在 iPhone 或 iPad 上編輯、共同編輯，或輸出 Word。
