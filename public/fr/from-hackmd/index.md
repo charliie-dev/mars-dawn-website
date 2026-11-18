@@ -50,6 +50,8 @@ Si MarsDawn n’atteint pas une image à côté de votre fichier, utilisez le bo
 
 La plupart de la syntaxe HackMD se lit de la même façon : `==surligné==`, `^exposant^`, `~indice~`, `[TOC]`, les tailles d’image comme `=300x200`, Mermaid et KaTeX. `{%youtube %}` s’affiche comme un lien. Pour garder chaque saut de ligne comme dans HackMD, activez Réglages ▸ Apparence ▸ Conserver les sauts de ligne simples.
 
+Les blocs `:::` fonctionnent aussi. `:::info`, `:::success`, `:::warning` et `:::danger` apparaissent sous forme de blocs avec une barre colorée et un titre (Remarque, Conseil, Avertissement ou Danger par défaut). Si vous écrivez votre propre titre après le nom, c’est lui qui s’affiche. `:::spoiler` apparaît sous forme de bloc repliable qui s’ouvre d’un clic. Un bloc `:::` avec un autre nom, ou sans `:::` de fermeture, s’affiche tel que vous l’avez tapé.
+
 Quelques éléments changent :
 
 - `++inséré++` et les codes emoji comme `:sparkles:` s’affichent tels que vous les avez tapés.

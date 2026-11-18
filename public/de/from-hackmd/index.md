@@ -50,6 +50,8 @@ Wenn MarsDawn ein Bild neben deiner Datei nicht erreicht, gib ihm mit der Taste 
 
 Der Großteil der HackMD-Syntax liest sich gleich: `==Hervorhebung==`, `^hochgestellt^`, `~tiefgestellt~`, `[TOC]`, Bildgrößen wie `=300x200`, Mermaid und KaTeX. `{%youtube %}` erscheint als Link. Um wie bei HackMD jeden Zeilenumbruch zu behalten, schalte Einstellungen ▸ Erscheinungsbild ▸ Einzelne Zeilenumbrüche beibehalten ein.
 
+Auch `:::`-Blöcke funktionieren. `:::info`, `:::success`, `:::warning` und `:::danger` erscheinen als Blöcke mit farbigem Balken und einer Überschrift. Standardmäßig lautet sie Hinweis, Tipp, Warnung oder Gefahr; schreibst du hinter den Namen eine eigene Überschrift, wird diese verwendet. `:::spoiler` erscheint als reduzierbarer Block, der sich mit einem Klick öffnet. Ein `:::`-Block mit einem anderen Namen oder ohne schließendes `:::` erscheint so, wie du ihn getippt hast.
+
 Ein paar Dinge sehen anders aus:
 
 - `++eingefügt++` und Emoji-Codes wie `:sparkles:` erscheinen so, wie du sie getippt hast.

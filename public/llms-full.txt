@@ -1073,6 +1073,8 @@ If MarsDawn can't reach an image next to your file, use the button in the previe
 
 Most of HackMD's syntax reads the same: `==highlight==`, `^superscript^`, `~subscript~`, `[TOC]`, image sizes such as `=300x200`, Mermaid and KaTeX. `{%youtube %}` shows as a link. To keep every line break as HackMD does, turn on Settings ▸ Appearance ▸ Keep single line breaks.
 
+`:::` blocks work too. `:::info`, `:::success`, `:::warning` and `:::danger` show as blocks with a colored bar and a heading (Note, Tip, Warning or Caution), or your own heading if you write one after the name. `:::spoiler` shows as a collapsible section that opens when you click it. A `:::` block with any other name, or without its closing `:::`, shows as you typed it.
+
 A few things look different:
 
 - `++inserted++` and emoji codes such as `:sparkles:` show as you typed them.
@@ -4804,6 +4806,8 @@ HackMD 的 GitHub 同步是一篇筆記對一個檔案，所以推送過的筆�
 ## 讀起來的樣子
 
 HackMD 的語法大多照樣能讀：`==螢光==`、`^上標^`、`~下標~`、`[TOC]`、`=300x200` 這類圖片尺寸、Mermaid 和 KaTeX。`{%youtube %}` 會顯示成連結。想和 HackMD 一樣保留每個換行，請打開「設定 ▸ 外觀 ▸ 保留單一換行」。
+
+`:::` 區塊也看得到。`:::info`、`:::success`、`:::warning`、`:::danger` 會顯示成有色條的區塊，上面有標題，預設是附註、提示、警告、小心；在名稱後面自己寫標題的話，就用你寫的。`:::spoiler` 會顯示成點一下才展開的可收合區塊。其他名稱的 `:::` 區塊，或少了結尾 `:::` 的，會照原文顯示。
 
 有幾個地方不一樣：
 
@@ -8575,6 +8579,8 @@ HackMD 的 GitHub 同步是一篇笔记对一个文件，所以推送过的笔�
 
 HackMD 的语法大多照样能读：`==高亮==`、`^上标^`、`~下标~`、`[TOC]`、`=300x200` 这类图片尺寸、Mermaid 和 KaTeX。`{%youtube %}` 会显示成链接。想和 HackMD 一样保留每个换行，请打开“设置 ▸ 外观 ▸ 保留单个换行”。
 
+`:::` 区块也看得到。`:::info`、`:::success`、`:::warning`、`:::danger` 会显示成有色条的区块，上面有标题，默认是附注、提示、警告、小心；在名称后面自己写标题的话，就用你写的。`:::spoiler` 会显示成点一下才展开的可折叠区块。其他名称的 `:::` 区块，或少了结尾 `:::` 的，会按原文显示。
+
 有几个地方不一样：
 
 - `++下划线++` 和 `:sparkles:` 这类 emoji 代码会按原文显示。
@@ -12337,6 +12343,8 @@ HackMD にアップロードした画像の URL は `https://hackmd.io/_uploads/
 ## ノートの見え方
 
 HackMD の記法はほとんどそのまま読めます。`==ハイライト==`、`^上付き^`、`~下付き~`、`[TOC]`、`=300x200` のような画像サイズ、Mermaid、KaTeX に対応しています。`{%youtube %}` はリンクになります。HackMD と同じようにすべての改行を保つには、「設定 ▸ 外観モード ▸ 単一の改行を保持」をオンにします。
+
+`:::` ブロックにも対応しています。`:::info`、`:::success`、`:::warning`、`:::danger` は、色付きのバーと見出しが付いたブロックとして表示されます。見出しのデフォルトはメモ、ヒント、警告、危険で、名前のあとに自分で見出しを書けば、その見出しが使われます。`:::spoiler` は、クリックすると開く折りたたみ可能なブロックとして表示されます。ほかの名前の `:::` ブロックや、終わりの `:::` がないものは、書いたまま表示されます。
 
 いくつか違う点があります。
 
@@ -16101,6 +16109,8 @@ Wenn MarsDawn ein Bild neben deiner Datei nicht erreicht, gib ihm mit der Taste 
 
 Der Großteil der HackMD-Syntax liest sich gleich: `==Hervorhebung==`, `^hochgestellt^`, `~tiefgestellt~`, `[TOC]`, Bildgrößen wie `=300x200`, Mermaid und KaTeX. `{%youtube %}` erscheint als Link. Um wie bei HackMD jeden Zeilenumbruch zu behalten, schalte Einstellungen ▸ Erscheinungsbild ▸ Einzelne Zeilenumbrüche beibehalten ein.
 
+Auch `:::`-Blöcke funktionieren. `:::info`, `:::success`, `:::warning` und `:::danger` erscheinen als Blöcke mit farbigem Balken und einer Überschrift. Standardmäßig lautet sie Hinweis, Tipp, Warnung oder Gefahr; schreibst du hinter den Namen eine eigene Überschrift, wird diese verwendet. `:::spoiler` erscheint als reduzierbarer Block, der sich mit einem Klick öffnet. Ein `:::`-Block mit einem anderen Namen oder ohne schließendes `:::` erscheint so, wie du ihn getippt hast.
+
 Ein paar Dinge sehen anders aus:
 
 - `++eingefügt++` und Emoji-Codes wie `:sparkles:` erscheinen so, wie du sie getippt hast.
@@ -19803,6 +19813,8 @@ Si MarsDawn n’atteint pas une image à côté de votre fichier, utilisez le bo
 ## L’apparence de vos notes
 
 La plupart de la syntaxe HackMD se lit de la même façon : `==surligné==`, `^exposant^`, `~indice~`, `[TOC]`, les tailles d’image comme `=300x200`, Mermaid et KaTeX. `{%youtube %}` s’affiche comme un lien. Pour garder chaque saut de ligne comme dans HackMD, activez Réglages ▸ Apparence ▸ Conserver les sauts de ligne simples.
+
+Les blocs `:::` fonctionnent aussi. `:::info`, `:::success`, `:::warning` et `:::danger` apparaissent sous forme de blocs avec une barre colorée et un titre (Remarque, Conseil, Avertissement ou Danger par défaut). Si vous écrivez votre propre titre après le nom, c’est lui qui s’affiche. `:::spoiler` apparaît sous forme de bloc repliable qui s’ouvre d’un clic. Un bloc `:::` avec un autre nom, ou sans `:::` de fermeture, s’affiche tel que vous l’avez tapé.
 
 Quelques éléments changent :
 
@@ -23507,6 +23519,8 @@ Si MarsDawn no puede leer una imagen que está junto a tu archivo, usa el botón
 
 La mayor parte de la sintaxis de HackMD se lee igual: `==resaltado==`, `^superíndice^`, `~subíndice~`, `[TOC]`, tamaños de imagen como `=300x200`, Mermaid y KaTeX. `{%youtube %}` se muestra como un enlace. Para conservar cada salto de línea como en HackMD, activa Ajustes ▸ Aspecto ▸ Mantener saltos de línea simples.
 
+Los bloques `:::` también funcionan. `:::info`, `:::success`, `:::warning` y `:::danger` se muestran como bloques con una barra de color y un título (Nota, Consejo, Advertencia o Peligro), o con tu propio título si lo escribes después del nombre. `:::spoiler` se muestra como un bloque plegable que se abre al hacer clic. Un bloque `:::` con otro nombre, o sin su `:::` de cierre, se muestra tal como lo escribiste.
+
 Algunas cosas cambian:
 
 - `++insertado++` y los códigos de emoji como `:sparkles:` se muestran tal como los escribiste.
@@ -27209,6 +27223,8 @@ HackMD에 올린 이미지의 주소는 `https://hackmd.io/_uploads/...`입니�
 ## 어떻게 보이나요
 
 HackMD 문법은 대부분 그대로 읽을 수 있습니다. `==강조==`, `^위첨자^`, `~아래첨자~`, `[TOC]`, `=300x200` 같은 이미지 크기, Mermaid, KaTeX를 지원합니다. `{%youtube %}`는 링크로 표시됩니다. HackMD처럼 모든 줄바꿈을 유지하려면 설정 ▸ 화면 모드 ▸ 단일 줄 바꿈 유지를 켜세요.
+
+`:::` 블록도 지원합니다. `:::info`, `:::success`, `:::warning`, `:::danger`는 색 막대와 제목이 있는 블록으로 표시되며, 제목 기본값은 참고, 팁, 경고, 위험입니다. 이름 뒤에 제목을 직접 쓰면 그 제목이 쓰입니다. `:::spoiler`는 클릭하면 열리는 접을 수 있는 블록으로 표시됩니다. 다른 이름의 `:::` 블록이나 닫는 `:::` 줄이 없는 블록은 쓴 그대로 표시됩니다.
 
 몇 가지는 다르게 보입니다.
 
