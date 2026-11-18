@@ -1,6 +1,6 @@
-# PDF 看起来就是你写的那一页。
+# 打印，或存储为 PDF
 
-导出成 PDF 或打印，使用主题的浅色配色。图表和代码高亮都会保留，分页位置也经过安排。
+MarsDawn 能把 Markdown 打印，或存储为 PDF，使用主题的浅色配色。先预览页面，再选布局。
 
 ![用 MarsDawn 导出的 PDF，在内置的 PDF 查看器中打开，旁边有页面缩略图。](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
 
@@ -9,15 +9,38 @@
 1. Mermaid 图表直接画进 PDF。
 2. 代码保留语法高亮。
 
-## 这代表什么
+## 先预览，再决定
 
-- Mermaid 图表直接画进 PDF。
+1. **打开预览。**在“文件”选“打印…”或“导出为 PDF…”，都会打开“打印与导出”。
+2. **选布局。**看过预览的页面，再选“文稿”、“手册”或“讲义”。
+3. **打印或存储。**点按“打印…”，或点按“存储为 PDF…”留下文件。
+
+## 三种布局
+
+每种布局都能打印，也能存储为 PDF。
+
+![文稿布局第 1 页：标题、一段文字、流程图、代码块和一张表格。](/assets/cli/layout-document.png)
+
+**文稿。**与实时预览相同的页面，自动分页。
+
+![手册布局的目录页，列出各标题和页码。](/assets/cli/layout-handbook-contents.png)
+
+**手册。**封面、带页码的目录、每章另起一页。
+
+![讲义布局第 1 页：内容在左，右侧是空白的笔记栏，底部有页脚。](/assets/cli/layout-handout.png)
+
+**讲义。**右侧 1/3 留给笔记，页脚有文件名、日期和页码。
+
+## 页面上会有什么
+
+- Mermaid 图表直接画进页面。
 - 代码块保留语法高亮。
 - 分页时会尽量不让标题落在页面底部，也不切开代码和图表。
-- 任何布局都能导出，只显示源代码时也可以。
 - 打印或导出前先预览页面，再选布局：“文稿”、有封面和目录的“手册”，或有笔记栏的“讲义”。
 
-免费的 [marsdawn 命令行工具](/zh-hans/cli/)使用同一套导出程序，所以脚本或 AI 代理也能得到一样的 PDF。
+iPhone 和 iPad 从 1.0.2 版起可打印 Markdown 文稿。
+
+免费的 [marsdawn 命令行工具](/zh-hans/cli/)用同一套导出程序，脚本和 AI 代理也能用。
 
 ## 其他页面
 
@@ -66,10 +89,10 @@
 - [规格文档模板](https://marsdawn.southern-light.dev/zh-hans/templates/spec/index.md): Markdown 规格文档模板，包含需求、Mermaid 流程图和验收标准。代理来填，你在 MarsDawn 里审阅。
 - [流程图模板](https://marsdawn.southern-light.dev/zh-hans/templates/flowchart/index.md): Markdown 的 Mermaid 流程图模板，图的下方把步骤写出来。在 Mac 上预览，也能导出成 PDF。
 - [会议记录模板](https://marsdawn.southern-light.dev/zh-hans/templates/meeting-notes/index.md): Markdown 会议记录模板，列出决议和行动项，每项都有负责人。代理来写，你在 MarsDawn 里确认。
-- [English](https://marsdawn.southern-light.dev/pdf/index.md): Export Markdown as a PDF or print it on your Mac, with Mermaid diagrams and highlighted code. Page breaks avoid splitting short code blocks.
-- [繁體中文](https://marsdawn.southern-light.dev/zh-hant/pdf/index.md): 在 Mac 上把 Markdown 輸出成 PDF 或列印，Mermaid 圖表和程式碼上色都會保留；分頁會盡量不切開短的程式碼，超過一頁的會接到下一頁。
-- [日本語](https://marsdawn.southern-light.dev/ja/pdf/index.md): Mac で Markdown を PDF に書き出したりプリントしたりできます。Mermaid 図やハイライトされたコードにも対応。改ページは短いコードブロックを分断しないよう配慮されます。
-- [Deutsch](https://marsdawn.southern-light.dev/de/pdf/index.md): Exportiere Markdown auf deinem Mac als PDF oder drucke es, mit Mermaid-Diagrammen und hervorgehobenem Code. Seitenumbrüche vermeiden es, kurze Codeblöcke zu teilen.
-- [Français](https://marsdawn.southern-light.dev/fr/pdf/index.md): Exportez du Markdown en PDF ou imprimez-le sur votre Mac, avec les diagrammes Mermaid et le code en couleur. Les sauts de page évitent de couper les blocs de code courts.
-- [Español](https://marsdawn.southern-light.dev/es/pdf/index.md): Exporta Markdown como PDF o imprímelo en tu Mac, con diagramas Mermaid y código resaltado. Los saltos de página evitan partir bloques de código cortos.
-- [한국어](https://marsdawn.southern-light.dev/ko/pdf/index.md): Mac에서 Markdown을 PDF로 내보내거나 프린트하세요. Mermaid 다이어그램과 하이라이트된 코드도 그대로입니다. 페이지 나눔은 짧은 코드 블록을 가르지 않도록 합니다.
+- [English](https://marsdawn.southern-light.dev/pdf/index.md): Preview your Markdown, then print it or save it as a PDF on your Mac, in Document, Handbook or Handout layout, with diagrams and code colors intact.
+- [繁體中文](https://marsdawn.southern-light.dev/zh-hant/pdf/index.md): 在 Mac 上先預覽，再把 Markdown 列印或儲存為 PDF；有文件、手冊、講義三種版面，Mermaid 圖表和程式碼上色都會保留。
+- [日本語](https://marsdawn.southern-light.dev/ja/pdf/index.md): Mac でプレビューしてから、Markdown をプリントまたは PDF として保存。書類・ハンドブック・配布資料の3つのレイアウトで、図やコードの色も保たれます。
+- [Deutsch](https://marsdawn.southern-light.dev/de/pdf/index.md): Sieh dir dein Markdown in der Vorschau an, drucke es dann oder sichere es als PDF, im Layout Dokument, Handbuch oder Handout, mit Diagrammen und farbigem Code.
+- [Français](https://marsdawn.southern-light.dev/fr/pdf/index.md): Prévisualisez votre Markdown, puis imprimez-le ou enregistrez-le en PDF sur Mac, en disposition Document, Guide ou Polycopié, avec diagrammes et code coloré.
+- [Español](https://marsdawn.southern-light.dev/es/pdf/index.md): Previsualiza tu Markdown y luego imprímelo o guárdalo como PDF en tu Mac, con la disposición Documento, Guía o Folleto, con diagramas y código resaltado.
+- [한국어](https://marsdawn.southern-light.dev/ko/pdf/index.md): Mac에서 미리 본 뒤 Markdown을 프린트하거나 PDF로 저장하세요. 문서·설명서·프린트물 레이아웃을 지원하고 다이어그램과 코드 색도 그대로 남습니다.

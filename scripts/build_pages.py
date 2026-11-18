@@ -308,7 +308,7 @@ UI = {
         "footer_store": f'MarsDawn is on the <a href="{LISTING_URL}">Mac App Store</a>.',
         "footer_nav": "Site",
         "more": "More",
-        "yours": "Your writing stays on your Mac", "pay-once": "Try free, pay once", "pdf": "PDF export",
+        "yours": "Your writing stays on your Mac", "pay-once": "Try free, pay once", "pdf": "Print & PDF",
         "native": "A Mac app", "limits": "What MarsDawn doesn't do",
         "mcp": "MCP server", "token-efficient-review": "Token-efficient review",
         "vs-markdown-preview-tools": "Viewing Markdown elsewhere vs. MarsDawn", "themes": "Themes",
@@ -339,7 +339,7 @@ UI = {
         "footer_store": f'MarsDawn 已在 <a href="{LISTING_URL}">Mac App Store</a> 上架。',
         "footer_nav": "網站",
         "more": "其他頁面",
-        "yours": "你寫的內容留在你的 Mac 上", "pay-once": "免費試用，買一次就好", "pdf": "輸出 PDF",
+        "yours": "你寫的內容留在你的 Mac 上", "pay-once": "免費試用，買一次就好", "pdf": "列印與 PDF",
         "native": "為 Mac 而做", "limits": "MarsDawn 做不到的事",
         "mcp": "MCP 伺服器", "token-efficient-review": "節省 token 的審閱方式",
         "vs-markdown-preview-tools": "在別處看 Markdown，對比 MarsDawn", "themes": "主題",
@@ -4225,43 +4225,87 @@ TRAIT_PAGES = {
 """,
     ),
     ("en", "pdf"): _trait_page(
-        "Export Markdown to PDF on a Mac, diagrams included · MarsDawn",
-        "Export Markdown as a PDF or print it on your Mac, with Mermaid diagrams and highlighted code. Page breaks avoid splitting short code blocks.",
+        "Print Markdown or Save as PDF on a Mac · MarsDawn",
+        "Preview your Markdown, then print it or save it as a PDF on your Mac, in Document, Handbook or Handout layout, with diagrams and code colors intact.",
         """
 <section class="intro">
-  <h1>The PDF looks like the page you wrote.</h1>
-  <p>Export as PDF or print, in your theme's light colors. Diagrams and highlighted code come through, and page breaks avoid splitting what belongs together.</p>
+  <h1>Print it, or save it as a PDF</h1>
+  <p>MarsDawn prints your Markdown or saves it as a PDF, in your theme's light colors. A preview shows the pages first, so you can pick a layout before you print.</p>
 </section>
 """,
         """
-<h2>What that means</h2>
+<h2>Preview first, then decide</h2>
+<ol class="loop-steps">
+  <li><strong>Open the preview.</strong> Choose File ▸ Print… or File ▸ Export as PDF…; both open the Print &amp; Export sheet.</li>
+  <li><strong>Pick a layout.</strong> Look through the preview, then choose Document, Handbook or Handout.</li>
+  <li><strong>Print or save.</strong> Click Print…, or Save as PDF… to keep a file.</li>
+</ol>
+<h2>Three layouts</h2>
+<p>Every layout can be printed or saved as a PDF.</p>
+<div class="layout-shots">
+  <figure>
+    <img src="/assets/cli/layout-document.png" alt="Document layout, page 1: a title, a paragraph, a flowchart, a code block and a table." width="856" height="1108">
+    <figcaption><strong>Document.</strong> Pages as in the live preview, with automatic page breaks.</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/cli/layout-handbook-contents.png" alt="Handbook layout: a contents page listing the headings with their page numbers." width="856" height="1108">
+    <figcaption><strong>Handbook.</strong> A cover, contents with page numbers, each chapter on a new page.</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/cli/layout-handout.png" alt="Handout layout, page 1: content on the left, an empty notes column on the right and a footer line." width="856" height="1108">
+    <figcaption><strong>Handout.</strong> A notes column on the right; the footer has file name, date and page number.</figcaption>
+  </figure>
+</div>
+<h2>What ends up on the page</h2>
 <ul>
-  <li>Mermaid diagrams are drawn into the PDF.</li>
+  <li>Mermaid diagrams are drawn into the pages.</li>
   <li>Code blocks keep their syntax highlighting.</li>
   <li>Page breaks avoid leaving a heading at the bottom of a page or splitting code and diagrams.</li>
-  <li>Any layout. Export works even while only the source is showing.</li>
 </ul>
-<p>The free <a href="/cli/">marsdawn command-line tool</a> uses the same exporter, so a script or an AI agent gets the same PDF.</p>
+<p>On iPhone and iPad, version 1.0.2 and later can print a Markdown document.</p>
+<p>The free <a href="/cli/">marsdawn command-line tool</a> uses the same exporter, so scripts and AI agents get the same PDF.</p>
 """,
     ),
     ("zh-hant", "pdf"): _trait_page(
-        "在 Mac 把 Markdown 輸出成 PDF，圖表也在 · MarsDawn",
-        "在 Mac 上把 Markdown 輸出成 PDF 或列印，Mermaid 圖表和程式碼上色都會保留；分頁會盡量不切開短的程式碼，超過一頁的會接到下一頁。",
+        "在 Mac 列印 Markdown 或儲存為 PDF · MarsDawn",
+        "在 Mac 上先預覽，再把 Markdown 列印或儲存為 PDF；有文件、手冊、講義三種版面，Mermaid 圖表和程式碼上色都會保留。",
         """
 <section class="intro">
-  <h1>PDF 看起來就是你寫的那一頁。</h1>
-  <p>輸出成 PDF 或列印，使用主題的淺色配色。圖表和程式碼上色都會保留，分頁位置也經過安排。</p>
+  <h1>列印，或儲存為 PDF</h1>
+  <p>MarsDawn 能把 Markdown 列印，或儲存為 PDF，使用主題的淺色配色。先預覽頁面，再選版面。</p>
 </section>
 """,
         """
-<h2>這代表什麼</h2>
+<h2>先預覽，再決定</h2>
+<ol class="loop-steps">
+  <li><strong>開啟預覽。</strong>在「檔案」選「列印⋯」或「輸出為 PDF⋯」，都會開啟「列印與輸出」。</li>
+  <li><strong>選版面。</strong>看過預覽的頁面，再選「文件」、「手冊」或「講義」。</li>
+  <li><strong>列印或儲存。</strong>按「列印⋯」，或按「儲存為 PDF⋯」留下檔案。</li>
+</ol>
+<h2>三種版面</h2>
+<p>每種版面都能列印，也能儲存為 PDF。</p>
+<div class="layout-shots">
+  <figure>
+    <img src="/assets/cli/layout-document.png" alt="文件版面第 1 頁：標題、一段文字、流程圖、程式碼區塊和一張表格。" width="856" height="1108">
+    <figcaption><strong>文件。</strong>跟即時預覽一樣的頁面，自動分頁。</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/cli/layout-handbook-contents.png" alt="手冊版面的目錄頁，列出各標題和頁碼。" width="856" height="1108">
+    <figcaption><strong>手冊。</strong>封面、有頁碼的目錄、每章換頁。</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/cli/layout-handout.png" alt="講義版面第 1 頁：內容在左，右側是空白的筆記欄，底部有頁尾。" width="856" height="1108">
+    <figcaption><strong>講義。</strong>右側 1/3 留給筆記，頁尾有檔名、日期和頁碼。</figcaption>
+  </figure>
+</div>
+<h2>頁面上會有什麼</h2>
 <ul>
-  <li>Mermaid 圖表直接畫進 PDF。</li>
+  <li>Mermaid 圖表直接畫進頁面。</li>
   <li>程式碼區塊保留語法上色。</li>
   <li>分頁時會盡量不讓標題落在頁尾，也不切開程式碼和圖表。</li>
-  <li>任何版面都能輸出，只顯示原始碼時也可以。</li>
 </ul>
-<p>免費的 <a href="/zh-hant/cli/">marsdawn 命令列工具</a>使用同一套輸出程式，所以腳本或 AI agent 也能得到一樣的 PDF。</p>
+<p>iPhone 和 iPad 從 1.0.2 版起可列印 Markdown 文件。</p>
+<p>免費的 <a href="/zh-hant/cli/">marsdawn 命令列工具</a>用同一套輸出程式，腳本、agent 也能用。</p>
 """,
     ),
     ("en", "native"): _trait_page(
@@ -4394,7 +4438,7 @@ TRAIT_LINK = {
     "en": {
         "yours": ("Your writing stays on your Mac", "No account, no sync, no cloud."),
         "pay-once": ("Try free, pay once", "Free for 14 days, then USD 4.99 once. No subscription."),
-        "pdf": ("PDF export", "Diagrams, highlighted code, careful page breaks."),
+        "pdf": ("Print & PDF", "Preview, pick a layout, then print or save."),
         "native": ("A Mac app", "Native windows, tabs, autosave, Quick Look."),
         "limits": ("What MarsDawn doesn't do", "Know before you buy."),
         "features": ("Features", "Everything MarsDawn does, on one page."),
@@ -4402,7 +4446,7 @@ TRAIT_LINK = {
     "zh-hant": {
         "yours": ("你寫的內容留在你的 Mac 上", "不需要帳號，沒有同步，也沒有雲端。"),
         "pay-once": ("免費試用，買一次就好", "免費試用 14 天，之後 USD 4.99 買一次，沒有訂閱。"),
-        "pdf": ("輸出 PDF", "圖表、程式碼上色、經過安排的分頁。"),
+        "pdf": ("列印與 PDF", "先預覽、選版面，再列印或儲存。"),
         "native": ("為 Mac 而做", "原生視窗、分頁、自動儲存、快速查看。"),
         "limits": ("MarsDawn 做不到的事", "購買前先知道。"),
         "features": ("功能一覽", "MarsDawn 能做的事，一頁看完。"),
@@ -5081,7 +5125,7 @@ def features_marks(locale: str, body: str) -> str:
             return f'<a href="{LISTING_URL}">{HOME[locale]["cta_try"]}</a>'
         if mark.startswith("link:"):
             slug = mark[5:]
-            return f'<a href="{page_path(locale, slug)}">{UI[locale][SLUG_TO_UI_KEY[slug]]}</a>'
+            return f'<a href="{page_path(locale, slug)}">{html_escape(UI[locale][SLUG_TO_UI_KEY[slug]], quote=False)}</a>'
         return match.group(0)
     return _FEATURES_MARK.sub(fill, body)
 
@@ -5191,14 +5235,14 @@ HOME_CARD_COPY = {
         "es": ("Diagramas Mermaid y código", "La vista previa dibuja el diagrama y resalta el código, junto al código fuente."),
     },
     "pdf": {
-        "en": ("PDF export", "Mermaid diagrams, drawn into the PDF."),
-        "zh-hant": ("輸出 PDF", "Mermaid 圖表直接畫進 PDF。"),
-        "zh-hans": ("导出 PDF", "Mermaid 图表直接画进 PDF。"),
-        "ja": ("PDF 書き出し", "Mermaid 図は PDF に描き込まれます。"),
-        "ko": ("PDF 내보내기", "Mermaid 다이어그램이 PDF 안에 그려집니다."),
-        "de": ("PDF-Export", "Mermaid-Diagramme, ins PDF gezeichnet."),
-        "fr": ("Export PDF", "Les diagrammes Mermaid, dessinés dans le PDF."),
-        "es": ("Exportación a PDF", "Diagramas Mermaid, dibujados dentro del PDF."),
+        "en": ("Print & PDF", "Mermaid diagrams, drawn into the PDF."),
+        "zh-hant": ("列印與 PDF", "Mermaid 圖表直接畫進 PDF。"),
+        "zh-hans": ("打印与 PDF", "Mermaid 图表直接画进 PDF。"),
+        "ja": ("プリントと PDF", "Mermaid 図は PDF に描き込まれます。"),
+        "ko": ("프린트 및 PDF", "Mermaid 다이어그램이 PDF 안에 그려집니다."),
+        "de": ("Drucken und PDF", "Mermaid-Diagramme, ins PDF gezeichnet."),
+        "fr": ("Imprimer et PDF", "Les diagrammes Mermaid, dessinés dans le PDF."),
+        "es": ("Imprimir y PDF", "Diagramas Mermaid, dibujados dentro del PDF."),
     },
 }
 
@@ -5542,7 +5586,7 @@ def home_sections_html(locale: str) -> str:
             line = line.replace(term, f'<a href="{page_path(locale, "quicklook")}">{term}</a>', 1)
         return line
     traits = "\n".join(
-        f'  <li><a href="{page_path(locale, slug)}">{TRAIT_LINK[locale][slug][0]}</a><span>{trait_line(slug)}</span></li>'
+        f'  <li><a href="{page_path(locale, slug)}">{html_escape(TRAIT_LINK[locale][slug][0], quote=False)}</a><span>{trait_line(slug)}</span></li>'
         for slug in HOME_TRAITS
     )
     if locale in HOME_THEMES_LINK:
@@ -5966,7 +6010,7 @@ THEME_GALLERY_NOTE = {
 
 def trait_nav_html(locale: str, current: str) -> str:
     items = "\n".join(
-        f'  <li><a href="{page_path(locale, slug)}">{TRAIT_LINK[locale][slug][0]}</a>'
+        f'  <li><a href="{page_path(locale, slug)}">{html_escape(TRAIT_LINK[locale][slug][0], quote=False)}</a>'
         f'<span>{TRAIT_LINK[locale][slug][1]}</span></li>'
         for slug in TRAIT_ORDER
         if slug != current
@@ -7017,7 +7061,7 @@ def site_footer_nav_html(locale: str, current=None) -> str:
             slug = href.strip("/")
             if has_page(locale, slug):
                 mark = ' aria-current="page"' if slug == current else ""
-                rows.append(f'        <li><a href="{page_path(locale, slug)}"{mark}>{ui[SLUG_TO_UI_KEY[slug]]}</a></li>\n')
+                rows.append(f'        <li><a href="{page_path(locale, slug)}"{mark}>{html_escape(ui[SLUG_TO_UI_KEY[slug]], quote=False)}</a></li>\n')
         if key == "support":
             rows.append(f'        <li><button type="button" id="consent-settings-link" class="footer-link-btn">{ui["cookie_settings"]}</button></li>\n')
         sections.append(f'    <section aria-labelledby="footer-{key}">\n      <h3 id="footer-{key}">{_attr(name)}</h3>\n'
@@ -7056,7 +7100,7 @@ class MarkdownConversionError(Exception):
     """Raised when the converter meets an HTML tag it doesn't know how to render."""
 
 
-_TRANSPARENT_TAGS = {"section", "div"}
+_TRANSPARENT_TAGS = {"section", "div", "figure"}
 # Elements with no closing tag. Pushing one onto the stack would nest the rest of the page inside it.
 _VOID_TAGS = {"img", "br"}
 
@@ -7162,9 +7206,12 @@ def _render_block(node: _Node) -> str:
         return _render_children(node.children)
     if tag in ("h1", "h2", "h3"):
         return "#" * int(tag[1]) + " " + _render_inline(node.children).strip() + "\n\n"
-    if tag == "p":
+    if tag in ("p", "figcaption"):
         text = _render_inline(node.children).strip()
         return (text + "\n\n") if text else ""
+    if tag == "img":
+        # A picture on its own line (/pdf/'s three layout pages, in <figure>): its alt text is the Markdown twin's description.
+        return _render_inline([node]) + "\n\n"
     if tag in ("ul", "ol"):
         items = []
         for child in node.children:

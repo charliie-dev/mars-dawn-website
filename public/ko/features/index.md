@@ -49,19 +49,19 @@ Markdown 파일을 열면 렌더링된 페이지가 소스 옆에 나타납니�
 
 페이지를 프린트하거나 모두에게 같은 PDF를 보내면, 한 화면을 함께 보는 대신 테이블 전체가 같은 문서로 작업할 수 있습니다. 같은 파일을 가진 사람은 페이지 나눔도 같으므로 ‘3쪽의 표’가 모두에게 같은 것을 가리킵니다. 그다음 사람들이 결정 사항을 프린트한 종이나 메모에 적습니다. 회의 메모 템플릿은 결정 사항으로 시작하고 각 실행 항목에 담당자를 둡니다.
 
-[PDF 내보내기](/ko/pdf/) · [회의록 템플릿](/ko/templates/meeting-notes/)
+[프린트 및 PDF](/ko/pdf/) · [회의록 템플릿](/ko/templates/meeting-notes/)
 
 ### 펜으로 읽기
 
 펜으로 밑줄을 긋고 여백에 적어 가며 읽어야 머리에 잘 남는 사람도 있습니다. 문서를 프린트해서 종이 위에서 그렇게 하세요. MarsDawn에는 자체 주석 도구가 없으니, PDF에 표시하고 싶다면 이미 쓰고 있는 PDF 앱을 사용하세요.
 
-[PDF 내보내기](/ko/pdf/)
+[프린트 및 PDF](/ko/pdf/)
 
 ### 종이 기록
 
 아직도 종이로 보관하는 분야가 있으며, 회계가 그 예입니다. MarsDawn은 보관이나 규정 준수에 대해 아무것도 주장하지 않습니다. 하는 일은 깔끔하게 페이지가 나뉜 페이지를 프린트하고 내보내는 것입니다. 다이어그램이 그려지고, 짧은 코드 블록은 잘리지 않으며, 테마의 라이트 색상이 쓰입니다. 종이가 여전히 기록인 곳에서 사용하세요.
 
-[PDF 내보내기](/ko/pdf/)
+[프린트 및 PDF](/ko/pdf/)
 
 ### Markdown을 쓰지 않는 사람에게 전달하기
 
@@ -133,7 +133,7 @@ KaTeX 구문으로 쓴 수식은 미리보기와 훑어보기에 그려지고, �
 
 파일 ▸ 프린트… 또는 파일 ▸ PDF로 내보내기… 메뉴를 선택하면 ‘프린트 및 내보내기’가 열려 페이지를 미리 볼 수 있습니다. 레이아웃은 ‘문서’, 표지·목차·PDF 책갈피가 있는 ‘설명서’, 메모 칸이 있는 ‘프린트물’ 중에서 고른 뒤 프린트하거나 저장합니다. Mermaid 다이어그램이 그려지고, 코드는 구문 강조를 유지하며, 페이지 나눔은 제목을 해당 절에서 떼어 놓거나 짧은 코드 블록이나 다이어그램을 반으로 자르지 않도록 피합니다. PDF에는 항상 테마의 라이트 색상이 쓰입니다.
 
-[PDF 내보내기](/ko/pdf/)
+[프린트 및 PDF](/ko/pdf/)
 
 ![MarsDawn에서 내보낸 PDF를 페이지 축소판과 함께 PDF 뷰어로 연 모습.](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
 
@@ -233,7 +233,7 @@ MarsDawn은 무료로 다운로드할 수 있습니다. 14일 동안 모든 기�
 - [MarsDawn](https://marsdawn.southern-light.dev/ko/index.md): 에이전트가 쓴 Markdown, JSON, YAML을 검토하는 Mac 네이티브 앱. 실시간 미리보기, Mermaid, KaTeX, 훑어보기, PDF 내보내기. 무료 체험 후 한 번만 USD 4.99.
 - [내 글은 내 Mac에](https://marsdawn.southern-light.dev/ko/yours/index.md): MarsDawn에는 계정도, 동기화도, 클라우드도 없습니다. Markdown 문서는 직접 고른 파일과 폴더에 담겨 Mac에 남습니다.
 - [무료로 체험하고, 한 번만 구입](https://marsdawn.southern-light.dev/ko/pay-once/index.md): MarsDawn은 무료로 다운로드할 수 있습니다. 14일 동안 모든 기능을 체험한 뒤 USD 4.99에 한 번만 잠금 해제하세요. 구독도, 계정도 없습니다.
-- [PDF 내보내기](https://marsdawn.southern-light.dev/ko/pdf/index.md): Mac에서 Markdown을 PDF로 내보내거나 프린트하세요. Mermaid 다이어그램과 하이라이트된 코드도 그대로입니다. 페이지 나눔은 짧은 코드 블록을 가르지 않도록 합니다.
+- [프린트 및 PDF](https://marsdawn.southern-light.dev/ko/pdf/index.md): Mac에서 미리 본 뒤 Markdown을 프린트하거나 PDF로 저장하세요. 문서·설명서·프린트물 레이아웃을 지원하고 다이어그램과 코드 색도 그대로 남습니다.
 - [Mac 앱](https://marsdawn.southern-light.dev/ko/native/index.md): 진짜 Mac 앱인 Markdown 편집기. 네이티브 윈도우와 탭, 자동 저장, 버전 기록, Finder의 훑어보기, 그리고 Mac답게 동작하는 텍스트 편집기를 갖췄습니다.
 - [MarsDawn이 하지 않는 일](https://marsdawn.southern-light.dev/ko/limits/index.md): 동기화도, iPhone·iPad에서의 편집도, 플러그인도, 계정도 없습니다. 테마는 바꿀 수 있지만 사용자 지정 CSS는 없습니다. 구입 전에 알아 두세요.
 - [지원](https://marsdawn.southern-light.dev/ko/support/index.md): macOS용 Markdown 편집기 MarsDawn에 관한 도움말입니다.

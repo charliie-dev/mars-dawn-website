@@ -36,7 +36,7 @@ MarsDawn 是讀、檢查 Markdown 的 Mac 原生 app，有分割即時預覽、M
 
 預覽會把圖表畫出來、程式碼上色，就在原始碼旁邊。
 
-### [輸出 PDF](/zh-hant/pdf/)
+### [列印與 PDF](/zh-hant/pdf/)
 
 ![頁面頂部：標題、一小段文字和一張流程圖。](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
 
@@ -93,7 +93,7 @@ brew install redtear1115/tap/marsdawn
 | 功能 | App 內 | CLI | MCP／skill | 狀態 |
 |---|---|---|---|---|
 | 打開到某一行 | 停在那一行，預覽區塊閃一下 | marsdawn open notes.md:120（--background 不搶焦點） | open_in_marsdawn；skill 只開一次 | 已推出 |
-| 輸出 PDF | 檔案 ▸ 輸出為 PDF⋯（⌥⌘E），可選標準、手冊、講義版面 | marsdawn export，不需要 app；--layout handbook 或 handout | export_markdown_to_pdf；skill | 已推出 |
+| 輸出 PDF | 檔案 ▸ 輸出為 PDF⋯（⌥⌘E），可選文件、手冊、講義版面 | marsdawn export，不需要 app；--layout handbook 或 handout | export_markdown_to_pdf；skill | 已推出 |
 | JSON 結果 | — | open、export 加 --json | MCP 回傳同一份 JSON | 已推出 |
 | Agent skill | — | marsdawn skill --install | 教 agent 開一次、輸出 PDF | 已推出 |
 | MCP 伺服器 | — | 在底下執行 | marsdawn-mcp：兩個工具，只碰允許的資料夾 | 已推出 |
@@ -191,7 +191,7 @@ MarsDawn 本身不傳送任何東西。skill 只是一份文字說明，marsdawn
 - [功能一覽](https://marsdawn.southern-light.dev/zh-hant/features/index.md): Mac 原生的 Markdown、JSON、YAML 編輯器：即時預覽、Mermaid 與數學式、主題，輸出和列印的頁面可拿去開會或存檔。
 - [你寫的內容留在你的 Mac 上](https://marsdawn.southern-light.dev/zh-hant/yours/index.md): MarsDawn 不需要帳號，沒有同步，也沒有雲端。你的 Markdown 文件留在你的 Mac 上，就在你選的檔案和資料夾裡。
 - [免費試用，買一次就好](https://marsdawn.southern-light.dev/zh-hant/pay-once/index.md): MarsDawn 免費下載。先免費試用 14 天，之後花 USD 4.99 解鎖一次就好。沒有訂閱，也不需要帳號。
-- [輸出 PDF](https://marsdawn.southern-light.dev/zh-hant/pdf/index.md): 在 Mac 上把 Markdown 輸出成 PDF 或列印，Mermaid 圖表和程式碼上色都會保留；分頁會盡量不切開短的程式碼，超過一頁的會接到下一頁。
+- [列印與 PDF](https://marsdawn.southern-light.dev/zh-hant/pdf/index.md): 在 Mac 上先預覽，再把 Markdown 列印或儲存為 PDF；有文件、手冊、講義三種版面，Mermaid 圖表和程式碼上色都會保留。
 - [為 Mac 而做](https://marsdawn.southern-light.dev/zh-hant/native/index.md): 真正的 Mac app：原生視窗與分頁、自動儲存、版本記錄、在 Finder 用快速查看預覽 Markdown，文字編輯器的操作和 Mac 上其他 app 一致。
 - [MarsDawn 做不到的事](https://marsdawn.southern-light.dev/zh-hant/limits/index.md): 沒有同步、iPhone 和 iPad 上不能編輯、沒有外掛、不需要帳號；可以換主題，但不能自訂 CSS。購買前先知道。
 - [支援](https://marsdawn.southern-light.dev/zh-hant/support/index.md): MarsDawn（macOS Markdown 編輯器）的使用說明與聯絡方式。

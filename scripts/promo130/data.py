@@ -1316,7 +1316,7 @@ DATA = {'seo': {'en': {'ql_title': 'Markdown Quick Look for Mac: preview .md fil
                                 'href="/zh-hant/cli/">命令列工具</a>。',
                         'head': ['功能', 'App 內', 'CLI', 'MCP／skill', '狀態'],
                         'rows': [['打開到某一行', '停在那一行，預覽區塊閃一下', 'marsdawn open notes.md:120（--background 不搶焦點）', 'open_in_marsdawn；skill 只開一次', '已推出'],
-                                 ['輸出 PDF', '檔案 ▸ 輸出為 PDF⋯（⌥⌘E），可選標準、手冊、講義版面', 'marsdawn export，不需要 app；--layout handbook 或 handout', 'export_markdown_to_pdf；skill', '已推出'],
+                                 ['輸出 PDF', '檔案 ▸ 輸出為 PDF⋯（⌥⌘E），可選文件、手冊、講義版面', 'marsdawn export，不需要 app；--layout handbook 或 handout', 'export_markdown_to_pdf；skill', '已推出'],
                                  ['JSON 結果', '—', 'open、export 加 --json', 'MCP 回傳同一份 JSON', '已推出'],
                                  ['Agent skill', '—', 'marsdawn skill --install', '教 agent 開一次、輸出 PDF', '已推出'],
                                  ['MCP 伺服器', '—', '在底下執行', 'marsdawn-mcp：兩個工具，只碰允許的資料夾', '已推出'],

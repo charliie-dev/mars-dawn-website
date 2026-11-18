@@ -1,0 +1,54 @@
+{
+ "comments": {
+  "daphne": {
+   "issue": 383,
+   "id": 6951950154,
+   "what": "Daphne's structure and per-cell limits for /pdf/ (Print & PDF)",
+   "created_at": "2026-11-17T15:07:27Z",
+   "updated_at": "2026-11-17T15:08:12Z",
+   "sha256": "38e07bae4a0db7ff22decec11e779be7f69a71ae687dd1bc966a44e49301121e",
+   "chars": 6525,
+   "author": "redtear1115"
+  },
+  "aria_en_zhhant": {
+   "issue": 383,
+   "id": 6952823397,
+   "what": "Aria's en and zh-Hant tables A (page cells) and B (link text); approved by the owner on 2026-11-17",
+   "created_at": "2026-11-17T15:39:34Z",
+   "updated_at": "2026-11-17T15:39:34Z",
+   "sha256": "c3d572674fc8780633fb04ffade52af4989c02741fc119e184b754fb5f3cc3ed",
+   "chars": 32081,
+   "author": "redtear1115"
+  },
+  "approval": {
+   "issue": 383,
+   "id": 6953584073,
+   "what": "decision comment recording the owner's 2026-11-17 approval of the en and zh-Hant tables",
+   "created_at": "2026-11-17T16:08:20Z",
+   "updated_at": "2026-11-17T16:08:20Z",
+   "sha256": "5ab5c1047247d2cc432e5a3ae8b13401eeb4a75e36efe6e020de74d023f12b85",
+   "chars": 652,
+   "author": "redtear1115"
+  },
+  "paula": {
+   "issue": 383,
+   "id": 6953647659,
+   "what": "Paula's note: zh-Hant layout word 標準 becomes 文件",
+   "created_at": "2026-11-17T16:10:45Z",
+   "updated_at": "2026-11-17T16:10:45Z",
+   "sha256": "5f3b44d6dd6f81df6a42c9529f03d3969f95300920806fcc7b436c866995c834",
+   "chars": 499,
+   "author": "redtear1115"
+  },
+  "aria_six": {
+   "issue": 383,
+   "id": 6954520336,
+   "what": "Aria's tables A and B for zh-Hans, ja, ko, de, fr, es, translated from the approved en and zh-Hant",
+   "created_at": "2026-11-17T16:43:20Z",
+   "updated_at": "2026-11-17T16:43:20Z",
+   "sha256": "2479bb507ec89ecf514d91c3493b1dc10fca0958e6e641780c3ce0a714a27832",
+   "chars": 54529,
+   "author": "redtear1115"
+  }
+ }
+}
