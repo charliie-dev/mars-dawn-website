@@ -116,7 +116,7 @@ Marked 3 是預覽器，用來看你在其他 App 寫的 Markdown。檔案一變
 | ColaMD | 免費（MIT） | 無 | 無，打開就是編輯 | 有 | KaTeX | 有 | 有 | 未記載 | 未記載 | Electron |
 | MacDown 3000 | 免費 | 無 | 未記載，官方稱是編輯器 | 有 | MathJax | 有 | 有 | 未記載 | 有 | 原生 |
 | Marked 3 | 優惠價每月 USD 2.99 起 | 無 | 有，本身就是預覽器 | 有 | MathJax、KaTeX | 有，含頁碼 | 有 | 未記載 | Marked QL，USD 9.99 | 原生 |
-| MarkEdit | 免費 | 無 | 未記載，官方稱是編輯器 | 擴充功能 | KaTeX（擴充功能） | Pandoc | 未記載 | 未記載 | 有 | 原生（web view） |
+| MarkEdit | 免費 | 無 | 有（Read Only Mode） | 擴充功能 | KaTeX（擴充功能） | Pandoc | 未記載 | 未記載 | 有 | 原生（web view） |
 | MarsDawn | 一次 USD 4.99 | 有，只能讀 | Mac：預覽窗格不能改，原始碼窗格可以改；iPhone／iPad：只能讀 | 有 | KaTeX | 有，手冊與講義版面含頁碼 | 有，可撤銷 | 有 | 有 | 原生 |
 | Obsidian | 免費 | 有，能讀也能寫 | 有，閱讀檢視 | 有 | MathJax | 有 | 有 | 未記載 | 未記載 | Electron |
 | QLMarkdown | 開源（GPL-3.0） | 無 | 有，只在 Finder 預覽 | 需開啟 | MathJax（需開啟） | 未記載 | 不適用 | 不適用 | 本身即是 | 原生 |
@@ -150,7 +150,7 @@ MarsDawn（`marsdawn open notes.md:120`）與 VS Code（`code -g file:line`）�
 
 ### 哪些是原生 Mac App，不是 Electron？
 
-除了 Obsidian 與 VS Code 都是。MarkEdit 是原生 App，編輯區用 web view。
+Obsidian、VS Code 與 ColaMD 是 Electron，Chrome 的 Markdown Reader 是瀏覽器擴充功能，不是 Mac App；其餘都是原生 Mac App。MarkEdit 是原生 App，編輯區用 web view。
 
 [立刻下載試用](https://apps.apple.com/app/id6812925073)
 
