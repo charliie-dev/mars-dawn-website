@@ -7860,10 +7860,16 @@ Source: {BASE_URL}{PRODUCT_FACTS_PATH}
 - The MarsDawn app: macOS 26 (Tahoe) or later, Apple silicon or Intel.
 - The `marsdawn` command-line tool: macOS 15 or later to run; building it from source needs Swift 6.2 (Xcode 26) or later.
 
+## Install the Mac app
+
+- The MarsDawn app is installed from the [Mac App Store]({LISTING_URL}).
+- With Homebrew: run `brew install mas`, then `sudo mas get 6812925073`. Sign in to the App Store with an Apple Account first. This installs the App Store version at `/Applications/MarsDawn.app`.
+- `brew install marsdawn` is different: it installs the command-line tool, not the app.
+
 ## Free and open source, available today
 
 - [mars-dawn-kit]({KIT_URL}) is free and open source, licensed {KIT_LICENSE}.
-- The free `marsdawn` command-line tool is built from that kit and distributed separately from the Mac App Store: `{BREW_TAP_INSTALL}`.
+- The free `marsdawn` command-line tool is built from that kit and distributed separately from the Mac App Store: `{BREW_TAP_INSTALL}`. This installs the tool, not the MarsDawn app.
 - Both the kit and the CLI exist today and can be installed now, independent of the MarsDawn app's own release status.
 
 ## Entity disambiguation
@@ -7979,9 +7985,10 @@ def build_llms_txt(pages: dict) -> str:
         f"Open source: [mars-dawn-kit]({KIT_URL}) is free and {KIT_LICENSE}, and the free `marsdawn` "
         "command-line tool is built from it."
     )
-    lines.append(f"Install: `{BREW_TAP_INSTALL}` (a prebuilt bottle on Apple silicon, "
+    lines.append(f"Install the command-line tool: `{BREW_TAP_INSTALL}` (a prebuilt bottle on Apple silicon, "
                  "no Xcode needed; on Intel it builds from source with Xcode 26; macOS 15 or later). "
                  "`export` works without the MarsDawn app; `open` needs it.")
+    lines.append(f"Install the Mac app: from the Mac App Store ({LISTING_URL}). With Homebrew: `brew install mas`, then `sudo mas get 6812925073`; sign in to the App Store first.")
     lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 
