@@ -2,7 +2,7 @@
 
 The free `marsdawn` command-line tool: export Markdown to PDF from a shell or an LLM agent, and, with the MarsDawn app installed, open files in it.
 
-**marsdawn is free and distributed separately from the Mac App Store.** Install it with Homebrew: on an Apple silicon Mac it arrives ready to run. `export` works on its own; `open` needs the MarsDawn app.
+**marsdawn is free and distributed separately from the Mac App Store.** Install it with Homebrew: on an Apple silicon Mac it arrives ready to run. `export` works on its own; `open` needs the MarsDawn app. Looking for the Mac app? [Install it with Homebrew and mas](#mac-app).
 
 Calling marsdawn from an AI agent or a script? See [marsdawn for agents](/cli/agents/) for the JSON output, its schemas and every exit code, or [the MCP server](/cli/mcp/) if your agent calls tools over MCP instead.
 
@@ -27,6 +27,19 @@ swift build -c release --product marsdawn
 ```
 
 Check which version you have with `marsdawn --version`.
+
+## Install the MarsDawn app with Homebrew and mas
+
+`brew install marsdawn` installs the command-line tool, not the app. The Mac app comes from the Mac App Store, and [mas](https://github.com/mas-cli/mas) can get it from the terminal:
+
+```
+brew install mas
+sudo mas get 6812925073
+```
+
+Sign in to the App Store with your Apple Account first; `sudo` asks for your Mac login password. This installs the App Store version at `/Applications/MarsDawn.app`. It needs macOS 26 or later, and updates come through the App Store.
+
+It's free to download. The first time you open MarsDawn you can start a 14-day free trial with everything working; to keep using it after that, unlock it once. There is no subscription. [How it works](/pay-once/)
 
 ## Commands
 

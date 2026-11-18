@@ -74,6 +74,8 @@ brew install redtear1115/tap/marsdawn
 - `marsdawn open` はファイルを MarsDawn アプリで開き、確認できるようにします。
 - `--json` は、スクリプトやエージェントが解析できる結果を返します。
 
+ここでインストールされるのはコマンドラインツールです。Homebrew で Mac アプリを入手する方法は、[こちら](/ja/cli/#mac-app)をご覧ください。
+
 [コマンドライン](/ja/cli/) · [AI エージェント向け marsdawn](/ja/cli/agents/) · [エージェント用スキル](/ja/cli/skill/) · [MCP サーバー](/ja/cli/mcp/)
 
 ## MarsDawn に期待できること

@@ -74,6 +74,8 @@ brew install redtear1115/tap/marsdawn
 - `marsdawn open` 在 MarsDawn app 裡開啟檔案，讓你審閱。
 - `--json` 回傳腳本和 agent 能解析的結果。
 
+上面裝的是命令列工具。要用 Homebrew 裝 Mac app，[看這裡](/zh-hant/cli/#mac-app)。
+
 [命令列工具](/zh-hant/cli/) · [給 AI agent 的 marsdawn 參考](/zh-hant/cli/agents/) · [給 agent 的 skill](/zh-hant/cli/skill/) · [MCP 伺服器](/zh-hant/cli/mcp/)
 
 ## MarsDawn 是什麼樣的 app
