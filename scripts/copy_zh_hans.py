@@ -284,6 +284,7 @@ OPEN_MD = {'title': 'Mac 上怎么打开 md 文件：双击、默认 App、快�
  'read_p1_html': 'MarsDawn 是为 Mac 做的 Markdown 编辑器，可以在 Mac App Store 免费下载：先免费试用全部功能 14 天，之后花 USD 4.99 '
                  '解锁一次就好。没有订阅，也不需要账户。需要 macOS 26 以上。',
  'download': '到 Mac App Store 免费下载 MarsDawn',
+ 'read_mas_html': '习惯用终端？<a href="/zh-hans/cli/#mac-app">用 Homebrew 和 mas 安装</a>。',
  'read_p2_html': '打开 <code>.md</code> 文件，排好的页面就在源代码旁边：',
  'read_b1_html': '预览会随着你打字实时更新，两边的窗格一起滚动。',
  'read_b4_html': '想改的时候，源代码就在旁边。MarsDawn 是编辑器，不只是查看器。',
@@ -511,7 +512,7 @@ def build(k) -> dict:
   <p>免费的 <code>marsdawn</code> 命令行工具：从终端或 LLM 代理把 Markdown 导出成 PDF；装了 MarsDawn app 的话，也能用它打开文件。</p>
 </section>
 
-<div class="summary"><p><strong>marsdawn 免费、另外发布，不通过 Mac App Store。</strong>用 Homebrew 安装，在 Apple 芯片的 Mac 上装好就能直接使用。<code>export</code> 可以单独使用；<code>open</code> 需要 MarsDawn app。</p></div>
+<div class="summary"><p><strong>marsdawn 免费、另外发布，不通过 Mac App Store。</strong>用 Homebrew 安装，在 Apple 芯片的 Mac 上装好就能直接使用。<code>export</code> 可以单独使用；<code>open</code> 需要 MarsDawn app。要装的是 Mac app？<a href="#mac-app">用 Homebrew 和 mas 安装</a>。</p></div>
 
 <p>要从 AI 代理或脚本调用 marsdawn？请看<a href="/zh-hans/cli/agents/">给 AI 代理的 marsdawn 参考</a>，里面有 JSON 输出、Schema 和所有退出代码。</p>
 
@@ -525,6 +526,13 @@ def build(k) -> dict:
 cd mars-dawn-kit
 swift build -c release --product marsdawn</code></pre>
 <p>用 <code>marsdawn --version</code> 查看安装的版本。</p>
+
+<h2 id="mac-app">用 Homebrew 和 mas 安装 MarsDawn app</h2>
+<p><code>brew install marsdawn</code> 装的是命令行工具，不是 app。Mac 版 app 在 Mac App Store，可以用 <a href="https://github.com/mas-cli/mas">mas</a> 从终端获取：</p>
+<pre><code>brew install mas
+sudo mas get 6812925073</code></pre>
+<p>先在 App Store 登录 Apple 账户；<code>sudo</code> 会要你输入 Mac 的登录密码。装好的是 App Store 版，位置在 <code>/Applications/MarsDawn.app</code>，需要 macOS 26 以上，之后的更新通过 App Store 进行。</p>
+<p>可以免费下载。第一次打开 MarsDawn 时可以开始 14 天试用，所有功能都能使用；试用结束后想继续使用，解锁一次就好，没有订阅。<a href="/zh-hans/pay-once/">怎么运作</a></p>
 
 <h2>命令</h2>
 
