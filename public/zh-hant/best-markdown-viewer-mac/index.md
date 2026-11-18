@@ -1,6 +1,51 @@
-# 2026 Mac Markdown 檢視器推薦
+# 2026 Markdown 閱讀器推薦：只想看、不想改，Mac 和 iPhone 怎麼選
 
-哪款 Markdown 檢視器最好，要看你讀的是什麼。如果是自己寫的筆記，一款全能的筆記 App 就夠了。如果是有圖表和數學式的長文件，或是 AI 代理不斷改寫的檔案，就要看各款怎麼處理自動重新載入、Mermaid 和 PDF。以下依字母排序，每款都寫出適合誰、一個老實的缺點和價格。
+只想讀 Markdown、不想改的話，先看你在哪裡讀、讀的是什麼：
+
+- **看 AI／agent 寫的計畫和報告**：用 MarsDawn。agent 存檔時頁面會跟著更新，Mermaid 圖表和數學式都畫好。
+- **在 iPhone 上看**：MarsDawn 的 iPhone 版只能讀，不會誤改；Obsidian 能讀也能寫，但檔案要放在它的 vault 裡。
+- **看完要交 PDF，而且要頁碼**：用 Typora 或 Marked 3；MarsDawn 要選手冊或講義版面。
+
+市面上的比較文多半在比「編輯器」，比的是寫起來順不順手。這篇只比「讀」：打開後看到的是不是排好的頁面、會不會一不小心就改到檔案、手機上能不能看。以下 10 款依字母排序，每款都寫出適合誰、一個老實的缺點和價格。價格和功能的查證日期是 2026-11-18。
+
+## 依情境挑
+
+### 看 AI／agent 產出的計畫
+
+agent 寫的檔案很長，會一直被改寫，裡面常常有表格和 Mermaid 圖表。挑的時候，看三件事：檔案被改了會不會自動更新、圖表畫不畫得出來、能不能從終端機直接打開。
+
+- **MarsDawn**：agent 存檔時，開著的視窗會自動「從磁碟更新」，而且可以撤銷。`marsdawn open plan.md` 從終端機打開，也有給 agent 用的 skill。
+- **ColaMD**：免費開源，agent 改檔時畫面也會即時更新，Windows 和 Linux 也能用。
+
+### 在手機上看
+
+- **MarsDawn（iPhone／iPad）**：只能讀，不能改，Mermaid、數學式和表格都畫好。和 Mac 版共用一次買斷。
+- **Obsidian**：有 iPhone 版，能讀也能寫。檔案要放在它的 vault 裡。
+
+### 看完要交 PDF
+
+- **Typora**：輸出 PDF 時，頁首或頁尾可以加頁碼。
+- **Marked 3**：專門用來預覽和列印，PDF 有分頁和頁碼。
+
+MarsDawn 也能輸出 PDF：手冊和講義版面有頁碼，預設的文件版面沒有。
+
+## Chrome 的 Markdown Reader 擴充功能
+
+裝在 Chrome 裡的擴充功能。把 .md 檔拖進瀏覽器，就會顯示排好的頁面，旁邊有目錄。Mermaid 圖表和數學式（KaTeX）都內建。
+
+- 適合：不想多裝一個 App、本來就整天開著 Chrome 的人。
+- 缺點：要先在擴充功能設定裡打開「允許存取檔案網址」，才能讀本機檔案。
+- 價格：免費版可以用，另有 Pro 訂閱。
+- 是哪一個：Chrome 線上應用程式商店裡的「Markdown Reader」（ID `medapdbncneneejhbgcjceippjlfkmkg`，開發者網站 md-reader.github.io）。官方頁面：[商店頁](https://chromewebstore.google.com/detail/md-reader/medapdbncneneejhbgcjceippjlfkmkg)、[官網](https://md-reader.github.io/)、[價格頁](https://md-reader.github.io/pricing)。查證日期 2026-11-18。
+
+## ColaMD
+
+免費開源（MIT）的 Markdown 編輯器，用 Electron 做的，macOS、Windows、Linux 都能用。agent 改檔時，畫面會即時更新，不用重新打開。
+
+- 適合：要在 Windows 或 Linux 上看 agent 寫的檔案的人。
+- 缺點：是所見即所得的編輯器，打開後就能直接改，沒有只讀模式。Mermaid 圖表和數學式（KaTeX）都內建。
+- 價格：免費。
+- 官方頁面：[GitHub](https://github.com/marswaveai/ColaMD)、[官網](https://colamd.com/)。查證日期 2026-11-18。
 
 ## MacDown 3000
 
@@ -16,7 +61,7 @@ Marked 3 是預覽器，用來看你在其他 App 寫的 Markdown。檔案一變
 
 - 適合：保留自己編輯工具、想要精緻預覽與列印的寫作者。
 - 缺點：快速查看要另買 Marked QL（USD 9.99）。
-- 價格：Marked 3 免費下載，之後每月 USD 2.99、每年 USD 29.99 或終身 USD 69.99。Marked 2 官網 USD 14.99，Mac App Store USD 13.99。
+- 價格：Marked 3 免費試用，之後每月 USD 2.99、每年 USD 29.99 或終身 USD 69.99（限時優惠價，原價每月 USD 4.99、每年 USD 49.99、終身 USD 89.99）。Marked 2 官網 USD 14.99，Mac App Store USD 13.99。
 
 ## MarkEdit
 
@@ -32,7 +77,7 @@ Marked 3 是預覽器，用來看你在其他 App 寫的 Markdown。檔案一變
 
 - 適合：審閱 AI 代理所寫 Markdown 的人。
 - 缺點：PDF 要用手冊或講義版面才有頁碼，預設的文件版面沒有。
-- 價格：免費下載，試用 14 天，之後一次 USD 4.99。不需帳號。僅在 Mac App Store 提供。
+- 價格：免費下載，試用 14 天，之後 USD 4.99 一次買斷。同一個 Apple 帳號，一次購買，Mac、iPhone、iPad 都能用。
 
 ## Obsidian
 
@@ -48,7 +93,7 @@ Marked 3 是預覽器，用來看你在其他 App 寫的 Markdown。檔案一變
 
 - 適合：只想在 Finder 裡瞄一眼檔案的人。
 - 缺點：不是用來閱讀或編輯的 App，也沒有記載 PDF 輸出。
-- 價格：免費（GPL-3.0）。
+- 價格：開源（GPL-3.0）。
 
 ## Typora
 
@@ -68,24 +113,32 @@ Marked 3 是預覽器，用來看你在其他 App 寫的 Markdown。檔案一變
 
 ## 比較表
 
-| App | 價格 | Mermaid | 數學式 | PDF | 自動重新載入 | 命令列開到指定行 | 快速查看 | 架構 |
-|---|---|---|---|---|---|---|---|---|
-| MacDown 3000 | 免費 | 有 | MathJax | 有 | 有 | 未記載 | 有 | 原生 |
-| Marked 3 | 每月 USD 2.99 起 | 有 | MathJax、KaTeX | 有，含頁碼 | 有 | 未記載 | Marked QL，USD 9.99 | 原生 |
-| MarkEdit | 免費 | 擴充功能 | KaTeX（擴充功能） | Pandoc | 未記載 | 未記載 | 有 | 原生（web view） |
-| MarsDawn | 一次 USD 4.99 | 有 | KaTeX | 有，手冊與講義版面含頁碼 | 有，可撤銷 | 有 | 有 | 原生 |
-| Obsidian | 免費 | 有 | MathJax | 有 | 有 | 未記載 | 未記載 | Electron |
-| QLMarkdown | 免費 | 需開啟 | MathJax（需開啟） | 未記載 | 不適用 | 不適用 | 本身即是 | 原生 |
-| Typora | 一次 USD 14.99 | 有 | MathJax | 有，含頁碼 | 未記載 | 未記載 | 未記載 | 原生 |
-| VS Code | 免費 | 有（1.121 起） | KaTeX | 無 | 未記載 | 有 | 未記載 | Electron |
+| App | 價格 | iPhone／iPad | 只讀（不會誤改） | Mermaid | 數學式 | PDF | 自動重新載入 | 命令列開到指定行 | 快速查看 | 架構 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Chrome Markdown Reader | 免費，另有 Pro 訂閱 | 無 | 有 | 有 | KaTeX | 未記載 | 有 | 未記載 | 未記載 | 瀏覽器擴充功能 |
+| ColaMD | 免費（MIT） | 無 | 無，打開就是編輯 | 有 | KaTeX | 有 | 有 | 未記載 | 未記載 | Electron |
+| MacDown 3000 | 免費 | 無 | 未記載，官方稱是編輯器 | 有 | MathJax | 有 | 有 | 未記載 | 有 | 原生 |
+| Marked 3 | 優惠價每月 USD 2.99 起 | 無 | 有，本身就是預覽器 | 有 | MathJax、KaTeX | 有，含頁碼 | 有 | 未記載 | Marked QL，USD 9.99 | 原生 |
+| MarkEdit | 免費 | 無 | 有（Read Only Mode） | 擴充功能 | KaTeX（擴充功能） | Pandoc | 未記載 | 未記載 | 有 | 原生（web view） |
+| MarsDawn | 一次 USD 4.99 | 有，只能讀 | Mac：預覽窗格不能改，原始碼窗格可以改；iPhone／iPad：只能讀 | 有 | KaTeX | 有，手冊與講義版面含頁碼 | 有，可撤銷 | 有 | 有 | 原生 |
+| Obsidian | 免費 | 有，能讀也能寫 | 有，閱讀檢視 | 有 | MathJax | 有 | 有 | 未記載 | 未記載 | Electron |
+| QLMarkdown | 開源（GPL-3.0） | 無 | 有，只在 Finder 預覽 | 需開啟 | MathJax（需開啟） | 未記載 | 不適用 | 不適用 | 本身即是 | 原生 |
+| Typora | 一次 USD 14.99 | 無 | 未記載，官方稱是編輯器 | 有 | MathJax | 有，含頁碼 | 未記載 | 未記載 | 未記載 | 原生 |
+| VS Code | 免費 | 無 | 有，預覽分頁 | 有（1.121 起） | KaTeX | 無 | 未記載 | 有 | 未記載 | Electron |
 
 ## MarsDawn 不適合誰
 
+- 你要的 PDF 得有頁碼，又不想換成手冊或講義版面。MarsDawn 預設的文件版面沒有頁碼；Typora 與 Marked 3 能加。
+- 想在 iPhone 或 iPad 上改檔案。MarsDawn 的 iPhone、iPad 版只能讀；要在手機上寫，Obsidian 可以。
+- 用 Windows 或 Linux。MarsDawn 只有 Mac、iPhone 和 iPad 版；ColaMD 三個平台都有。
 - 你在經營互相連結的個人筆記庫。Obsidian 就是為此打造的。
-- 你從不離開 VS Code。內建預覽免費，VS Code 也正在 Agents 視窗加入實驗性的 Markdown 檢視。
-- 你只想在 Finder 預覽。QLMarkdown 免費。
+- 你只想在 Finder 預覽。QLMarkdown 開源（GPL-3.0）。
 
 ## 常見問題
+
+### Mac 預設能開 .md 嗎？
+
+能打開，但通常是用「文字編輯」，看到的是 `#` 和 `**` 這些記號，不是排好的頁面。換成 Markdown 閱讀器再設成預設 App，之後雙擊就會在那裡打開。做法請看 [Mac 怎麼開 md 檔](/zh-hant/view-markdown-on-mac/)。
 
 ### 哪些免費的 Mac Markdown 檢視器支援 Mermaid？
 
@@ -101,7 +154,7 @@ MarsDawn（`marsdawn open notes.md:120`）與 VS Code（`code -g file:line`）�
 
 ### 哪些是原生 Mac App，不是 Electron？
 
-除了 Obsidian 與 VS Code 都是。MarkEdit 是原生 App，編輯區用 web view。
+Obsidian、VS Code 與 ColaMD 是 Electron，Chrome Markdown Reader 是瀏覽器擴充功能，不是 Mac App；其餘都是原生 Mac App。MarkEdit 是原生 App，編輯區用 web view。
 
 [立刻下載試用](https://apps.apple.com/app/id6812925073)
 
