@@ -17,8 +17,14 @@ public/zh-hant/best-markdown-viewer-mac/index.html and index.md, and fails unles
                   line is gone when drop_line says so);
   and: the held FAQ question (iPhone, waits for #337) and its link are not on the page; the two new tools
   link to their official pages and the Chrome extension's Web Store ID is stated; the eight old tools'
-  paragraphs, bullets and table cells are the ones scripts/best228/data.py has (the MarsDawn price bullet
-  is Aria's new one); every other locale's page does not carry any of this ticket's words.
+  paragraphs, bullets and table cells are the ones scripts/best228/data.py has, apart from the MarsDawn price
+  bullet (Aria's new one) and
+  5 corrections the four old-text facts of CORRECTIONS in copy336/data.py (Marked 3's limited-time price, in its
+                  bullet and its table cell; QLMarkdown's price as 開源 in its bullet and its table cell):
+                  each has its new text on the page, in html and md, and its old text nowhere on the page, and
+                  QLMarkdown's section and row do not say 免費. Aria's own not-for line "QLMarkdown 免費" is
+                  left as she wrote it (verbatim check 1; PR 待決定 R5), so it is the one place that may.
+  Every other locale's page does not carry any of this ticket's words.
 
 Text is compared as visible text (tags stripped, entities decoded, whitespace collapsed) against the copy with
 its Markdown marks removed. Never against the build's own rendering, which would share a mistake the build makes.
@@ -275,21 +281,50 @@ def page_problems(h: str, md: str, text: str, absent_extra=()) -> list:
 
     # the eight old tools stay as best228 has them
     old = best.DATA["zh-hant"]
+    fix_bullet = {c["old"]: c["new"] for c in data.CORRECTIONS if c["where"] == "app bullet"}
+    fix_cell = {c["key"]: c for c in data.CORRECTIONS if c["where"] == "table cell 價格"}
     for app in old["apps"]:
         sec = secs.get(app["name"])
         if sec is None:
             out.append(f"html: old tool {app['name']} lost its section")
             continue
         ts = [vis(m.group(2)) for m in re.finditer(r"<(p|li)\b[^>]*>(.*?)</\1>", sec, re.S)]
-        for t in [vis(app["para"])] + [vis(b) for b in app["bullets"] if not (app["slug"] == "marsdawn" and b.startswith("價格："))]:
+        for t in [vis(app["para"])] + [vis(fix_bullet.get(b, b)) for b in app["bullets"] if not (app["slug"] == "marsdawn" and b.startswith("價格："))]:
             if t not in ts:
                 out.append(f"html: old text of {app['name']} changed: {t[:50]}")
     for row in old["rows"]:
         got = rows.get(row[0])
+        want_cells = [vis(c) for c in row[1:]]
+        if row[0] in fix_cell:
+            want_cells[0] = fix_cell[row[0]]["new"]
         if got is None:
             out.append(f"html: old row {row[0]} lost")
-        elif [c for col, c in zip(head[1:], got) if col not in NEW_COLS] != [vis(c) for c in row[1:]]:
+        elif [c for col, c in zip(head[1:], got) if col not in NEW_COLS] != want_cells:
             out.append(f"html: old cells of {row[0]} changed")
+
+    # 5 corrections of old text: new text in html and md, old text gone, and no 免費 left for QLMarkdown
+    for c in data.CORRECTIONS:
+        if c["where"] == "app bullet":
+            sec = secs.get({"marked": "Marked", "qlmarkdown": "QLMarkdown"}[c["key"]], "")
+            if c["new"] not in [vis(m.group(1)) for m in re.finditer(r"<li\b[^>]*>(.*?)</li>", sec, re.S)]:
+                out.append(f"html: correction {c['id']} ({c['app']}) is not on the page: {c['new'][:50]}")
+            if c["old"] in vis(sec):
+                out.append(f"html: correction {c['id']} ({c['app']}) still has the old text: {c['old'][:50]}")
+            if c["new"] not in md_plain:
+                out.append(f"md: correction {c['id']} ({c['app']}) is not in the twin: {c['new'][:50]}")
+            if c["old"] in md_plain:
+                out.append(f"md: correction {c['id']} ({c['app']}) still has the old text: {c['old'][:50]}")
+        else:
+            cells = rows.get(c["key"])
+            if cells is None or cells[0] != c["new"]:
+                out.append(f"html: correction {c['id']} ({c['app']}) price cell is {cells[0] if cells else None!r}, want {c['new']!r}")
+            if mrows.get(c["key"], [None])[0] != c["new"]:
+                out.append(f"md: correction {c['id']} ({c['app']}) price cell is not {c['new']!r}")
+    ql_sec, ql_row = vis(secs.get("QLMarkdown", "")), rows.get("QLMarkdown", [""])[0]
+    if "免費" in ql_sec or "免費" in ql_row:
+        out.append("html: QLMarkdown's section or price cell still says 免費 (the official page states no price)")
+    if not any(t == data.KEPT_ARIA for _, t in els):
+        out.append(f"html: Aria's line {data.KEPT_ARIA!r} was changed; it stays as she wrote it (R5)")
     faq = re.search(r'<section class="faq">(.*?)</section>', h, re.S)
     faq_h3 = [vis(x) for x in re.findall(r"<h3>(.*?)</h3>", faq.group(1), re.S)] if faq else []
     if faq_h3 != ["Mac 預設能開 .md 嗎？"] + [q for q, _ in old["faq"]]:
@@ -367,6 +402,17 @@ def self_test(root: Path) -> int:
     plant("the ColaMD link is gone", hh=h.replace("https://github.com/marswaveai/ColaMD", "https://example.com"))
     plant("MarsDawn's price is the old one", hh=sub(h, "價格：免費下載，試用 14 天，之後 USD 4.99 一次買斷。", "價格：免費下載，試用 14 天，之後一次 USD 4.99。"))
     plant("the title lost iPhone", hh=sub(h, "Mac、iPhone 只看不改", "Mac 只看不改"))
+    # fifth kind: the old-text corrections
+    plant("C1 old price wording is back (免費下載)", hh=sub(h, "Marked 3 免費試用", "Marked 3 免費下載"))
+    plant("C1 original price is wrong by one digit", hh=sub(h, "每年 USD 49.99", "每年 USD 49.98"))
+    plant("C1 lost its limited-time note (md)", mm=sub(md, "（限時優惠價，原價", "（原價"))
+    plant("C2 table cell is the old one", hh=sub(h, "<td data-col=\"price\">優惠價每月 USD 2.99 起</td>", "<td data-col=\"price\">每月 USD 2.99 起</td>"))
+    plant("C2 table cell changed (md)", mm=sub(md, "| 優惠價每月 USD 2.99 起 |", "| 優惠價每月 USD 2.98 起 |"))
+    plant("C3 bullet says 免費 again", hh=sub(h, "價格：開源（GPL-3.0）。", "價格：免費（GPL-3.0）。"))
+    plant("C3 bullet says 免費 again (md)", mm=sub(md, "價格：開源（GPL-3.0）。", "價格：免費（GPL-3.0）。"))
+    plant("C4 table cell says 免費 again", hh=sub(h, "<td data-col=\"price\">開源（GPL-3.0）</td>", "<td data-col=\"price\">免費</td>"))
+    plant("C4 table cell changed (md)", mm=sub(md, "| QLMarkdown | 開源（GPL-3.0） |", "| QLMarkdown | 開源 |"))
+    plant("Aria's QLMarkdown not-for line was edited", hh=sub(h, "你只想在 Finder 預覽。QLMarkdown 免費。", "你只想在 Finder 預覽。QLMarkdown 開源。"))
     # the pin: a changed approved.md text is the pin's problem, not the page's
     if not pin_problems(text + "x\n"):
         print("self-test: a changed approved.md was NOT caught by the pin")
@@ -393,7 +439,7 @@ def main() -> int:
         return 1
     print("ok: #336 copy on /zh-hant/best-markdown-viewer-mac/ (html and md): verbatim lines, filled placeholders, "
           f"{len(data.CELLS_DIFFER)} table cells that differ from Aria's, {len(data.REMOVED)} removed sentences, "
-          "old tools unchanged, held iPhone FAQ absent")
+          f"{len(data.CORRECTIONS)} old-text corrections (kind 5), other old text unchanged, held iPhone FAQ absent")
     return 0
 
 

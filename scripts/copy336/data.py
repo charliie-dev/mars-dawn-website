@@ -3,13 +3,17 @@
 Hand-kept, unlike scripts/best228/data.py (that one is generated and `ingest.py --check` fails on a hand
 edit, so this module overrides it for zh-Hant only: merge() below). The words are Aria's, pinned in
 approved.md (comment 6560244450 on #336, see sources.json), apart from four kinds of difference, each
-listed here so scripts/check_copy336.py can hold the rendered page to them:
+listed here so scripts/check_copy336.py can hold the rendered page to them, and a fifth kind that is about
+the old text, not Aria's:
 
   FILLS    a {{placeholder}} in Aria's text, filled from an official page on CHECK_DATE;
   CELLS    a table cell whose value is not the one Aria pre-filled, because an official page says otherwise;
   REMOVED  a sentence of Aria's that conflicts with what is shipped or that no official page backs: it is
            left out and not rewritten (the PR lists it under 待決定);
-  ADDED    text the ticket asks for that Aria's copy does not have: the source links of the two new tools.
+  ADDED    text the ticket asks for that Aria's copy does not have: the source links of the two new tools;
+  CORRECTIONS  (the fifth kind) a fact in the OLD text of two of the eight old tools that the official page no
+           longer backs on CHECK_DATE (Marked 3's price is a limited-time one; QLMarkdown's page states no
+           price). Paula decided both on #336; they are not Aria's words and not new copy.
 
 Everything that says what MarsDawn does is Mac 1.2.2 and iOS 1.0.2 (shipped), nothing later.
 Other locales are not touched: merge() is called for zh-hant only (build_pages.apply_best228)."""
@@ -125,6 +129,32 @@ FAQ_FIRST = [
 
 MARSDAWN_PRICE = "價格：免費下載，試用 14 天，之後 USD 4.99 一次買斷。同一個 Apple 帳號，一次購買，Mac、iPhone、iPad 都能用。"
 
+# --- fifth kind: corrections to old text ------------------------------------------------------------------------
+# Each is a fixed old string that best228/data.py has for zh-hant and its replacement. merge() applies them (and
+# fails if the old string is not there); scripts/check_copy336.py holds the built page to the new string and
+# fails if the old one is still on it. `where` says which part of the old data it is in.
+CORRECTIONS = [
+    {"id": "C1", "app": "Marked 3", "where": "app bullet", "key": "marked",
+     "old": "價格：Marked 3 免費下載，之後每月 USD 2.99、每年 USD 29.99 或終身 USD 69.99。Marked 2 官網 USD 14.99，Mac App Store USD 13.99。",
+     "new": ("價格：Marked 3 免費試用，之後每月 USD 2.99、每年 USD 29.99 或終身 USD 69.99"
+             "（限時優惠價，原價每月 USD 4.99、每年 USD 49.99、終身 USD 89.99）。"
+             "Marked 2 官網 USD 14.99，Mac App Store USD 13.99。"),
+     "source": "https://markedapp.com/pricing/", "date": CHECK_DATE},
+    {"id": "C2", "app": "Marked 3", "where": "table cell 價格", "key": "Marked 3",
+     "old": "每月 USD 2.99 起", "new": "優惠價每月 USD 2.99 起",
+     "source": "https://markedapp.com/pricing/", "date": CHECK_DATE},
+    {"id": "C3", "app": "QLMarkdown", "where": "app bullet", "key": "qlmarkdown",
+     "old": "價格：免費（GPL-3.0）。", "new": "價格：開源（GPL-3.0）。",
+     "source": "https://github.com/sbarex/QLMarkdown", "date": CHECK_DATE},
+    {"id": "C4", "app": "QLMarkdown", "where": "table cell 價格", "key": "QLMarkdown",
+     "old": "免費", "new": "開源（GPL-3.0）",
+     "source": "https://github.com/sbarex/QLMarkdown", "date": CHECK_DATE},
+]
+
+# Aria's line that now disagrees with C3/C4 and is left as she wrote it (PR 待決定 R5): the not-for list's last
+# bullet says "QLMarkdown 免費" while the corrected bullet and table cell do not.
+KEPT_ARIA = "你只想在 Finder 預覽。QLMarkdown 免費。"
+
 # --- what differs from approved.md (read by scripts/check_copy336.py) ----------------------------------------
 
 # {{placeholder}} in approved.md -> the text that stands in its place, and why it is true (source, CHECK_DATE).
@@ -163,6 +193,11 @@ def merge(base: dict) -> dict:
     d["title"], d["h1"], d["description"] = TITLE, H1, DESCRIPTION
     d["intro_html"], d["scenarios_html"] = INTRO_HTML, SCENARIOS_HTML
     apps = [dict(a) for a in base["apps"]]
+    for c in CORRECTIONS:
+        if c["where"] == "app bullet":
+            app = next(a for a in apps if a["slug"] == c["key"])
+            assert c["old"] in app["bullets"], (c["id"], app["bullets"])
+            app["bullets"] = [c["new"] if b == c["old"] else b for b in app["bullets"]]
     for app in apps:
         if app["slug"] == "marsdawn":
             bullets = list(app["bullets"])
@@ -176,7 +211,12 @@ def merge(base: dict) -> dict:
     rows = []
     for row in base["rows"]:
         extra = OLD_ROW_CELLS[row[0]]
-        rows.append([row[0], row[1], *extra, *row[2:]])
+        price = row[1]
+        for c in CORRECTIONS:
+            if c["where"] == "table cell 價格" and c["key"] == row[0]:
+                assert price == c["old"], (c["id"], price)
+                price = c["new"]
+        rows.append([row[0], price, *extra, *row[2:]])
     new_rows = [[name, *cells] for name, cells in NEW_ROWS.items()]
     d["rows"] = new_rows + rows
     d["notfor"] = NOTFOR
