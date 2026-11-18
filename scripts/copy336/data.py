@@ -11,7 +11,7 @@ the old text, not Aria's:
   REMOVED  a sentence of Aria's that conflicts with what is shipped or that no official page backs: it is
            left out and not rewritten (the PR lists it under 待決定);
   ADDED    text the ticket asks for that Aria's copy does not have: the source links of the two new tools;
-  CORRECTIONS  (the fifth kind) a fact in the OLD text of two of the eight old tools that the official page no
+  CORRECTIONS  (the fifth kind; C5 is a FAQ answer) a fact in the OLD text of two of the eight old tools that the official page no
            longer backs on CHECK_DATE (Marked 3's price is a limited-time one; QLMarkdown's page states no
            price). Paula decided both on #336; they are not Aria's words and not new copy.
 
@@ -94,10 +94,20 @@ NEW_APPS = [
 # cells stay exactly as best228/data.py has them.
 NEW_COLS = ("iphone-ipad", "read-only")
 NEW_HEAD = ("iPhone／iPad", "只讀（不會誤改）")
+# MarkEdit's 只讀 cell. Aria pre-filled 無, the first pass of this PR wrote 未記載，官方稱是編輯器; the source code says
+# otherwise (Dev B, P2-1): v1.37.1 (commit d42ec3be6c4354b85d894b68f8c1571bdbfa6026) has a "Read Only Mode" menu item that
+# turns most edit actions off. Paula set the string. Checked on CHECK_DATE against that tag and main.
+_MARKEDIT_TAG = "https://github.com/MarkEdit-app/MarkEdit/blob/d42ec3be6c4354b85d894b68f8c1571bdbfa6026/"
+MARKEDIT_READ_ONLY = "有（Read Only Mode）"
+MARKEDIT_READ_ONLY_SOURCES = [
+    _MARKEDIT_TAG + "MarkEditMac/Base.lproj/Main.storyboard#L763",  # menu item "Read Only Mode" -> toggleReadOnlyMode:
+    _MARKEDIT_TAG + "MarkEditMac/Sources/Editor/Controllers/EditorViewController%2BMenu.swift#L85-L101",  # edit actions off when isReadOnlyMode
+    _MARKEDIT_TAG + "MarkEditMac/mul.lproj/Main.xcstrings",  # zh-Hant 只讀模式
+]
 OLD_ROW_CELLS = {
     "MacDown 3000": ("無", "未記載，官方稱是編輯器"),
     "Marked 3": ("無", "有，本身就是預覽器"),
-    "MarkEdit": ("無", "未記載，官方稱是編輯器"),
+    "MarkEdit": ("無", MARKEDIT_READ_ONLY),
     "MarsDawn": ("有，只能讀", "Mac：預覽窗格不能改，原始碼窗格可以改；iPhone／iPad：只能讀"),
     "Obsidian": ("有，能讀也能寫", "有，閱讀檢視"),
     "QLMarkdown": ("無", "有，只在 Finder 預覽"),
@@ -149,6 +159,14 @@ CORRECTIONS = [
     {"id": "C4", "app": "QLMarkdown", "where": "table cell 價格", "key": "QLMarkdown",
      "old": "免費", "new": "開源（GPL-3.0）",
      "source": "https://github.com/sbarex/QLMarkdown", "date": CHECK_DATE},
+    # C5: the old FAQ answer was true of eight tools; this page now has ColaMD (Electron) and a Chrome extension.
+    # Every claim is a cell of the 架構 column (Obsidian, VS Code, ColaMD: Electron; Chrome Markdown Reader: 瀏覽器擴充功能;
+    # MarkEdit: 原生（web view）; the rest: 原生). ColaMD's Electron: its GitHub README and package.json.
+    {"id": "C5", "app": "FAQ", "where": "faq answer", "key": "哪些是原生 Mac App，不是 Electron？",
+     "old": "除了 Obsidian 與 VS Code 都是。MarkEdit 是原生 App，編輯區用 web view。",
+     "new": ("Obsidian、VS Code 與 ColaMD 是 Electron，Chrome 的 Markdown Reader 是瀏覽器擴充功能，不是 Mac App；"
+             "其餘都是原生 Mac App。MarkEdit 是原生 App，編輯區用 web view。"),
+     "source": _COLA_REPO, "date": CHECK_DATE},
 ]
 
 # Aria's line that now disagrees with C3/C4 and is left as she wrote it (PR 待決定 R5): the not-for list's last
@@ -169,7 +187,7 @@ FILLS = {
 CELLS_DIFFER = [
     ("Chrome Markdown Reader", "iPhone／iPad", "無（iOS 版 Chrome 不支援擴充功能）", "無"),
     ("MacDown 3000", "只讀（不會誤改）", "無，原始碼可以直接改", "未記載，官方稱是編輯器"),
-    ("MarkEdit", "只讀（不會誤改）", "無", "未記載，官方稱是編輯器"),
+    ("MarkEdit", "只讀（不會誤改）", "無", MARKEDIT_READ_ONLY),
     ("Typora", "只讀（不會誤改）", "無，打開就是編輯", "未記載，官方稱是編輯器"),
 ]
 
@@ -220,5 +238,11 @@ def merge(base: dict) -> dict:
     new_rows = [[name, *cells] for name, cells in NEW_ROWS.items()]
     d["rows"] = new_rows + rows
     d["notfor"] = NOTFOR
-    d["faq"] = FAQ_FIRST + [list(q) for q in base["faq"]]
+    faq = [list(q) for q in base["faq"]]
+    for c in CORRECTIONS:
+        if c["where"] == "faq answer":
+            hit = [q for q in faq if q[0] == c["key"]]
+            assert len(hit) == 1 and hit[0][1] == c["old"], (c["id"], hit)
+            hit[0][1] = c["new"]
+    d["faq"] = FAQ_FIRST + faq
     return d

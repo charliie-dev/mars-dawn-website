@@ -19,11 +19,14 @@ public/zh-hant/best-markdown-viewer-mac/index.html and index.md, and fails unles
   link to their official pages and the Chrome extension's Web Store ID is stated; the eight old tools'
   paragraphs, bullets and table cells are the ones scripts/best228/data.py has, apart from the MarsDawn price
   bullet (Aria's new one) and
-  5 corrections the four old-text facts of CORRECTIONS in copy336/data.py (Marked 3's limited-time price, in its
-                  bullet and its table cell; QLMarkdown's price as 開源 in its bullet and its table cell):
-                  each has its new text on the page, in html and md, and its old text nowhere on the page, and
+  5 corrections the old-text facts of CORRECTIONS in copy336/data.py (Marked 3's limited-time price, in its
+                  bullet and its table cell; QLMarkdown's price as 開源 in its bullet and its table cell; C5, the
+                  FAQ answer about native Mac apps, which also has to be in the page's FAQPage JSON-LD and in
+                  llms-full.txt): each has its new text on the page, in html and md, and its old text nowhere, and
                   QLMarkdown's section and row do not say 免費. Aria's own not-for line "QLMarkdown 免費" is
                   left as she wrote it (verbatim check 1; PR 待決定 R5), so it is the one place that may.
+  MarkEdit's 只讀 cell is data.MARKEDIT_READ_ONLY (cell check 3, in html and md), not Aria's 無 and not the first
+  pass's 未記載，官方稱是編輯器 (an official-repo fact, see data.MARKEDIT_READ_ONLY_SOURCES).
   Every other locale's page does not carry any of this ticket's words.
 
 Text is compared as visible text (tags stripped, entities decoded, whitespace collapsed) against the copy with
@@ -182,7 +185,30 @@ def sections(main: str) -> dict:
     return out
 
 
-def page_problems(h: str, md: str, text: str, absent_extra=()) -> list:
+def jsonld_answers(h: str) -> list:
+    """(question, answer text) of every FAQPage in the page's JSON-LD."""
+    out = []
+    for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', h, re.S):
+        try:
+            blob = json.loads(m.group(1))
+        except ValueError:
+            continue
+        for node in (blob if isinstance(blob, list) else [blob]):
+            if isinstance(node, dict) and node.get("@type") == "FAQPage":
+                out += [(q.get("name", ""), vis(q.get("acceptedAnswer", {}).get("text", ""))) for q in node.get("mainEntity", [])]
+    return out
+
+
+def zh_hant_llms(llms: str) -> str:
+    """The zh-hant best page's part of llms-full.txt: from its "Source:" line to the next page's "---" rule."""
+    i = llms.find("\nSource: https://marsdawn.southern-light.dev/" + PAGE + "/\n")
+    if i < 0:
+        return ""
+    j = llms.find("\n---\n", i)
+    return llms[i:j if j > 0 else len(llms)]
+
+
+def page_problems(h: str, md: str, text: str, absent_extra=(), llms: str = "") -> list:
     out = []
     main = main_of(h)
     meta = aria_meta(text)
@@ -302,6 +328,7 @@ def page_problems(h: str, md: str, text: str, absent_extra=()) -> list:
         elif [c for col, c in zip(head[1:], got) if col not in NEW_COLS] != want_cells:
             out.append(f"html: old cells of {row[0]} changed")
 
+    faq = re.search(r'<section class="faq">(.*?)</section>', h, re.S)
     # 5 corrections of old text: new text in html and md, old text gone, and no 免費 left for QLMarkdown
     for c in data.CORRECTIONS:
         if c["where"] == "app bullet":
@@ -314,6 +341,19 @@ def page_problems(h: str, md: str, text: str, absent_extra=()) -> list:
                 out.append(f"md: correction {c['id']} ({c['app']}) is not in the twin: {c['new'][:50]}")
             if c["old"] in md_plain:
                 out.append(f"md: correction {c['id']} ({c['app']}) still has the old text: {c['old'][:50]}")
+        elif c["where"] == "faq answer":
+            # html FAQ section, the FAQPage JSON-LD, the md twin and llms-full.txt: new text in each, old text in none
+            html_ans = [vis(m.group(2)) for m in re.finditer(r"<h3>(.*?)</h3>\s*<p>(.*?)</p>", faq.group(1), re.S) if vis(m.group(1)) == c["key"]] if faq else []
+            ld_ans = [a for q, a in jsonld_answers(h) if q == c["key"]]
+            zl = ws(zh_hant_llms(llms))
+            for where, ok, anywhere in (("html", c["new"] in html_ans, c["old"] in vis(main)),
+                                        ("JSON-LD", c["new"] in ld_ans, any(c["old"] in a for _, a in jsonld_answers(h)) or c["old"] in h),
+                                        ("md", c["new"] in md_plain, c["old"] in md_plain),
+                                        ("llms-full.txt", c["new"] in zl, c["old"] in ws(llms))):
+                if not ok:
+                    out.append(f"{where}: correction {c['id']} ({c['key']}) answer is not on the page: {c['new'][:50]}")
+                if anywhere:
+                    out.append(f"{where}: correction {c['id']} ({c['key']}) still has the old answer: {c['old'][:50]}")
         else:
             cells = rows.get(c["key"])
             if cells is None or cells[0] != c["new"]:
@@ -325,7 +365,6 @@ def page_problems(h: str, md: str, text: str, absent_extra=()) -> list:
         out.append("html: QLMarkdown's section or price cell still says 免費 (the official page states no price)")
     if not any(t == data.KEPT_ARIA for _, t in els):
         out.append(f"html: Aria's line {data.KEPT_ARIA!r} was changed; it stays as she wrote it (R5)")
-    faq = re.search(r'<section class="faq">(.*?)</section>', h, re.S)
     faq_h3 = [vis(x) for x in re.findall(r"<h3>(.*?)</h3>", faq.group(1), re.S)] if faq else []
     if faq_h3 != ["Mac 預設能開 .md 嗎？"] + [q for q, _ in old["faq"]]:
         out.append(f"html: FAQ questions are {faq_h3}")
@@ -347,7 +386,11 @@ def site_problems(root: Path) -> list:
     page = root / PAGE
     if not (page / "index.html").is_file() or not (page / "index.md").is_file():
         return out + [f"{PAGE}: index.html or index.md is not built"]
-    out += page_problems((page / "index.html").read_text(encoding="utf-8"), (page / "index.md").read_text(encoding="utf-8"), text)
+    llms = root / "llms-full.txt"
+    if not llms.is_file():
+        out.append("llms-full.txt: missing")
+    out += page_problems((page / "index.html").read_text(encoding="utf-8"), (page / "index.md").read_text(encoding="utf-8"), text,
+                         llms=llms.read_text(encoding="utf-8") if llms.is_file() else "")
     for loc in OTHER_LOCALES:
         f = root / loc / "best-markdown-viewer-mac" / "index.html"
         if not f.is_file():
@@ -367,15 +410,16 @@ def self_test(root: Path) -> int:
     page = root / PAGE
     h = (page / "index.html").read_text(encoding="utf-8")
     md = (page / "index.md").read_text(encoding="utf-8")
-    if page_problems(h, md, text):
+    llms = (root / "llms-full.txt").read_text(encoding="utf-8")
+    if page_problems(h, md, text, llms=llms):
         print("self-test: the built page already has problems; plants prove little")
         return 1
     caught = missed = 0
 
-    def plant(what, hh=None, mm=None, tt=None, extra=()):
+    def plant(what, hh=None, mm=None, tt=None, extra=(), ll=None):
         nonlocal caught, missed
         if page_problems(hh if hh is not None else h, mm if mm is not None else md,
-                         tt if tt is not None else text, extra):
+                         tt if tt is not None else text, extra, ll if ll is not None else llms):
             caught += 1
         else:
             print(f"self-test: {what} was NOT caught")
@@ -413,6 +457,32 @@ def self_test(root: Path) -> int:
     plant("C4 table cell says 免費 again", hh=sub(h, "<td data-col=\"price\">開源（GPL-3.0）</td>", "<td data-col=\"price\">免費</td>"))
     plant("C4 table cell changed (md)", mm=sub(md, "| QLMarkdown | 開源（GPL-3.0） |", "| QLMarkdown | 開源 |"))
     plant("Aria's QLMarkdown not-for line was edited", hh=sub(h, "你只想在 Finder 預覽。QLMarkdown 免費。", "你只想在 Finder 預覽。QLMarkdown 開源。"))
+    # MarkEdit's 只讀 cell (P2-1)
+    ro, old_ro = data.MARKEDIT_READ_ONLY, "未記載，官方稱是編輯器"
+    me = "| MarkEdit | 免費 | 無 | " + ro + " |"
+    plant("MarkEdit 只讀 cell is the first pass's (html)", hh=sub(h, f'<td data-col="read-only">{ro}</td>', f'<td data-col="read-only">{old_ro}</td>'))
+    plant("MarkEdit 只讀 cell is the first pass's (md)", mm=sub(md, me, me.replace(ro, old_ro)))
+    plant("MarkEdit 只讀 cell is Aria's 無 (html)", hh=sub(h, f'<td data-col="read-only">{ro}</td>', '<td data-col="read-only">無</td>'))
+    plant("MarkEdit 只讀 cell is another string (html)", hh=sub(h, f'<td data-col="read-only">{ro}</td>', '<td data-col="read-only">有，唯讀模式</td>'))
+    plant("MarkEdit 只讀 cell is another string (md)", mm=sub(md, me, me.replace(ro, "有")))
+    # C5: the native-app FAQ answer, in html, JSON-LD, md and llms-full.txt
+    c5 = next(c for c in data.CORRECTIONS if c["id"] == "C5")
+    old5, new5 = c5["old"], c5["new"]
+
+    def in_jsonld(page, old, new):
+        """Swap text inside the FAQPage JSON-LD only."""
+        m = re.search(r'<script type="application/ld\+json">(?:(?!</script>).)*?' + re.escape(old) + r'.*?</script>', page, re.S)
+        assert m, f"self-test: {old[:30]!r} is not in a JSON-LD block"
+        return page[:m.start()] + m.group(0).replace(old, new, 1) + page[m.end():]
+
+    plant("C5 old answer is back (html only)", hh=sub(h, "<p>" + new5 + "</p>", "<p>" + old5 + "</p>"))
+    plant("C5 old answer is back (JSON-LD only)", hh=in_jsonld(h, new5, old5))
+    plant("C5 old answer is back (md)", mm=sub(md, new5, old5))
+    plant("C5 old answer is back (llms-full.txt)", ll=sub(llms, new5, old5))
+    plant("C5 new answer is missing (html only)", hh=sub(h, "<p>" + new5 + "</p>", "<p>x</p>"))
+    plant("C5 new answer is missing (JSON-LD only)", hh=in_jsonld(h, new5, "x"))
+    plant("C5 new answer is missing (md)", mm=sub(md, new5, "x"))
+    plant("C5 new answer is missing (llms-full.txt)", ll=sub(llms, new5, "x"))
     # the pin: a changed approved.md text is the pin's problem, not the page's
     if not pin_problems(text + "x\n"):
         print("self-test: a changed approved.md was NOT caught by the pin")
