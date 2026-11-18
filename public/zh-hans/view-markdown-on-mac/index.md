@@ -62,6 +62,7 @@ open notes.pdf
 
 - 命令行工具的所有选项：[命令行工具](/zh-hans/cli/)。
 - MarsDawn 做不到的事：[这份清单](/zh-hans/limits/)。
+- 放在 HackMD 的笔记：[从 HackMD 搬到 Mac](/zh-hans/from-hackmd/)。
 - Markdown 文件里的图表：[在 Mac 上预览 Mermaid](/zh-hans/mermaid-preview-mac/)。
 
 ## 其他页面

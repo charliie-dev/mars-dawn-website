@@ -852,6 +852,7 @@ Yes, that is what MarsDawn is built for. Open the file and read the rendered pag
 - Every option of the command-line tool: [Command Line](/cli/).
 - What MarsDawn doesn't do: [the list](/limits/).
 - Reading Markdown in VS Code, a browser or Claude Desktop instead: [how they compare](/vs/markdown-preview-tools/).
+- Notes you keep on HackMD: [Move from HackMD to your Mac](/from-hackmd/).
 - Diagrams in a Markdown file: [Mermaid preview on Mac](/mermaid-preview-mac/).
 
 ---
@@ -4583,6 +4584,7 @@ open notes.pdf
 - 命令列工具的所有選項：[命令列工具](/zh-hant/cli/)。
 - MarsDawn 做不到的事：[這份清單](/zh-hant/limits/)。
 - 改用 VS Code、瀏覽器或 Claude Desktop 看 Markdown：[比較一下](/zh-hant/vs/markdown-preview-tools/)。
+- 放在 HackMD 的筆記：[從 HackMD 搬到 Mac](/zh-hant/from-hackmd/)。
 - Markdown 檔裡的圖表：[在 Mac 上預覽 Mermaid](/zh-hant/mermaid-preview-mac/)。
 
 ---
@@ -8352,6 +8354,7 @@ open notes.pdf
 
 - 命令行工具的所有选项：[命令行工具](/zh-hans/cli/)。
 - MarsDawn 做不到的事：[这份清单](/zh-hans/limits/)。
+- 放在 HackMD 的笔记：[从 HackMD 搬到 Mac](/zh-hans/from-hackmd/)。
 - Markdown 文件里的图表：[在 Mac 上预览 Mermaid](/zh-hans/mermaid-preview-mac/)。
 
 ---
@@ -12114,6 +12117,7 @@ open notes.pdf
 
 - コマンドラインツールのすべてのオプション：[コマンドライン](/ja/cli/)。
 - MarsDawn ができないこと：[一覧はこちら](/ja/limits/)。
+- HackMD に保存しているノート：[HackMD から Mac へ](/ja/from-hackmd/)。
 - Markdown ファイルの中の図：[Mac で Mermaid をプレビューする](/ja/mermaid-preview-mac/)。
 
 ---
@@ -15876,6 +15880,7 @@ Ja, dafür ist MarsDawn gebaut. Öffne die Datei und lies die gerenderte Seite n
 - Alle Optionen des Befehlszeilenwerkzeugs: [Befehlszeile](/de/cli/).
 - Was MarsDawn nicht kann: [die Liste](/de/limits/).
 - Markdown stattdessen in VS Code, im Browser oder in Claude Desktop lesen: [der Vergleich](/de/vs/markdown-preview-tools/).
+- Notizen, die auf HackMD liegen: [Von HackMD auf den Mac](/de/from-hackmd/).
 - Diagramme in einer Markdown-Datei: [Mermaid-Vorschau auf dem Mac](/de/mermaid-preview-mac/).
 
 ---
@@ -19578,6 +19583,7 @@ Oui, c’est pour cela que MarsDawn est conçu. Ouvrez le fichier et lisez la pa
 - Toutes les options de l’outil en ligne de commande : [Ligne de commande](/fr/cli/).
 - Ce que MarsDawn ne fait pas : [la liste](/fr/limits/).
 - Lire du Markdown plutôt dans VS Code, un navigateur ou Claude Desktop : [la comparaison](/fr/vs/markdown-preview-tools/).
+- Les notes que vous gardez sur HackMD : [Passer de HackMD à votre Mac](/fr/from-hackmd/).
 - Les diagrammes dans un fichier Markdown : [Aperçu Mermaid sur Mac](/fr/mermaid-preview-mac/).
 
 ---
@@ -23280,6 +23286,7 @@ Sí, para eso está hecho MarsDawn. Abre el archivo y lee la página renderizada
 - Todas las opciones de la herramienta de línea de comandos: [Línea de comandos](/es/cli/).
 - Lo que MarsDawn no hace: [la lista](/es/limits/).
 - Leer Markdown en VS Code, un navegador o Claude Desktop: [cómo se comparan](/es/vs/markdown-preview-tools/).
+- Notas que guardas en HackMD: [Pasar de HackMD a tu Mac](/es/from-hackmd/).
 - Diagramas en un archivo Markdown: [Vista previa de Mermaid en Mac](/es/mermaid-preview-mac/).
 
 ---
@@ -26982,6 +26989,7 @@ open notes.pdf
 - 명령줄 도구의 모든 옵션: [명령줄](/ko/cli/).
 - MarsDawn이 하지 않는 일: [목록](/ko/limits/).
 - VS Code, 브라우저, Claude Desktop에서 Markdown을 읽는 경우: [비교해 보기](/ko/vs/markdown-preview-tools/).
+- HackMD에 보관 중인 노트: [HackMD에서 Mac으로](/ko/from-hackmd/).
 - Markdown 파일 속 다이어그램: [Mac에서 Mermaid 미리보기](/ko/mermaid-preview-mac/).
 
 ---

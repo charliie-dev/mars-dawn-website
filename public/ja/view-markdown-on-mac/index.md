@@ -62,6 +62,7 @@ open notes.pdf
 
 - コマンドラインツールのすべてのオプション：[コマンドライン](/ja/cli/)。
 - MarsDawn ができないこと：[一覧はこちら](/ja/limits/)。
+- HackMD に保存しているノート：[HackMD から Mac へ](/ja/from-hackmd/)。
 - Markdown ファイルの中の図：[Mac で Mermaid をプレビューする](/ja/mermaid-preview-mac/)。
 
 ## その他

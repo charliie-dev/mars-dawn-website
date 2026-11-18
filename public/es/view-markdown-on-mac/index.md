@@ -63,6 +63,7 @@ Sí, para eso está hecho MarsDawn. Abre el archivo y lee la página renderizada
 - Todas las opciones de la herramienta de línea de comandos: [Línea de comandos](/es/cli/).
 - Lo que MarsDawn no hace: [la lista](/es/limits/).
 - Leer Markdown en VS Code, un navegador o Claude Desktop: [cómo se comparan](/es/vs/markdown-preview-tools/).
+- Notas que guardas en HackMD: [Pasar de HackMD a tu Mac](/es/from-hackmd/).
 - Diagramas en un archivo Markdown: [Vista previa de Mermaid en Mac](/es/mermaid-preview-mac/).
 
 ## Más

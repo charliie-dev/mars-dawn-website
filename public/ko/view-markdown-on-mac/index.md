@@ -63,6 +63,7 @@ open notes.pdf
 - 명령줄 도구의 모든 옵션: [명령줄](/ko/cli/).
 - MarsDawn이 하지 않는 일: [목록](/ko/limits/).
 - VS Code, 브라우저, Claude Desktop에서 Markdown을 읽는 경우: [비교해 보기](/ko/vs/markdown-preview-tools/).
+- HackMD에 보관 중인 노트: [HackMD에서 Mac으로](/ko/from-hackmd/).
 - Markdown 파일 속 다이어그램: [Mac에서 Mermaid 미리보기](/ko/mermaid-preview-mac/).
 
 ## 더 보기

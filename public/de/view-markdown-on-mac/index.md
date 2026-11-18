@@ -63,6 +63,7 @@ Ja, dafür ist MarsDawn gebaut. Öffne die Datei und lies die gerenderte Seite n
 - Alle Optionen des Befehlszeilenwerkzeugs: [Befehlszeile](/de/cli/).
 - Was MarsDawn nicht kann: [die Liste](/de/limits/).
 - Markdown stattdessen in VS Code, im Browser oder in Claude Desktop lesen: [der Vergleich](/de/vs/markdown-preview-tools/).
+- Notizen, die auf HackMD liegen: [Von HackMD auf den Mac](/de/from-hackmd/).
 - Diagramme in einer Markdown-Datei: [Mermaid-Vorschau auf dem Mac](/de/mermaid-preview-mac/).
 
 ## Mehr

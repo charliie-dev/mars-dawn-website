@@ -63,6 +63,7 @@ Oui, c’est pour cela que MarsDawn est conçu. Ouvrez le fichier et lisez la pa
 - Toutes les options de l’outil en ligne de commande : [Ligne de commande](/fr/cli/).
 - Ce que MarsDawn ne fait pas : [la liste](/fr/limits/).
 - Lire du Markdown plutôt dans VS Code, un navigateur ou Claude Desktop : [la comparaison](/fr/vs/markdown-preview-tools/).
+- Les notes que vous gardez sur HackMD : [Passer de HackMD à votre Mac](/fr/from-hackmd/).
 - Les diagrammes dans un fichier Markdown : [Aperçu Mermaid sur Mac](/fr/mermaid-preview-mac/).
 
 ## Plus

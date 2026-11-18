@@ -63,6 +63,7 @@ open notes.pdf
 - 命令列工具的所有選項：[命令列工具](/zh-hant/cli/)。
 - MarsDawn 做不到的事：[這份清單](/zh-hant/limits/)。
 - 改用 VS Code、瀏覽器或 Claude Desktop 看 Markdown：[比較一下](/zh-hant/vs/markdown-preview-tools/)。
+- 放在 HackMD 的筆記：[從 HackMD 搬到 Mac](/zh-hant/from-hackmd/)。
 - Markdown 檔裡的圖表：[在 Mac 上預覽 Mermaid](/zh-hant/mermaid-preview-mac/)。
 
 ## 其他頁面

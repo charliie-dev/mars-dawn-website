@@ -63,6 +63,7 @@ Yes, that is what MarsDawn is built for. Open the file and read the rendered pag
 - Every option of the command-line tool: [Command Line](/cli/).
 - What MarsDawn doesn't do: [the list](/limits/).
 - Reading Markdown in VS Code, a browser or Claude Desktop instead: [how they compare](/vs/markdown-preview-tools/).
+- Notes you keep on HackMD: [Move from HackMD to your Mac](/from-hackmd/).
 - Diagrams in a Markdown file: [Mermaid preview on Mac](/mermaid-preview-mac/).
 
 ## More

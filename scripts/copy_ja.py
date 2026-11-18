@@ -326,7 +326,8 @@ OPEN_MD = {'title': 'Mac で .md ファイルを開く方法：ダブルクリ�
                 'href="/ja/markdown-to-pdf/">Markdown から PDF へ</a>にあります。',
  'next_h2': '次に',
  'next_items_html': ['コマンドラインツールのすべてのオプション：<a href="/ja/cli/">コマンドライン</a>。',
-                     'MarsDawn ができないこと：<a href="/ja/limits/">一覧はこちら</a>。']}
+                     'MarsDawn ができないこと：<a href="/ja/limits/">一覧はこちら</a>。',
+                     'HackMD に保存しているノート：<a href="/ja/from-hackmd/">HackMD から Mac へ</a>。']}
 
 MERMAID = {'title': 'Mac で Mermaid をプレビュー、Markdown の隣で · MarsDawn',
  'description': 'Mac で Mermaid の図を Markdown の隣に描画：リアルタイムプレビュー、クイックルック、PDF 書き出し。図に誤りがあると、エラーとその行が表示されます。',

@@ -4515,7 +4515,8 @@ OPEN_MD_KEPT = {'en': {'opening_html': 'A <code>.md</code> file is plain text. T
         'next_items_html': ['Every option of the command-line tool: <a href="/cli/">Command Line</a>.',
                             'What MarsDawn doesn\'t do: <a href="/limits/">the list</a>.',
                             'Reading Markdown in VS Code, a browser or Claude Desktop instead: <a '
-                            'href="/vs/markdown-preview-tools/">how they compare</a>.']},
+                            'href="/vs/markdown-preview-tools/">how they compare</a>.',
+                            'Notes you keep on HackMD: <a href="/from-hackmd/">Move from HackMD to your Mac</a>.']},
  'zh-hant': {'opening_html': '<code>.md</code> 檔案是純文字。標題、粗體、表格和圖表，都是用記號寫成的：<code>#</code> '
                              '代表標題，<code>**</code> 包住粗體，直線符號畫出表格，<code>mermaid</code> '
                              '程式碼區塊則是一張圖。用純文字編輯器打開，看到的就是這些記號。想照作者的意思讀到排好的頁面，就需要有東西把它排版出來。',
@@ -4541,7 +4542,8 @@ OPEN_MD_KEPT = {'en': {'opening_html': 'A <code>.md</code> file is plain text. T
              'next_items_html': ['命令列工具的所有選項：<a href="/zh-hant/cli/">命令列工具</a>。',
                                  'MarsDawn 做不到的事：<a href="/zh-hant/limits/">這份清單</a>。',
                                  '改用 VS Code、瀏覽器或 Claude Desktop 看 Markdown：<a '
-                                 'href="/zh-hant/vs/markdown-preview-tools/">比較一下</a>。']}}
+                                 'href="/zh-hant/vs/markdown-preview-tools/">比較一下</a>。',
+                                 '放在 HackMD 的筆記：<a href="/zh-hant/from-hackmd/">從 HackMD 搬到 Mac</a>。']}}
 OPEN_MD = {loc: {**approved_copy.OPEN_MD[loc], **OPEN_MD_KEPT[loc]} for loc in OPEN_MD_KEPT}
 MERMAID = approved_copy.MERMAID
 # The kept list of "Next" links is as long as a locale's old page had it; it is not part of the shape.

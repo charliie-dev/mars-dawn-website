@@ -414,7 +414,8 @@ OPEN_MD = {'title': 'Ouvrir un fichier .md sur Mac · MarsDawn',
                      'commande</a>.',
                      'Ce que MarsDawn ne fait pas\xa0: <a href="/fr/limits/">la liste</a>.',
                      'Lire du Markdown plutôt dans VS Code, un navigateur ou Claude Desktop\xa0: <a '
-                     'href="/fr/vs/markdown-preview-tools/">la comparaison</a>.']}
+                     'href="/fr/vs/markdown-preview-tools/">la comparaison</a>.',
+                     'Les notes que vous gardez sur HackMD\xa0: <a href="/fr/from-hackmd/">Passer de HackMD à votre Mac</a>.']}
 
 MERMAID = {'title': 'Aperçu Mermaid sur Mac, à côté de votre Markdown · MarsDawn',
  'description': 'Diagrammes Mermaid dessinés à côté de votre Markdown sur Mac\xa0: aperçu '

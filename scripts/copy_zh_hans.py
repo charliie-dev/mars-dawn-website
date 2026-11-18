@@ -299,7 +299,8 @@ OPEN_MD = {'title': 'Mac 上怎么打开 md 文件：双击、默认 App、快�
                 'PDF</a>。',
  'next_h2': '接下来',
  'next_items_html': ['命令行工具的所有选项：<a href="/zh-hans/cli/">命令行工具</a>。',
-                     'MarsDawn 做不到的事：<a href="/zh-hans/limits/">这份清单</a>。']}
+                     'MarsDawn 做不到的事：<a href="/zh-hans/limits/">这份清单</a>。',
+                     '放在 HackMD 的笔记：<a href="/zh-hans/from-hackmd/">从 HackMD 搬到 Mac</a>。']}
 
 MERMAID = {'title': '在 Mac 上预览 Mermaid 图表，就在 Markdown 旁边 · MarsDawn',
  'description': '在 Mac 上预览 Mermaid 图表：源代码旁边实时画出来，快速查看和导出 PDF 也看得到。图表写错时，会显示错误信息和出错的那一行。',
