@@ -16,6 +16,8 @@ MarsDawn は Mac 向けの Markdown エディタです。Mac App Store から無
 
 [Mac App Store で MarsDawn を無料でダウンロード](https://apps.apple.com/app/id6812925073)
 
+ターミナルを使う場合は、[Homebrew と mas でインストールする方法](/ja/cli/#mac-app)もあります。
+
 `.md` ファイルを開くと、ソースの隣でレンダリングされたページを読めます。
 
 - 入力すると同時にプレビューが更新され、2つのペインは一緒にスクロールします。

@@ -1113,7 +1113,7 @@ CLI_PAGES = {
   <p>The free <code>marsdawn</code> command-line tool: export Markdown to PDF from a shell or an LLM agent, and, with the MarsDawn app installed, open files in it.</p>
 </section>
 
-<div class="summary"><p><strong>marsdawn is free and distributed separately from the Mac App Store.</strong> Install it with Homebrew: on an Apple silicon Mac it arrives ready to run. <code>export</code> works on its own; <code>open</code> needs the MarsDawn app.</p></div>
+<div class="summary"><p><strong>marsdawn is free and distributed separately from the Mac App Store.</strong> Install it with Homebrew: on an Apple silicon Mac it arrives ready to run. <code>export</code> works on its own; <code>open</code> needs the MarsDawn app. Looking for the Mac app? <a href="#mac-app">Install it with Homebrew and mas</a>.</p></div>
 
 <p>Calling marsdawn from an AI agent or a script? See <a href="/cli/agents/">marsdawn for agents</a> for the JSON output, its schemas and every exit code, or <a href="/cli/mcp/">the MCP server</a> if your agent calls tools over MCP instead.</p>
 
@@ -1127,6 +1127,13 @@ CLI_PAGES = {
 cd mars-dawn-kit
 swift build -c release --product marsdawn</code></pre>
 <p>Check which version you have with <code>marsdawn --version</code>.</p>
+
+<h2 id="mac-app">Install the MarsDawn app with Homebrew and mas</h2>
+<p><code>brew install marsdawn</code> installs the command-line tool, not the app. The Mac app comes from the Mac App Store, and <a href="https://github.com/mas-cli/mas">mas</a> can get it from the terminal:</p>
+<pre><code>brew install mas
+sudo mas get 6812925073</code></pre>
+<p>Sign in to the App Store with your Apple Account first; <code>sudo</code> asks for your Mac login password. This installs the App Store version at <code>/Applications/MarsDawn.app</code>. It needs macOS 26 or later, and updates come through the App Store.</p>
+<p>It's free to download. The first time you open MarsDawn you can start a 14-day free trial with everything working; to keep using it after that, unlock it once. There is no subscription. <a href="/pay-once/">How it works</a></p>
 
 <h2>Commands</h2>
 
@@ -1192,7 +1199,7 @@ marsdawn open notes.md --folder .</code></pre>
   <p>免費的 <code>marsdawn</code> 命令列工具：從終端機或 LLM agent 把 Markdown 輸出成 PDF；裝了 MarsDawn app 的話，也能用它開啟檔案。</p>
 </section>
 
-<div class="summary"><p><strong>marsdawn 免費、另外發佈，不透過 Mac App Store。</strong>用 Homebrew 安裝，在 Apple 晶片的 Mac 上裝好就能直接使用。<code>export</code> 可以單獨使用；<code>open</code> 需要 MarsDawn app。</p></div>
+<div class="summary"><p><strong>marsdawn 免費、另外發佈，不透過 Mac App Store。</strong>用 Homebrew 安裝，在 Apple 晶片的 Mac 上裝好就能直接使用。<code>export</code> 可以單獨使用；<code>open</code> 需要 MarsDawn app。要裝的是 Mac app？<a href="#mac-app">用 Homebrew 和 mas 安裝</a>。</p></div>
 
 <p>要從 AI agent 或腳本呼叫 marsdawn？請看<a href="/zh-hant/cli/agents/">給 AI agent 的 marsdawn 參考</a>，裡面有 JSON 輸出、Schema 和所有離開代碼；如果你的 agent 是透過 MCP 呼叫工具，也可以看<a href="/zh-hant/cli/mcp/">MCP 伺服器</a>。</p>
 
@@ -1206,6 +1213,13 @@ marsdawn open notes.md --folder .</code></pre>
 cd mars-dawn-kit
 swift build -c release --product marsdawn</code></pre>
 <p>用 <code>marsdawn --version</code> 查看安裝的版本。</p>
+
+<h2 id="mac-app">用 Homebrew 和 mas 安裝 MarsDawn app</h2>
+<p><code>brew install marsdawn</code> 裝的是命令列工具，不是 app。Mac 版 app 在 Mac App Store，可以用 <a href="https://github.com/mas-cli/mas">mas</a> 從終端機取得：</p>
+<pre><code>brew install mas
+sudo mas get 6812925073</code></pre>
+<p>先在 App Store 登入 Apple 帳號；<code>sudo</code> 會要你輸入 Mac 的登入密碼。裝好的是 App Store 版，位置在 <code>/Applications/MarsDawn.app</code>，需要 macOS 26 或更新版本，之後的更新照 App Store 的更新走。</p>
+<p>可以免費下載。第一次開啟 MarsDawn 時可以開始 14 天試用，所有功能都能使用；試用結束後想繼續使用，解鎖一次就好，沒有訂閱。<a href="/zh-hant/pay-once/">運作方式</a></p>
 
 <h2>指令</h2>
 
@@ -4494,6 +4508,7 @@ OPEN_MD_KEPT = {'en': {'opening_html': 'A <code>.md</code> file is plain text. T
                         'Store: try everything for 14 days, then unlock it once for USD 4.99. No '
                         'subscription, no account. It needs macOS 26 or later.',
         'download': 'Download MarsDawn free on the Mac App Store',
+        'read_mas_html': 'Prefer the terminal? <a href="/cli/#mac-app">Install it with Homebrew and mas</a>.',
         'read_p2_html': 'Open a <code>.md</code> file and read the rendered page next to the source:',
         'read_b1_html': 'The preview updates as you type, and the two panes scroll together.',
         'read_b4_html': 'When you want to change something, the source is right there. MarsDawn is an '
@@ -4525,6 +4540,7 @@ OPEN_MD_KEPT = {'en': {'opening_html': 'A <code>.md</code> file is plain text. T
              'read_p1_html': 'MarsDawn 是為 Mac 做的 Markdown 編輯器，可以在 Mac App Store 免費下載：先免費試用全部功能 14 天，之後花 USD '
                              '4.99 解鎖一次就好。沒有訂閱，也不需要帳號。需要 macOS 26 以上。',
              'download': '到 Mac App Store 免費下載 MarsDawn',
+             'read_mas_html': '習慣用終端機？<a href="/zh-hant/cli/#mac-app">用 Homebrew 和 mas 安裝</a>。',
              'read_p2_html': '打開 <code>.md</code> 檔案，排好的頁面就在原始碼旁邊：',
              'read_b1_html': '預覽會隨著你打字即時更新，兩邊的窗格一起捲動。',
              'read_b4_html': '想改的時候，原始碼就在旁邊。MarsDawn 是編輯器，不只是檢視器。',
@@ -5279,6 +5295,7 @@ HOME = {
             "<code>marsdawn open</code> opens files in the MarsDawn app for you to review.",
             "<code>--json</code> gives scripts and agents results they can parse.",
         ],
+        "install_app_note": 'That installs the command-line tool. To get the Mac app with Homebrew, <a href="/cli/#mac-app">see how</a>.',
         "proof_h": "Features",
     },
     "zh-hant": {
@@ -5292,6 +5309,7 @@ HOME = {
             "<code>marsdawn open</code> 在 MarsDawn app 裡開啟檔案，讓你審閱。",
             "<code>--json</code> 回傳腳本和 agent 能解析的結果。",
         ],
+        "install_app_note": '上面裝的是命令列工具。要用 Homebrew 裝 Mac app，<a href="/zh-hant/cli/#mac-app">看這裡</a>。',
         "proof_h": "功能",
     },
     "zh-hans": {
@@ -5305,6 +5323,7 @@ HOME = {
             "<code>marsdawn open</code> 在 MarsDawn app 里打开文件，让你审阅。",
             "<code>--json</code> 返回脚本和代理能解析的结果。",
         ],
+        "install_app_note": '上面装的是命令行工具。要用 Homebrew 装 Mac app，<a href="/zh-hans/cli/#mac-app">看这里</a>。',
         "proof_h": "功能",
     },
     "ja": {
@@ -5318,6 +5337,7 @@ HOME = {
             "<code>marsdawn open</code> はファイルを MarsDawn アプリで開き、確認できるようにします。",
             "<code>--json</code> は、スクリプトやエージェントが解析できる結果を返します。",
         ],
+        "install_app_note": 'ここでインストールされるのはコマンドラインツールです。Homebrew で Mac アプリを入手する方法は、<a href="/ja/cli/#mac-app">こちら</a>をご覧ください。',
         "proof_h": "機能",
     },
 }
@@ -5560,6 +5580,7 @@ def home_sections_html(locale: str) -> str:
 <ul>
 {caps}
 </ul>
+<p>{home["install_app_note"]}</p>
 <p class="install-links">{links}</p>
 </section>
 <nav class="traits" aria-label="{TRAIT_NAV_HEADING[locale]}">
@@ -7839,10 +7860,16 @@ Source: {BASE_URL}{PRODUCT_FACTS_PATH}
 - The MarsDawn app: macOS 26 (Tahoe) or later, Apple silicon or Intel.
 - The `marsdawn` command-line tool: macOS 15 or later to run; building it from source needs Swift 6.2 (Xcode 26) or later.
 
+## Install the Mac app
+
+- The MarsDawn app is installed from the [Mac App Store]({LISTING_URL}).
+- With Homebrew: run `brew install mas`, then `sudo mas get 6812925073`. Sign in to the App Store with an Apple Account first. This installs the App Store version at `/Applications/MarsDawn.app`.
+- `brew install marsdawn` is different: it installs the command-line tool, not the app.
+
 ## Free and open source, available today
 
 - [mars-dawn-kit]({KIT_URL}) is free and open source, licensed {KIT_LICENSE}.
-- The free `marsdawn` command-line tool is built from that kit and distributed separately from the Mac App Store: `{BREW_TAP_INSTALL}`.
+- The free `marsdawn` command-line tool is built from that kit and distributed separately from the Mac App Store: `{BREW_TAP_INSTALL}`. This installs the tool, not the MarsDawn app.
 - Both the kit and the CLI exist today and can be installed now, independent of the MarsDawn app's own release status.
 
 ## Entity disambiguation
@@ -7958,9 +7985,10 @@ def build_llms_txt(pages: dict) -> str:
         f"Open source: [mars-dawn-kit]({KIT_URL}) is free and {KIT_LICENSE}, and the free `marsdawn` "
         "command-line tool is built from it."
     )
-    lines.append(f"Install: `{BREW_TAP_INSTALL}` (a prebuilt bottle on Apple silicon, "
+    lines.append(f"Install the command-line tool: `{BREW_TAP_INSTALL}` (a prebuilt bottle on Apple silicon, "
                  "no Xcode needed; on Intel it builds from source with Xcode 26; macOS 15 or later). "
                  "`export` works without the MarsDawn app; `open` needs it.")
+    lines.append(f"Install the Mac app: from the Mac App Store ({LISTING_URL}). With Homebrew: `brew install mas`, then `sudo mas get 6812925073`; sign in to the App Store first.")
     lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 

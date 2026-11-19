@@ -386,6 +386,7 @@ OPEN_MD = {'title': 'Cómo abrir archivos .md en Mac · MarsDawn',
                  'prueba todo durante 14 días y desbloquéalo una sola vez por 4,99 USD. Sin suscripción y '
                  'sin cuenta. Requiere macOS 26 o posterior.',
  'download': 'Descarga MarsDawn gratis en el Mac App Store',
+ 'read_mas_html': '¿Prefieres la terminal? <a href="/es/cli/#mac-app">Instala MarsDawn con Homebrew y mas</a>.',
  'read_p2_html': 'Abre un archivo <code>.md</code> y lee la página renderizada junto al código fuente:',
  'read_b1_html': 'La vista previa se actualiza mientras escribes, y los dos paneles se desplazan juntos.',
  'read_b4_html': 'Cuando quieras cambiar algo, el código fuente está ahí mismo. MarsDawn es un editor, no '
@@ -855,7 +856,7 @@ def build(k) -> dict:
   <p>La herramienta de línea de comandos gratuita <code>marsdawn</code>: exporta Markdown a PDF desde una shell o un agente LLM y, si tienes instalada la app MarsDawn, abre archivos en ella.</p>
 </section>
 
-<div class="summary"><p><strong>marsdawn es gratis y se distribuye por separado del Mac App Store.</strong> Instálalo con Homebrew: en una Mac con chip de Apple llega listo para usar. <code>export</code> funciona por sí solo; <code>open</code> necesita la app MarsDawn.</p></div>
+<div class="summary"><p><strong>marsdawn es gratis y se distribuye por separado del Mac App Store.</strong> Instálalo con Homebrew: en una Mac con chip de Apple llega listo para usar. <code>export</code> funciona por sí solo; <code>open</code> necesita la app MarsDawn. ¿Buscas la app para Mac? <a href="#mac-app">Instálala con Homebrew y mas</a>.</p></div>
 
 <p>¿Llamas a marsdawn desde un agente de IA o un script? Consulta <a href="/es/cli/agents/">marsdawn para agentes</a> para ver la salida JSON, sus esquemas y todos los códigos de salida, o <a href="/es/cli/mcp/">el servidor MCP</a> si tu agente llama a herramientas por MCP.</p>
 
@@ -869,6 +870,13 @@ def build(k) -> dict:
 cd mars-dawn-kit
 swift build -c release --product marsdawn</code></pre>
 <p>Revisa qué versión tienes con <code>marsdawn --version</code>.</p>
+
+<h2 id="mac-app">Instala la app MarsDawn con Homebrew y mas</h2>
+<p><code>brew install marsdawn</code> instala la herramienta de línea de comandos, no la app. La app para Mac está en el Mac App Store, y con <a href="https://github.com/mas-cli/mas">mas</a> puedes obtenerla desde la terminal:</p>
+<pre><code>brew install mas
+sudo mas get 6812925073</code></pre>
+<p>Primero inicia sesión en el App Store con tu cuenta de Apple; <code>sudo</code> te pedirá la contraseña de inicio de sesión de tu Mac. Esto instala la versión del App Store en <code>/Applications/MarsDawn.app</code>. Requiere macOS 26 o posterior, y las actualizaciones llegan por el App Store.</p>
+<p>La descarga es gratuita. La primera vez que abras MarsDawn, puedes comenzar la prueba gratuita de 14 días, con todas las funciones disponibles; para seguir usándolo después, desbloquéalo una sola vez. No hay suscripción. <a href="/es/pay-once/">Cómo funciona</a></p>
 
 <h2>Comandos</h2>
 
@@ -949,6 +957,7 @@ marsdawn open notes.md --folder .</code></pre>
             '<code>marsdawn open</code> abre archivos en la app MarsDawn para que los revises.',
             '<code>--json</code> les da a los scripts y a los agentes resultados que pueden analizar.',
         ],
+        "install_app_note": 'Esto instala la herramienta de línea de comandos. Para obtener la app para Mac con Homebrew, <a href="/es/cli/#mac-app">mira cómo</a>.',
         "proof_h": 'Funciones',
     }
     compare_tables = {

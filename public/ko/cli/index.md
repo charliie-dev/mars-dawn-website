@@ -2,7 +2,7 @@
 
 무료 `marsdawn` 명령줄 도구입니다. 셸이나 LLM 에이전트에서 Markdown을 PDF로 내보내고, MarsDawn 앱이 설치되어 있으면 앱에서 파일을 열 수 있습니다.
 
-**marsdawn은 무료이며 Mac App Store와 별도로 배포됩니다.** Homebrew로 설치하세요. Apple 실리콘 Mac에서는 바로 실행할 수 있는 상태로 설치됩니다. `export`는 단독으로 작동하고, `open`은 MarsDawn 앱이 필요합니다.
+**marsdawn은 무료이며 Mac App Store와 별도로 배포됩니다.** Homebrew로 설치하세요. Apple 실리콘 Mac에서는 바로 실행할 수 있는 상태로 설치됩니다. `export`는 단독으로 작동하고, `open`은 MarsDawn 앱이 필요합니다. Mac 앱을 찾고 계신가요? [Homebrew와 mas로 설치하는 방법](#mac-app)을 확인하세요.
 
 AI 에이전트나 스크립트에서 marsdawn을 호출하나요? JSON 출력과 스키마, 모든 종료 코드는 [에이전트를 위한 marsdawn](/ko/cli/agents/)에서, 에이전트가 MCP로 도구를 호출한다면 [MCP 서버](/ko/cli/mcp/)에서 확인하세요.
 
@@ -27,6 +27,19 @@ swift build -c release --product marsdawn
 ```
 
 설치된 버전은 `marsdawn --version`으로 확인할 수 있습니다.
+
+## Homebrew와 mas로 MarsDawn 앱 설치하기
+
+`brew install marsdawn`으로 설치되는 것은 명령줄 도구이며, 앱이 아닙니다. Mac용 앱은 Mac App Store에서 제공되며, [mas](https://github.com/mas-cli/mas)를 쓰면 터미널에서 받을 수 있습니다.
+
+```
+brew install mas
+sudo mas get 6812925073
+```
+
+먼저 App Store에 Apple 계정으로 로그인하세요. `sudo`는 Mac의 로그인 암호를 요청합니다. App Store 버전이 `/Applications/MarsDawn.app`에 설치됩니다. macOS 26 이상이 필요하며, 업데이트는 App Store를 통해 제공됩니다.
+
+무료로 다운로드할 수 있습니다. MarsDawn을 처음 열 때 모든 기능을 쓸 수 있는 14일 무료 체험을 시작할 수 있습니다. 체험이 끝난 뒤에도 계속 쓰려면 한 번만 잠금 해제하면 됩니다. 구독은 없습니다. [이렇게 진행됩니다](/ko/pay-once/)
 
 ## 명령
 

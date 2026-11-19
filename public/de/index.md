@@ -74,6 +74,8 @@ brew install redtear1115/tap/marsdawn
 - `marsdawn open` öffnet Dateien in der App MarsDawn, damit du sie prüfen kannst.
 - `--json` liefert Skripten und Agenten Ergebnisse, die sie parsen können.
 
+Damit installierst du das Befehlszeilenprogramm. Wie du die Mac-App mit Homebrew bekommst, siehst du [hier](/de/cli/#mac-app).
+
 [Befehlszeile](/de/cli/) · [marsdawn für Agenten](/de/cli/agents/) · [Agent-Skill](/de/cli/skill/) · [MCP-Server](/de/cli/mcp/)
 
 ## Was du von MarsDawn erwarten kannst

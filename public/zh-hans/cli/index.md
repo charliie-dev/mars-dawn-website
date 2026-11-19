@@ -2,7 +2,7 @@
 
 免费的 `marsdawn` 命令行工具：从终端或 LLM 代理把 Markdown 导出成 PDF；装了 MarsDawn app 的话，也能用它打开文件。
 
-**marsdawn 免费、另外发布，不通过 Mac App Store。**用 Homebrew 安装，在 Apple 芯片的 Mac 上装好就能直接使用。`export` 可以单独使用；`open` 需要 MarsDawn app。
+**marsdawn 免费、另外发布，不通过 Mac App Store。**用 Homebrew 安装，在 Apple 芯片的 Mac 上装好就能直接使用。`export` 可以单独使用；`open` 需要 MarsDawn app。要装的是 Mac app？[用 Homebrew 和 mas 安装](#mac-app)。
 
 要从 AI 代理或脚本调用 marsdawn？请看[给 AI 代理的 marsdawn 参考](/zh-hans/cli/agents/)，里面有 JSON 输出、Schema 和所有退出代码。
 
@@ -27,6 +27,19 @@ swift build -c release --product marsdawn
 ```
 
 用 `marsdawn --version` 查看安装的版本。
+
+## 用 Homebrew 和 mas 安装 MarsDawn app
+
+`brew install marsdawn` 装的是命令行工具，不是 app。Mac 版 app 在 Mac App Store，可以用 [mas](https://github.com/mas-cli/mas) 从终端获取：
+
+```
+brew install mas
+sudo mas get 6812925073
+```
+
+先在 App Store 登录 Apple 账户；`sudo` 会要你输入 Mac 的登录密码。装好的是 App Store 版，位置在 `/Applications/MarsDawn.app`，需要 macOS 26 以上，之后的更新通过 App Store 进行。
+
+可以免费下载。第一次打开 MarsDawn 时可以开始 14 天试用，所有功能都能使用；试用结束后想继续使用，解锁一次就好，没有订阅。[怎么运作](/zh-hans/pay-once/)
 
 ## 命令
 
