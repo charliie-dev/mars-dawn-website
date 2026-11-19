@@ -67,6 +67,13 @@ DATA = {'en': {'title': 'Move from HackMD to your Mac: notes, images and GitHub'
                     '<code>~subscript~</code>, <code>[TOC]</code>, image sizes such as <code>=300x200</code>, Mermaid '
                     'and KaTeX. <code>{%youtube %}</code> shows as a link. To keep every line break as HackMD does, '
                     'turn on Settings ▸ Appearance ▸ Keep single line breaks.'),
+                   ('p',
+                    '<code>:::</code> blocks work too. <code>:::info</code>, <code>:::success</code>, '
+                    '<code>:::warning</code> and <code>:::danger</code> show as blocks with a colored bar and a '
+                    'heading (Note, Tip, Warning or Caution), or your own heading if you write one after the name. '
+                    '<code>:::spoiler</code> shows as a collapsible section that opens when you click it. A '
+                    '<code>:::</code> block with any other name, or without its closing <code>:::</code>, shows as you '
+                    'typed it.'),
                    ('p', 'A few things look different:'),
                    ('ul',
                     ['<code>++inserted++</code> and emoji codes such as <code>:sparkles:</code> show as you typed '
@@ -152,6 +159,11 @@ DATA = {'en': {'title': 'Move from HackMD to your Mac: notes, images and GitHub'
                          '的語法大多照樣能讀：<code>==螢光==</code>、<code>^上標^</code>、<code>~下標~</code>、<code>[TOC]</code>、<code>=300x200</code> '
                          '這類圖片尺寸、Mermaid 和 KaTeX。<code>{%youtube %}</code> 會顯示成連結。想和 HackMD 一樣保留每個換行，請打開「設定 ▸ 外觀 ▸ '
                          '保留單一換行」。'),
+                        ('p',
+                         '<code>:::</code> '
+                         '區塊也看得到。<code>:::info</code>、<code>:::success</code>、<code>:::warning</code>、<code>:::danger</code> '
+                         '會顯示成有色條的區塊，上面有標題，預設是附註、提示、警告、小心；在名稱後面自己寫標題的話，就用你寫的。<code>:::spoiler</code> '
+                         '會顯示成點一下才展開的可收合區塊。其他名稱的 <code>:::</code> 區塊，或少了結尾 <code>:::</code> 的，會照原文顯示。'),
                         ('p', '有幾個地方不一樣：'),
                         ('ul',
                          ['<code>++底線++</code> 和 <code>:sparkles:</code> 這類 emoji 代碼會照原文顯示。',
@@ -221,6 +233,11 @@ DATA = {'en': {'title': 'Move from HackMD to your Mac: notes, images and GitHub'
                          '的语法大多照样能读：<code>==高亮==</code>、<code>^上标^</code>、<code>~下标~</code>、<code>[TOC]</code>、<code>=300x200</code> '
                          '这类图片尺寸、Mermaid 和 KaTeX。<code>{%youtube %}</code> 会显示成链接。想和 HackMD 一样保留每个换行，请打开“设置 ▸ 外观 ▸ '
                          '保留单个换行”。'),
+                        ('p',
+                         '<code>:::</code> '
+                         '区块也看得到。<code>:::info</code>、<code>:::success</code>、<code>:::warning</code>、<code>:::danger</code> '
+                         '会显示成有色条的区块，上面有标题，默认是附注、提示、警告、小心；在名称后面自己写标题的话，就用你写的。<code>:::spoiler</code> '
+                         '会显示成点一下才展开的可折叠区块。其他名称的 <code>:::</code> 区块，或少了结尾 <code>:::</code> 的，会按原文显示。'),
                         ('p', '有几个地方不一样：'),
                         ('ul',
                          ['<code>++下划线++</code> 和 <code>:sparkles:</code> 这类 emoji 代码会按原文显示。',
@@ -300,6 +317,12 @@ DATA = {'en': {'title': 'Move from HackMD to your Mac: notes, images and GitHub'
                     'の記法はほとんどそのまま読めます。<code>==ハイライト==</code>、<code>^上付き^</code>、<code>~下付き~</code>、<code>[TOC]</code>、<code>=300x200</code> '
                     'のような画像サイズ、Mermaid、KaTeX に対応しています。<code>{%youtube %}</code> はリンクになります。HackMD と同じようにすべての改行を保つには、「設定 '
                     '▸ 外観モード ▸ 単一の改行を保持」をオンにします。'),
+                   ('p',
+                    '<code>:::</code> '
+                    'ブロックにも対応しています。<code>:::info</code>、<code>:::success</code>、<code>:::warning</code>、<code>:::danger</code> '
+                    'は、色付きのバーと見出しが付いたブロックとして表示されます。見出しのデフォルトはメモ、ヒント、警告、危険で、名前のあとに自分で見出しを書けば、その見出しが使われます。<code>:::spoiler</code> '
+                    'は、クリックすると開く折りたたみ可能なブロックとして表示されます。ほかの名前の <code>:::</code> ブロックや、終わりの <code>:::</code> '
+                    'がないものは、書いたまま表示されます。'),
                    ('p', 'いくつか違う点があります。'),
                    ('ul',
                     ['<code>++下線++</code> と <code>:sparkles:</code> のような絵文字コードは、書いたまま表示されます。',
@@ -382,6 +405,11 @@ DATA = {'en': {'title': 'Move from HackMD to your Mac: notes, images and GitHub'
                     'HackMD 문법은 대부분 그대로 읽을 수 있습니다. <code>==강조==</code>, <code>^위첨자^</code>, <code>~아래첨자~</code>, '
                     '<code>[TOC]</code>, <code>=300x200</code> 같은 이미지 크기, Mermaid, KaTeX를 지원합니다. <code>{%youtube '
                     '%}</code>는 링크로 표시됩니다. HackMD처럼 모든 줄바꿈을 유지하려면 설정 ▸ 화면 모드 ▸ 단일 줄 바꿈 유지를 켜세요.'),
+                   ('p',
+                    '<code>:::</code> 블록도 지원합니다. <code>:::info</code>, <code>:::success</code>, '
+                    '<code>:::warning</code>, <code>:::danger</code>는 색 막대와 제목이 있는 블록으로 표시되며, 제목 기본값은 참고, 팁, 경고, '
+                    '위험입니다. 이름 뒤에 제목을 직접 쓰면 그 제목이 쓰입니다. <code>:::spoiler</code>는 클릭하면 열리는 접을 수 있는 블록으로 표시됩니다. 다른 이름의 '
+                    '<code>:::</code> 블록이나 닫는 <code>:::</code> 줄이 없는 블록은 쓴 그대로 표시됩니다.'),
                    ('p', '몇 가지는 다르게 보입니다.'),
                    ('ul',
                     ['<code>++밑줄++</code>과 <code>:sparkles:</code> 같은 이모지 코드는 쓴 그대로 표시됩니다.',
@@ -492,6 +520,13 @@ DATA = {'en': {'title': 'Move from HackMD to your Mac: notes, images and GitHub'
                     '<code>=300x200</code>, Mermaid und KaTeX. <code>{%youtube %}</code> erscheint als Link. Um wie '
                     'bei HackMD jeden Zeilenumbruch zu behalten, schalte Einstellungen ▸ Erscheinungsbild ▸ Einzelne '
                     'Zeilenumbrüche beibehalten ein.'),
+                   ('p',
+                    'Auch <code>:::</code>-Blöcke funktionieren. <code>:::info</code>, <code>:::success</code>, '
+                    '<code>:::warning</code> und <code>:::danger</code> erscheinen als Blöcke mit farbigem Balken und '
+                    'einer Überschrift. Standardmäßig lautet sie Hinweis, Tipp, Warnung oder Gefahr; schreibst du '
+                    'hinter den Namen eine eigene Überschrift, wird diese verwendet. <code>:::spoiler</code> erscheint '
+                    'als reduzierbarer Block, der sich mit einem Klick öffnet. Ein <code>:::</code>-Block mit einem '
+                    'anderen Namen oder ohne schließendes <code>:::</code> erscheint so, wie du ihn getippt hast.'),
                    ('p', 'Ein paar Dinge sehen anders aus:'),
                    ('ul',
                     ['<code>++eingefügt++</code> und Emoji-Codes wie <code>:sparkles:</code> erscheinen so, wie du sie '
@@ -612,6 +647,13 @@ DATA = {'en': {'title': 'Move from HackMD to your Mac: notes, images and GitHub'
                     '<code>=300x200</code>, Mermaid et KaTeX. <code>{%youtube %}</code> s’affiche comme un lien. Pour '
                     'garder chaque saut de ligne comme dans HackMD, activez Réglages ▸ Apparence ▸ Conserver les sauts '
                     'de ligne simples.'),
+                   ('p',
+                    'Les blocs <code>:::</code> fonctionnent aussi. <code>:::info</code>, <code>:::success</code>, '
+                    '<code>:::warning</code> et <code>:::danger</code> apparaissent sous forme de blocs avec une barre '
+                    'colorée et un titre (Remarque, Conseil, Avertissement ou Danger par défaut). Si vous écrivez '
+                    'votre propre titre après le nom, c’est lui qui s’affiche. <code>:::spoiler</code> apparaît sous '
+                    'forme de bloc repliable qui s’ouvre d’un clic. Un bloc <code>:::</code> avec un autre nom, ou '
+                    'sans <code>:::</code> de fermeture, s’affiche tel que vous l’avez tapé.'),
                    ('p', 'Quelques éléments changent\xa0:'),
                    ('ul',
                     ['<code>++inséré++</code> et les codes emoji comme <code>:sparkles:</code> s’affichent tels que '
@@ -727,6 +769,13 @@ DATA = {'en': {'title': 'Move from HackMD to your Mac: notes, images and GitHub'
                     '<code>=300x200</code>, Mermaid y KaTeX. <code>{%youtube %}</code> se muestra como un enlace. Para '
                     'conservar cada salto de línea como en HackMD, activa Ajustes ▸ Aspecto ▸ Mantener saltos de línea '
                     'simples.'),
+                   ('p',
+                    'Los bloques <code>:::</code> también funcionan. <code>:::info</code>, <code>:::success</code>, '
+                    '<code>:::warning</code> y <code>:::danger</code> se muestran como bloques con una barra de color '
+                    'y un título (Nota, Consejo, Advertencia o Peligro), o con tu propio título si lo escribes después '
+                    'del nombre. <code>:::spoiler</code> se muestra como un bloque plegable que se abre al hacer clic. '
+                    'Un bloque <code>:::</code> con otro nombre, o sin su <code>:::</code> de cierre, se muestra tal '
+                    'como lo escribiste.'),
                    ('p', 'Algunas cosas cambian:'),
                    ('ul',
                     ['<code>++insertado++</code> y los códigos de emoji como <code>:sparkles:</code> se muestran tal '

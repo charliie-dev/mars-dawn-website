@@ -50,6 +50,8 @@ If MarsDawn can't reach an image next to your file, use the button in the previe
 
 Most of HackMD's syntax reads the same: `==highlight==`, `^superscript^`, `~subscript~`, `[TOC]`, image sizes such as `=300x200`, Mermaid and KaTeX. `{%youtube %}` shows as a link. To keep every line break as HackMD does, turn on Settings ▸ Appearance ▸ Keep single line breaks.
 
+`:::` blocks work too. `:::info`, `:::success`, `:::warning` and `:::danger` show as blocks with a colored bar and a heading (Note, Tip, Warning or Caution), or your own heading if you write one after the name. `:::spoiler` shows as a collapsible section that opens when you click it. A `:::` block with any other name, or without its closing `:::`, shows as you typed it.
+
 A few things look different:
 
 - `++inserted++` and emoji codes such as `:sparkles:` show as you typed them.
