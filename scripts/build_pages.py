@@ -4131,8 +4131,8 @@ FIGURES = {
         },
         "callouts": [
             (20.83, 48.89, "l", {"en": "Preview the pages first.", "zh-hant": "先預覽頁面。"}),
-            (78.19, 33.56, "r", {"en": "Pick a layout.", "zh-hant": "選一種版面。"}),
-            (71.60, 78.00, "r", {"en": "Print, or save as a PDF.", "zh-hant": "列印，或儲存為 PDF。"}),
+            (80.00, 31.00, "r", {"en": "Pick a layout.", "zh-hant": "選一種版面。"}),
+            (80.00, 80.11, "r", {"en": "Print, or save as a PDF.", "zh-hant": "列印，或儲存為 PDF。"}),
         ],
     },
 }
