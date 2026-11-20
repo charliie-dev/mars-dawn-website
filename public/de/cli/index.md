@@ -2,7 +2,7 @@
 
 Das kostenlose Befehlszeilenprogramm `marsdawn`: Markdown aus einer Shell oder einem LLM-Agenten als PDF exportieren und, wenn die App MarsDawn installiert ist, Dateien darin öffnen.
 
-**marsdawn ist kostenlos und wird getrennt vom Mac App Store vertrieben.** Installiere es mit Homebrew: Auf einem Mac mit Apple Chip ist es sofort einsatzbereit. `export` funktioniert eigenständig; `open` braucht die App MarsDawn.
+**marsdawn ist kostenlos und wird getrennt vom Mac App Store vertrieben.** Installiere es mit Homebrew: Auf einem Mac mit Apple Chip ist es sofort einsatzbereit. `export` funktioniert eigenständig; `open` braucht die App MarsDawn. Du suchst die Mac-App? [So installierst du sie mit Homebrew und mas](#mac-app).
 
 Du rufst marsdawn aus einem KI-Agenten oder einem Skript auf? Unter [marsdawn für Agenten](/de/cli/agents/) findest du die JSON-Ausgabe, ihre Schemas und alle Exit-Codes, oder unter [MCP-Server](/de/cli/mcp/), wenn dein Agent Tools stattdessen über MCP aufruft.
 
@@ -27,6 +27,19 @@ swift build -c release --product marsdawn
 ```
 
 Welche Version du hast, zeigt `marsdawn --version`.
+
+## Die App MarsDawn mit Homebrew und mas installieren
+
+`brew install marsdawn` installiert das Befehlszeilenprogramm, nicht die App. Die Mac-App kommt aus dem Mac App Store, und mit [mas](https://github.com/mas-cli/mas) kannst du sie im Terminal laden:
+
+```
+brew install mas
+sudo mas get 6812925073
+```
+
+Melde dich zuerst im App Store mit deinem Apple Account an; `sudo` fragt nach dem Anmeldepasswort deines Mac. Installiert wird die App-Store-Version unter `/Applications/MarsDawn.app`. Sie braucht macOS 26 oder neuer, und Updates kommen über den App Store.
+
+Der Download ist kostenlos. Beim ersten Öffnen von MarsDawn kannst du den kostenlosen 14-tägigen Test starten, in dem alle Funktionen verfügbar sind. Wenn du es danach weiter nutzen möchtest, schalte es einmalig frei. Es gibt kein Abo. [So funktioniert es](/de/pay-once/)
 
 ## Befehle
 
@@ -133,6 +146,7 @@ Bei Erfolg gibt `marsdawn open --json` `ok`, `opened` (eine Liste mit dem `path`
 - [Mermaid-Vorschau auf dem Mac](https://marsdawn.southern-light.dev/de/mermaid-preview-mac/index.md): Mermaid-Diagramme auf dem Mac neben deinem Markdown: Live-Vorschau, Übersicht und PDF-Export. Ein fehlerhaftes Diagramm zeigt den Fehler und die Zeile.
 - [Übersicht für Markdown](https://marsdawn.southern-light.dev/de/quicklook/index.md): Mit MarsDawn zeigt die Übersicht Markdown im Finder per Leertaste gerendert: Mermaid, KaTeX, hervorgehobener Code. Sie funktioniert auch nach dem Test weiter.
 - [Für KI kopieren](https://marsdawn.southern-light.dev/de/copy-for-ai/index.md): Kopiere ausgewählten Text mit Dateipfad und Zeilennummern und füge ihn in Claude Code oder einen anderen Agenten ein. Das geht auf dem Mac, ohne IDE oder Plugin.
+- [Von HackMD auf den Mac](https://marsdawn.southern-light.dev/de/from-hackmd/index.md): Lade deine HackMD-Notizen als .md herunter und lies sie in MarsDawn auf dem Mac. Alle Notizen herunterladen, ein GitHub-Repository nutzen und Bilder retten.
 - [Markdown zu PDF](https://marsdawn.southern-light.dev/de/markdown-to-pdf/index.md): Wandle Markdown auf dem Mac mit dem kostenlosen Befehlszeilenwerkzeug marsdawn in ein PDF um. Mit Homebrew installieren, einen Befehl ausführen: Tabellen, Mathematik, Mermaid und Code.
 - [MarsDawn im Vergleich: VS-Code-Vorschau, Obsidian, QLMarkdown, LynxOffice](https://marsdawn.southern-light.dev/de/vs/index.md): Für alle, die entscheiden, wie sie Markdown auf dem Mac lesen und prüfen, oft das, was ein Agent geschrieben hat. Jede Zelle unten stammt von den Seiten des Herstellers oder aus unserer eigenen Prüfung, alles am 16. Oktober 2026, außer der PDF-Zelle von MarsDawn, aktualisiert am 7. November 2026; Produkte ändern sich, also kann eine Zelle veralten. Wenn du einen Fehler findest, schreib an die Adresse auf Support.
 - [MacMD Viewer vs. MarsDawn](https://marsdawn.southern-light.dev/de/vs/macmd-viewer/index.md): MacMD Viewer ist ein Markdown-Viewer nur zum Lesen für 19,99 USD. MarsDawn bearbeitet und zeigt die Vorschau daneben: 14 Tage kostenlos, dann einmalig 4,99 USD.

@@ -309,6 +309,7 @@ OPEN_MD = {'title': 'Mac で .md ファイルを開く方法：ダブルクリ�
  'read_p1_html': 'MarsDawn は Mac 向けの Markdown エディタです。Mac App Store から無料でダウンロードでき、14日間すべての機能を試したあと、USD 4.99 '
                  'の一度きりの購入でロックを解除できます。サブスクリプションもアカウントもありません。macOS 26 以降が必要です。',
  'download': 'Mac App Store で MarsDawn を無料でダウンロード',
+ 'read_mas_html': 'ターミナルを使う場合は、<a href="/ja/cli/#mac-app">Homebrew と mas でインストールする方法</a>もあります。',
  'read_p2_html': '<code>.md</code> ファイルを開くと、ソースの隣でレンダリングされたページを読めます。',
  'read_b1_html': '入力すると同時にプレビューが更新され、2つのペインは一緒にスクロールします。',
  'read_b4_html': '何かを変更したいときは、ソースがすぐそこにあります。MarsDawn はビューアだけでなくエディタでもあります。',
@@ -326,7 +327,8 @@ OPEN_MD = {'title': 'Mac で .md ファイルを開く方法：ダブルクリ�
                 'href="/ja/markdown-to-pdf/">Markdown から PDF へ</a>にあります。',
  'next_h2': '次に',
  'next_items_html': ['コマンドラインツールのすべてのオプション：<a href="/ja/cli/">コマンドライン</a>。',
-                     'MarsDawn ができないこと：<a href="/ja/limits/">一覧はこちら</a>。']}
+                     'MarsDawn ができないこと：<a href="/ja/limits/">一覧はこちら</a>。',
+                     'HackMD に保存しているノート：<a href="/ja/from-hackmd/">HackMD から Mac へ</a>。']}
 
 MERMAID = {'title': 'Mac で Mermaid をプレビュー、Markdown の隣で · MarsDawn',
  'description': 'Mac で Mermaid の図を Markdown の隣に描画：リアルタイムプレビュー、クイックルック、PDF 書き出し。図に誤りがあると、エラーとその行が表示されます。',
@@ -774,7 +776,7 @@ marsdawn --version</code></pre>
   <p>無料の <code>marsdawn</code> コマンドラインツール：シェルや LLM エージェントから Markdown を PDF に書き出せます。MarsDawn アプリがインストールされていれば、そのアプリでファイルを開くこともできます。</p>
 </section>
 
-<div class="summary"><p><strong>marsdawn は無料で、Mac App Store とは別に配布されています。</strong>Homebrew でインストールすると、Apple シリコンの Mac では、すぐに実行できる状態でインストールされます。<code>export</code> は単独で動作し、<code>open</code> には MarsDawn アプリが必要です。</p></div>
+<div class="summary"><p><strong>marsdawn は無料で、Mac App Store とは別に配布されています。</strong>Homebrew でインストールすると、Apple シリコンの Mac では、すぐに実行できる状態でインストールされます。<code>export</code> は単独で動作し、<code>open</code> には MarsDawn アプリが必要です。Mac アプリをお探しの場合は、<a href="#mac-app">Homebrew と mas でインストールする方法</a>をご覧ください。</p></div>
 
 <p>AI エージェントやスクリプトから marsdawn を呼び出しますか？JSON 出力とそのスキーマ、すべての終了コードについては<a href="/ja/cli/agents/">AI エージェント向け marsdawn</a>をご覧ください。</p>
 
@@ -788,6 +790,13 @@ marsdawn --version</code></pre>
 cd mars-dawn-kit
 swift build -c release --product marsdawn</code></pre>
 <p>インストールされているバージョンは <code>marsdawn --version</code> で確認できます。</p>
+
+<h2 id="mac-app">Homebrew と mas で MarsDawn アプリをインストールする</h2>
+<p><code>brew install marsdawn</code> でインストールされるのはコマンドラインツールで、アプリではありません。Mac 版アプリは Mac App Store で配信されており、<a href="https://github.com/mas-cli/mas">mas</a> を使うとターミナルから入手できます：</p>
+<pre><code>brew install mas
+sudo mas get 6812925073</code></pre>
+<p>先に App Store で Apple Account にサインインしてください。<code>sudo</code> では Mac のログインパスワードの入力を求められます。インストールされるのは App Store 版で、場所は <code>/Applications/MarsDawn.app</code> です。macOS 26 以降が必要で、アップデートも App Store から行います。</p>
+<p>ダウンロードは無料です。MarsDawn を初めて開いたときに、すべての機能が使える14日間の無料トライアルを始められます。その後も使い続けるには、一度だけロックを解除します。サブスクリプションはありません。<a href="/ja/pay-once/">仕組み</a></p>
 
 <h2>コマンド</h2>
 
