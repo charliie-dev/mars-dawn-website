@@ -49,19 +49,19 @@ No todo el trabajo ocurre en una pantalla. Las páginas que MarsDawn imprime y e
 
 Imprime las páginas, o envía a todos el mismo PDF, y toda la mesa trabaja con el mismo documento en lugar de una sola pantalla compartida. Quien tiene el mismo archivo tiene los mismos saltos de página, así que «la tabla de la página 3» señala una sola cosa. Después, las personas anotan las decisiones, en la copia impresa o en notas. La plantilla de notas de reunión empieza por las decisiones y asigna un responsable a cada tarea.
 
-[Exportación a PDF](/es/pdf/) · [Plantilla de minuta de reunión](/es/templates/meeting-notes/)
+[Imprimir y PDF](/es/pdf/) · [Plantilla de minuta de reunión](/es/templates/meeting-notes/)
 
 ### Leer con un bolígrafo
 
 Hay quien asimila mejor con un bolígrafo: subrayar, escribir en el margen, para que se quede. Imprime el documento y hazlo en papel. MarsDawn no tiene una herramienta de anotación propia, así que, si prefieres marcar el PDF, usa la app de PDF que ya tienes.
 
-[Exportación a PDF](/es/pdf/)
+[Imprimir y PDF](/es/pdf/)
 
 ### Registros en papel
 
 En algunos sectores todavía se archiva en papel, como la contabilidad. MarsDawn no afirma nada sobre archivo ni cumplimiento normativo. Lo que hace es imprimir y exportar páginas limpias y paginadas: diagramas dibujados, bloques de código cortos sin partir, los colores claros del tema. Úsalas dondequiera que el papel siga siendo el registro.
 
-[Exportación a PDF](/es/pdf/)
+[Imprimir y PDF](/es/pdf/)
 
 ### Pasárselo a alguien que no usa Markdown
 
@@ -133,7 +133,7 @@ Ajustes ▸ Aspecto ▸ Obtener más temas… abre una galería de temas de vist
 
 Archivo ▸ Imprimir… y Archivo ▸ Exportar como PDF… abren «Imprimir y exportar», con una vista previa de las páginas. Elige una disposición: Documento; Guía, con portada, índice y marcadores PDF; o Folleto, con una columna para notas. Luego imprime o guarda. Los diagramas Mermaid se dibujan, el código conserva su resaltado, y los saltos de página evitan separar un encabezado de su sección o partir por la mitad un bloque de código corto o un diagrama. El PDF usa siempre los colores claros del tema.
 
-[Exportación a PDF](/es/pdf/)
+[Imprimir y PDF](/es/pdf/)
 
 ![Un PDF exportado desde MarsDawn, abierto en su visor de PDF con miniaturas de las páginas.](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
 
@@ -233,7 +233,7 @@ Cómo funciona la prueba: [Pruébalo gratis, paga una vez](/es/pay-once/). Lo qu
 - [MarsDawn](https://marsdawn.southern-light.dev/es/index.md): Revisa el Markdown, JSON y YAML de tu agente en tu Mac: vista previa en vivo, Mermaid, KaTeX, Vista Rápida y PDF. Pruébalo gratis y luego 4,99 USD una vez.
 - [Lo que escribes se queda en tu Mac](https://marsdawn.southern-light.dev/es/yours/index.md): MarsDawn no tiene cuenta, ni sincronización, ni nube. Tus documentos Markdown se quedan en tu Mac, en los archivos y carpetas que elijas.
 - [Pruébalo gratis, paga una vez](https://marsdawn.southern-light.dev/es/pay-once/index.md): MarsDawn se descarga gratis. Prueba todo durante 14 días y desbloquéalo una sola vez por 4,99 USD. Sin suscripción y sin cuenta.
-- [Exportación a PDF](https://marsdawn.southern-light.dev/es/pdf/index.md): Exporta Markdown como PDF o imprímelo en tu Mac, con diagramas Mermaid y código resaltado. Los saltos de página evitan partir bloques de código cortos.
+- [Imprimir y PDF](https://marsdawn.southern-light.dev/es/pdf/index.md): Previsualiza tu Markdown y luego imprímelo o guárdalo como PDF en tu Mac, con la disposición Documento, Guía o Folleto, con diagramas y código resaltado.
 - [Una app para Mac](https://marsdawn.southern-light.dev/es/native/index.md): Un editor de Markdown que es una app de Mac de verdad: ventanas y pestañas nativas, guardado automático, historial de versiones, Vista Rápida en el Finder y un editor de texto que se comporta como en la Mac.
 - [Lo que MarsDawn no hace](https://marsdawn.southern-light.dev/es/limits/index.md): Sin sincronización, sin edición en iPhone o iPad, sin plugins, sin cuentas. Temas, pero sin CSS personalizado. Lo que conviene saber antes de comprar.
 - [Soporte](https://marsdawn.southern-light.dev/es/support/index.md): Ayuda con MarsDawn, el editor de Markdown para macOS.

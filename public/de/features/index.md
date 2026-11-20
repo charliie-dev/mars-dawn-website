@@ -49,19 +49,19 @@ Nicht alle Arbeit passiert auf einem Bildschirm. Die Seiten, die MarsDawn druckt
 
 Drucke die Seiten aus oder schicke allen dasselbe PDF, dann arbeitet die ganze Runde mit demselben Dokument statt an einem gemeinsamen Bildschirm. Wer dieselbe Datei hat, hat dieselben Seitenumbrüche, sodass „die Tabelle auf Seite 3“ für alle dasselbe meint. Dann halten die Leute die Beschlüsse fest, auf dem Ausdruck oder in Notizen. Die Vorlage für Besprechungsnotizen beginnt mit den Beschlüssen und gibt jedem Aktionspunkt eine verantwortliche Person.
 
-[PDF-Export](/de/pdf/) · [Protokollvorlage](/de/templates/meeting-notes/)
+[Drucken und PDF](/de/pdf/) · [Protokollvorlage](/de/templates/meeting-notes/)
 
 ### Mit dem Stift lesen
 
 Manche nehmen Dinge besser mit einem Stift auf: unterstreichen, an den Rand schreiben, damit es hängen bleibt. Drucke das Dokument aus und tu das auf Papier. MarsDawn hat kein eigenes Werkzeug für Anmerkungen. Wenn du das PDF lieber digital markieren möchtest, nimm die PDF-App, die du ohnehin hast.
 
-[PDF-Export](/de/pdf/)
+[Drucken und PDF](/de/pdf/)
 
 ### Papierakten
 
 In manchen Bereichen wird weiterhin Papier abgelegt, etwa in der Buchhaltung. MarsDawn erhebt keinen Anspruch auf Archivierung oder Compliance. Es druckt und exportiert saubere Seiten mit Seitenumbrüchen: Diagramme eingezeichnet, kurze Codeblöcke am Stück, in den hellen Farben des Themes. Nutze sie überall dort, wo Papier noch die Akte ist.
 
-[PDF-Export](/de/pdf/)
+[Drucken und PDF](/de/pdf/)
 
 ### Für Menschen, die kein Markdown nutzen
 
@@ -133,7 +133,7 @@ Einstellungen ▸ Erscheinungsbild ▸ Weitere Themes laden … öffnet eine Gal
 
 Ablage ▸ Drucken … und Ablage ▸ Als PDF exportieren … öffnen „Drucken und Exportieren“ mit einer Vorschau der Seiten. Wähle ein Layout: Dokument; Handbuch, mit Deckblatt, Inhaltsverzeichnis und PDF-Lesezeichen; oder Handout, mit einer Notizspalte. Dann druckst oder sicherst du. Mermaid-Diagramme werden eingezeichnet, Code behält seine Hervorhebung, und Seitenumbrüche trennen keine Überschrift von ihrem Abschnitt und zerschneiden keinen kurzen Codeblock und kein Diagramm. PDFs verwenden die hellen Farben des Themes.
 
-[PDF-Export](/de/pdf/)
+[Drucken und PDF](/de/pdf/)
 
 ![Ein aus MarsDawn exportiertes PDF, geöffnet in seinem PDF-Viewer mit Seitenminiaturen.](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
 
@@ -233,7 +233,7 @@ So funktioniert die Testphase: [Kostenlos testen, einmal bezahlen](/de/pay-once/
 - [MarsDawn](https://marsdawn.southern-light.dev/de/index.md): Lies Markdown, JSON und YAML deines Agenten nativ auf dem Mac: Live-Vorschau, Mermaid, KaTeX, Übersicht, PDF-Export. Kostenlos testen, dann einmal 4,99 USD.
 - [Deine Texte bleiben auf deinem Mac](https://marsdawn.southern-light.dev/de/yours/index.md): MarsDawn hat kein Konto, keine Synchronisierung und keine Cloud. Deine Markdown-Dokumente bleiben auf deinem Mac, in den Dateien und Ordnern, die du wählst.
 - [Kostenlos testen, einmal bezahlen](https://marsdawn.southern-light.dev/de/pay-once/index.md): MarsDawn ist kostenlos zum Herunterladen. Teste alles 14 Tage lang und schalte es dann einmalig für 4,99 USD frei. Kein Abo, kein Konto.
-- [PDF-Export](https://marsdawn.southern-light.dev/de/pdf/index.md): Exportiere Markdown auf deinem Mac als PDF oder drucke es, mit Mermaid-Diagrammen und hervorgehobenem Code. Seitenumbrüche vermeiden es, kurze Codeblöcke zu teilen.
+- [Drucken und PDF](https://marsdawn.southern-light.dev/de/pdf/index.md): Sieh dir dein Markdown in der Vorschau an, drucke es dann oder sichere es als PDF, im Layout Dokument, Handbuch oder Handout, mit Diagrammen und farbigem Code.
 - [Eine Mac-App](https://marsdawn.southern-light.dev/de/native/index.md): Ein Markdown-Editor, der eine echte Mac-App ist: native Fenster und Tabs, automatisches Sichern, Versionsverlauf, Übersicht im Finder und ein Texteditor, der sich wie ein Mac verhält.
 - [Was MarsDawn nicht kann](https://marsdawn.southern-light.dev/de/limits/index.md): Keine Synchronisierung, kein Bearbeiten auf iPhone oder iPad, keine Plug-ins, keine Konten. Themen, aber kein eigenes CSS. Vor dem Kauf gut zu wissen.
 - [Support](https://marsdawn.southern-light.dev/de/support/index.md): Hilfe zu MarsDawn, dem Markdown-Editor für macOS.

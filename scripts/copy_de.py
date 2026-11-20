@@ -369,7 +369,7 @@ OPEN_MD = {'title': 'So öffnest du .md-Dateien auf dem Mac · MarsDawn',
           'Ja. Wähle in MarsDawn „Ablage ▸ Als PDF exportieren\xa0…“ (⌥⌘E) oder „Ablage ▸ Drucken\xa0…“; die '
           'Seiten werden umbrochen, Diagramme sind eingezeichnet und Code ist hervorgehoben, in den hellen '
           'Farben des Themas. Ohne die App erzeugt das kostenlose Befehlszeilenwerkzeug `marsdawn export` '
-          'dasselbe PDF: `marsdawn export notes.md`. Siehe [PDF-Export](/de/pdf/) und [Markdown zu '
+          'dasselbe PDF: `marsdawn export notes.md`. Siehe [Drucken und PDF](/de/pdf/) und [Markdown zu '
           'PDF](/de/markdown-to-pdf/).'],
          ['Kann ich die .md-Dateien öffnen, die mein KI-Agent geschrieben hat?',
           'Ja, dafür ist MarsDawn gebaut. Öffne die Datei und lies die gerenderte Seite neben ihrem '
@@ -463,7 +463,7 @@ MERMAID = {'title': 'Mermaid-Vorschau auf dem Mac, neben deinem Markdown · Mars
  'next_h2': 'Weiter',
  'next': '- Beginne mit einem Diagramm, das schon funktioniert: die '
          '[Flussdiagramm-Vorlage](/de/templates/flowchart/).\n'
-         '- Exportiere es: [PDF-Export](/de/pdf/), oder aus einem Skript, [Befehlszeile](/de/cli/).\n'
+         '- Exportiere es: [Drucken und PDF](/de/pdf/), oder aus einem Skript, [Befehlszeile](/de/cli/).\n'
          '- Unsicher, wie du die Datei öffnest? [So öffnest du .md-Dateien auf dem '
          'Mac](/de/view-markdown-on-mac/).',
  'try_h2': 'Probiere es auf deinem Mac aus',
@@ -716,23 +716,45 @@ def build(k) -> dict:
 """,
     }
     pages['pdf'] = {
-        "title": 'Markdown auf dem Mac als PDF exportieren, mit Diagrammen · MarsDawn',
-        "description": 'Exportiere Markdown auf deinem Mac als PDF oder drucke es, mit Mermaid-Diagrammen und hervorgehobenem Code. Seitenumbrüche vermeiden es, kurze Codeblöcke zu teilen.',
+        "title": 'Markdown auf dem Mac drucken oder als PDF sichern · MarsDawn',
+        "description": 'Sieh dir dein Markdown in der Vorschau an, drucke es dann oder sichere es als PDF, im Layout Dokument, Handbuch oder Handout, mit Diagrammen und farbigem Code.',
         "intro": """
 <section class="intro">
-  <h1>Das PDF sieht aus wie die Seite, die du geschrieben hast.</h1>
-  <p>Als PDF exportieren oder drucken, in den hellen Farben deines Themas. Diagramme und hervorgehobener Code bleiben erhalten, und Seitenumbrüche trennen nicht, was zusammengehört.</p>
+  <h1>Drucken oder als PDF sichern</h1>
+  <p>MarsDawn druckt dein Markdown oder sichert es als PDF, in den hellen Farben deines Themas. Eine Vorschau zeigt zuerst die Seiten, damit du vor dem Drucken ein Layout wählen kannst.</p>
 </section>
 """,
         "body": """
-<h2>Was das bedeutet</h2>
+<h2>Erst die Vorschau, dann entscheiden</h2>
+<ol class="loop-steps">
+  <li><strong>Vorschau öffnen.</strong> Wähle Ablage ▸ Drucken\xa0… oder Ablage ▸ Als PDF exportieren\xa0…; beide öffnen „Drucken und Exportieren“.</li>
+  <li><strong>Layout wählen.</strong> Sieh dir die Vorschau an und wähle dann Dokument, Handbuch oder Handout.</li>
+  <li><strong>Drucken oder sichern.</strong> Klicke auf „Drucken\xa0…“ oder, um eine Datei zu behalten, auf „Als PDF sichern\xa0…“.</li>
+</ol>
+<h2>Drei Layouts</h2>
+<p>Jedes Layout lässt sich drucken oder als PDF sichern.</p>
+<div class="layout-shots">
+  <figure>
+    <img src="/assets/cli/layout-document.png" alt="Layout Dokument, Seite 1: eine Überschrift, ein Absatz, ein Flussdiagramm, ein Codeblock und eine Tabelle." width="856" height="1108">
+    <figcaption><strong>Dokument.</strong> Seiten wie in der Vorschau, automatisch umbrochen.</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/cli/layout-handbook-contents.png" alt="Layout Handbuch: eine Inhaltsseite, die die Überschriften mit ihren Seitenzahlen auflistet." width="856" height="1108">
+    <figcaption><strong>Handbuch.</strong> Deckblatt, Inhaltsverzeichnis mit Seitenzahlen, jedes Kapitel auf neuer Seite.</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/cli/layout-handout.png" alt="Layout Handout, Seite 1: links der Inhalt, rechts eine leere Notizspalte und eine Fußzeile." width="856" height="1108">
+    <figcaption><strong>Handout.</strong> Notizspalte im rechten Drittel; Dateiname, Datum und Seitenzahl in der Fußzeile.</figcaption>
+  </figure>
+</div>
+<h2>Was auf der Seite landet</h2>
 <ul>
-  <li>Mermaid-Diagramme werden ins PDF gezeichnet.</li>
+  <li>Mermaid-Diagramme werden in die Seiten gezeichnet.</li>
   <li>Codeblöcke behalten ihre Syntaxhervorhebung.</li>
   <li>Seitenumbrüche vermeiden es, eine Überschrift unten auf einer Seite stehen zu lassen oder Code und Diagramme zu teilen.</li>
-  <li>In jedem Layout. Der Export funktioniert auch, wenn nur der Quelltext angezeigt wird.</li>
 </ul>
-<p>Das kostenlose <a href="/de/cli/">Befehlszeilenprogramm marsdawn</a> verwendet denselben Exporter, sodass ein Skript oder ein KI-Agent dasselbe PDF erhält.</p>
+<p>Auf iPhone und iPad kannst du ab Version 1.0.2 ein Markdown-Dokument drucken.</p>
+<p>Das kostenlose <a href="/de/cli/">Befehlszeilenprogramm marsdawn</a> verwendet denselben Exporter, sodass Skripte und KI-Agenten dasselbe PDF erhalten.</p>
 """,
     }
     pages['native'] = {
@@ -947,6 +969,10 @@ marsdawn open notes.md --folder .</code></pre>
                      "callouts": ['Markdown-Hervorhebung im Editor, inklusive.', 'Jedes Thema und jedes Layout ist enthalten.', 'Mermaid-Diagramme, inklusive.', 'Code-Hervorhebung, inklusive.']},
         'pdf': {"alt": 'Ein aus MarsDawn exportiertes PDF, geöffnet in seinem PDF-Viewer mit Seitenminiaturen.',
                 "callouts": ['Mermaid-Diagramme, ins PDF gezeichnet.', 'Code behält seine Hervorhebung.']},
+        'print-export': {
+            "alt": 'Der Dialog „Drucken und Exportieren“: eine Seitenvorschau mit Flussdiagramm und etwas Code, drei Layout-Karten sowie die Schaltflächen „Drucken\xa0…“ und „Als PDF sichern\xa0…“.',
+            "callouts": ['Erst die Seiten in der Vorschau ansehen.', 'Ein Layout wählen.', 'Drucken oder als PDF sichern.'],
+        },
         'native': {"alt": 'MarsDawn in geteilter Ansicht: links der Markdown-Quelltext, rechts die gerenderte Seite.',
                    "callouts": ['Ein natives Mac-Fenster.', 'Der Texteditor des Mac, mit Markdown-Hervorhebung.', '⌘1 Quelltext, ⌘2 geteilt, ⌘3 Vorschau.', 'Die Seite aktualisiert sich beim Tippen.']},
         'limits': {"alt": 'MarsDawn im dunklen Modus, links der Markdown-Quelltext, rechts die gerenderte Seite.',
@@ -2019,9 +2045,9 @@ Teilnehmende: _Namen_
     }
 
     app_ui_languages = 'Englisch, traditionelles Chinesisch, vereinfachtes Chinesisch, Japanisch, Deutsch, Französisch, Spanisch und Koreanisch'
-    ui = {'features': 'Funktionen', 'home': 'MarsDawn', 'privacy': 'Datenschutzrichtlinie', 'support': 'Support', 'cli': 'Befehlszeile', 'agents': 'marsdawn für Agenten', 'using_cli': 'Die CLI verwenden', 'markdown-to-pdf': 'Markdown zu PDF', 'skill': 'Agent-Skill', 'view-markdown-on-mac': 'So öffnest du .md-Dateien auf dem Mac', 'mermaid-preview-mac': 'Mermaid-Vorschau auf dem Mac', 'vs-macmd-viewer': 'MacMD Viewer vs. MarsDawn', 'updated': f'Zuletzt aktualisiert am {k.UPDATED}', 'tagline': 'Lies, was dein Agent geschrieben hat.', 'slogan': 'Ein neuer Morgen für Markdown.', 'footer_store': f'MarsDawn gibt es im <a href="{k.LISTING_URL}">Mac App Store</a>.', 'footer_nav': 'Website', 'more': 'Mehr', 'yours': 'Deine Texte bleiben auf deinem Mac', 'pay-once': 'Kostenlos testen, einmal bezahlen', 'pdf': 'PDF-Export', 'native': 'Eine Mac-App', 'limits': 'Was MarsDawn nicht kann', 'mcp': 'MCP-Server', 'token-efficient-review': 'Review mit wenigen Tokens', 'vs-markdown-preview-tools': 'Markdown anderswo ansehen vs. MarsDawn', 'themes': 'Themen', 'themes-new': 'Ein Thema erstellen', 'themes-agents': 'Mit deinem Agenten ein Thema erstellen', 'themes-gallery': 'Themen-Galerie', 'sharing-exported-pdfs': 'Exportierte PDFs teilen', 'reviewing-ai-output': 'Warum KI-Ergebnisse weiterhin einen menschlichen Leser brauchen', 'reading-agent-output': 'Lesen, was dein Agent zurückgibt', 'agent-transparency': 'Transparenz von Agenten', 'reviewing-agent-plans': 'Den Plan eines Agenten prüfen', 'agent-design-patterns': 'Entwurfsmuster für Agenten', 'changelog': 'Änderungsprotokoll', 'roadmap': 'Roadmap', 'reading-notes': 'Lektürenotizen der Redaktion', 'reading-notes-anthropic': 'Lektürenotizen: Anthropic', 'reading-notes-chip-huyen': 'Lektürenotizen: Chip Huyen', 'reading-notes-lilian-weng': 'Lektürenotizen: Lilian Weng', 'reading-notes-harrison-chase': 'Lektürenotizen: Harrison Chase', 'reading-notes-langchain': 'Lektürenotizen: LangChain (Jess Ou)', 'reading-notes-andrew-ng': 'Lektürenotizen: Andrew Ng', 'consent_text': 'Wir nutzen Analyse-Cookies. Sie bleiben aus, bis du zustimmst.', 'consent_accept': 'Akzeptieren', 'consent_decline': 'Ablehnen', 'consent_aria': 'Cookie-Einwilligung', 'cookie_settings': 'Cookie-Einstellungen', 'view_markdown_source': 'Markdown-Quelltext ansehen'}
+    ui = {'features': 'Funktionen', 'home': 'MarsDawn', 'privacy': 'Datenschutzrichtlinie', 'support': 'Support', 'cli': 'Befehlszeile', 'agents': 'marsdawn für Agenten', 'using_cli': 'Die CLI verwenden', 'markdown-to-pdf': 'Markdown zu PDF', 'skill': 'Agent-Skill', 'view-markdown-on-mac': 'So öffnest du .md-Dateien auf dem Mac', 'mermaid-preview-mac': 'Mermaid-Vorschau auf dem Mac', 'vs-macmd-viewer': 'MacMD Viewer vs. MarsDawn', 'updated': f'Zuletzt aktualisiert am {k.UPDATED}', 'tagline': 'Lies, was dein Agent geschrieben hat.', 'slogan': 'Ein neuer Morgen für Markdown.', 'footer_store': f'MarsDawn gibt es im <a href="{k.LISTING_URL}">Mac App Store</a>.', 'footer_nav': 'Website', 'more': 'Mehr', 'yours': 'Deine Texte bleiben auf deinem Mac', 'pay-once': 'Kostenlos testen, einmal bezahlen', 'pdf': 'Drucken und PDF', 'native': 'Eine Mac-App', 'limits': 'Was MarsDawn nicht kann', 'mcp': 'MCP-Server', 'token-efficient-review': 'Review mit wenigen Tokens', 'vs-markdown-preview-tools': 'Markdown anderswo ansehen vs. MarsDawn', 'themes': 'Themen', 'themes-new': 'Ein Thema erstellen', 'themes-agents': 'Mit deinem Agenten ein Thema erstellen', 'themes-gallery': 'Themen-Galerie', 'sharing-exported-pdfs': 'Exportierte PDFs teilen', 'reviewing-ai-output': 'Warum KI-Ergebnisse weiterhin einen menschlichen Leser brauchen', 'reading-agent-output': 'Lesen, was dein Agent zurückgibt', 'agent-transparency': 'Transparenz von Agenten', 'reviewing-agent-plans': 'Den Plan eines Agenten prüfen', 'agent-design-patterns': 'Entwurfsmuster für Agenten', 'changelog': 'Änderungsprotokoll', 'roadmap': 'Roadmap', 'reading-notes': 'Lektürenotizen der Redaktion', 'reading-notes-anthropic': 'Lektürenotizen: Anthropic', 'reading-notes-chip-huyen': 'Lektürenotizen: Chip Huyen', 'reading-notes-lilian-weng': 'Lektürenotizen: Lilian Weng', 'reading-notes-harrison-chase': 'Lektürenotizen: Harrison Chase', 'reading-notes-langchain': 'Lektürenotizen: LangChain (Jess Ou)', 'reading-notes-andrew-ng': 'Lektürenotizen: Andrew Ng', 'consent_text': 'Wir nutzen Analyse-Cookies. Sie bleiben aus, bis du zustimmst.', 'consent_accept': 'Akzeptieren', 'consent_decline': 'Ablehnen', 'consent_aria': 'Cookie-Einwilligung', 'cookie_settings': 'Cookie-Einstellungen', 'view_markdown_source': 'Markdown-Quelltext ansehen'}
     store_chip = 'Im Mac App Store'
-    trait_link = {'features': ('Funktionen', 'Alles, was MarsDawn kann, auf einer Seite.'), 'yours': ('Deine Texte bleiben auf deinem Mac', 'Kein Konto, keine Synchronisierung, keine Cloud.'), 'pay-once': ('Kostenlos testen, einmal bezahlen', '14 Tage kostenlos, danach einmalig 4,99 USD. Kein Abo.'), 'pdf': ('PDF-Export', 'Diagramme, hervorgehobener Code, saubere Seitenumbrüche.'), 'native': ('Eine Mac-App', 'Native Fenster und Tabs, automatisches Sichern, Übersicht.'), 'limits': ('Was MarsDawn nicht kann', 'Gut zu wissen, bevor du kaufst.')}
+    trait_link = {'features': ('Funktionen', 'Alles, was MarsDawn kann, auf einer Seite.'), 'yours': ('Deine Texte bleiben auf deinem Mac', 'Kein Konto, keine Synchronisierung, keine Cloud.'), 'pay-once': ('Kostenlos testen, einmal bezahlen', '14 Tage kostenlos, danach einmalig 4,99 USD. Kein Abo.'), 'pdf': ('Drucken und PDF', 'Vorschau, Layout wählen, dann drucken oder sichern.'), 'native': ('Eine Mac-App', 'Native Fenster und Tabs, automatisches Sichern, Übersicht.'), 'limits': ('Was MarsDawn nicht kann', 'Gut zu wissen, bevor du kaufst.')}
     trait_nav_heading = 'Was du von MarsDawn erwarten kannst'
     figure_list_label = 'Auf diesem Bildschirmfoto'
 
