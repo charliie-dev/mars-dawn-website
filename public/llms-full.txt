@@ -538,12 +538,13 @@ Source: https://marsdawn.southern-light.dev/pdf/
 
 MarsDawn prints your Markdown or saves it as a PDF, in your theme's light colors. A preview shows the pages first, so you can pick a layout before you print.
 
-![A PDF exported from MarsDawn, open in its PDF viewer with page thumbnails.](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
+![The Print & Export panel: a page preview with a flowchart and some code, three layout cards, and Print… and Save as PDF… buttons.](https://marsdawn.southern-light.dev/assets/screens/06-print-export-868.png)
 
 In this screenshot:
 
-1. Mermaid diagrams, drawn into the PDF.
-2. Code keeps its highlighting.
+1. Preview the pages first.
+2. Pick a layout.
+3. Print, or save as a PDF.
 
 ## Preview first, then decide
 
@@ -4316,12 +4317,13 @@ Source: https://marsdawn.southern-light.dev/zh-hant/pdf/
 
 MarsDawn 能把 Markdown 列印，或儲存為 PDF，使用主題的淺色配色。先預覽頁面，再選版面。
 
-![用 MarsDawn 輸出的 PDF，在內建的 PDF 檢視器中開啟，旁邊有頁面縮圖。](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
+![「列印與輸出」面板：左側頁面預覽有流程圖和一小段程式碼，右側三張版面卡片，右下有「列印⋯」和「儲存為 PDF⋯」按鈕。](https://marsdawn.southern-light.dev/assets/screens/06-print-export-868.png)
 
 這張截圖裡：
 
-1. Mermaid 圖表直接畫進 PDF。
-2. 程式碼保留語法上色。
+1. 先預覽頁面。
+2. 選一種版面。
+3. 列印，或儲存為 PDF。
 
 ## 先預覽，再決定
 
@@ -8186,12 +8188,13 @@ Source: https://marsdawn.southern-light.dev/zh-hans/pdf/
 
 MarsDawn 能把 Markdown 打印，或存储为 PDF，使用主题的浅色配色。先预览页面，再选布局。
 
-![用 MarsDawn 导出的 PDF，在内置的 PDF 查看器中打开，旁边有页面缩略图。](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
+![“打印与导出”面板：左侧页面预览有流程图和一小段代码，右侧三张布局卡片，右下有“打印…”和“存储为 PDF…”按钮。](https://marsdawn.southern-light.dev/assets/screens/06-print-export-868.png)
 
 这张截图里：
 
-1. Mermaid 图表直接画进 PDF。
-2. 代码保留语法高亮。
+1. 先预览页面。
+2. 选一种布局。
+3. 打印，或存储为 PDF。
 
 ## 先预览，再决定
 
@@ -11995,12 +11998,13 @@ Source: https://marsdawn.southern-light.dev/ja/pdf/
 
 MarsDawn なら、Markdown をプリントしたり PDF として保存したりできます。テーマのライトカラーを使い、先にページをプレビューしてレイアウトを選べます。
 
-![MarsDawn から書き出した PDF を、ページのサムネイル付きの PDF ビューアで開いたところ。](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
+![「プリントと書き出し」パネル：図とコードのプレビュー、レイアウトカード3枚、「プリント…」「PDFとして保存…」ボタン。](https://marsdawn.southern-light.dev/assets/screens/06-print-export-868.png)
 
 このスクリーンショットの内容：
 
-1. Mermaid 図は PDF に描き込まれます。
-2. コードはハイライトを保ちます。
+1. まずページをプレビュー。
+2. レイアウトを選ぶ。
+3. プリント、または PDF として保存。
 
 ## まずプレビュー、それから決める
 
@@ -15803,12 +15807,13 @@ Source: https://marsdawn.southern-light.dev/de/pdf/
 
 MarsDawn druckt dein Markdown oder sichert es als PDF, in den hellen Farben deines Themas. Eine Vorschau zeigt zuerst die Seiten, damit du vor dem Drucken ein Layout wählen kannst.
 
-![Ein aus MarsDawn exportiertes PDF, geöffnet in seinem PDF-Viewer mit Seitenminiaturen.](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
+![Der Dialog „Drucken und Exportieren“: eine Seitenvorschau mit Flussdiagramm und etwas Code, drei Layout-Karten sowie die Schaltflächen „Drucken …“ und „Als PDF sichern …“.](https://marsdawn.southern-light.dev/assets/screens/06-print-export-868.png)
 
 Auf diesem Bildschirmfoto:
 
-1. Mermaid-Diagramme, ins PDF gezeichnet.
-2. Code behält seine Hervorhebung.
+1. Erst die Seiten in der Vorschau ansehen.
+2. Ein Layout wählen.
+3. Drucken oder als PDF sichern.
 
 ## Erst die Vorschau, dann entscheiden
 
@@ -19552,12 +19557,13 @@ Source: https://marsdawn.southern-light.dev/fr/pdf/
 
 MarsDawn imprime votre Markdown ou l’enregistre en PDF, dans les couleurs claires de votre thème. Un aperçu montre d’abord les pages, pour choisir une disposition avant d’imprimer.
 
-![Un PDF exporté depuis MarsDawn, ouvert dans sa visionneuse PDF avec les vignettes des pages.](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
+![Le panneau « Imprimer et exporter » : aperçu de la page avec diagramme de flux et un peu de code, trois cartes de disposition, boutons « Imprimer… » et « Enregistrer au format PDF… ».](https://marsdawn.southern-light.dev/assets/screens/06-print-export-868.png)
 
 Sur cette capture d’écran :
 
-1. Les diagrammes Mermaid, dessinés dans le PDF.
-2. Le code garde sa coloration.
+1. Consultez d’abord l’aperçu des pages.
+2. Choisissez une disposition.
+3. Imprimez, ou enregistrez au format PDF.
 
 ## D’abord l’aperçu, ensuite le choix
 
@@ -23301,12 +23307,13 @@ Source: https://marsdawn.southern-light.dev/es/pdf/
 
 MarsDawn imprime tu Markdown o lo guarda como PDF, con los colores claros de tu tema. Una vista previa muestra primero las páginas, para que elijas una disposición antes de imprimir.
 
-![Un PDF exportado desde MarsDawn, abierto en su visor de PDF con miniaturas de las páginas.](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
+![El panel «Imprimir y exportar»: vista previa de la página con diagrama de flujo y algo de código, tres tarjetas de disposición y botones «Imprimir…» y «Guardar como PDF…».](https://marsdawn.southern-light.dev/assets/screens/06-print-export-868.png)
 
 En esta captura de pantalla:
 
-1. Diagramas Mermaid, dibujados dentro del PDF.
-2. El código conserva su resaltado.
+1. Revisa primero la vista previa de las páginas.
+2. Elige una disposición.
+3. Imprime, o guarda como PDF.
 
 ## Primero la vista previa, luego decides
 
@@ -27050,12 +27057,13 @@ Source: https://marsdawn.southern-light.dev/ko/pdf/
 
 MarsDawn은 Markdown을 프린트하거나 PDF로 저장합니다. 테마의 라이트 색상을 쓰며, 먼저 페이지를 미리 보고 레이아웃을 고를 수 있습니다.
 
-![MarsDawn에서 내보낸 PDF를 페이지 축소판과 함께 PDF 뷰어로 연 모습.](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
+![“프린트 및 내보내기”: 순서도·코드 미리보기, 레이아웃 카드 3개, “프린트…”·“PDF로 저장…” 버튼.](https://marsdawn.southern-light.dev/assets/screens/06-print-export-868.png)
 
 이 스크린샷의 내용:
 
-1. Mermaid 다이어그램이 PDF 안에 그려집니다.
-2. 코드는 하이라이트를 유지합니다.
+1. 먼저 페이지 미리보기.
+2. 레이아웃 고르기.
+3. 프린트 또는 PDF로 저장.
 
 ## 먼저 미리 보고 결정하세요
 

@@ -2,12 +2,13 @@
 
 MarsDawn druckt dein Markdown oder sichert es als PDF, in den hellen Farben deines Themas. Eine Vorschau zeigt zuerst die Seiten, damit du vor dem Drucken ein Layout wählen kannst.
 
-![Ein aus MarsDawn exportiertes PDF, geöffnet in seinem PDF-Viewer mit Seitenminiaturen.](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
+![Der Dialog „Drucken und Exportieren“: eine Seitenvorschau mit Flussdiagramm und etwas Code, drei Layout-Karten sowie die Schaltflächen „Drucken …“ und „Als PDF sichern …“.](https://marsdawn.southern-light.dev/assets/screens/06-print-export-868.png)
 
 Auf diesem Bildschirmfoto:
 
-1. Mermaid-Diagramme, ins PDF gezeichnet.
-2. Code behält seine Hervorhebung.
+1. Erst die Seiten in der Vorschau ansehen.
+2. Ein Layout wählen.
+3. Drucken oder als PDF sichern.
 
 ## Erst die Vorschau, dann entscheiden
 

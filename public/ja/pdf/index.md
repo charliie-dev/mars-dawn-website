@@ -2,12 +2,13 @@
 
 MarsDawn なら、Markdown をプリントしたり PDF として保存したりできます。テーマのライトカラーを使い、先にページをプレビューしてレイアウトを選べます。
 
-![MarsDawn から書き出した PDF を、ページのサムネイル付きの PDF ビューアで開いたところ。](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
+![「プリントと書き出し」パネル：図とコードのプレビュー、レイアウトカード3枚、「プリント…」「PDFとして保存…」ボタン。](https://marsdawn.southern-light.dev/assets/screens/06-print-export-868.png)
 
 このスクリーンショットの内容：
 
-1. Mermaid 図は PDF に描き込まれます。
-2. コードはハイライトを保ちます。
+1. まずページをプレビュー。
+2. レイアウトを選ぶ。
+3. プリント、または PDF として保存。
 
 ## まずプレビュー、それから決める
 

@@ -2,12 +2,13 @@
 
 MarsDawn은 Markdown을 프린트하거나 PDF로 저장합니다. 테마의 라이트 색상을 쓰며, 먼저 페이지를 미리 보고 레이아웃을 고를 수 있습니다.
 
-![MarsDawn에서 내보낸 PDF를 페이지 축소판과 함께 PDF 뷰어로 연 모습.](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
+![“프린트 및 내보내기”: 순서도·코드 미리보기, 레이아웃 카드 3개, “프린트…”·“PDF로 저장…” 버튼.](https://marsdawn.southern-light.dev/assets/screens/06-print-export-868.png)
 
 이 스크린샷의 내용:
 
-1. Mermaid 다이어그램이 PDF 안에 그려집니다.
-2. 코드는 하이라이트를 유지합니다.
+1. 먼저 페이지 미리보기.
+2. 레이아웃 고르기.
+3. 프린트 또는 PDF로 저장.
 
 ## 먼저 미리 보고 결정하세요
 

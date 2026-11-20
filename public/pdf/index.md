@@ -2,12 +2,13 @@
 
 MarsDawn prints your Markdown or saves it as a PDF, in your theme's light colors. A preview shows the pages first, so you can pick a layout before you print.
 
-![A PDF exported from MarsDawn, open in its PDF viewer with page thumbnails.](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
+![The Print & Export panel: a page preview with a flowchart and some code, three layout cards, and Print… and Save as PDF… buttons.](https://marsdawn.southern-light.dev/assets/screens/06-print-export-868.png)
 
 In this screenshot:
 
-1. Mermaid diagrams, drawn into the PDF.
-2. Code keeps its highlighting.
+1. Preview the pages first.
+2. Pick a layout.
+3. Print, or save as a PDF.
 
 ## Preview first, then decide
 

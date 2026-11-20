@@ -2,12 +2,13 @@
 
 MarsDawn imprime votre Markdown ou l’enregistre en PDF, dans les couleurs claires de votre thème. Un aperçu montre d’abord les pages, pour choisir une disposition avant d’imprimer.
 
-![Un PDF exporté depuis MarsDawn, ouvert dans sa visionneuse PDF avec les vignettes des pages.](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
+![Le panneau « Imprimer et exporter » : aperçu de la page avec diagramme de flux et un peu de code, trois cartes de disposition, boutons « Imprimer… » et « Enregistrer au format PDF… ».](https://marsdawn.southern-light.dev/assets/screens/06-print-export-868.png)
 
 Sur cette capture d’écran :
 
-1. Les diagrammes Mermaid, dessinés dans le PDF.
-2. Le code garde sa coloration.
+1. Consultez d’abord l’aperçu des pages.
+2. Choisissez une disposition.
+3. Imprimez, ou enregistrez au format PDF.
 
 ## D’abord l’aperçu, ensuite le choix
 

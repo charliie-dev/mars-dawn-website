@@ -2,12 +2,13 @@
 
 MarsDawn 能把 Markdown 列印，或儲存為 PDF，使用主題的淺色配色。先預覽頁面，再選版面。
 
-![用 MarsDawn 輸出的 PDF，在內建的 PDF 檢視器中開啟，旁邊有頁面縮圖。](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
+![「列印與輸出」面板：左側頁面預覽有流程圖和一小段程式碼，右側三張版面卡片，右下有「列印⋯」和「儲存為 PDF⋯」按鈕。](https://marsdawn.southern-light.dev/assets/screens/06-print-export-868.png)
 
 這張截圖裡：
 
-1. Mermaid 圖表直接畫進 PDF。
-2. 程式碼保留語法上色。
+1. 先預覽頁面。
+2. 選一種版面。
+3. 列印，或儲存為 PDF。
 
 ## 先預覽，再決定
 

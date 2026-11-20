@@ -2,12 +2,13 @@
 
 MarsDawn imprime tu Markdown o lo guarda como PDF, con los colores claros de tu tema. Una vista previa muestra primero las páginas, para que elijas una disposición antes de imprimir.
 
-![Un PDF exportado desde MarsDawn, abierto en su visor de PDF con miniaturas de las páginas.](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
+![El panel «Imprimir y exportar»: vista previa de la página con diagrama de flujo y algo de código, tres tarjetas de disposición y botones «Imprimir…» y «Guardar como PDF…».](https://marsdawn.southern-light.dev/assets/screens/06-print-export-868.png)
 
 En esta captura de pantalla:
 
-1. Diagramas Mermaid, dibujados dentro del PDF.
-2. El código conserva su resaltado.
+1. Revisa primero la vista previa de las páginas.
+2. Elige una disposición.
+3. Imprime, o guarda como PDF.
 
 ## Primero la vista previa, luego decides
 
