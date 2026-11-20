@@ -18,15 +18,18 @@ Compared places, per locale:
   /pdf/index.html  <title>, meta description, og:title, og:description, h1, lede, the three h2, the three steps
                    (label in <strong>, sentence), the opener, three figcaptions, three img alt, the four list
                    items (the last is the #369 sentence), the iPhone/iPad line, the closing line and its link.
+                   The Print & Export figure's image, alt, markers, leaders and ordered caption.
   /pdf/index.md    the same cells as lines, in the same order.
   llms.txt         "- [name](.../pdf/index.md): meta".
   yours, pay-once, limits, native (html)   trait nav: <a>name</a><span>trait</span>.
   index.html       home card: <a>name</a><span>card</span>.
   /pdf/ and every page's footer: the page name.   JSON-LD BreadcrumbList on /pdf/: the page name.
-Cells that wait for the Print & Export panel photo (fig_alt, co1, co2, co3: "待圖") are reported as PENDING, and the
-page must not carry a "待圖" marker. The deleted cell (b_del) must be gone.
+Both formats must use the new panel image and omit the old PDF viewer image and alt. The HTML page must omit
+the deleted cell (b_del) and the original "待圖" marker.
 
 Limits are Daphne's structure table (issue #383, section 2). Words = str.split() on the visible text; chars = len().
+For the panel alt and callouts, Aria's approved counts split on whitespace (including NBSP), then count tokens
+with a word character. English also counts a standalone "&". The original cells retain their original counts.
 The #369 sentence (b369) is locked by check_copy369.py and is reported as LOCKED when it is over, not as a FAIL.
 
 Exit codes: 0 all good, 1 a mismatch, 2 usage error or a failed --self-test.
@@ -54,10 +57,12 @@ PREFIX = {"en": "", "zh-Hant": "zh-hant/", "zh-Hans": "zh-hans/", "ja": "ja/", "
 # The page names (issue #383, Aria's page-name table). Written out here so a wrong name in the sources is caught.
 NAME = {"en": "Print & PDF", "zh-Hant": "列印與 PDF", "zh-Hans": "打印与 PDF", "ja": "プリントと PDF",
         "ko": "프린트 및 PDF", "de": "Drucken und PDF", "fr": "Imprimer et PDF", "es": "Imprimir y PDF"}
-PENDING = ["fig_alt", "co1", "co2", "co3"]
-APPLIED = ["title", "meta", "h1", "lede", "h2_steps", "step1", "step2", "step3", "h2_layouts", "opener",
-           "cap_doc", "cap_hb", "cap_ho", "alt_doc", "alt_hb", "alt_ho", "h2_bul", "b1", "b2", "b3", "b369",
-           "ios", "close", "trait", "card"]
+CALLOUTS = ("co1", "co2", "co3")
+COPY_CELLS = ["title", "meta", "h1", "lede", "fig_alt", *CALLOUTS, "h2_steps", "step1", "step2", "step3",
+              "h2_layouts", "opener", "cap_doc", "cap_hb", "cap_ho", "alt_doc", "alt_hb", "alt_ho",
+              "h2_bul", "b1", "b2", "b3", "b_del", "b369", "ios", "close", "trait", "card"]
+PANEL_SRC = "/assets/screens/06-print-export-868.png"
+PANEL_CANDIDATES = ("/assets/screens/06-print-export-800.png 800w", f"{PANEL_SRC} 868w")
 IMG = {"doc": "layout-document.png", "hb": "layout-handbook-contents.png", "ho": "layout-handout.png"}
 TRAIT_PAGES = ["yours", "pay-once", "limits", "native"]
 
@@ -69,6 +74,8 @@ LIMITS = {
     "h1": [("w", 8), ("c", 16), ("c", 26), ("c", 24), ("w", 11)],
     "h1.chars": [("c", 45), None, None, None, ("c", 60)],
     "lede": [("w", 30), ("c", 55), ("c", 95), ("c", 95), ("w", 38)],
+    "fig_alt": [("w", 25), ("c", 60), ("c", 60), ("c", 60), ("w", 30)],
+    "co": [("w", 8), ("c", 16), ("c", 24), ("c", 22), ("w", 10)],
     "step.label": [("w", 3), ("c", 6), ("c", 10), ("c", 10), ("w", 4)],
     "step.text": [("w", 18), ("c", 36), ("c", 55), ("c", 55), ("w", 22)],
     "opener": [("w", 25), ("c", 50), ("c", 80), ("c", 80), ("w", 32)],
@@ -118,9 +125,13 @@ def words(text: str) -> int:
     return len(text.split())
 
 
+def words_text(text: str, locale: str) -> int:
+    return sum(bool(re.search(r"\w", token)) or (locale == "en" and token == "&") for token in text.split())
+
+
 def limit_text(locale: str, cell: str, text: str, key: str = None) -> str:
     """'count/limit unit ok|OVER' for a cell, or '' when there is no limit for it."""
-    key = key or cell
+    key = key or ("co" if cell in CALLOUTS else cell)
     row = LIMITS.get(key)
     if row is None:
         return ""
@@ -128,7 +139,10 @@ def limit_text(locale: str, cell: str, text: str, key: str = None) -> str:
     for r in (row, LIMITS.get(key + ".chars")):
         spec = r[_COL[locale]] if r else None
         if spec:
-            n = words(text) if spec[0] == "w" else len(text)
+            if spec[0] == "c":
+                n = len(text)
+            else:
+                n = words_text(text, locale) if key in ("fig_alt", "co") else words(text)
             parts.append(f"{n}/{spec[1]} {'words' if spec[0] == 'w' else 'chars'} {'ok' if n <= spec[1] else 'OVER'}")
     return "limit " + ", ".join(parts)
 
@@ -146,12 +160,35 @@ def expected(locale: str) -> dict:
     return {k: v[1] for k, v in TABLE_A[locale].items()}
 
 
+def collect_panel(body: str) -> dict:
+    shot = re.search(r'<figure class="shot">(.*?)</figure>', body, re.S)
+    figure = shot[1] if shot else ""
+    image = re.search(r'<img\s([^>]*)>', figure)
+    attrs = dict(re.findall(r'([\w-]+)="([^"]*)"', image[1])) if image else {}
+    alt = attrs.get("alt")
+    out = {
+        "fig_alt": (html.unescape(alt) if alt is not None else None, "html panel img alt"),
+        "panel.src": (attrs.get("src"), "html panel img src"),
+        "panel.srcset": (attrs.get("srcset"), "html panel img srcset"),
+    }
+    caption = re.search(r'<figcaption>[^<]*(?:<span[^>]*>[^<]*</span>\s*)?<ol>(.*?)</ol>', figure, re.S)
+    items = re.findall(r'<li>(.*?)</li>', caption[1], re.S) if caption else []
+    out["panel.caption"] = (len(items), "html panel figcaption li count")
+    for i, cell in enumerate(CALLOUTS, 1):
+        cls = rf'[^"]* co-print-export-{i}(?=\s|")[^"]*'
+        leaders = re.findall(rf'<span class="leader {cls}"[^>]*><span>(.*?)</span></span>', figure, re.S)
+        markers = re.findall(rf'<span class="marker {cls}"[^>]*>(.*?)</span>', figure, re.S)
+        out[cell] = (tags_off(leaders[0]) if len(leaders) == 1 else None, f"html panel leader #{i}")
+        out[cell + ".caption"] = (tags_off(items[i - 1]) if i <= len(items) else None, f"html panel figcaption li #{i}")
+        out[cell + ".marker"] = (markers[0] if len(markers) == 1 else None, f"html panel marker #{i}")
+    return out
+
+
 def collect(site: Site, locale: str) -> dict:
     """What the built /pdf/ page of one locale says in each cell: {cell: (text, where)}, or an error string."""
     pre = PREFIX[locale]
     h = site.read(f"{pre}pdf/index.html")
     md = site.read(f"{pre}pdf/index.md")
-    out, err = {}, {}
     if h is None:
         return {"_missing": f"{pre}pdf/index.html is missing"}
     main = re.search(r"<main[^>]*>(.*?)</main>", h, re.S)
@@ -159,6 +196,7 @@ def collect(site: Site, locale: str) -> dict:
         return {"_missing": "no <main> in the page"}
     body = main.group(1)
     body = body.split('<nav class="traits"')[0]
+    out = collect_panel(body)
     t = re.search(r"<title>(.*?)</title>", h, re.S)
     out["title"] = (tags_off(t.group(1)).removesuffix(" · MarsDawn") if t else None, "html <title>")
     m = re.search(r'<meta name="description" content="([^"]*)"', h)
@@ -212,8 +250,9 @@ def collect(site: Site, locale: str) -> dict:
 def md_expect(locale: str) -> list:
     """The twin's lines, in order, from the cells (as the twin writes them)."""
     e = expected(locale)
-    pre = PREFIX[locale]
-    lines = [("h1", "# " + e["h1"]), ("lede", e["lede"]), ("h2_steps", "## " + e["h2_steps"]),
+    lines = [("h1", "# " + e["h1"]), ("lede", e["lede"]), ("fig_alt", f"![{e['fig_alt']}]({BASE}{PANEL_SRC})")]
+    lines += [(cell, f"{i}. {e[cell]}") for i, cell in enumerate(CALLOUTS, 1)]
+    lines += [("h2_steps", "## " + e["h2_steps"]),
              ("step1", "1. " + e["step1"]), ("step2", "2. " + e["step2"]), ("step3", "3. " + e["step3"]),
              ("h2_layouts", "## " + e["h2_layouts"]), ("opener", e["opener"])]
     for k in ("doc", "hb", "ho"):
@@ -242,8 +281,8 @@ def run(site: Site, quiet: bool = False):
             emit(False, locale, "(page)", 0, got["_missing"])
             continue
         # html cells
-        for cell in APPLIED:
-            if cell in ("trait", "card"):
+        for cell in COPY_CELLS:
+            if cell in ("b_del", "trait", "card"):
                 continue
             want = plain(e[cell])
             text, where = got[cell]
@@ -266,6 +305,23 @@ def run(site: Site, quiet: bool = False):
                 lim = limit_text(locale, cell, want)
             locked = cell == "b369" and over(lim)
             emit(ok, locale, cell, len(want), where, lim.replace("OVER", "OVER, locked by #369") if locked else lim, note)
+        # The caption repeats each leader's copy, and every leader has a matching marker.
+        for i, cell in enumerate(CALLOUTS, 1):
+            want = e[cell]
+            text, where = got[cell + ".caption"]
+            emit(text == want, locale, cell + ".caption", len(want), where,
+                 note="" if text == want else first_diff(want, text) if text is not None else "element not found")
+            marker, where = got[cell + ".marker"]
+            emit(marker == str(i), locale, cell + ".marker", 0, where, note="" if marker == str(i) else f"got {marker!r}")
+        src, where = got["panel.src"]
+        emit(src == PANEL_SRC, locale, "panel.src", len(PANEL_SRC), where, note="" if src == PANEL_SRC else f"got {src!r}")
+        srcset, where = got["panel.srcset"]
+        candidates = {part.strip() for part in (srcset or "").split(",")}
+        srcset_ok = candidates.issuperset(PANEL_CANDIDATES)
+        emit(srcset_ok, locale, "panel.srcset", 0, where, note="" if srcset_ok else f"got {srcset!r}")
+        count, where = got["panel.caption"]
+        emit(count == len(CALLOUTS), locale, "panel.caption", 0, where,
+             note="" if count == len(CALLOUTS) else f"got {count}, want {len(CALLOUTS)}")
         # bold labels in <strong>
         for cell in ("step1", "step2", "step3", "cap_doc", "cap_hb", "cap_ho"):
             label, _ = label_and_rest(e[cell])
@@ -283,13 +339,16 @@ def run(site: Site, quiet: bool = False):
         # og: tags equal the title / description
         emit(got["og_title"][0] == e["title"] + " · MarsDawn", locale, "og_title", len(e["title"]) + 11, "og:title", "", "")
         emit(got["og_desc"][0] == e["meta"], locale, "og_desc", len(e["meta"]), "og:description", "", "")
-        # the deleted cell and the pending cells
+        # the deleted cell and the retired PDF viewer figure
         h = site.read(f"{PREFIX[locale]}pdf/index.html") or ""
-        gone = plain(e.get("b_del", "")) if e.get("b_del") and e["b_del"] != "（刪除）" else None
         old_b_del = TABLE_A[locale]["b_del"][0]
         emit(old_b_del not in h and "待圖" not in h, locale, "b_del", len(old_b_del), "old list item absent, no 待圖 marker")
-        for cell in PENDING:
-            lines.append(f"PEND  {locale:8} {cell:11} not applied: waits for the Print & Export panel photo (主圖 stays 05-pdf)")
+        old_alt = TABLE_A[locale]["fig_alt"][0]
+        for fmt, page in (("html", h), ("md", site.read(f"{PREFIX[locale]}pdf/index.md"))):
+            if page is not None:
+                old_fig = [label for label, needle in (("05-pdf", "05-pdf"), ("old alt", old_alt))
+                           if needle in html.unescape(page)]
+                emit(not old_fig, locale, f"{fmt}.old_fig", 0, fmt, note="found " + ", ".join(old_fig) if old_fig else "")
         # markdown twin
         md = got["_md"]
         if md is None:
@@ -332,6 +391,32 @@ def run(site: Site, quiet: bool = False):
     return lines, fails
 
 
+def swap(rel_for, old_new):
+    def mutate(rel, text):
+        if rel in rel_for:
+            old, new = old_new(text)
+            return text.replace(old, new, 1)
+        return text
+    return mutate
+
+
+def panel_self_test_cases():
+    first_word, second_word = expected("en")["fig_alt"].split()[:2]
+    ja_callout = expected("ja")["co1"]
+    es_panel = f'src="{PANEL_SRC}" srcset="{", ".join(PANEL_CANDIDATES)}"'
+    es_pdf = ('src="/assets/screens/05-pdf-980.png" '
+              'srcset="/assets/screens/05-pdf-800.png 800w, /assets/screens/05-pdf-980.png 980w"')
+    de_callout = f'3. {expected("de")["co3"]}\n'
+    return [
+        ("one word changed in the panel alt (en)",
+         swap({"pdf/index.html"}, lambda t: (f'alt="{first_word} {second_word} ', f'alt="This {second_word} '))),
+        ("panel leader changed (ja)",
+         swap({"ja/pdf/index.html"}, lambda t: (f"><span>{ja_callout}</span></span>", f"><span>{ja_callout}!</span></span>"))),
+        ("old 05-pdf image back (es)", swap({"es/pdf/index.html"}, lambda t: (es_panel, es_pdf))),
+        ("panel callout missing from the twin (de)", swap({"de/pdf/index.md"}, lambda t: (de_callout, ""))),
+    ]
+
+
 def self_test() -> int:
     site = Site(ROOT / "public")
     lines, fails = run(site)
@@ -341,14 +426,6 @@ def self_test() -> int:
         return 2
     pdf = {loc: f"{PREFIX[loc]}pdf/index.html" for loc in LOCALES}
     e = {loc: expected(loc) for loc in LOCALES}
-
-    def swap(rel_for, old_new):
-        def mutate(rel, text):
-            if rel in rel_for:
-                old, new = old_new(text)
-                return text.replace(old, new, 1)
-            return text
-        return mutate
 
     def first(loc, key):
         return plain(e[loc][key])
@@ -368,7 +445,7 @@ def self_test() -> int:
         ("trait line changed on /limits/ (es)", swap({"es/limits/index.html"}, lambda t: (e["es"]["trait"], e["es"]["trait"] + "."))),
         ("md twin line changed (ja)", swap({"ja/pdf/index.md"}, lambda t: (e["ja"]["opener"], e["ja"]["opener"] + " "))),
         ("llms.txt meta changed (de)", swap({"llms.txt"}, lambda t: (e["de"]["meta"], e["de"]["meta"][:-1]))),
-    ]
+    ] + panel_self_test_cases()
     bad = 0
     for name, mut in cases:
         _, f = run(Site(ROOT / "public", mut))
@@ -394,14 +471,20 @@ def main() -> int:
         return 2
     lines, fails = run(Site(Path(a.site)))
     print("\n".join(lines))
-    cells = sum(1 for l in lines if l[:4] in ("PASS", "FAIL"))
-    print(f"\n{len(LOCALES)} locales, {cells} comparisons: {cells - fails} PASS, {fails} FAIL, "
-          f"{sum(1 for l in lines if l.startswith('PEND'))} PENDING (not applied)")
+    print(f"\n{len(LOCALES)} locales, {len(lines)} comparisons: {len(lines) - fails} PASS, {fails} FAIL")
     over_n = [l for l in lines if "OVER" in l and "locked" not in l]
     print(f"length limits: {len(over_n)} cell(s) over the limit, "
           f"{sum(1 for l in lines if 'locked by #369' in l)} locked #369 sentence(s) over")
     for l in over_n:
         print("  OVER", l)
+    compared = set()
+    for line in lines:
+        _, locale, field, _ = line.split(maxsplit=3)
+        cell = field.split("@", 1)[0]
+        if cell in COPY_CELLS:
+            compared.add((locale, cell))
+    pending = sum(len(TABLE_A[locale].keys() - set(COPY_CELLS)) for locale in LOCALES)
+    print(f"copy cells: {len(compared)} ({len(LOCALES)} locales x {len(COPY_CELLS)}), PENDING {pending}")
     return 1 if fails or over_n else 0
 
 

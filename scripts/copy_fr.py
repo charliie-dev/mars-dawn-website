@@ -970,6 +970,10 @@ marsdawn open notes.md --folder .</code></pre>
                      "callouts": ['Coloration Markdown dans l’éditeur, incluse.', 'Tous les thèmes et toutes les dispositions sont inclus.', 'Diagrammes Mermaid, inclus.', 'Coloration du code, incluse.']},
         'pdf': {"alt": 'Un PDF exporté depuis MarsDawn, ouvert dans sa visionneuse PDF avec les vignettes des pages.',
                 "callouts": ['Les diagrammes Mermaid, dessinés dans le PDF.', 'Le code garde sa coloration.']},
+        'print-export': {
+            "alt": 'Le panneau «\xa0Imprimer et exporter\xa0»\xa0: aperçu de la page avec diagramme de flux et un peu de code, trois cartes de disposition, boutons «\xa0Imprimer…\xa0» et «\xa0Enregistrer au format PDF…\xa0».',
+            "callouts": ['Consultez d’abord l’aperçu des pages.', 'Choisissez une disposition.', 'Imprimez, ou enregistrez au format PDF.'],
+        },
         'native': {"alt": 'MarsDawn en vue partagée : la source Markdown à gauche, la page mise en forme à droite.',
                    "callouts": ['Une fenêtre Mac native.', 'L’éditeur de texte du Mac, avec la coloration Markdown.', '⌘1 source, ⌘2 partagé, ⌘3 aperçu.', 'La page se met à jour pendant la saisie.']},
         'limits': {"alt": 'MarsDawn en mode sombre, la source Markdown à gauche et la page mise en forme à droite.',

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Ingestion for website #383: /pdf/ becomes "Print & PDF" (列印與 PDF) in eight locales.
 
-Every string this slice puts on the site comes from a pinned issue comment and is carried here by
-program, never typed. Each comment is fetched by id with `gh api` and held to the sha256 and
-`updated_at` in sources.json; a comment that changed stops the run.
+All 30 /pdf/ cells in each of the eight locales come from pinned issue comments and are carried here
+by program, never typed. Each comment is fetched by id with `gh api` and checked against the issue,
+sha256 and `updated_at` in sources.json; a comment that changed stops the run.
 
 - aria_en_zhhant, #383 6952823397 (Aria, 2026-11-17): Table A (30 cells for /pdf/) and Table B (link
   text across the site) for en and zh-Hant. The owner approved both on 2026-11-18 ("approval", 6953584073).
@@ -11,6 +11,10 @@ program, never typed. Each comment is fetched by id with `gh api` and held to th
   the approved pair, plus the one row Paula added ("paula", 6953647659): 標準 -> 文件 on the zh-Hant home page.
 - daphne, #383 6951950154: the structure and the per-cell limits; only verified here, the limits are
   checked by scripts/check_copy383.py.
+- aria_panel_en_zhhant, #383 7025121176 (Aria): the main image alt and three callouts for en and zh-Hant.
+- ray_ok_panel, #383 7033704793 (Ray): the approval of those eight cells, checked for the source id and
+  the approval phrase.
+- aria_panel_six, #383 7033795799 (Aria): the same four panel cells for zh-Hans, ja, ko, de, fr, es.
 
 Writes scripts/copy383/data.py: TABLE_A[locale][key] = (current, proposed) for the 30 cells, and SRC_ROWS,
 the source-code edits of Table B (file, current fragment, proposed fragment).
@@ -36,10 +40,10 @@ LOCALES = ["en", "zh-Hant", "zh-Hans", "ja", "ko", "de", "fr", "es"]
 KEYS = ["title", "meta", "h1", "lede", "fig_alt", "co1", "co2", "co3", "h2_steps", "step1", "step2", "step3",
         "h2_layouts", "opener", "cap_doc", "cap_hb", "cap_ho", "alt_doc", "alt_hb", "alt_ho", "h2_bul", "b1", "b2",
         "b3", "b_del", "b369", "ios", "close", "trait", "card"]
-PENDING = ["fig_alt", "co1", "co2", "co3"]      # "待圖": they wait for the Print & Export panel photo
+PANEL_KEYS = ("fig_alt", "co1", "co2", "co3")
 UNCHANGED = ["b2", "b3", "b369", "card"]        # current == proposed in the table
 DELETED = ["b_del"]
-NEW_MARK, DELETE_MARK, PENDING_MARK, KEEP_MARK = "（新增）", "（刪除）", "待圖", "（不動）"
+NEW_MARK, DELETE_MARK, KEEP_MARK = "（新增）", "（刪除）", "（不動）"
 
 
 class Stop(SystemExit):
@@ -74,19 +78,19 @@ def section(body: str, start: str, end: str = None) -> str:
     return body[i:j]
 
 
-def cells(line: str) -> list:
-    """The cells of one table row: split on a `|` that is not escaped and not inside backticks."""
+def cells(line: str, *, verbatim: bool = False) -> list:
+    """Split on unescaped `|` outside backticks. In verbatim mode remove only ASCII cell padding."""
     out, cur, in_code, i, s = [], "", False, 0, line[1:]
     while i < len(s):
         ch = s[i]
         if ch == "`":
             in_code = not in_code
         if ch == "\\" and i + 1 < len(s) and s[i + 1] == "|":
-            cur += "|"
+            cur += s[i:i + 2] if verbatim else "|"
             i += 2
             continue
         if ch == "|" and not in_code:
-            out.append(cur.strip())
+            out.append(cur.strip(" \t") if verbatim else cur.strip())
             cur = ""
         else:
             cur += ch
@@ -111,6 +115,8 @@ def table_a(block: str, locale: str) -> dict:
         prefix, loc, key = ident.split(".")
         if loc != locale:
             raise Stop(f"A {locale}: row {ident} is for another locale")
+        if key in PANEL_KEYS and key in out:
+            raise Stop(f"A {locale} {key}: found more than once")
         now, new = unquote(c[1]), c[2]
         out[key] = (now, now if new == KEEP_MARK else new)   # the six-locale table says （不動） instead of repeating it
     if sorted(out) != sorted(KEYS):
@@ -118,9 +124,9 @@ def table_a(block: str, locale: str) -> dict:
     for key in UNCHANGED:
         if out[key][0] != out[key][1]:
             raise Stop(f"A {locale} {key}: marked unchanged but current != proposed")
-    for key in PENDING:
-        if out[key][1] != PENDING_MARK:
-            raise Stop(f"A {locale} {key}: expected {PENDING_MARK}, got {out[key][1]!r}")
+    for key in PANEL_KEYS:
+        if out[key][1] != "待圖":
+            raise Stop(f"A {locale} {key}: expected 待圖 in the original table, got {out[key][1]!r}")
     if out["b_del"][1] != DELETE_MARK:
         raise Stop(f"A {locale} b_del: expected {DELETE_MARK}")
     return out
@@ -136,6 +142,25 @@ def parse_table_a(b_enzh: str, b_six: str) -> dict:
         end = f"### {order[i + 1]}\n" if i + 1 < len(order) else None
         data[locale] = table_a(section(a2, f"### {locale}\n", end), locale)
     return data
+
+
+def apply_panel_rows(data: dict, body: str, locales: list, source: str) -> None:
+    lines = body.split("\n")
+    for locale in locales:
+        for key in PANEL_KEYS:
+            ident = f"pdf.{locale}.{key}"
+            matches = [line for line in lines if line.startswith(f"| `{ident}`")]
+            where = f"{source}: {ident}"
+            if len(matches) != 1:
+                raise Stop(f"{where}: found {len(matches)} rows, expected 1")
+            row = cells(matches[0], verbatim=True)
+            if len(row) != 4:
+                raise Stop(f"{where}: found {len(row)} columns, expected 4")
+            current, proposed = unquote(row[1]), unquote(row[2])
+            expected = data[locale][key][0] if key == "fig_alt" else NEW_MARK
+            if current != expected:
+                raise Stop(f"{where}: current text differs from {expected!r}")
+            data[locale][key] = (current, proposed)
 
 
 def src_rows(body: str, start: str, end: str = None) -> list:
@@ -166,7 +191,16 @@ def build() -> tuple:
     for name in ("daphne", "approval", "paula"):
         fetch(name)
     b_enzh, b_six = fetch("aria_en_zhhant"), fetch("aria_six")
-    return parse_table_a(b_enzh, b_six), parse_src_rows(b_enzh, b_six)
+    data = parse_table_a(b_enzh, b_six)
+    panel_enzh = "aria_panel_en_zhhant"
+    panel_six = "aria_panel_six"
+    approved_id = SOURCES["comments"][panel_enzh]["id"]
+    decision = fetch("ray_ok_panel")
+    if str(approved_id) not in decision or "383文案ok" not in decision:
+        raise Stop(f"ray_ok_panel: expected {approved_id} and 383文案ok in the decision")
+    apply_panel_rows(data, fetch(panel_enzh), LOCALES[:2], panel_enzh)
+    apply_panel_rows(data, fetch(panel_six), LOCALES[2:], panel_six)
+    return data, parse_src_rows(b_enzh, b_six)
 
 
 def render(a: dict, rows: list) -> str:

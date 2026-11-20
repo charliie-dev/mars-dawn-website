@@ -461,6 +461,10 @@ def build(k) -> dict:
             "alt": '用 MarsDawn 导出的 PDF，在内置的 PDF 查看器中打开，旁边有页面缩略图。',
             "callouts": ['Mermaid 图表直接画进 PDF。', '代码保留语法高亮。'],
         },
+        'print-export': {
+            "alt": '“打印与导出”面板：左侧页面预览有流程图和一小段代码，右侧三张布局卡片，右下有“打印…”和“存储为 PDF…”按钮。',
+            "callouts": ['先预览页面。', '选一种布局。', '打印，或存储为 PDF。'],
+        },
         'native': {
             "alt": 'MarsDawn 的并排布局：左边是 Markdown 源代码，右边是排版后的页面。',
             "callouts": ['原生的 Mac 窗口。', 'Mac 原生的文本编辑器，附 Markdown 语法高亮。', '⌘1 源代码、⌘2 并排、⌘3 预览。', '页面会随着打字更新。'],

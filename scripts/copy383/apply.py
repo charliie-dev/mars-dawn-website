@@ -9,7 +9,7 @@ Reads scripts/copy383/data.py (written by ingest.py from the pinned comments) an
    cell that is being replaced must occur exactly once in it, and the block is rewritten from the proposed cells.
    The cells the table leaves alone (b2, b3, the #369 sentence b369, card) are not typed here: b2 and b3 must occur
    exactly once in the old block and are carried over; b369 is appended by apply_copy369_pdf_pages as before.
-   fig_alt and co1-co3 are "待圖" (they wait for the Print & Export panel photo) and are not applied.
+   apply_panel.py applies fig_alt and co1-co3 to the Print & Export panel figure.
 
     python3 -I -B scripts/copy383/apply.py --dry-run   # check every match, write nothing
     python3 -I -B scripts/copy383/apply.py             # write
