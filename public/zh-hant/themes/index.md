@@ -29,7 +29,7 @@ MarsDawn 內建四種預覽主題：黎明、典雅、流行和活潑，各有�
 
 ## 主題庫裡有什麼
 
-目前有八個主題，都是我們製作並審核的：Dracula、Gruvbox、Nord 和 Solarized 改編自知名配色，並為可讀性調整；Guide、Ledger、Spec 和 Story 則分別為使用者指南、預算表、PRD 和衝刺筆記而做。
+目前的主題都是我們製作並審核的。例如 Dracula、Gruvbox、Nord 和 Solarized 改編自知名配色，並為可讀性調整；Guide、Ledger、Spec 和 Story 則分別為使用者指南、預算表、PRD 和衝刺筆記而做。
 
 ## 經過審核，而且只是資料
 

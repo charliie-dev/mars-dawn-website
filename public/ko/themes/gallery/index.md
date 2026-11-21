@@ -1,6 +1,6 @@
 # 테마 갤러리
 
-MarsDawn의 미리보기 테마로, 각각 개발자가 검토하고 병합한 뒤에야 여기에 나타납니다. 지금 있는 여덟 가지는 모두 Southern Light가 만들었으며, 그중 네 가지는 잘 알려진 팔레트를 바탕으로 했습니다. 용도로 걸러 보거나, [브라우저에서 직접 만드세요](/ko/themes/new/): 제출하면 검토를 요청하는 GitHub 이슈가 열리며, 설치도 git도 필요 없습니다.
+MarsDawn의 미리보기 테마로, 각각 개발자가 검토하고 병합한 뒤에야 여기에 나타납니다. 지금 있는 테마는 모두 Southern Light가 만들었으며, 그중 일부는 잘 알려진 팔레트를 바탕으로 했습니다. 용도로 걸러 보거나, [브라우저에서 직접 만드세요](/ko/themes/new/): 제출하면 검토를 요청하는 GitHub 이슈가 열리며, 설치도 git도 필요 없습니다.
 
 전체
 
@@ -12,6 +12,7 @@ MarsDawn의 미리보기 테마로, 각각 개발자가 검토하고 병합한 �
 
 메모·공유
 
+- [![Christmas — light preview](/themes/v1/christmas/1.0.0/preview-light.png)](/themes/v1/christmas/1.0.0/preview-light.png)[![Christmas — dark preview](/themes/v1/christmas/1.0.0/preview-dark.png)](/themes/v1/christmas/1.0.0/preview-dark.png) **Christmas** v1.0.0 크리스마스 분위기의 읽기용 팔레트 — 따뜻한 크림색 페이지에 베리 레드 제목, 다크 버전은 와인빛이 감도는 블랙 메모·공유 작성: Southern Light 신고 이메일로 신고
 - [![Dracula — light preview](/themes/v1/dracula/1.0.1/preview-light.png)](/themes/v1/dracula/1.0.1/preview-light.png)[![Dracula — dark preview](/themes/v1/dracula/1.0.1/preview-dark.png)](/themes/v1/dracula/1.0.1/preview-dark.png) **Dracula** v1.0.1 클래식한 다크 뱀파이어 팔레트, 낮에는 Alucard — Dracula Theme을 바탕으로 가독성에 맞게 조정 기술 문서 에이전트 결과 검토 작성: Southern Light [크레딧 및 라이선스](/themes/third-party-notices.html#dracula) 신고 이메일로 신고
 - [![Gruvbox — light preview](/themes/v1/gruvbox/1.0.1/preview-light.png)](/themes/v1/gruvbox/1.0.1/preview-light.png)[![Gruvbox — dark preview](/themes/v1/gruvbox/1.0.1/preview-dark.png)](/themes/v1/gruvbox/1.0.1/preview-dark.png) **Gruvbox** v1.0.1 크림, 브라운, 오렌지로 이루어진 따뜻한 레트로 팔레트 — Gruvbox를 바탕으로 가독성에 맞게 조정 기술 문서 메모·공유 작성: Southern Light [크레딧 및 라이선스](/themes/third-party-notices.html#gruvbox) 신고 이메일로 신고
 - [![Guide — light preview](/themes/v1/guide/1.0.1/preview-light.png)](/themes/v1/guide/1.0.1/preview-light.png)[![Guide — dark preview](/themes/v1/guide/1.0.1/preview-dark.png)](/themes/v1/guide/1.0.1/preview-dark.png) **Guide** v1.0.1 차가운 흰색 배경에 네이비 제목과 선명한 파란색 링크, 큰 글자 — 사용자 가이드, 튜토리얼, README에 적합 기술 문서 작성: Southern Light 신고 이메일로 신고

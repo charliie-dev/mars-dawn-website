@@ -1,6 +1,6 @@
 # Themen-Galerie
 
-Vorschauthemen für MarsDawn, jedes vom Entwickler geprüft und gemerged, bevor es hier erscheint. Die bisherigen acht stammen von Southern Light, vier davon adaptiert von bekannten Paletten. Nach Szenario filtern oder [im Browser ein eigenes erstellen](/de/themes/new/): Das Einreichen öffnet ein GitHub-Issue zur Prüfung, ohne Installation und ohne git.
+Vorschauthemen für MarsDawn, jedes vom Entwickler geprüft und gemerged, bevor es hier erscheint. Die bisherigen Themen stammen alle von Southern Light, einige davon adaptiert von bekannten Paletten. Nach Szenario filtern oder [im Browser ein eigenes erstellen](/de/themes/new/): Das Einreichen öffnet ein GitHub-Issue zur Prüfung, ohne Installation und ohne git.
 
 Alle
 
@@ -12,6 +12,7 @@ Formale Ausgabe
 
 Notizen & Teilen
 
+- [![Christmas — light preview](/themes/v1/christmas/1.0.0/preview-light.png)](/themes/v1/christmas/1.0.0/preview-light.png)[![Christmas — dark preview](/themes/v1/christmas/1.0.0/preview-dark.png)](/themes/v1/christmas/1.0.0/preview-dark.png) **Christmas** v1.0.0 Lesepalette für Weihnachten: beerenrote Überschriften auf warmer Cremeseite, dunkle Variante in Schwarz mit Weinton Notizen & Teilen von Southern Light Melden Per E-Mail melden
 - [![Dracula — light preview](/themes/v1/dracula/1.0.1/preview-light.png)](/themes/v1/dracula/1.0.1/preview-light.png)[![Dracula — dark preview](/themes/v1/dracula/1.0.1/preview-dark.png)](/themes/v1/dracula/1.0.1/preview-dark.png) **Dracula** v1.0.1 Die klassische dunkle Vampirpalette, tagsüber mit Alucard – nach Dracula Theme, für bessere Lesbarkeit angepasst Technische Docs Agentenausgabe prüfen von Southern Light [Credits & Lizenz](/themes/third-party-notices.html#dracula) Melden Per E-Mail melden
 - [![Gruvbox — light preview](/themes/v1/gruvbox/1.0.1/preview-light.png)](/themes/v1/gruvbox/1.0.1/preview-light.png)[![Gruvbox — dark preview](/themes/v1/gruvbox/1.0.1/preview-dark.png)](/themes/v1/gruvbox/1.0.1/preview-dark.png) **Gruvbox** v1.0.1 Eine warme Retropalette aus Creme, Braun und Orange – nach Gruvbox, für bessere Lesbarkeit angepasst Technische Docs Notizen & Teilen von Southern Light [Credits & Lizenz](/themes/third-party-notices.html#gruvbox) Melden Per E-Mail melden
 - [![Guide — light preview](/themes/v1/guide/1.0.1/preview-light.png)](/themes/v1/guide/1.0.1/preview-light.png)[![Guide — dark preview](/themes/v1/guide/1.0.1/preview-dark.png)](/themes/v1/guide/1.0.1/preview-dark.png) **Guide** v1.0.1 Kühles Weiß, marineblaue Überschriften und klare blaue Links, größere Schrift für Anleitungen, Tutorials und READMEs Technische Docs von Southern Light Melden Per E-Mail melden

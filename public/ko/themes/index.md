@@ -29,7 +29,7 @@ MarsDawn에서 설정 ▸ 화면 모드를 열고 테마 더 받기…를 클릭
 
 ## 갤러리에 있는 테마
 
-현재 여덟 가지 테마가 있으며, 모두 저희가 만들고 검토했습니다. 잘 알려진 팔레트를 바탕으로 가독성을 손본 Dracula, Gruvbox, Nord, Solarized에 더해, 사용자 가이드, 예산표, PRD, 스프린트 노트를 위해 만든 Guide, Ledger, Spec, Story가 있습니다.
+현재 테마는 모두 저희가 만들고 검토했습니다. 예를 들어 Dracula, Gruvbox, Nord, Solarized는 잘 알려진 팔레트를 바탕으로 가독성을 손봤고, Guide, Ledger, Spec, Story는 각각 사용자 가이드, 예산표, PRD, 스프린트 노트를 위해 만들었습니다.
 
 ## 검토를 거치며, 오직 데이터뿐
 

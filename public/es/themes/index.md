@@ -29,7 +29,7 @@ En MarsDawn, abre Ajustes ▸ Aspecto y haz clic en Obtener más temas…. La Ga
 
 ## Qué hay en la galería
 
-Ocho temas hoy, todos hechos y revisados por nosotros: Dracula, Gruvbox, Nord y Solarized, adaptados de las conocidas paletas y ajustados para facilitar la lectura, además de Guide, Ledger, Spec y Story, pensados para guías de usuario, presupuestos, PRD y notas de sprint.
+Hoy, todos los temas están hechos y revisados por nosotros. Por ejemplo, Dracula, Gruvbox, Nord y Solarized están adaptados de paletas conocidas y ajustados para facilitar la lectura, mientras que Guide, Ledger, Spec y Story están pensados para guías de usuario, presupuestos, PRD y notas de sprint.
 
 ## Revisados, y solo datos
 
