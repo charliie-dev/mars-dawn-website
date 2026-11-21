@@ -1,10 +1,19 @@
 # 변경 내역
 
-Mac App Store의 MarsDawn 앱과 무료 marsdawn 명령줄 도구에서 버전마다 바뀐 점입니다. 앱의 날짜는 해당 버전이 Mac App Store에 출시된 날입니다.
+Mac, iPhone, iPad용 MarsDawn 앱과 무료 marsdawn 명령줄 도구에서 버전마다 바뀐 점입니다. 앱의 날짜는 해당 버전이 App Store에 출시된 날입니다.
 
 앞으로 나올 기능은 [로드맵](/ko/roadmap/)에 있습니다.
 
-## MarsDawn 앱
+## Mac용 MarsDawn
+
+### MarsDawn 1.2.2
+
+2026년 11월 14일
+
+- 파일 > ‘프린트…’와 파일 > ‘PDF로 내보내기…’를 선택하면 이제 ‘프린트 및 내보내기’ 시트가 열려 PDF를 미리 볼 수 있습니다. ‘문서’, ‘설명서’, ‘프린트물’ 중 하나를 고른 뒤 프린트하거나 PDF로 저장합니다. 프린트에서도 ‘문서’ 외의 레이아웃을 쓸 수 있습니다.
+- 수정: 자동 저장 직후 입력한 글자가 바뀔 수 있던 문제와 ‘분할’로 돌아온 직후 스크롤이 되돌아갈 수 있던 문제.
+- ‘설명서’를 고르면 ‘프린트 및 내보내기’ 시트에 표지에 들어갈 내용이 표시되고, ‘화성의 일출’ 표지 이미지도 넣을 수 있습니다. ‘프린트 및 내보내기’를 도구 막대에 추가할 수도 있습니다.
+- 파일 > ‘Claude Code 계획 추가…’를 선택하면 Claude Code가 계획을 저장하는 폴더가 ‘파일’ 사이드바에 추가되고, 최신순으로 표시됩니다. 사이드바의 정렬 메뉴에는 ‘MarsDawn에서 열 수 있는 파일만 보기’가 추가되었으며, 폴더마다 따로 설정할 수 있습니다.
 
 ### MarsDawn 1.2.1
 
@@ -43,9 +52,35 @@ Mac App Store의 MarsDawn 앱과 무료 marsdawn 명령줄 도구에서 버전�
 
 이전 버전의 설명은 영어로만 제공됩니다. [영어 변경 내역 보기](/changelog/)
 
+## iPhone 및 iPad용 MarsDawn
+
+### MarsDawn 1.0.2
+
+2026년 11월 13일
+
+- PDF를 열고 안의 텍스트를 찾을 수 있습니다. 암호가 있는 PDF는 먼저 암호를 묻습니다.
+- JSON 및 YAML 파일을 읽기 전용 문서로 열 수 있으며, 트리 미리보기가 표시됩니다.
+- 파일, Mail, 다른 앱에서 Markdown, 텍스트, PDF, JSON, YAML 파일을 열 수 있습니다.
+- 미리보기에서 텍스트를 찾을 수 있습니다(키보드에서는 ⌘F). ‘화면 모드 및 테마’에 ‘단일 줄 바꿈 유지’가 추가되었습니다.
+- 도구 막대에서 파일을 공유하거나 프린트할 수 있습니다.
+- iPad와 펼친 iPhone Duo에서 개요가 사이드바로 바뀌어 읽고 있는 위치를 표시합니다. PDF 책갈피도 여기에 표시됩니다.
+
+1.0.2 이전 버전은 싣지 않았습니다.
+
 ## marsdawn 명령줄 도구
 
 0.5.1 이전 버전은 싣지 않았습니다.
+
+### marsdawn 0.7.7
+
+2026년 11월 9일. PNG 내보내기, 접을 수 있는 블록, 더 빨라진 큰 파일 내보내기.
+
+- `marsdawn export --format png`는 문서를 PNG로 내보내 렌더링을 확인할 수 있게 합니다. `--width`(600–2000, 기본값 1200), `--appearance light|dark`, `--theme`, 일부만 내보내는 `--lines`나 `--heading`을 지정할 수 있습니다. 높이가 8,000픽셀을 넘는 페이지는 번호가 붙은 여러 이미지로 나뉘며, 표, 코드 블록, 다이어그램 중간에서는 나뉘지 않습니다.
+- `marsdawn export --details`는 접을 수 있는 블록을 어떻게 인쇄할지 정합니다. 기본값인 `expand`는 이전처럼 모두 펼쳐 인쇄하고, `as-written`은 펼친 상태로 작성된 블록만 펼치고 나머지는 제목만 인쇄합니다. 두 방식 모두 제목은 삼각형 없이 굵은 한 줄로 인쇄됩니다.
+- 접을 수 있는 블록이 HackMD와 Obsidian의 작성법을 더 지원합니다. 제목이 없거나 `{state="open"}`이 붙은 `:::spoiler`, 제목 안의 Markdown, 중첩된 `::::spoiler`, Obsidian의 접을 수 있는 콜아웃 `> [!note]-`, `> [!tip]+`를 지원합니다.
+- 큰 파일을 훨씬 빨리 내보냅니다. 저희 테스트에서 10MB 파일이 약 4분에서 약 74초로 줄었습니다.
+- 여러 `marsdawn export`를 동시에 실행하면 가끔 하나가 코드 5로 종료되었습니다. 이제는 자동으로 다시 시도합니다.
+- MarsDawn 앱이 실행 중이 아닐 때 여러 `marsdawn open`을 동시에 실행해도 이제 모든 파일이 열립니다. 이전에는 성공했다고 알려도 열리지 않는 파일이 있었습니다.
 
 ### marsdawn 0.7.6
 
@@ -171,7 +206,7 @@ Mac App Store의 MarsDawn 앱과 무료 marsdawn 명령줄 도구에서 버전�
 - [기능 한눈에 보기](https://marsdawn.southern-light.dev/ko/features/index.md): Mac 네이티브 Markdown, JSON, YAML 편집기: 실시간 미리보기, Mermaid와 수식, 테마, 회의와 기록에 쓸 수 있는 깔끔한 PDF와 프린트 페이지.
 - [내 글은 내 Mac에](https://marsdawn.southern-light.dev/ko/yours/index.md): MarsDawn에는 계정도, 동기화도, 클라우드도 없습니다. Markdown 문서는 직접 고른 파일과 폴더에 담겨 Mac에 남습니다.
 - [무료로 체험하고, 한 번만 구입](https://marsdawn.southern-light.dev/ko/pay-once/index.md): MarsDawn은 무료로 다운로드할 수 있습니다. 14일 동안 모든 기능을 체험한 뒤 USD 4.99에 한 번만 잠금 해제하세요. 구독도, 계정도 없습니다.
-- [PDF 내보내기](https://marsdawn.southern-light.dev/ko/pdf/index.md): Mac에서 Markdown을 PDF로 내보내거나 프린트하세요. Mermaid 다이어그램과 하이라이트된 코드도 그대로입니다. 페이지 나눔은 짧은 코드 블록을 가르지 않도록 합니다.
+- [프린트 및 PDF](https://marsdawn.southern-light.dev/ko/pdf/index.md): Mac에서 미리 본 뒤 Markdown을 프린트하거나 PDF로 저장하세요. 문서·설명서·프린트물 레이아웃을 지원하고 다이어그램과 코드 색도 그대로 남습니다.
 - [Mac 앱](https://marsdawn.southern-light.dev/ko/native/index.md): 진짜 Mac 앱인 Markdown 편집기. 네이티브 윈도우와 탭, 자동 저장, 버전 기록, Finder의 훑어보기, 그리고 Mac답게 동작하는 텍스트 편집기를 갖췄습니다.
 - [MarsDawn이 하지 않는 일](https://marsdawn.southern-light.dev/ko/limits/index.md): 동기화도, iPhone·iPad에서의 편집도, 플러그인도, 계정도 없습니다. 테마는 바꿀 수 있지만 사용자 지정 CSS는 없습니다. 구입 전에 알아 두세요.
 - [지원](https://marsdawn.southern-light.dev/ko/support/index.md): macOS용 Markdown 편집기 MarsDawn에 관한 도움말입니다.
@@ -179,6 +214,8 @@ Mac App Store의 MarsDawn 앱과 무료 marsdawn 명령줄 도구에서 버전�
 - [Mac에서 .md 파일 여는 방법](https://marsdawn.southern-light.dev/ko/view-markdown-on-mac/index.md): Mac에서 .md 파일을 여는 방법: 더블 클릭, 기본 앱 지정, Finder 훑어보기. AI 에이전트가 쓴 .md 파일은 MarsDawn에서 렌더링된 모습으로 읽으세요.
 - [Mac에서 Mermaid 미리보기](https://marsdawn.southern-light.dev/ko/mermaid-preview-mac/index.md): Mac에서 Mermaid 다이어그램을 Markdown 옆에 그려서 보세요: 실시간 미리보기, 훑어보기, PDF 내보내기. 다이어그램에 오류가 있으면 오류와 해당 줄이 표시됩니다.
 - [Markdown 훑어보기](https://marsdawn.southern-light.dev/ko/quicklook/index.md): MarsDawn의 훑어보기로 Finder에서 스페이스 바를 누르면 Markdown이 렌더링되어 보입니다. Mermaid, KaTeX, 강조된 코드도 표시됩니다. 체험이 끝난 뒤에도 계속 작동합니다.
+- [AI용으로 복사](https://marsdawn.southern-light.dev/ko/copy-for-ai/index.md): 선택한 텍스트를 파일 경로, 줄 번호와 함께 복사해 Claude Code나 다른 에이전트에 붙여 넣습니다. Mac에서 바로 되며, IDE도 플러그인도 필요 없습니다.
+- [HackMD에서 Mac으로](https://marsdawn.southern-light.dev/ko/from-hackmd/index.md): HackMD 노트를 .md로 내려받아 Mac의 MarsDawn에서 읽는 방법입니다. 모든 노트 다운로드, GitHub 저장소에서 옮기기, 이미지 처리 방법을 정리했습니다.
 - [Markdown을 PDF로](https://marsdawn.southern-light.dev/ko/markdown-to-pdf/index.md): 무료 marsdawn 명령줄 도구로 Mac에서 Markdown을 PDF로 변환하세요. Homebrew로 설치하고 명령 하나만 실행하면 됩니다. 표, 수식, Mermaid, 코드까지 지원합니다.
 - [MarsDawn 비교: VS Code 미리보기, Obsidian, QLMarkdown, LynxOffice](https://marsdawn.southern-light.dev/ko/vs/index.md): Mac에서 Markdown을, 대개는 에이전트가 쓴 글을 읽고 검토할 방법을 고르는 분을 위한 페이지입니다. 아래 표의 각 칸은 각 회사의 공식 페이지나 저희가 직접 확인한 내용이며, 모두 2026년 10월 16일 기준입니다(MarsDawn의 PDF 칸은 2026년 11월 7일에 업데이트). 제품은 바뀌므로 내용이 오래될 수 있습니다. 틀린 내용을 발견하면 지원 페이지의 주소로 알려 주세요.
 - [MacMD Viewer와 MarsDawn 비교](https://marsdawn.southern-light.dev/ko/vs/macmd-viewer/index.md): MacMD Viewer는 읽기 전용 Markdown 뷰어로 USD 19.99입니다. MarsDawn은 편집과 미리보기를 나란히 보여 주며, 14일 무료 체험 후 USD 4.99를 한 번만 내면 됩니다. 항목별 비교, 출처 포함.

@@ -11,10 +11,10 @@ La page montre une fenêtre MarsDawn interactive qui affiche un extrait du guide
 ## Lisez ce qu’a écrit votre agent, même loin de votre bureau
 
 1. Sur votre Mac, demandez à votre agent d’enregistrer ses fichiers dans un dossier d’iCloud Drive.
-2. Sur votre iPhone ou iPad, ouvrez MarsDawn et choisissez le fichier.
-3. Pour le modifier ou l’exporter en PDF, revenez sur votre Mac.
+2. Sur votre iPhone ou iPad, ouvrez le fichier dans MarsDawn, ou depuis une autre app.
+3. Partagez-le, imprimez-le ou enregistrez-le en PDF ; pour le modifier, revenez sur votre Mac.
 
-Sur iPhone et iPad, MarsDawn sert uniquement à lire et n’ouvre que les fichiers Markdown et texte brut.
+Sur iPhone et iPad, MarsDawn sert uniquement à lire et ouvre les fichiers Markdown, texte, PDF, JSON et YAML.
 
 [![Télécharger dans l'App Store](/assets/badges/app-store-fr.svg)](https://apps.apple.com/app/id6812925073)
 
@@ -22,19 +22,45 @@ Sur iPhone et iPad, MarsDawn sert uniquement à lire et n’ouvre que les fichie
 
 ## Lisez ce que votre agent a écrit.
 
-1. **L’agent écrit.** Votre agent de code ou votre assistant d’écriture rédige le Markdown : un README, une spécification, des notes.
+1. **L’agent écrit.** Votre agent de code ou votre assistant d’écriture rédige le Markdown : un README, une spécification, des notes.
 2. **Vous relisez dans MarsDawn.** Ouvrez le fichier et lisez-le mis en forme, avec les [diagrammes Mermaid](/fr/mermaid-preview-mac/) et le code en couleur, à côté de la source.
 3. **L’agent corrige.** Demandez des modifications. Ouvrez le fichier révisé et lisez-le de la même façon.
 
 [Comment relire ce que votre agent vous rend](/fr/reading-agent-output/) · [Ouvrir un fichier .md sur Mac](/fr/view-markdown-on-mac/)
 
+## Fonctionnalités
+
+### [Diagrammes Mermaid et code](/fr/mermaid-preview-mac/)
+
+![Un organigramme avec une vérification et une boucle de renvoi, au-dessus d’un bloc de code.](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
+
+L’aperçu dessine le diagramme et colore le code, juste à côté de la source.
+
+### [Imprimer et PDF](/fr/pdf/)
+
+![Le haut d’une page : un titre, un court paragraphe et un organigramme.](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
+
+Les diagrammes Mermaid, dessinés dans le PDF.
+
+### [Coup d’œil pour Markdown](/fr/quicklook/)
+
+![Une fenêtre d’aperçu avec la page mise en forme : un titre, un court paragraphe et un organigramme.](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+
+Sélectionnez un fichier Markdown dans le Finder et appuyez sur Espace.
+
+### [Lire sur iPhone et iPad](/fr/features/#iphone-ipad)
+
+![Un organigramme du paiement, au-dessus du début d’un bloc de code.](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
+
+Sur iPhone et iPad, MarsDawn sert uniquement à lire, pas à modifier. Modifiez sur votre Mac.
+
 ## Relisez le plan de votre agent avant qu’il ne s’exécute.
 
 Repérez l’étape mal placée, désignez sa ligne et renvoyez-la.
 
-1. Voir ce qui a changé : quand l’agent enregistre le plan, la fenêtre ouverte se met à jour depuis le disque, en une étape que vous pouvez annuler.
-2. Aller à la ligne : marsdawn open plan-checkout-v2.md:10 amène la fenêtre à la ligne 10 et fait clignoter le bloc correspondant.
-3. Renvoyer : « Copier la référence » (⌥⌘C) copie plan-checkout-v2.md:10 ; collez-le avec votre remarque dans le chat de l’agent.
+1. Voir ce qui a changé : quand l’agent enregistre le plan, la fenêtre ouverte se met à jour depuis le disque, en une étape que vous pouvez annuler.
+2. Aller à la ligne : marsdawn open plan-checkout-v2.md:10 amène la fenêtre à la ligne 10 et fait clignoter le bloc correspondant.
+3. Renvoyer : « Copier la référence » (⌥⌘C) copie plan-checkout-v2.md:10 ; collez-le avec votre remarque dans le chat de l’agent.
 
 ## À faire dès maintenant
 
@@ -48,15 +74,17 @@ brew install redtear1115/tap/marsdawn
 - `marsdawn open` ouvre des fichiers dans l’app MarsDawn pour que vous les relisiez.
 - `--json` donne aux scripts et aux agents des résultats qu’ils peuvent analyser.
 
+Cela installe l’outil en ligne de commande. Pour obtenir l’app pour Mac avec Homebrew, [voyez comment](/fr/cli/#mac-app).
+
 [Ligne de commande](/fr/cli/) · [marsdawn pour les agents](/fr/cli/agents/) · [Skill pour agents](/fr/cli/skill/) · [Serveur MCP](/fr/cli/mcp/)
 
 ## Ce que vous pouvez attendre de MarsDawn
 
-- [Une app Mac](/fr/native/) : Fenêtres et onglets natifs, enregistrement automatique, [Coup d’œil](/fr/quicklook/).
-- [Vos textes restent sur votre Mac](/fr/yours/) : Pas de compte, pas de synchronisation, pas de cloud.
-- [Essai gratuit, achat unique](/fr/pay-once/) : Gratuit pendant 14 jours, puis 4,99 USD une seule fois. Sans abonnement.
-- [Fonctionnalités](/fr/features/) : Tout ce que fait MarsDawn, sur une seule page.
-- [Thèmes](/fr/themes/) : Quatre intégrés, d’autres dans la galerie.
+- [Une app Mac](/fr/native/) : Fenêtres et onglets natifs, enregistrement automatique, [Coup d’œil](/fr/quicklook/).
+- [Vos textes restent sur votre Mac](/fr/yours/) : Pas de compte, pas de synchronisation, pas de cloud.
+- [Essai gratuit, achat unique](/fr/pay-once/) : Gratuit pendant 14 jours, puis 4,99 USD une seule fois. Sans abonnement.
+- [Fonctionnalités](/fr/features/) : Tout ce que fait MarsDawn, sur une seule page.
+- [Thèmes](/fr/themes/) : Quatre intégrés, d’autres dans la galerie.
 
 À savoir avant d’acheter. [Ce que MarsDawn ne fait pas](/fr/limits/)
 
@@ -66,87 +94,87 @@ Ce que fait chaque élément aujourd’hui, avec MarsDawn 1.2.1, marsdawn 0.6.4 
 
 | Fonction | Dans l’app | CLI | MCP / skill | Statut |
 |---|---|---|---|---|
-| Ouvrir à une ligne | Va à la ligne, le bloc de l’aperçu clignote | `marsdawn open notes.md:120` (`--background` garde le focus) | `open_in_marsdawn` ; le skill ouvre une fois | Disponible |
-| Export PDF | Fichier ▸ Exporter au format PDF… (⌥⌘E) | `marsdawn export`, sans l’app | `export_markdown_to_pdf` ; skill | Disponible |
+| Ouvrir à une ligne | Va à la ligne, le bloc de l’aperçu clignote | `marsdawn open notes.md:120` (`--background` garde le focus) | `open_in_marsdawn` ; le skill ouvre une fois | Disponible |
+| Export PDF | Fichier ▸ Exporter au format PDF… (⌥⌘E) | `marsdawn export`, sans l’app | `export_markdown_to_pdf` ; skill | Disponible |
 | Résultat JSON | — | `--json` sur open et export | MCP renvoie le même JSON | Disponible |
 | Skill pour agents | — | `marsdawn skill --install` | Apprend à ouvrir une fois et à exporter | Disponible |
-| Serveur MCP | — | Tourne en dessous | marsdawn-mcp : deux outils, dossiers autorisés seulement | Disponible |
+| Serveur MCP | — | Tourne en dessous | marsdawn-mcp : deux outils, dossiers autorisés seulement | Disponible |
 | Copier pour l’IA, Copier la référence | Édition ▸ Copier pour l’IA (⌃⌥⌘C), Copier la référence (⌥⌘C) | — | — (à coller dans n’importe quel agent) | Disponible |
-| Rechargement à l’enregistrement | Reprend la modification enregistrée, annulable en une fois | — | Skill : ne pas rouvrir | Disponible |
+| Rechargement à l’enregistrement | Reprend la modification enregistrée, annulable en une fois | — | Skill : ne pas rouvrir | Disponible |
 | Hook Claude Code | — | Utilise `open --background` | Script de hook de /cli/agents/ | Documenté, facultatif |
 
-Disponible : dans la version indiquée ci-dessus. Documenté, facultatif : instructions de ce site que vous ajoutez vous-même ; pas inclus dans l’outil. Prévu : pas encore fait, sans date. Prévu : une option de dossier dans l’outil MCP `open_in_marsdawn`. D’autres options, comme `--folder`, sont sur [Ligne de commande](/fr/cli/).
+Disponible : dans la version indiquée ci-dessus. Documenté, facultatif : instructions de ce site que vous ajoutez vous-même ; pas inclus dans l’outil. Prévu : pas encore fait, sans date. Prévu : une option de dossier dans l’outil MCP `open_in_marsdawn`. D’autres options, comme `--folder`, sont sur [Ligne de commande](/fr/cli/).
 
 ## Si vous créez des apps Mac avec un agent de code
 
-Pour les développeurs Mac indépendants : comment votre agent ouvre aujourd’hui dans MarsDawn ce qu’il a écrit.
+Pour les développeurs Mac indépendants : comment votre agent ouvre aujourd’hui dans MarsDawn ce qu’il a écrit.
 
 | Outil | Comment ils s’associent | Mise en place |
 |---|---|---|
-| Claude Code | Le skill lui fait ouvrir une fois ce qu’il a écrit, à la ligne : `marsdawn open plan.md:42`. Un hook facultatif ouvre chaque .md qu’il écrit, en arrière-plan | `marsdawn skill --install` ; le script de hook de /cli/agents/ |
-| Codex, Cursor, Xcode | Pas encore de guide de configuration. Tout ce qui exécute une commande shell peut appeler `marsdawn open file:line --json` ; un agent qui charge des fichiers d’instructions peut utiliser SKILL.md (`--dir`), et un client uniquement MCP, marsdawn-mcp | `brew install redtear1115/tap/marsdawn` |
+| Claude Code | Le skill lui fait ouvrir une fois ce qu’il a écrit, à la ligne : `marsdawn open plan.md:42`. Un hook facultatif ouvre chaque .md qu’il écrit, en arrière-plan | `marsdawn skill --install` ; le script de hook de /cli/agents/ |
+| Codex, Cursor, Xcode | Pas encore de guide de configuration. Tout ce qui exécute une commande shell peut appeler `marsdawn open file:line --json` ; un agent qui charge des fichiers d’instructions peut utiliser SKILL.md (`--dir`), et un client uniquement MCP, marsdawn-mcp | `brew install redtear1115/tap/marsdawn` |
 
-Le hook et les commandes : [marsdawn pour les agents](/fr/cli/agents/) · [Skill pour agents](/fr/cli/skill/) · [Ce que MarsDawn ne fait pas](/fr/limits/)
+Le hook et les commandes : [marsdawn pour les agents](/fr/cli/agents/) · [Skill pour agents](/fr/cli/skill/) · [Ce que MarsDawn ne fait pas](/fr/limits/)
 
-Vous hésitez entre MarsDawn, l’aperçu de VS Code, Obsidian, QLMarkdown et LynxOffice ? La comparaison indique ce que chaque fournisseur précise, ce qui manque à MarsDawn et quand vous n’en avez pas besoin. [Comparer](/fr/vs/)
+Vous hésitez entre MarsDawn, l’aperçu de VS Code, Obsidian, QLMarkdown et LynxOffice ? La comparaison indique ce que chaque fournisseur précise, ce qui manque à MarsDawn et quand vous n’en avez pas besoin. [Comparer](/fr/vs/)
 
 ## Vos documents restent sur votre Mac
 
-Sur votre Mac. Lecture, édition, rendu, [export PDF](/fr/privacy/#exporting-and-printing) et [l’outil en ligne de commande marsdawn](/fr/privacy/#the-marsdawn-command-line-tool) tournent ici, même hors ligne ; l’app n’envoie jamais vos documents en ligne.
+Sur votre Mac. Lecture, édition, rendu, [export PDF](/fr/privacy/#exporting-and-printing) et [l’outil en ligne de commande marsdawn](/fr/privacy/#the-marsdawn-command-line-tool) tournent ici, même hors ligne ; l’app n’envoie jamais vos documents en ligne.
 
-En savoir plus : [Politique de confidentialité](/fr/privacy/#what-stays-on-your-mac)
+En savoir plus : [Politique de confidentialité](/fr/privacy/#what-stays-on-your-mac)
 
-Hors réseau par défaut. Les images du web ne se chargent qu’après un clic sur « Charger les images » ou si vous activez « Charger automatiquement les images distantes » dans les Réglages ; un document HTML s’ouvre de façon statique, sans exécuter son code.
+Hors réseau par défaut. Les images du web ne se chargent qu’après un clic sur « Charger les images » ou si vous activez « Charger automatiquement les images distantes » dans les Réglages ; un document HTML s’ouvre de façon statique, sans exécuter son code.
 
-En savoir plus : [Politique de confidentialité](/fr/privacy/#when-marsdawn-uses-the-internet)
+En savoir plus : [Politique de confidentialité](/fr/privacy/#when-marsdawn-uses-the-internet)
 
-Rien ne sort sans votre choix. « Copier pour l’IA » place le texte dans le presse-papiers, c’est vous qui le collez ; un téléchargement de thème, un document lancé avec « Présentation › Exécuter ce document » et le fichier que vous laissez lire à votre agent ne sortent que si vous le décidez.
+Rien ne sort sans votre choix. « Copier pour l’IA » place le texte dans le presse-papiers, c’est vous qui le collez ; un téléchargement de thème, un document lancé avec « Présentation › Exécuter ce document » et le fichier que vous laissez lire à votre agent ne sortent que si vous le décidez.
 
-En savoir plus : [Politique de confidentialité](/fr/privacy/#when-marsdawn-uses-the-internet)
+En savoir plus : [Politique de confidentialité](/fr/privacy/#when-marsdawn-uses-the-internet)
 
 ## Questions et réponses
 
-### Qu’est-ce que MarsDawn ?
+### Qu’est-ce que MarsDawn ?
 
-MarsDawn est une app Mac native pour lire et relire le Markdown écrit par votre agent, avec la source à côté d’un aperçu en direct. Elle dessine Mermaid et KaTeX, affiche les fichiers .md dans Coup d’œil et exporte en PDF ; vous pouvez aussi modifier la source. Sur Mac, elle ouvre aussi JSON et YAML avec un aperçu en arbre.
+MarsDawn est une app Mac native pour lire et relire le Markdown écrit par votre agent, avec la source à côté d’un aperçu en direct. Elle dessine Mermaid et KaTeX, affiche les fichiers .md dans Coup d’œil et exporte en PDF ; vous pouvez aussi modifier la source. Sur Mac, elle ouvre aussi JSON et YAML avec un aperçu en arbre.
 
-### MarsDawn est-il un abonnement ?
+### MarsDawn est-il un abonnement ?
 
 Non. MarsDawn se télécharge gratuitement, avec 14 jours d’essai de toutes les fonctions. Ensuite, un seul achat intégré de 4,99 USD le déverrouille pour de bon. Rien ne se renouvelle, et il n’y a pas de compte.
 
-### MarsDawn fonctionne-t-il sur iPhone ou iPad ?
+### MarsDawn fonctionne-t-il sur iPhone ou iPad ?
 
-Oui, pour la lecture. Sur iPhone et iPad, MarsDawn ouvre les fichiers Markdown et texte brut et met en forme les diagrammes Mermaid, les formules, le code et les tableaux, avec un plan et des thèmes. Il ne permet ni de modifier ni d’exporter en PDF. Il demande iOS 26 ou iPadOS 26 ou une version ultérieure. Avec le même compte Apple, un seul essai et un seul déverrouillage couvrent MarsDawn sur Mac, iPhone et iPad.
+Oui, pour la lecture. Sur iPhone et iPad, MarsDawn ouvre les fichiers Markdown, texte, PDF, JSON et YAML et met en forme les diagrammes Mermaid, les formules, le code et les tableaux. Vous pouvez partager un fichier, l’imprimer ou l’enregistrer en PDF, mais pas le modifier. Il demande iOS 26 ou iPadOS 26 ou une version ultérieure. Avec le même compte Apple, un seul essai et un seul déverrouillage couvrent Mac, iPhone et iPad.
 
 En savoir plus : [Feuille de route](/fr/roadmap/)
 
-### Claude Code peut-il ouvrir des fichiers dans MarsDawn ?
+### Claude Code peut-il ouvrir des fichiers dans MarsDawn ?
 
 Oui. L’outil en ligne de commande gratuit marsdawn a une commande open qui ouvre un fichier Markdown dans MarsDawn, donc Claude Code, ou tout agent capable d’exécuter une commande shell, peut l’appeler. Un hook Claude Code facultatif peut ouvrir chaque fichier Markdown que Claude écrit ou modifie.
 
-### MarsDawn envoie-t-il mes documents en ligne ?
+### MarsDawn envoie-t-il mes documents en ligne ?
 
-Non. L’app n’envoie jamais vos documents, ne collecte aucune donnée sur vous et n’a pas de compte ; vos documents et réglages restent sur votre Mac. Si un document fait référence au web et que vous chargez ce contenu, votre Mac le récupère directement auprès des serveurs qui l’hébergent, et le développeur de MarsDawn n’en reçoit rien.
+Non. L’app n’envoie jamais vos documents, ne collecte aucune donnée sur vous et n’a pas de compte ; vos documents et réglages restent sur votre Mac. Si un document fait référence au web et que vous chargez ce contenu, votre Mac le récupère directement auprès des serveurs qui l’hébergent, et le développeur de MarsDawn n’en reçoit rien.
 
-En savoir plus : [Politique de confidentialité](/fr/privacy/#what-stays-on-your-mac)
+En savoir plus : [Politique de confidentialité](/fr/privacy/#what-stays-on-your-mac)
 
-### Avec MCP ou le skill, qui peut voir mes fichiers ?
+### Avec MCP ou le skill, qui peut voir mes fichiers ?
 
-MarsDawn lui-même n’envoie rien. Le skill est un fichier texte d’instructions, l’outil en ligne de commande marsdawn et le serveur MCP tournent sur votre Mac, et le serveur MCP n’agit que dans les dossiers que vous autorisez. Celui qui lit vos fichiers, c’est votre agent ; ce que lui et son fournisseur de modèle en font relève de la politique de cet agent, que MarsDawn ne contrôle ni ne décrit.
+MarsDawn lui-même n’envoie rien. Le skill est un fichier texte d’instructions, l’outil en ligne de commande marsdawn et le serveur MCP tournent sur votre Mac, et le serveur MCP n’agit que dans les dossiers que vous autorisez. Celui qui lit vos fichiers, c’est votre agent ; ce que lui et son fournisseur de modèle en font relève de la politique de cet agent, que MarsDawn ne contrôle ni ne décrit.
 
-En savoir plus : [MCP](/fr/cli/mcp/)
+En savoir plus : [MCP](/fr/cli/mcp/)
 
-### Est-il sûr d’ouvrir un HTML qu’on m’a envoyé ?
+### Est-il sûr d’ouvrir un HTML qu’on m’a envoyé ?
 
-Par défaut, il s’ouvre de façon statique : son code ne s’exécute pas et rien n’est chargé depuis le web. Si vous choisissez « Présentation › Exécuter ce document », ce document s’exécute et peut envoyer des données sur le réseau et lire les images, feuilles de style, polices et médias de son dossier. Ce choix n’est jamais mémorisé : à la prochaine ouverture, il est de nouveau statique.
+Par défaut, il s’ouvre de façon statique : son code ne s’exécute pas et rien n’est chargé depuis le web. Si vous choisissez « Présentation › Exécuter ce document », ce document s’exécute et peut envoyer des données sur le réseau et lire les images, feuilles de style, polices et médias de son dossier. Ce choix n’est jamais mémorisé : à la prochaine ouverture, il est de nouveau statique.
 
-En savoir plus : [Politique de confidentialité](/fr/privacy/#when-marsdawn-uses-the-internet)
+En savoir plus : [Politique de confidentialité](/fr/privacy/#when-marsdawn-uses-the-internet)
 
-### Le cookie de mesure d’audience du site a-t-il un lien avec l’app ?
+### Le cookie de mesure d’audience du site a-t-il un lien avec l’app ?
 
-Non. L’app et ce site sont distincts : l’app ne collecte rien, et une visite ne peut être enregistrée que sur marsdawn.southern-light.dev. Sur le site, Google Analytics démarre refusé et ne pose de cookies qu’après « Accepter » dans le bandeau ; « Réglages des cookies » en pied de page permet de changer ce choix. Les requêtes de l’app pour les fichiers de thème sous /themes/ ne sont pas enregistrées.
+Non. L’app et ce site sont distincts : l’app ne collecte rien, et une visite ne peut être enregistrée que sur marsdawn.southern-light.dev. Sur le site, Google Analytics démarre refusé et ne pose de cookies qu’après « Accepter » dans le bandeau ; « Réglages des cookies » en pied de page permet de changer ce choix. Les requêtes de l’app pour les fichiers de thème sous /themes/ ne sont pas enregistrées.
 
-En savoir plus : [Politique de confidentialité](/fr/privacy/#the-website)
+En savoir plus : [Politique de confidentialité](/fr/privacy/#the-website)
 
 ### Pourquoi MarsDawn plutôt qu’une autre app ?
 
@@ -160,34 +188,12 @@ Oui. Chaque mise à jour depuis l’arrivée de MarsDawn sur le Mac App Store fi
 
 En savoir plus : [Historique des versions](/fr/changelog/) · [Feuille de route](/fr/roadmap/) · [mars-dawn-kit](https://github.com/redtear1115/mars-dawn-kit)
 
-## L’app, telle qu’elle est
-
-### [Une app Mac](/fr/native/)
-
-![MarsDawn en vue partagée : la source Markdown à gauche, la page mise en forme à droite.](https://marsdawn.southern-light.dev/assets/screens/01-split-1180.png)
-
-Sur cette capture d’écran :
-
-1. Une fenêtre Mac native.
-2. L’éditeur de texte du Mac, avec la coloration Markdown.
-3. ⌘1 source, ⌘2 partagé, ⌘3 aperçu.
-4. La page se met à jour pendant la saisie.
-
-### [Export PDF](/fr/pdf/)
-
-![Un PDF exporté depuis MarsDawn, ouvert dans sa visionneuse PDF avec les vignettes des pages.](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
-
-Sur cette capture d’écran :
-
-1. Les diagrammes Mermaid, dessinés dans le PDF.
-2. Le code garde sa coloration.
-
 ## Plus
 
 - [Fonctionnalités](https://marsdawn.southern-light.dev/fr/features/index.md): Éditeur Mac natif pour Markdown, JSON et YAML : aperçu en direct, Mermaid, formules, thèmes et pages PDF ou imprimées pour réunions et dossiers papier.
 - [Vos textes restent sur votre Mac](https://marsdawn.southern-light.dev/fr/yours/index.md): MarsDawn n’a ni compte, ni synchronisation, ni cloud. Vos documents Markdown restent sur votre Mac, dans les fichiers et dossiers que vous choisissez.
 - [Essai gratuit, achat unique](https://marsdawn.southern-light.dev/fr/pay-once/index.md): MarsDawn se télécharge gratuitement. Essayez tout pendant 14 jours, puis déverrouillez-le une fois pour 4,99 USD. Sans abonnement, sans compte.
-- [Export PDF](https://marsdawn.southern-light.dev/fr/pdf/index.md): Exportez du Markdown en PDF ou imprimez-le sur votre Mac, avec les diagrammes Mermaid et le code en couleur. Les sauts de page évitent de couper les blocs de code courts.
+- [Imprimer et PDF](https://marsdawn.southern-light.dev/fr/pdf/index.md): Prévisualisez votre Markdown, puis imprimez-le ou enregistrez-le en PDF sur Mac, en disposition Document, Guide ou Polycopié, avec diagrammes et code coloré.
 - [Une app Mac](https://marsdawn.southern-light.dev/fr/native/index.md): Un éditeur Markdown qui est une vraie app Mac : fenêtres et onglets natifs, enregistrement automatique, historique des versions, Coup d’œil dans le Finder et un éditeur de texte qui se comporte comme sur Mac.
 - [Ce que MarsDawn ne fait pas](https://marsdawn.southern-light.dev/fr/limits/index.md): Pas de synchronisation, pas de modification sur iPhone ou iPad, pas de plug-ins, pas de comptes. Des thèmes, mais pas de CSS personnalisé. À savoir avant d’acheter.
 - [Assistance](https://marsdawn.southern-light.dev/fr/support/index.md): De l’aide pour MarsDawn, l’éditeur Markdown pour macOS.
@@ -195,6 +201,8 @@ Sur cette capture d’écran :
 - [Ouvrir un fichier .md sur Mac](https://marsdawn.southern-light.dev/fr/view-markdown-on-mac/index.md): Ouvrir un fichier .md sur Mac : double-clic, app par défaut, Coup d’œil dans le Finder. Les .md écrits par un agent IA se lisent mis en forme dans MarsDawn.
 - [Aperçu Mermaid sur Mac](https://marsdawn.southern-light.dev/fr/mermaid-preview-mac/index.md): Diagrammes Mermaid dessinés à côté de votre Markdown sur Mac : aperçu en direct, Coup d’œil et export PDF. Un diagramme erroné affiche l’erreur et la ligne.
 - [Coup d’œil pour Markdown](https://marsdawn.southern-light.dev/fr/quicklook/index.md): Avec MarsDawn, Coup d’œil affiche le Markdown mis en forme dans le Finder avec Espace : Mermaid, KaTeX, code coloré. Il fonctionne toujours après l’essai.
+- [Copier pour l’IA](https://marsdawn.southern-light.dev/fr/copy-for-ai/index.md): Copiez le texte sélectionné avec son chemin de fichier et ses numéros de ligne, puis collez-le dans Claude Code ou tout autre agent. Sur votre Mac, sans IDE ni plug-in.
+- [Passer de HackMD à votre Mac](https://marsdawn.southern-light.dev/fr/from-hackmd/index.md): Téléchargez vos notes HackMD en .md et lisez-les dans MarsDawn sur votre Mac. Comment tout télécharger, partir d’un dépôt GitHub et garder vos images.
 - [Markdown vers PDF](https://marsdawn.southern-light.dev/fr/markdown-to-pdf/index.md): Convertissez du Markdown en PDF sur Mac avec l’outil en ligne de commande gratuit marsdawn. Installez-le avec Homebrew et lancez une seule commande : tableaux, maths, Mermaid et code.
 - [MarsDawn comparé : aperçu VS Code, Obsidian, QLMarkdown, LynxOffice](https://marsdawn.southern-light.dev/fr/vs/index.md): Pour celles et ceux qui choisissent comment lire et relire du Markdown sur Mac, souvent écrit par un agent. Chaque cellule ci-dessous vient des pages du fournisseur ou de notre propre vérification, toutes au 16 octobre 2026, sauf la cellule PDF de MarsDawn, mise à jour le 7 novembre 2026 ; les produits évoluent, une cellule peut donc vieillir. Si vous repérez une erreur, écrivez à l’adresse indiquée sur Assistance.
 - [MacMD Viewer vs MarsDawn](https://marsdawn.southern-light.dev/fr/vs/macmd-viewer/index.md): MacMD Viewer est une visionneuse Markdown en lecture seule à 19,99 USD. MarsDawn modifie avec l’aperçu à côté : 14 jours gratuits, puis 4,99 USD une seule fois.
