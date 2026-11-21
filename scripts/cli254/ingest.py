@@ -23,16 +23,32 @@ program, never typed. Each comment is fetched by id with `gh api` and held to th
   other six locales, under the standing machine-locale OK. One `## <locale>` section with one md block in
   each; ### headings are read as ##, as in I.
 
+Later approved text (#362): merged PRs after these comments were read put newer approved text into
+data.py by hand. Those replacements are the last step of the run (after build, for --check too) and live
+in sources.json under "later", grouped by merged PR. Each field names its path (relative to the data dict
+build() returns: locale, then the field), the commit whose data.py holds the approved text, the sha256 of
+the pinned text it replaces (old_sha256) and of the approved text (new_sha256), and, when the text is
+verbatim in an approval comment, that comment's id. An old_sha256 of null means the path is new (the
+marsdawn 0.7.7 changelog entries): the parent must exist and the key must not. The comments (id,
+updated_at, sha256) are pinned in the same group. A path that is listed twice or not there, pinned text
+or approved text that does not hash to the recorded value, a comment that changed, or a field that names a
+comment its group does not pin stops the run with exit 1. Only data is patched, not the shared dict.
+This layer also carries what the unpinned approved360.json (PR #354) held for #360, so that file and its
+step are gone: it still had the zh-Hant text from before #286, which the PR #367 cells here replace.
+
 Writes scripts/cli254/data.py, which scripts/build_pages.py reads (apply_cli254). The text is the
 comments' Markdown; the build turns it into HTML with rich_pages.md_inline. Schema notes are HTML in
 the source and stay HTML.
 
     python3 -I -B scripts/cli254/ingest.py           # verify the comments, write data.py
     python3 -I -B scripts/cli254/ingest.py --check   # verify, compare with data.py, write nothing
+Exit codes: 0 ok, 1 --check differs, a pinned comment differs, a parse assertion failed, gh api failed
+or the later layer stopped.
 
 It needs gh, so it runs locally, never in CI.
 """
 import argparse
+import ast
 import hashlib
 import json
 import pprint
@@ -42,6 +58,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent.parent
 SOURCES = json.loads((HERE / "sources.json").read_text(encoding="utf-8"))
 REPO = "redtear1115/mars-dawn-website"
 LABELS = {"en": "en", "zh-Hant": "zh-hant", "zh-Hans": "zh-hans", "ja": "ja", "ko": "ko", "de": "de",
@@ -304,19 +321,6 @@ def apply_295(data: dict) -> None:
                 data[loc]["schema_notes"][key] = row[cols[loc]]
 
 
-def apply_360(data: dict) -> None:
-    """#360 changed `--layout`, `<!--BREAK-->` and the version sentence in data.py itself, from comments
-    on #357 that aren't pinned here, so a run without this put the old sentences back. approved360.json
-    is those two fields as #360 merged them, cut from main's data.py by program, and they win.
-    """
-    pin = SOURCES["local_copy_360"]
-    body = (HERE / pin["path"]).read_text(encoding="utf-8")
-    if sha256(body) != pin["sha256"]:
-        raise Stop(f"#360 local copy differs: {pin['path']}")
-    for locale, fields in json.loads(body).items():
-        data[locale].update(fields)
-
-
 NEW_355 = ["0.7.6", "0.7.5", "0.7.4", "0.7.3"]
 
 
@@ -362,8 +366,88 @@ def build() -> tuple:
     fetch(c["approval_355"])
     apply_355(fetch(c["K"]), ["en", "zh-hant"], data)
     apply_355(fetch(c["K_i18n"]), ["zh-hans", "ja", "ko", "de", "fr", "es"], data)
-    apply_360(data)
     return data, shared
+
+
+# ---- later approved text (#362) ----------------------------------------------------------------
+
+def value_sha256(value) -> str:
+    return sha256(value if isinstance(value, str) else json.dumps(value, ensure_ascii=False, sort_keys=True))
+
+
+def data_at(commit: str) -> dict:
+    """DATA of scripts/cli254/data.py at a commit, read from the git object (a literal, never executed)."""
+    out = subprocess.run(["git", "-C", str(ROOT), "show", f"{commit}:scripts/cli254/data.py"], capture_output=True)
+    if out.returncode:
+        raise Stop(f"git show {commit}:scripts/cli254/data.py failed: {out.stderr.decode(errors='replace')[:200]}")
+    for node in ast.parse(out.stdout.decode("utf-8")).body:
+        if isinstance(node, ast.Assign) and [getattr(t, "id", None) for t in node.targets] == ["DATA"]:
+            return ast.literal_eval(node.value)
+    raise Stop(f"no DATA in scripts/cli254/data.py at {commit}")
+
+
+def at_path(node, path: list, where: str):
+    for part in path:
+        try:
+            node = node[part]
+        except (KeyError, IndexError, TypeError):
+            raise Stop(f"{where}: path {'/'.join(map(str, path))} not found at {part!r}")
+    return node
+
+
+def pinned_comment(pin: dict, pr: int) -> None:
+    """A later-layer approval comment (GET by id), held to its pinned sha256 and updated_at. Unlike fetch()
+    it does not check the issue: these comments sit on PRs and on other issues."""
+    out = subprocess.run(["gh", "api", f"repos/{REPO}/issues/comments/{pin['id']}"], capture_output=True, text=True)
+    if out.returncode:
+        raise Stop(f"gh api failed for comment {pin['id']} (later, PR #{pr}): {out.stderr.strip()}")
+    got = json.loads(out.stdout)
+    digest = sha256(got["body"])
+    if digest != pin["sha256"] or got["updated_at"] != pin["updated_at"]:
+        raise Stop(f"comment {pin['id']} (later, PR #{pr}) differs from the pinned source: sha256 {digest} vs {pin['sha256']}, "
+                   f"updated_at {got['updated_at']} vs {pin['updated_at']}")
+
+
+def apply_later(out: dict) -> None:
+    """Replace the pinned text with the approved text the merged PRs put into data.py (sources.json "later"),
+    or add it where old_sha256 is null. Every failure here exits 1."""
+    blobs, seen = {}, set()
+    kinds = {"comment": 0, "pr": 0}
+    later = SOURCES.get("later")
+    if not later or not later.get("prs"):
+        raise Stop('sources.json has no "later" layer: the approved text would be put back to the pinned text')
+    for group in later["prs"]:
+        pr = group["pr"]
+        pins = group.get("comments", [])
+        for pin in pins:
+            pinned_comment(pin, pr)
+        known = {pin["id"] for pin in pins}
+        for field in group["fields"]:
+            path, where = field["path"], f"later PR #{pr}"
+            name = "/".join(map(str, path))
+            if tuple(path) in seen:
+                raise Stop(f"{where}: path {name} is listed twice")
+            seen.add(tuple(path))
+            if not set(field.get("comments", [])) <= known:
+                raise Stop(f"{where}: {name} names a comment that the group does not pin")
+            if field["old_sha256"] is None:
+                parent = at_path(out, path[:-1], where)
+                if not isinstance(parent, dict) or path[-1] in parent:
+                    raise Stop(f"{where}: {name} has old_sha256 null, so its parent must be a dict without that key")
+            else:
+                old = at_path(out, path, where)
+                if value_sha256(old) != field["old_sha256"]:
+                    raise Stop(f"{where}: {name} is not the pinned text any more (sha256 {value_sha256(old)} vs {field['old_sha256']})")
+            commit = field["commit"]
+            if commit not in blobs:
+                blobs[commit] = data_at(commit)
+            new = at_path(blobs[commit], path, f"{where} at {commit[:9]}")
+            if value_sha256(new) != field["new_sha256"]:
+                raise Stop(f"{where}: approved text at {commit[:9]} for {name} does not match the pinned sha256 "
+                           f"{field['new_sha256']} (got {value_sha256(new)})")
+            at_path(out, path[:-1], where)[path[-1]] = new
+            kinds["comment" if field.get("comments") else "pr"] += 1
+    print(f"applied {sum(kinds.values())} later replacements: {kinds['comment']} pinned to an approval comment, {kinds['pr']} to a merged PR")
 
 
 def render(data: dict, shared: dict) -> str:
@@ -379,6 +463,7 @@ def main() -> int:
     ap.add_argument("--check", action="store_true")
     args = ap.parse_args()
     data, shared = build()
+    apply_later(data)
     text = render(data, shared)
     target = HERE / "data.py"
     if args.check:
