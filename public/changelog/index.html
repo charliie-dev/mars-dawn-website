@@ -124,12 +124,21 @@ try {
 <main id="main">
 <section class="intro">
   <h1>Changelog</h1>
-  <p>What changed in each version of the MarsDawn app on the Mac App Store and the free marsdawn command-line tool. App dates are the day the version appeared on the Mac App Store.</p>
+  <p>What changed in each version of the MarsDawn app for Mac, iPhone and iPad, and of the free marsdawn command-line tool. App dates are the day the version appeared on the App Store.</p>
 </section>
 
 <p>What's coming next is on the <a href="/roadmap/">roadmap</a>.</p>
 
-<h2 id="marsdawn-app">MarsDawn app</h2>
+<h2 id="marsdawn-app">MarsDawn for Mac</h2>
+
+<h3 id="app-1-2-2">MarsDawn 1.2.2</h3>
+<p>14 November 2026</p>
+<ul>
+  <li>File &gt; Print... and File &gt; Export as PDF... now open a Print &amp; Export sheet with a preview of the PDF. Choose Document, Handbook or Handout, then print it or save it as a PDF. Printing is no longer limited to Document.</li>
+  <li>Fixed: text typed right after an autosave could be replaced, and scrolling right after switching back to Split could jump back.</li>
+  <li>When you choose Handbook, the Print &amp; Export sheet shows what will go on the cover, and you can add the Mars Sunrise cover image. Print &amp; Export can also be added to the toolbar.</li>
+  <li>File &gt; Add Claude Code Plans... adds the folder where Claude Code saves its plans to the Files sidebar, newest first. The sidebar's sort menu has a new option, Show Only Files MarsDawn Can Open, which you set for each folder.</li>
+</ul>
 
 <h3 id="app-1-2-1">MarsDawn 1.2.1</h3>
 <p>3 November 2026</p>
@@ -187,8 +196,34 @@ try {
 <p>5 October 2026</p>
 <p>First release.</p>
 
+<h2 id="marsdawn-ios">MarsDawn for iPhone and iPad</h2>
+
+<h3 id="ios-1-0-2">MarsDawn 1.0.2</h3>
+<p>13 November 2026</p>
+<ul>
+  <li>Open PDFs and find text in them. A PDF with a password asks for it first.</li>
+  <li>Open JSON and YAML files as read-only documents, with a tree preview.</li>
+  <li>Open Markdown, text, PDF, JSON and YAML files from Files, Mail and other apps.</li>
+  <li>Find text in the preview (⌘F on a keyboard). Appearance and Theme has a new setting: Keep single line breaks.</li>
+  <li>Share the file from the toolbar, or print it.</li>
+  <li>On iPad and an unfolded iPhone Duo, the outline is now a sidebar that shows where you are. PDF bookmarks appear there too.</li>
+</ul>
+
+<p>Versions before 1.0.2 are not listed.</p>
+
 <h2 id="marsdawn-command-line-tool">marsdawn command-line tool</h2>
 <p>Versions before 0.5.1 are not listed.</p>
+
+<h3 id="marsdawn-0-7-7">marsdawn 0.7.7</h3>
+<p>9 November 2026. PNG export, collapsible blocks and faster large exports.</p>
+<ul>
+  <li><code>marsdawn export --format png</code> renders a document to PNG, to check how it looks: <code>--width</code> (600–2000, default 1200), <code>--appearance light|dark</code>, <code>--theme</code>, and <code>--lines</code> or <code>--heading</code> for part of it. A page taller than 8,000 pixels is split into numbered images, never inside a table, code block or diagram.</li>
+  <li><code>marsdawn export --details</code> decides how collapsible blocks print: <code>expand</code>, the default, prints every one open, as before; <code>as-written</code> prints only the blocks written open, and the others as their summary alone. Either way, a summary prints as a bold line without the triangle.</li>
+  <li>Collapsible blocks render more of what HackMD and Obsidian write: <code>:::spoiler</code> with no title or with <code>{state="open"}</code>, Markdown in titles, nested <code>::::spoiler</code>, and Obsidian's foldable callouts <code>&gt; [!note]-</code> and <code>&gt; [!tip]+</code>.</li>
+  <li>Large documents export much faster: in our test, a 10 MB file took about 74 seconds instead of about 4 minutes.</li>
+  <li>When several <code>marsdawn export</code> commands run at once, one of them could fail with exit code 5. It now tries again instead.</li>
+  <li>When the MarsDawn app isn't running, several <code>marsdawn open</code> commands run at once now open every file. Before, some files didn't open even when the command reported success.</li>
+</ul>
 
 <h3 id="marsdawn-0-7-6">marsdawn 0.7.6</h3>
 <p>2 November 2026. Handbook PDFs on macOS 27.2.</p>
@@ -317,7 +352,7 @@ try {
         <li><a href="/features/">Features</a></li>
         <li><a href="/quicklook/">Quick Look for Markdown</a></li>
         <li><a href="/native/">A Mac app</a></li>
-        <li><a href="/pdf/">PDF export</a></li>
+        <li><a href="/pdf/">Print &amp; PDF</a></li>
         <li><a href="/limits/">What MarsDawn doesn't do</a></li>
         <li><a href="/pay-once/">Try free, pay once</a></li>
         <li><a href="/yours/">Your writing stays on your Mac</a></li>

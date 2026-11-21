@@ -124,12 +124,21 @@ try {
 <main id="main">
 <section class="intro">
   <h1>更新紀錄</h1>
-  <p>Mac App Store 上的 MarsDawn App，以及免費的 marsdawn 命令列工具，每個版本改了什麼。App 的日期是該版本在 Mac App Store 上架的日子。</p>
+  <p>MarsDawn 的 Mac、iPhone 和 iPad App，以及免費的 marsdawn 命令列工具，每個版本改了什麼。App 的日期是該版本在 App Store 上架的日子。</p>
 </section>
 
 <p>接下來要做的事列在<a href="/zh-hant/roadmap/">路線圖</a>。</p>
 
-<h2 id="marsdawn-app">MarsDawn App</h2>
+<h2 id="marsdawn-app">Mac 版 MarsDawn</h2>
+
+<h3 id="app-1-2-2">MarsDawn 1.2.2</h3>
+<p>2026 年 11 月 14 日</p>
+<ul>
+  <li>「檔案 ▸ 列印⋯」和「檔案 ▸ 輸出為 PDF⋯」現在都會打開「列印與輸出」面板，先預覽 PDF。選擇「文件」、「手冊」或「講義」後，再列印或儲存為 PDF。列印也不再只能用「文件」版面。</li>
+  <li>修正：自動儲存後馬上打的字可能被換掉，切回「並排」後馬上捲動可能被拉回去。</li>
+  <li>選擇「手冊」時，「列印與輸出」面板會列出封面要顯示的內容，也可以加上「火星日出」封面圖。「列印與輸出」也可以加到工具列。</li>
+  <li>「檔案 ▸ 加入 Claude Code 計畫⋯」會把 Claude Code 存計畫的資料夾加到「檔案」側邊欄，最新的排在最上面。側邊欄的排序選單也多了「只顯示 MarsDawn 能打開的檔案」，每個資料夾可以分開設定。</li>
+</ul>
 
 <h3 id="app-1-2-1">MarsDawn 1.2.1</h3>
 <p>2026 年 11 月 3 日</p>
@@ -188,8 +197,34 @@ try {
 <p>2026 年 10 月 5 日</p>
 <p>首次發表。</p>
 
+<h2 id="marsdawn-ios">iPhone 和 iPad 版 MarsDawn</h2>
+
+<h3 id="ios-1-0-2">MarsDawn 1.0.2</h3>
+<p>2026 年 11 月 13 日</p>
+<ul>
+  <li>可以打開 PDF，也能在裡面尋找文字。有密碼的 PDF 會先請你輸入密碼。</li>
+  <li>JSON 和 YAML 檔可以當成唯讀文件打開，並有樹狀預覽。</li>
+  <li>可以從「檔案」、「郵件」和其他 App 打開 Markdown、文字、PDF、JSON 和 YAML 檔。</li>
+  <li>可以在預覽裡尋找文字（鍵盤按 ⌘F）。「外觀與主題」新增「保留單一換行」。</li>
+  <li>可以從工具列分享檔案，或列印出來。</li>
+  <li>在 iPad 和展開的 iPhone Duo 上，大綱改成側邊欄，會標出你讀到哪裡。PDF 的書籤也顯示在這裡。</li>
+</ul>
+
+<p>1.0.2 以前的版本不列。</p>
+
 <h2 id="marsdawn-command-line-tool">marsdawn 命令列工具</h2>
 <p>0.5.1 以前的版本不列。</p>
+
+<h3 id="marsdawn-0-7-7">marsdawn 0.7.7</h3>
+<p>2026 年 11 月 9 日。輸出 PNG、可收合區塊，以及大檔案輸出更快。</p>
+<ul>
+  <li><code>marsdawn export --format png</code> 會把文件輸出成 PNG，用來確認排版：<code>--width</code>（600–2000，預設 1200）、<code>--appearance light|dark</code>、<code>--theme</code>，以及只輸出一部分的 <code>--lines</code> 或 <code>--heading</code>。高度超過 8,000 像素的頁面會分成編號的多張圖，切點不會落在表格、程式碼區塊或圖表中間。</li>
+  <li><code>marsdawn export --details</code> 決定可收合區塊怎麼印：預設的 <code>expand</code> 和以前一樣全部展開；<code>as-written</code> 只展開原本寫成展開的區塊，其他只印標題。兩種方式的標題都印成粗體一行，不畫三角形。</li>
+  <li>可收合區塊支援更多 HackMD 和 Obsidian 的寫法：沒有標題或加上 <code>{state="open"}</code> 的 <code>:::spoiler</code>、標題裡的 Markdown、巢狀的 <code>::::spoiler</code>，以及 Obsidian 可收合的 callout <code>&gt; [!note]-</code>、<code>&gt; [!tip]+</code>。</li>
+  <li>大檔案輸出快很多：在我們的測試中，10 MB 的檔案從約 4 分鐘縮短到約 74 秒。</li>
+  <li>同時執行多個 <code>marsdawn export</code> 時，偶爾會有一個以代碼 5 結束。現在會自動重試。</li>
+  <li>MarsDawn App 沒在執行時，同時執行多個 <code>marsdawn open</code> 現在每個檔案都會打開。以前有些檔案沒打開，指令卻回報成功。</li>
+</ul>
 
 <h3 id="marsdawn-0-7-6">marsdawn 0.7.6</h3>
 <p>2026 年 11 月 2 日。macOS 27.2 上的手冊 PDF。</p>
@@ -318,7 +353,7 @@ try {
         <li><a href="/zh-hant/features/">功能一覽</a></li>
         <li><a href="/zh-hant/quicklook/">Markdown 快速查看</a></li>
         <li><a href="/zh-hant/native/">為 Mac 而做</a></li>
-        <li><a href="/zh-hant/pdf/">輸出 PDF</a></li>
+        <li><a href="/zh-hant/pdf/">列印與 PDF</a></li>
         <li><a href="/zh-hant/limits/">MarsDawn 做不到的事</a></li>
         <li><a href="/zh-hant/pay-once/">免費試用，買一次就好</a></li>
         <li><a href="/zh-hant/yours/">你寫的內容留在你的 Mac 上</a></li>

@@ -11,10 +11,10 @@ MarsDawn は、Markdown を読んで確かめるための Mac ネイティブア
 ## 席を離れても、エージェントが書いたものを読める
 
 1. Mac で、エージェントにファイルを iCloud Drive のフォルダへ保存させます。
-2. iPhone や iPad で MarsDawn を開き、そのファイルを選びます。
-3. 編集や PDF の書き出しは、Mac に戻って行います。
+2. iPhone や iPad で、MarsDawn から開くか、ほかの App から開きます。
+3. 共有、プリント、PDF として保存ができます。編集は Mac で行います。
 
-iPhone と iPad では閲覧専用で、開けるのは Markdown とプレーンテキストのファイルだけです。
+iPhone と iPad では閲覧専用で、Markdown、テキスト、PDF、JSON、YAML を開けます。
 
 [![App Storeからダウンロード](/assets/badges/app-store-ja.svg)](https://apps.apple.com/app/id6812925073)
 
@@ -27,6 +27,32 @@ iPhone と iPad では閲覧専用で、開けるのは Markdown とプレーン
 3. **エージェントが修正する。**変更を依頼します。修正されたファイルを開き、同じように読みます。
 
 [エージェントが返してくるものをどう確認するか](/ja/reading-agent-output/) · [Mac で .md ファイルを開く方法](/ja/view-markdown-on-mac/)
+
+## 機能
+
+### [Mermaid 図とコード](/ja/mermaid-preview-mac/)
+
+![確認と再送のループがあるフローチャートと、その下のコードブロック。](https://marsdawn.southern-light.dev/assets/screens/card-mermaid-624.png)
+
+プレビューが図を描き、コードをハイライトします。ソースのすぐ隣で。
+
+### [プリントと PDF](/ja/pdf/)
+
+![ページの上部：タイトル、短い段落、フローチャート。](https://marsdawn.southern-light.dev/assets/screens/card-pdf-665.png)
+
+Mermaid 図は PDF に描き込まれます。
+
+### [Markdown のクイックルック](/ja/quicklook/)
+
+![描画されたページを表示するプレビューウインドウ：タイトル、短い段落、フローチャート。](https://marsdawn.southern-light.dev/assets/screens/card-vivid-624.png)
+
+Finder で Markdown ファイルを選んでスペースキーを押します。
+
+### [iPhone と iPad で読む](/ja/features/#iphone-ipad)
+
+![チェックアウトのフローチャートと、その下のコードブロックの冒頭。](https://marsdawn.southern-light.dev/assets/screens/card-iphone-944.webp)
+
+iPhone と iPad の MarsDawn は閲覧専用で、編集はできません。編集は Mac で行います。
 
 ## エージェントの計画を、実行する前に読む。
 
@@ -47,6 +73,8 @@ brew install redtear1115/tap/marsdawn
 - `marsdawn export` は Markdown ファイルを、MarsDawn のプレビューと同じ見た目の PDF にします。アプリは要りません。
 - `marsdawn open` はファイルを MarsDawn アプリで開き、確認できるようにします。
 - `--json` は、スクリプトやエージェントが解析できる結果を返します。
+
+ここでインストールされるのはコマンドラインツールです。Homebrew で Mac アプリを入手する方法は、[こちら](/ja/cli/#mac-app)をご覧ください。
 
 [コマンドライン](/ja/cli/) · [AI エージェント向け marsdawn](/ja/cli/agents/) · [エージェント用スキル](/ja/cli/skill/) · [MCP サーバー](/ja/cli/mcp/)
 
@@ -116,7 +144,7 @@ MarsDawn は、エージェントが書いた Markdown を読んで確かめる�
 
 ### MarsDawn は iPhone や iPad で使えますか？
 
-はい、閲覧用です。iPhone と iPad の MarsDawn は Markdown とプレーンテキストのファイルを開き、Mermaid 図、数式、コード、表を整えて表示します。アウトラインとテーマも使えます。編集と PDF の書き出しはできません。iOS 26 または iPadOS 26 以降が必要です。同じ Apple Account なら、1回のトライアルと1回のロック解除で、Mac、iPhone、iPad の MarsDawn をすべて利用できます。
+はい、閲覧用です。iPhone と iPad の MarsDawn は Markdown、テキスト、PDF、JSON、YAML を開き、Mermaid 図、数式、コード、表を整えて表示します。ファイルの共有、プリント、PDF としての保存はできますが、編集はできません。iOS 26 または iPadOS 26 以降が必要です。同じ Apple Account なら、1回のトライアルと1回のロック解除で、Mac、iPhone、iPad をすべて利用できます。
 
 詳しくは：[ロードマップ](/ja/roadmap/)
 
@@ -150,7 +178,7 @@ MarsDawn 自体は何も送りません。skill は指示を書いたテキス�
 
 ### ほかのアプリではなく MarsDawn を使う理由は？
 
-必要ないかもしれません。自分のメモを書くのが中心なら、Obsidian のようなノートアプリのほうが向いています。VS Code でずっと作業しているなら、標準のプレビューが無料で使えます。Finder でファイルをさっと見たいだけなら、無料のクイックルック拡張機能で十分です。PDF にページ番号が必要なら、MarsDawn は付けられません。MarsDawn は、エージェントが書いた Markdown を読んでレビューするためのアプリです。ソースの横にライブプレビューがあり、エージェントの変更は一度で取り消せ、ファイルを指定の行で開けます。合わないと感じたら、その理由をメールで教えてください。
+必要ないかもしれません。自分のメモを書くのが中心なら、Obsidian のようなノートアプリのほうが向いています。VS Code でずっと作業しているなら、標準のプレビューが無料で使えます。Finder でファイルをさっと見たいだけなら、無料のクイックルック拡張機能で十分です。MarsDawn は、エージェントが書いた Markdown を読んでレビューするためのアプリです。ソースの横にライブプレビューがあり、エージェントの変更は一度で取り消せ、ファイルを指定の行で開けます。合わないと感じたら、その理由をメールで教えてください。
 
 詳しくは：[MarsDawn とほかのツールの比較](/ja/vs/) · [Mac 向け Markdown ビューアのおすすめ](/ja/best-markdown-viewer-mac/)
 
@@ -160,34 +188,12 @@ MarsDawn 自体は何も送りません。skill は指示を書いたテキス�
 
 詳しくは：[更新履歴](/ja/changelog/) · [ロードマップ](/ja/roadmap/) · [mars-dawn-kit](https://github.com/redtear1115/mars-dawn-kit)
 
-## 実際のアプリ画面
-
-### [Mac アプリ](/ja/native/)
-
-![MarsDawn の分割ビュー：左が Markdown のソース、右がレンダリングされたページ。](https://marsdawn.southern-light.dev/assets/screens/01-split-1180.png)
-
-このスクリーンショットの内容：
-
-1. ネイティブの Mac ウインドウ。
-2. Mac のテキストエディタに、Markdown ハイライトを追加したもの。
-3. ⌘1 でソース、⌘2 で分割、⌘3 でプレビュー。
-4. 入力するとページが更新されます。
-
-### [PDF 書き出し](/ja/pdf/)
-
-![MarsDawn から書き出した PDF を、ページのサムネイル付きの PDF ビューアで開いたところ。](https://marsdawn.southern-light.dev/assets/screens/05-pdf-980.png)
-
-このスクリーンショットの内容：
-
-1. Mermaid 図は PDF に描き込まれます。
-2. コードはハイライトを保ちます。
-
 ## その他
 
 - [機能一覧](https://marsdawn.southern-light.dev/ja/features/index.md): Mac ネイティブの Markdown・JSON・YAML エディタ：リアルタイムプレビュー、Mermaid と数式、テーマ、会議や保管に使える PDF とプリントのページ。
 - [あなたの文章は Mac に残ります](https://marsdawn.southern-light.dev/ja/yours/index.md): MarsDawn にはアカウントも同期もクラウドもありません。Markdown 文書はあなたの Mac 上に、選んだファイルとフォルダの中に残ります。
 - [無料で試して、一度だけ購入](https://marsdawn.southern-light.dev/ja/pay-once/index.md): MarsDawn は無料でダウンロードできます。14日間すべての機能を試したあと、USD 4.99 の一度だけの購入でロックを解除できます。サブスクリプションもアカウントも不要です。
-- [PDF 書き出し](https://marsdawn.southern-light.dev/ja/pdf/index.md): Mac で Markdown を PDF に書き出したりプリントしたりできます。Mermaid 図やハイライトされたコードにも対応。改ページは短いコードブロックを分断しないよう配慮されます。
+- [プリントと PDF](https://marsdawn.southern-light.dev/ja/pdf/index.md): Mac でプレビューしてから、Markdown をプリントまたは PDF として保存。書類・ハンドブック・配布資料の3つのレイアウトで、図やコードの色も保たれます。
 - [Mac アプリ](https://marsdawn.southern-light.dev/ja/native/index.md): 本物の Mac アプリである Markdown エディタ。ネイティブなウインドウとタブ、自動保存、バージョン履歴、Finder のクイックルック、Mac らしく動くテキストエディタ。
 - [MarsDawn ができないこと](https://marsdawn.southern-light.dev/ja/limits/index.md): 同期なし、iPhone・iPad では編集不可、プラグインなし、アカウントなし。テーマは変更できますが、カスタム CSS は使えません。購入前に知っておいてください。
 - [サポート](https://marsdawn.southern-light.dev/ja/support/index.md): macOS 向け Markdown エディタ MarsDawn のヘルプ。
@@ -195,8 +201,10 @@ MarsDawn 自体は何も送りません。skill は指示を書いたテキス�
 - [Mac で .md ファイルを開く方法](https://marsdawn.southern-light.dev/ja/view-markdown-on-mac/index.md): Mac で .md ファイルを開く方法：ダブルクリック、標準のアプリの設定、Finder のクイックルック。AI エージェントが書いた .md は、MarsDawn でレンダリングして読めます。
 - [Mac で Mermaid をプレビューする](https://marsdawn.southern-light.dev/ja/mermaid-preview-mac/index.md): Mac で Mermaid の図を Markdown の隣に描画：リアルタイムプレビュー、クイックルック、PDF 書き出し。図に誤りがあると、エラーとその行が表示されます。
 - [Markdown のクイックルック](https://marsdawn.southern-light.dev/ja/quicklook/index.md): MarsDawn のクイックルックなら、Finder でスペースキーを押すだけで Markdown を描画して表示します。Mermaid 図、KaTeX 数式、ハイライトされたコードにも対応。トライアル終了後も使えます。
+- [AI 用にコピー](https://marsdawn.southern-light.dev/ja/copy-for-ai/index.md): 選択したテキストをファイルパスと行番号ごとコピーして、Claude Code やほかのエージェントに貼り付けます。Mac だけで完結し、IDE もプラグインも要りません。
+- [HackMD から Mac へ](https://marsdawn.southern-light.dev/ja/from-hackmd/index.md): HackMD のノートを .md でダウンロードして、Mac の MarsDawn で読む方法。全ノートのダウンロード、GitHub リポジトリからの移行、画像の扱いをまとめました。
 - [Markdown から PDF へ](https://marsdawn.southern-light.dev/ja/markdown-to-pdf/index.md): 無料の marsdawn コマンドラインツールで、Mac 上の Markdown を PDF に変換します。Homebrew でインストールしてコマンド1つで実行：表、数式、Mermaid、コードに対応。
-- [MarsDawn と比較：VS Code プレビュー、Obsidian、QLMarkdown、LynxOffice](https://marsdawn.southern-light.dev/ja/vs/index.md): Mac で Markdown を、多くはエージェントが書いたものを読んで確かめる方法を選ぶ人へ。表の各セルは、各社の公式ページか私たちの確認によるもので、いずれも 2026 年 10 月 16 日時点です。製品は変わるので、古くなることがあります。誤りに気づいたら、サポートのアドレスまでお知らせください。
+- [MarsDawn と比較：VS Code プレビュー、Obsidian、QLMarkdown、LynxOffice](https://marsdawn.southern-light.dev/ja/vs/index.md): Mac で Markdown を、多くはエージェントが書いたものを読んで確かめる方法を選ぶ人へ。表の各セルは、各社の公式ページか私たちの確認によるもので、いずれも 2026 年 10 月 16 日時点です（MarsDawn の PDF のセルは 2026 年 11 月 7 日に更新）。製品は変わるので、古くなることがあります。誤りに気づいたら、サポートのアドレスまでお知らせください。
 - [MacMD Viewer と MarsDawn](https://marsdawn.southern-light.dev/ja/vs/macmd-viewer/index.md): MacMD Viewer は読み取り専用の Markdown ビューアで USD 19.99。MarsDawn は編集とプレビューを並べて表示し、14 日間無料、その後 USD 4.99 を一度だけ。項目ごとの比較、出典つき。
 - [Mac向けMarkdownビューアのおすすめ8選（2026年）](https://marsdawn.southern-light.dev/ja/best-markdown-viewer-mac/index.md): Mac向けMarkdownビューア8本を、価格、Mermaid、数式、PDF、自動再読み込み、クイックルック、ネイティブかElectronかで比較し、それぞれ誰に向くかをまとめました。
 - [コマンドライン](https://marsdawn.southern-light.dev/ja/cli/index.md): 無料の marsdawn コマンドラインツールで、Mac のシェル、スクリプト、LLM エージェントから Markdown を PDF に書き出せます。JSON 出力にも対応。Homebrew でインストール。
