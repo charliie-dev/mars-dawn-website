@@ -1407,7 +1407,7 @@ swift build -c release --product marsdawn
 </ul>
 
 <h2>Ce qu’il y a dans la galerie</h2>
-<p>Huit thèmes aujourd’hui, tous créés et relus par nos soins : Dracula, Gruvbox, Nord et Solarized, adaptés des palettes bien connues et ajustés pour la lisibilité, ainsi que Guide, Ledger, Spec et Story, conçus pour les guides utilisateur, les budgets, les PRD et les notes de sprint.</p>
+<p>Aujourd’hui, tous les thèmes sont créés et relus par nos soins. Par exemple, Dracula, Gruvbox, Nord et Solarized sont adaptés de palettes bien connues et ajustés pour la lisibilité, tandis que Guide, Ledger, Spec et Story sont conçus pour les guides utilisateur, les budgets, les PRD et les notes de sprint.</p>
 
 <h2>Relus, et uniquement des données</h2>
 <p>Chaque thème est relu et fusionné par nos soins avant d’apparaître dans la galerie. Un thème est un petit fichier JSON de couleurs et de quelques options bornées : aucun script, aucun CSS et aucune image provenant de son auteur, et MarsDawn vérifie chaque valeur avant de l’installer. Un thème signalé quitte la galerie dans les 24 heures. S’il est nuisible, il est aussi supprimé des Mac qui l’avaient installé à la prochaine ouverture de la galerie, et MarsDawn revient à Aube s’il était utilisé.</p>
@@ -1454,7 +1454,7 @@ swift build -c release --product marsdawn
         "body": f"""
 <section class="intro">
   <h1>Galerie de thèmes</h1>
-  <p>Thèmes d’aperçu pour MarsDawn, chacun relu et fusionné par le développeur avant d’apparaître ici. Les huit actuels sont réalisés par Southern Light, dont quatre adaptés de palettes bien connues. Filtrez par scénario, ou <a href="/fr/themes/new/">créez le vôtre</a> dans le navigateur : l’envoi ouvre une issue GitHub demandant une relecture, sans installation ni git.</p>
+  <p>Thèmes d’aperçu pour MarsDawn, chacun relu et fusionné par le développeur avant d’apparaître ici. Les thèmes actuels sont tous réalisés par Southern Light, dont certains adaptés de palettes bien connues. Filtrez par scénario, ou <a href="/fr/themes/new/">créez le vôtre</a> dans le navigateur : l’envoi ouvre une issue GitHub demandant une relecture, sans installation ni git.</p>
 </section>
 <!--community-theme-gallery-->
 <h2>Crédits et licence</h2>

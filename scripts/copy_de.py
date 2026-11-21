@@ -1397,7 +1397,7 @@ swift build -c release --product marsdawn
 </ul>
 
 <h2>Was in der Galerie ist</h2>
-<p>Heute acht Themen, alle von uns erstellt und geprüft: Dracula, Gruvbox, Nord und Solarized, adaptiert von den bekannten Paletten und für gute Lesbarkeit angepasst, sowie Guide, Ledger, Spec und Story für Benutzerhandbücher, Budgets, PRDs und Sprint-Notizen.</p>
+<p>Aktuell sind alle Themen von uns erstellt und geprüft. Zum Beispiel sind Dracula, Gruvbox, Nord und Solarized von bekannten Paletten adaptiert und für gute Lesbarkeit angepasst, während Guide, Ledger, Spec und Story für Benutzerhandbücher, Budgets, PRDs und Sprint-Notizen gemacht sind.</p>
 
 <h2>Geprüft, und nur Daten</h2>
 <p>Jedes Thema wird von uns geprüft und gemerged, bevor es in der Galerie erscheint. Ein Thema ist eine kleine JSON-Datei mit Farben und ein paar begrenzten Optionen: keine Skripte, kein CSS und keine Bilder vom Autor, und MarsDawn prüft jeden Wert vor der Installation. Ein gemeldetes Thema verlässt die Galerie innerhalb von 24 Stunden. Ist es schädlich, wird es beim nächsten Öffnen der Galerie auch von Macs entfernt, auf denen es installiert wurde, und MarsDawn wechselt zurück zu Morgenrot, falls es aktiv war.</p>
@@ -1444,7 +1444,7 @@ swift build -c release --product marsdawn
         "body": f"""
 <section class="intro">
   <h1>Themen-Galerie</h1>
-  <p>Vorschauthemen für MarsDawn, jedes vom Entwickler geprüft und gemerged, bevor es hier erscheint. Die bisherigen acht stammen von Southern Light, vier davon adaptiert von bekannten Paletten. Nach Szenario filtern oder <a href="/de/themes/new/">im Browser ein eigenes erstellen</a>: Das Einreichen öffnet ein GitHub-Issue zur Prüfung, ohne Installation und ohne git.</p>
+  <p>Vorschauthemen für MarsDawn, jedes vom Entwickler geprüft und gemerged, bevor es hier erscheint. Die bisherigen Themen stammen alle von Southern Light, einige davon adaptiert von bekannten Paletten. Nach Szenario filtern oder <a href="/de/themes/new/">im Browser ein eigenes erstellen</a>: Das Einreichen öffnet ein GitHub-Issue zur Prüfung, ohne Installation und ohne git.</p>
 </section>
 <!--community-theme-gallery-->
 <h2>Credits &amp; Lizenz</h2>
