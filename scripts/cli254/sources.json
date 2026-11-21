@@ -100,6 +100,30 @@
    "chars": 7971
   }
  },
+ "local_copy_295": [
+  {
+   "path": "approved295/three.md",
+   "issue": 295,
+   "sha256": "59a0591cb1872ec1a53e7cd0cfa7466f5845c438b3bd947948c82ea4e51e58c8",
+   "locales": [
+    "en",
+    "zh-hant",
+    "ja"
+   ]
+  },
+  {
+   "path": "approved295/five.md",
+   "issue": 295,
+   "sha256": "027ef3133193cbfa54831aa65dad8ad2149f83f96539159431d39320fb5856ea",
+   "locales": [
+    "zh-hans",
+    "ko",
+    "de",
+    "fr",
+    "es"
+   ]
+  }
+ ],
  "later": {
   "note": "Approved copy that was put into data.py by hand in merged PRs after the pinned comments were read. ingest.py applies it as its last step: each path must hold the pinned text (old_sha256; null means the path does not exist yet and is added) and the approved text read from the commit's data.py must hash to new_sha256, or the run stops.",
   "recorded_at_utc": "2026-11-21T02:59:38Z",

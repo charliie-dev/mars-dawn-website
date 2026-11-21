@@ -33,6 +33,8 @@ marsdawn 0.7.7 changelog entries): the parent must exist and the key must not. T
 updated_at, sha256) are pinned in the same group. A path that is listed twice or not there, pinned text
 or approved text that does not hash to the recorded value, a comment that changed, or a field that names a
 comment its group does not pin stops the run with exit 1. Only data is patched, not the shared dict.
+This layer also carries what the unpinned approved360.json (PR #354) held for #360, so that file and its
+step are gone: it still had the zh-Hant text from before #286, which the PR #367 cells here replace.
 
 Writes scripts/cli254/data.py, which scripts/build_pages.py reads (apply_cli254). The text is the
 comments' Markdown; the build turns it into HTML with rich_pages.md_inline. Schema notes are HTML in
@@ -301,6 +303,24 @@ def parse_i(body: str, locales: list, data: dict) -> None:
         data[loc]["schema_notes"] = notes
 
 
+def apply_295(data: dict) -> None:
+    """Apply the owner's supplied #295 snapshots, pinned locally without network metadata.
+
+    Remote comment ids/updated_at were not supplied for both files. Keep their exact bodies
+    and hashes rather than inventing remote pins; these override #254's older schema notes.
+    """
+    for pin in SOURCES["local_copy_295"]:
+        body = (HERE / pin["path"]).read_text(encoding="utf-8")
+        if sha256(body) != pin["sha256"]:
+            raise Stop(f"#295 local copy differs: {pin['path']}")
+        rows = table_rows(body, "1.")
+        cols = {LABELS[h]: i for i, h in enumerate(rows[0]) if h in LABELS}
+        for row in rows[2:]:
+            key = re.match(r"`(\w+)`", row[0]).group(1)
+            for loc in pin["locales"]:
+                data[loc]["schema_notes"][key] = row[cols[loc]]
+
+
 NEW_355 = ["0.7.6", "0.7.5", "0.7.4", "0.7.3"]
 
 
@@ -342,6 +362,7 @@ def build() -> tuple:
     for loc in machine:
         data[loc] = {"changelog": {}}
     parse_i(fetch(c["I"]), machine, data)
+    apply_295(data)
     fetch(c["approval_355"])
     apply_355(fetch(c["K"]), ["en", "zh-hant"], data)
     apply_355(fetch(c["K_i18n"]), ["zh-hans", "ja", "ko", "de", "fr", "es"], data)
