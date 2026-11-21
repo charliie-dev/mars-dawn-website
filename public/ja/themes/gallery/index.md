@@ -1,6 +1,6 @@
 # テーマギャラリー
 
-MarsDawn のプレビューテーマです。それぞれ開発者がレビューし、マージしてからここに表示されます。現在の8つはすべて Southern Light が作成したもので、そのうち4つはよく知られた配色を基にしています。シナリオで絞り込むか、[ブラウザで自分のテーマを作る](/ja/themes/new/)こともできます。送信するとレビュー依頼の GitHub issue が開きます。インストールも git も不要です。
+MarsDawn のプレビューテーマです。それぞれ開発者がレビューし、マージしてからここに表示されます。現在のテーマはすべて Southern Light が作成したもので、一部はよく知られた配色を基にしています。シナリオで絞り込むか、[ブラウザで自分のテーマを作る](/ja/themes/new/)こともできます。送信するとレビュー依頼の GitHub issue が開きます。インストールも git も不要です。
 
 すべて
 
@@ -12,6 +12,7 @@ MarsDawn のプレビューテーマです。それぞれ開発者がレビュ�
 
 メモ・共有
 
+- [![Christmas — light preview](/themes/v1/christmas/1.0.0/preview-light.png)](/themes/v1/christmas/1.0.0/preview-light.png)[![Christmas — dark preview](/themes/v1/christmas/1.0.0/preview-dark.png)](/themes/v1/christmas/1.0.0/preview-dark.png) **Christmas** v1.0.0 クリスマス気分で読むためのパレット。温かなクリーム色のページにベリーレッドの見出し、ダーク版はワインレッドを帯びた黒 メモ・共有 作者： Southern Light 通報 メールで通報
 - [![Dracula — light preview](/themes/v1/dracula/1.0.1/preview-light.png)](/themes/v1/dracula/1.0.1/preview-light.png)[![Dracula — dark preview](/themes/v1/dracula/1.0.1/preview-dark.png)](/themes/v1/dracula/1.0.1/preview-dark.png) **Dracula** v1.0.1 クラシックな吸血鬼風のダークパレット。昼間は Alucard — Dracula Theme を基に、読みやすさのために調整 技術ドキュメント エージェント出力のレビュー 作者： Southern Light [クレジットとライセンス](/themes/third-party-notices.html#dracula) 通報 メールで通報
 - [![Gruvbox — light preview](/themes/v1/gruvbox/1.0.1/preview-light.png)](/themes/v1/gruvbox/1.0.1/preview-light.png)[![Gruvbox — dark preview](/themes/v1/gruvbox/1.0.1/preview-dark.png)](/themes/v1/gruvbox/1.0.1/preview-dark.png) **Gruvbox** v1.0.1 クリーム、ブラウン、オレンジの温かなレトロパレット — Gruvbox を基に、読みやすさのために調整 技術ドキュメント メモ・共有 作者： Southern Light [クレジットとライセンス](/themes/third-party-notices.html#gruvbox) 通報 メールで通報
 - [![Guide — light preview](/themes/v1/guide/1.0.1/preview-light.png)](/themes/v1/guide/1.0.1/preview-light.png)[![Guide — dark preview](/themes/v1/guide/1.0.1/preview-dark.png)](/themes/v1/guide/1.0.1/preview-dark.png) **Guide** v1.0.1 クールな白背景にネイビーの見出しと鮮明な青のリンク。ユーザーガイド、チュートリアル、README 向けに大きめの文字 技術ドキュメント 作者： Southern Light 通報 メールで通報

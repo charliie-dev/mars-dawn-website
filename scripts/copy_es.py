@@ -1399,7 +1399,7 @@ swift build -c release --product marsdawn
 </ul>
 
 <h2>Qué hay en la galería</h2>
-<p>Ocho temas hoy, todos hechos y revisados por nosotros: Dracula, Gruvbox, Nord y Solarized, adaptados de las conocidas paletas y ajustados para facilitar la lectura, además de Guide, Ledger, Spec y Story, pensados para guías de usuario, presupuestos, PRD y notas de sprint.</p>
+<p>Hoy, todos los temas están hechos y revisados por nosotros. Por ejemplo, Dracula, Gruvbox, Nord y Solarized están adaptados de paletas conocidas y ajustados para facilitar la lectura, mientras que Guide, Ledger, Spec y Story están pensados para guías de usuario, presupuestos, PRD y notas de sprint.</p>
 
 <h2>Revisados, y solo datos</h2>
 <p>Cada tema es revisado y fusionado por nosotros antes de aparecer en la galería. Un tema es un pequeño archivo JSON de colores y unas pocas opciones acotadas: sin scripts, sin CSS y sin imágenes de su autor, y MarsDawn comprueba cada valor antes de instalarlo. Un tema denunciado sale de la galería en un plazo de 24 horas. Si es dañino, también se elimina de los Mac que lo instalaron la próxima vez que se abra allí la galería, y MarsDawn vuelve a Amanecer si estaba en uso.</p>
@@ -1446,7 +1446,7 @@ swift build -c release --product marsdawn
         "body": f"""
 <section class="intro">
   <h1>Galería de temas</h1>
-  <p>Temas de vista previa para MarsDawn; cada uno es revisado y fusionado por el desarrollador antes de aparecer aquí. Los ocho actuales están hechos por Southern Light, cuatro de ellos adaptados de paletas conocidas. Filtra por escenario, o <a href="/es/themes/new/">crea el tuyo</a> en el navegador: al enviarlo se abre un issue de GitHub para pedir revisión, sin instalación y sin git.</p>
+  <p>Temas de vista previa para MarsDawn; cada uno es revisado y fusionado por el desarrollador antes de aparecer aquí. Todos los temas actuales están hechos por Southern Light, algunos de ellos adaptados de paletas conocidas. Filtra por escenario, o <a href="/es/themes/new/">crea el tuyo</a> en el navegador: al enviarlo se abre un issue de GitHub para pedir revisión, sin instalación y sin git.</p>
 </section>
 <!--community-theme-gallery-->
 <h2>Créditos y licencia</h2>

@@ -1043,7 +1043,7 @@ GALLERY_PAGES = {
         "body": f"""
 <section class="intro">
   <h1>Theme gallery</h1>
-  <p>Preview themes for MarsDawn, each reviewed and merged by the developer before it appears here. The eight so far are made by Southern Light, four of them adapted from well-known palettes. Filter by scenario, or <a href="/themes/new/">build your own</a> in the browser: submitting opens a GitHub issue that asks for review, with no install and no git.</p>
+  <p>Preview themes for MarsDawn, each reviewed and merged by the developer before it appears here. So far they are all made by Southern Light, some of them adapted from well-known palettes. Filter by scenario, or <a href="/themes/new/">build your own</a> in the browser: submitting opens a GitHub issue that asks for review, with no install and no git.</p>
 </section>
 {COMMUNITY_GALLERY_MARK}
 <h2>Credits</h2>
@@ -1058,7 +1058,7 @@ GALLERY_PAGES = {
         "body": f"""
 <section class="intro">
   <h1>主題庫</h1>
-  <p>MarsDawn 的預覽主題，每一個都經過開發者審核、合併後才會出現在這裡。目前的八個都由 Southern Light 製作，其中四個改編自知名配色。可以依情境篩選，或是<a href="/zh-hant/themes/new/">在瀏覽器裡打造一個自己的主題</a>：送出後會開一則 GitHub issue 等待審核，不用安裝，也不用 git。</p>
+  <p>MarsDawn 的預覽主題，每一個都經過開發者審核、合併後才會出現在這裡。目前這些主題都由 Southern Light 製作，其中有些改編自知名配色。可以依情境篩選，或是<a href="/zh-hant/themes/new/">在瀏覽器裡打造一個自己的主題</a>：送出後會開一則 GitHub issue 等待審核，不用安裝，也不用 git。</p>
 </section>
 {COMMUNITY_GALLERY_MARK}
 <h2>版權與授權</h2>
@@ -1073,7 +1073,7 @@ GALLERY_PAGES = {
         "body": f"""
 <section class="intro">
   <h1>主题图库</h1>
-  <p>MarsDawn 的预览主题，每一个都经过开发者审核、合并后才会出现在这里。目前的八个都由 Southern Light 制作，其中四个改编自知名配色。可以按场景筛选，或是<a href="/zh-hans/themes/new/">在浏览器里打造一个自己的主题</a>：提交后会开一则 GitHub issue 等待审核，不用安装，也不用 git。</p>
+  <p>MarsDawn 的预览主题，每一个都经过开发者审核、合并后才会出现在这里。目前这些主题都由 Southern Light 制作，其中有些改编自知名配色。可以按场景筛选，或是<a href="/zh-hans/themes/new/">在浏览器里打造一个自己的主题</a>：提交后会开一则 GitHub issue 等待审核，不用安装，也不用 git。</p>
 </section>
 {COMMUNITY_GALLERY_MARK}
 <h2>版权与授权</h2>
@@ -1088,7 +1088,7 @@ GALLERY_PAGES = {
         "body": f"""
 <section class="intro">
   <h1>テーマギャラリー</h1>
-  <p>MarsDawn のプレビューテーマです。それぞれ開発者がレビューし、マージしてからここに表示されます。現在の8つはすべて Southern Light が作成したもので、そのうち4つはよく知られた配色を基にしています。シナリオで絞り込むか、<a href="/ja/themes/new/">ブラウザで自分のテーマを作る</a>こともできます。送信するとレビュー依頼の GitHub issue が開きます。インストールも git も不要です。</p>
+  <p>MarsDawn のプレビューテーマです。それぞれ開発者がレビューし、マージしてからここに表示されます。現在のテーマはすべて Southern Light が作成したもので、一部はよく知られた配色を基にしています。シナリオで絞り込むか、<a href="/ja/themes/new/">ブラウザで自分のテーマを作る</a>こともできます。送信するとレビュー依頼の GitHub issue が開きます。インストールも git も不要です。</p>
 </section>
 {COMMUNITY_GALLERY_MARK}
 <h2>クレジットとライセンス</h2>
@@ -2404,7 +2404,7 @@ BRAINSTORM_PAGES = {
 </ul>
 
 <h2>What's in the gallery</h2>
-<p>Eight themes today, all made and reviewed by us: Dracula, Gruvbox, Nord and Solarized, adapted from the well-known palettes and adjusted for readability, plus Guide, Ledger, Spec and Story, made for user guides, budgets, PRDs and sprint notes.</p>
+<p>The themes today are all made and reviewed by us. For example, Dracula, Gruvbox, Nord and Solarized are adapted from well-known palettes and adjusted for readability, while Guide, Ledger, Spec and Story are made for user guides, budgets, PRDs and sprint notes.</p>
 
 <h2>Reviewed, and only data</h2>
 <p>Every theme is reviewed and merged by us before it appears in the gallery. A theme is a small JSON file of colours and a few bounded options: no scripts, no CSS and no images from its author, and MarsDawn checks every value before installing it. A reported theme leaves the gallery within 24 hours. If it is harmful, it is also removed from Macs that installed it the next time the gallery opens there, and MarsDawn switches back to Dawn if it was in use.</p>
@@ -2457,7 +2457,7 @@ BRAINSTORM_PAGES = {
 </ul>
 
 <h2>主題庫裡有什麼</h2>
-<p>目前有八個主題，都是我們製作並審核的：Dracula、Gruvbox、Nord 和 Solarized 改編自知名配色，並為可讀性調整；Guide、Ledger、Spec 和 Story 則分別為使用者指南、預算表、PRD 和衝刺筆記而做。</p>
+<p>目前的主題都是我們製作並審核的。例如 Dracula、Gruvbox、Nord 和 Solarized 改編自知名配色，並為可讀性調整；Guide、Ledger、Spec 和 Story 則分別為使用者指南、預算表、PRD 和衝刺筆記而做。</p>
 
 <h2>經過審核，而且只是資料</h2>
 <p>每個主題都要經過我們審核、合併，才會出現在主題庫。主題是一個小小的 JSON 檔，只有顏色和幾個有範圍限制的選項：沒有腳本、沒有 CSS，也沒有作者自帶的圖片；MarsDawn 安裝前會檢查每一個值。被回報的主題會在 24 小時內從主題庫下架；如果它有害，下次在已安裝的 Mac 上打開主題庫時，也會一併移除，正在使用的話，MarsDawn 會改回黎明。</p>

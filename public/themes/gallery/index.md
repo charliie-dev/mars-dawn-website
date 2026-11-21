@@ -1,6 +1,6 @@
 # Theme gallery
 
-Preview themes for MarsDawn, each reviewed and merged by the developer before it appears here. The eight so far are made by Southern Light, four of them adapted from well-known palettes. Filter by scenario, or [build your own](/themes/new/) in the browser: submitting opens a GitHub issue that asks for review, with no install and no git.
+Preview themes for MarsDawn, each reviewed and merged by the developer before it appears here. So far they are all made by Southern Light, some of them adapted from well-known palettes. Filter by scenario, or [build your own](/themes/new/) in the browser: submitting opens a GitHub issue that asks for review, with no install and no git.
 
 All
 
@@ -12,6 +12,7 @@ Formal output
 
 Notes & sharing
 
+- [![Christmas — light preview](/themes/v1/christmas/1.0.0/preview-light.png)](/themes/v1/christmas/1.0.0/preview-light.png)[![Christmas — dark preview](/themes/v1/christmas/1.0.0/preview-dark.png)](/themes/v1/christmas/1.0.0/preview-dark.png) **Christmas** v1.0.0 A Christmas reading palette: berry-red headings on a warm cream page, with a wine-black dark version Notes & sharing by Southern Light Report Report by email
 - [![Dracula — light preview](/themes/v1/dracula/1.0.1/preview-light.png)](/themes/v1/dracula/1.0.1/preview-light.png)[![Dracula — dark preview](/themes/v1/dracula/1.0.1/preview-dark.png)](/themes/v1/dracula/1.0.1/preview-dark.png) **Dracula** v1.0.1 The classic dark vampire palette, with Alucard by day — adapted from Dracula Theme, adjusted for readability Technical docs Agent review by Southern Light [Credits & licence](/themes/third-party-notices.html#dracula) Report Report by email
 - [![Gruvbox — light preview](/themes/v1/gruvbox/1.0.1/preview-light.png)](/themes/v1/gruvbox/1.0.1/preview-light.png)[![Gruvbox — dark preview](/themes/v1/gruvbox/1.0.1/preview-dark.png)](/themes/v1/gruvbox/1.0.1/preview-dark.png) **Gruvbox** v1.0.1 A warm retro palette of cream, brown and orange — adapted from Gruvbox, adjusted for readability Technical docs Notes & sharing by Southern Light [Credits & licence](/themes/third-party-notices.html#gruvbox) Report Report by email
 - [![Guide — light preview](/themes/v1/guide/1.0.1/preview-light.png)](/themes/v1/guide/1.0.1/preview-light.png)[![Guide — dark preview](/themes/v1/guide/1.0.1/preview-dark.png)](/themes/v1/guide/1.0.1/preview-dark.png) **Guide** v1.0.1 A cool white background with navy headings and clear blue links, larger type for user guides, tutorials and READMEs Technical docs by Southern Light Report Report by email

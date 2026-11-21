@@ -2141,7 +2141,7 @@ In MarsDawn, open Settings ▸ Appearance and click Get More Themes…. The Them
 
 ## What's in the gallery
 
-Eight themes today, all made and reviewed by us: Dracula, Gruvbox, Nord and Solarized, adapted from the well-known palettes and adjusted for readability, plus Guide, Ledger, Spec and Story, made for user guides, budgets, PRDs and sprint notes.
+The themes today are all made and reviewed by us. For example, Dracula, Gruvbox, Nord and Solarized are adapted from well-known palettes and adjusted for readability, while Guide, Ledger, Spec and Story are made for user guides, budgets, PRDs and sprint notes.
 
 ## Reviewed, and only data
 
@@ -5979,7 +5979,7 @@ MarsDawn 內建四種預覽主題：黎明、典雅、流行和活潑，各有�
 
 ## 主題庫裡有什麼
 
-目前有八個主題，都是我們製作並審核的：Dracula、Gruvbox、Nord 和 Solarized 改編自知名配色，並為可讀性調整；Guide、Ledger、Spec 和 Story 則分別為使用者指南、預算表、PRD 和衝刺筆記而做。
+目前的主題都是我們製作並審核的。例如 Dracula、Gruvbox、Nord 和 Solarized 改編自知名配色，並為可讀性調整；Guide、Ledger、Spec 和 Story 則分別為使用者指南、預算表、PRD 和衝刺筆記而做。
 
 ## 經過審核，而且只是資料
 
@@ -9795,7 +9795,7 @@ MarsDawn 内置四种预览主题：黎明、典雅、流行和活泼，各有�
 
 ## 主题图库里有什么
 
-目前有八个主题，都是我们制作并审核的：Dracula、Gruvbox、Nord 和 Solarized 改编自知名配色，并为可读性做了调整；Guide、Ledger、Spec 和 Story 则分别为用户指南、预算表、PRD 和冲刺笔记而做。
+目前的主题都是我们制作并审核的。例如 Dracula、Gruvbox、Nord 和 Solarized 改编自知名配色，并为可读性做了调整；Guide、Ledger、Spec 和 Story 则分别为用户指南、预算表、PRD 和冲刺笔记而做。
 
 ## 经过审核，而且只是数据
 
@@ -13611,7 +13611,7 @@ MarsDawn で「設定 ▸ 外観モード」を開き、「テーマを追加…
 
 ## ギャラリーにあるテーマ
 
-現在は8つのテーマがあり、すべて私たちが作成・レビューしたものです。よく知られた配色を基に読みやすく調整した Dracula、Gruvbox、Nord、Solarized に加え、ユーザーガイド、予算表、PRD、スプリントノート向けに作られた Guide、Ledger、Spec、Story を揃えています。
+現在のテーマは、すべて私たちが作成・レビューしたものです。たとえば Dracula、Gruvbox、Nord、Solarized は、よく知られた配色を基に読みやすく調整したもので、Guide、Ledger、Spec、Story は、それぞれユーザーガイド、予算表、PRD、スプリントノート向けに作られたものです。
 
 ## レビュー済みで、中身はデータのみ
 
@@ -17433,7 +17433,7 @@ In MarsDawn Einstellungen ▸ Erscheinungsbild öffnen und auf „Weitere Themes
 
 ## Was in der Galerie ist
 
-Heute acht Themen, alle von uns erstellt und geprüft: Dracula, Gruvbox, Nord und Solarized, adaptiert von den bekannten Paletten und für gute Lesbarkeit angepasst, sowie Guide, Ledger, Spec und Story für Benutzerhandbücher, Budgets, PRDs und Sprint-Notizen.
+Aktuell sind alle Themen von uns erstellt und geprüft. Zum Beispiel sind Dracula, Gruvbox, Nord und Solarized von bekannten Paletten adaptiert und für gute Lesbarkeit angepasst, während Guide, Ledger, Spec und Story für Benutzerhandbücher, Budgets, PRDs und Sprint-Notizen gemacht sind.
 
 ## Geprüft, und nur Daten
 
@@ -21189,7 +21189,7 @@ Dans MarsDawn, ouvrez Réglages ▸ Apparence et cliquez sur Obtenir plus de th�
 
 ## Ce qu’il y a dans la galerie
 
-Huit thèmes aujourd’hui, tous créés et relus par nos soins : Dracula, Gruvbox, Nord et Solarized, adaptés des palettes bien connues et ajustés pour la lisibilité, ainsi que Guide, Ledger, Spec et Story, conçus pour les guides utilisateur, les budgets, les PRD et les notes de sprint.
+Aujourd’hui, tous les thèmes sont créés et relus par nos soins. Par exemple, Dracula, Gruvbox, Nord et Solarized sont adaptés de palettes bien connues et ajustés pour la lisibilité, tandis que Guide, Ledger, Spec et Story sont conçus pour les guides utilisateur, les budgets, les PRD et les notes de sprint.
 
 ## Relus, et uniquement des données
 
@@ -24945,7 +24945,7 @@ En MarsDawn, abre Ajustes ▸ Aspecto y haz clic en Obtener más temas…. La Ga
 
 ## Qué hay en la galería
 
-Ocho temas hoy, todos hechos y revisados por nosotros: Dracula, Gruvbox, Nord y Solarized, adaptados de las conocidas paletas y ajustados para facilitar la lectura, además de Guide, Ledger, Spec y Story, pensados para guías de usuario, presupuestos, PRD y notas de sprint.
+Hoy, todos los temas están hechos y revisados por nosotros. Por ejemplo, Dracula, Gruvbox, Nord y Solarized están adaptados de paletas conocidas y ajustados para facilitar la lectura, mientras que Guide, Ledger, Spec y Story están pensados para guías de usuario, presupuestos, PRD y notas de sprint.
 
 ## Revisados, y solo datos
 
@@ -28701,7 +28701,7 @@ MarsDawn에서 설정 ▸ 화면 모드를 열고 테마 더 받기…를 클릭
 
 ## 갤러리에 있는 테마
 
-현재 여덟 가지 테마가 있으며, 모두 저희가 만들고 검토했습니다. 잘 알려진 팔레트를 바탕으로 가독성을 손본 Dracula, Gruvbox, Nord, Solarized에 더해, 사용자 가이드, 예산표, PRD, 스프린트 노트를 위해 만든 Guide, Ledger, Spec, Story가 있습니다.
+현재 테마는 모두 저희가 만들고 검토했습니다. 예를 들어 Dracula, Gruvbox, Nord, Solarized는 잘 알려진 팔레트를 바탕으로 가독성을 손봤고, Guide, Ledger, Spec, Story는 각각 사용자 가이드, 예산표, PRD, 스프린트 노트를 위해 만들었습니다.
 
 ## 검토를 거치며, 오직 데이터뿐
 

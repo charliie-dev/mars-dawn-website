@@ -29,7 +29,7 @@ In MarsDawn Einstellungen ▸ Erscheinungsbild öffnen und auf „Weitere Themes
 
 ## Was in der Galerie ist
 
-Heute acht Themen, alle von uns erstellt und geprüft: Dracula, Gruvbox, Nord und Solarized, adaptiert von den bekannten Paletten und für gute Lesbarkeit angepasst, sowie Guide, Ledger, Spec und Story für Benutzerhandbücher, Budgets, PRDs und Sprint-Notizen.
+Aktuell sind alle Themen von uns erstellt und geprüft. Zum Beispiel sind Dracula, Gruvbox, Nord und Solarized von bekannten Paletten adaptiert und für gute Lesbarkeit angepasst, während Guide, Ledger, Spec und Story für Benutzerhandbücher, Budgets, PRDs und Sprint-Notizen gemacht sind.
 
 ## Geprüft, und nur Daten
 

@@ -1,7 +1,42 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T08:10:56Z",
+  "generatedAt": "2026-11-21T01:26:49Z",
   "themes": [
+    {
+      "id": "christmas",
+      "version": "1.0.0",
+      "name": {
+        "en": "Christmas"
+      },
+      "summary": {
+        "de": "Lesepalette für Weihnachten: beerenrote Überschriften auf warmer Cremeseite, dunkle Variante in Schwarz mit Weinton",
+        "en": "A Christmas reading palette: berry-red headings on a warm cream page, with a wine-black dark version",
+        "es": "Paleta de Navidad para leer: encabezados rojo frambuesa sobre una cálida página crema, variante oscura en negro vino",
+        "fr": "Palette de Noël pour lire : titres rouge framboise sur une page crème chaleureuse, variante sombre en noir bordeaux",
+        "ja": "クリスマス気分で読むためのパレット。温かなクリーム色のページにベリーレッドの見出し、ダーク版はワインレッドを帯びた黒",
+        "ko": "크리스마스 분위기의 읽기용 팔레트 — 따뜻한 크림색 페이지에 베리 레드 제목, 다크 버전은 와인빛이 감도는 블랙",
+        "zh-Hans": "圣诞风格的阅读调色盘，莓红标题搭配暖奶油色书页，深色版本为酒红黑底",
+        "zh-Hant": "聖誕風格的閱讀調色盤，莓紅標題搭配暖奶油色書頁，深色版本為酒紅黑底"
+      },
+      "scenarios": [
+        "notes-sharing"
+      ],
+      "author": {
+        "name": "Southern Light",
+        "github": "redtear1115"
+      },
+      "minAppVersion": "1.1.0",
+      "files": {
+        "theme.json": {
+          "path": "christmas/1.0.0/theme.json",
+          "sha256": "7b97392c941c6afa7cef1bc8f92c61798398daf672da9fa29306615bb56f3ad3"
+        }
+      },
+      "previews": {
+        "light": "christmas/1.0.0/preview-light.png",
+        "dark": "christmas/1.0.0/preview-dark.png"
+      }
+    },
     {
       "id": "dracula",
       "version": "1.0.1",

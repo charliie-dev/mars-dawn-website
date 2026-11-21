@@ -1,6 +1,6 @@
 # Galería de temas
 
-Temas de vista previa para MarsDawn; cada uno es revisado y fusionado por el desarrollador antes de aparecer aquí. Los ocho actuales están hechos por Southern Light, cuatro de ellos adaptados de paletas conocidas. Filtra por escenario, o [crea el tuyo](/es/themes/new/) en el navegador: al enviarlo se abre un issue de GitHub para pedir revisión, sin instalación y sin git.
+Temas de vista previa para MarsDawn; cada uno es revisado y fusionado por el desarrollador antes de aparecer aquí. Todos los temas actuales están hechos por Southern Light, algunos de ellos adaptados de paletas conocidas. Filtra por escenario, o [crea el tuyo](/es/themes/new/) en el navegador: al enviarlo se abre un issue de GitHub para pedir revisión, sin instalación y sin git.
 
 Todos
 
@@ -12,6 +12,7 @@ Salida formal
 
 Notas y compartir
 
+- [![Christmas — light preview](/themes/v1/christmas/1.0.0/preview-light.png)](/themes/v1/christmas/1.0.0/preview-light.png)[![Christmas — dark preview](/themes/v1/christmas/1.0.0/preview-dark.png)](/themes/v1/christmas/1.0.0/preview-dark.png) **Christmas** v1.0.0 Paleta de Navidad para leer: encabezados rojo frambuesa sobre una cálida página crema, variante oscura en negro vino Notas y compartir por Southern Light Denunciar Denunciar por correo
 - [![Dracula — light preview](/themes/v1/dracula/1.0.1/preview-light.png)](/themes/v1/dracula/1.0.1/preview-light.png)[![Dracula — dark preview](/themes/v1/dracula/1.0.1/preview-dark.png)](/themes/v1/dracula/1.0.1/preview-dark.png) **Dracula** v1.0.1 La clásica paleta oscura de vampiro, con Alucard de día —adaptada de Dracula Theme y ajustada para leer mejor Docs técnicos Revisar salida de agente por Southern Light [Créditos y licencia](/themes/third-party-notices.html#dracula) Denunciar Denunciar por correo
 - [![Gruvbox — light preview](/themes/v1/gruvbox/1.0.1/preview-light.png)](/themes/v1/gruvbox/1.0.1/preview-light.png)[![Gruvbox — dark preview](/themes/v1/gruvbox/1.0.1/preview-dark.png)](/themes/v1/gruvbox/1.0.1/preview-dark.png) **Gruvbox** v1.0.1 Una cálida paleta retro de crema, marrón y naranja —adaptada de Gruvbox y ajustada para leer mejor Docs técnicos Notas y compartir por Southern Light [Créditos y licencia](/themes/third-party-notices.html#gruvbox) Denunciar Denunciar por correo
 - [![Guide — light preview](/themes/v1/guide/1.0.1/preview-light.png)](/themes/v1/guide/1.0.1/preview-light.png)[![Guide — dark preview](/themes/v1/guide/1.0.1/preview-dark.png)](/themes/v1/guide/1.0.1/preview-dark.png) **Guide** v1.0.1 Fondo blanco frío, encabezados azul marino y enlaces azul nítido, letra más grande para guías, tutoriales y README Docs técnicos por Southern Light Denunciar Denunciar por correo

@@ -29,7 +29,7 @@ Dans MarsDawn, ouvrez Réglages ▸ Apparence et cliquez sur Obtenir plus de th�
 
 ## Ce qu’il y a dans la galerie
 
-Huit thèmes aujourd’hui, tous créés et relus par nos soins : Dracula, Gruvbox, Nord et Solarized, adaptés des palettes bien connues et ajustés pour la lisibilité, ainsi que Guide, Ledger, Spec et Story, conçus pour les guides utilisateur, les budgets, les PRD et les notes de sprint.
+Aujourd’hui, tous les thèmes sont créés et relus par nos soins. Par exemple, Dracula, Gruvbox, Nord et Solarized sont adaptés de palettes bien connues et ajustés pour la lisibilité, tandis que Guide, Ledger, Spec et Story sont conçus pour les guides utilisateur, les budgets, les PRD et les notes de sprint.
 
 ## Relus, et uniquement des données
 

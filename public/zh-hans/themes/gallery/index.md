@@ -1,6 +1,6 @@
 # 主题图库
 
-MarsDawn 的预览主题，每一个都经过开发者审核、合并后才会出现在这里。目前的八个都由 Southern Light 制作，其中四个改编自知名配色。可以按场景筛选，或是[在浏览器里打造一个自己的主题](/zh-hans/themes/new/)：提交后会开一则 GitHub issue 等待审核，不用安装，也不用 git。
+MarsDawn 的预览主题，每一个都经过开发者审核、合并后才会出现在这里。目前这些主题都由 Southern Light 制作，其中有些改编自知名配色。可以按场景筛选，或是[在浏览器里打造一个自己的主题](/zh-hans/themes/new/)：提交后会开一则 GitHub issue 等待审核，不用安装，也不用 git。
 
 全部
 
@@ -12,6 +12,7 @@ MarsDawn 的预览主题，每一个都经过开发者审核、合并后才会�
 
 笔记分享
 
+- [![Christmas — light preview](/themes/v1/christmas/1.0.0/preview-light.png)](/themes/v1/christmas/1.0.0/preview-light.png)[![Christmas — dark preview](/themes/v1/christmas/1.0.0/preview-dark.png)](/themes/v1/christmas/1.0.0/preview-dark.png) **Christmas** v1.0.0 圣诞风格的阅读调色盘，莓红标题搭配暖奶油色书页，深色版本为酒红黑底 笔记分享 作者： Southern Light 举报 用电子邮件举报
 - [![Dracula — light preview](/themes/v1/dracula/1.0.1/preview-light.png)](/themes/v1/dracula/1.0.1/preview-light.png)[![Dracula — dark preview](/themes/v1/dracula/1.0.1/preview-dark.png)](/themes/v1/dracula/1.0.1/preview-dark.png) **Dracula** v1.0.1 经典吸血鬼深色调色盘，白日则用 Alucard 版本 — 改编自 Dracula Theme，为可读性调整 技术文档 审阅代理产出 作者： Southern Light [版权与授权](/themes/third-party-notices.html#dracula) 举报 用电子邮件举报
 - [![Gruvbox — light preview](/themes/v1/gruvbox/1.0.1/preview-light.png)](/themes/v1/gruvbox/1.0.1/preview-light.png)[![Gruvbox — dark preview](/themes/v1/gruvbox/1.0.1/preview-dark.png)](/themes/v1/gruvbox/1.0.1/preview-dark.png) **Gruvbox** v1.0.1 温暖复古的米色、棕色与橘色调色盘 — 改编自 Gruvbox，为可读性调整 技术文档 笔记分享 作者： Southern Light [版权与授权](/themes/third-party-notices.html#gruvbox) 举报 用电子邮件举报
 - [![Guide — light preview](/themes/v1/guide/1.0.1/preview-light.png)](/themes/v1/guide/1.0.1/preview-light.png)[![Guide — dark preview](/themes/v1/guide/1.0.1/preview-dark.png)](/themes/v1/guide/1.0.1/preview-dark.png) **Guide** v1.0.1 冷白背景搭配海军蓝标题与清亮蓝色链接，字级加大，适合用户指南、教程与 README 技术文档 作者： Southern Light 举报 用电子邮件举报
