@@ -24,9 +24,15 @@
     "files": {
      "docs/release-notes/1.2.3.md": "0d5d951f2329d2cd56c6ef92af737c6a253814c04a5810faf9993f29f2cf87ba"
     }
+   },
+   {
+    "commit": "dad172c63630f5b33ff5ed926670c493378e3cd4",
+    "files": {
+     "docs/release-notes/ios-1.0.3.md": "dc390ce6892b2a4d230e29afebec8ed526d3bfdd3d1742bded674afbf1bac7c6"
+    }
    }
   ],
-  "asc_read": "2026-11-16T04:12:42.723252+00:00",
+  "asc_read": "2026-11-23T20:03:57.149404+00:00",
   "dates": "https://apps.apple.com/us/app/id6812925073?platform=mac",
   "dates_read": "2026-11-16",
   "ios_dates": "https://apps.apple.com/us/app/id6812925073?platform=iphone",
@@ -45,10 +51,9 @@
  "versions": [
   {
    "version": "1.2.3",
-   "asc_version_id": null,
+   "asc_version_id": "3f83a191-cc6f-475c-a55a-ffdfa9c91fc4",
    "released": "2026-11-23",
-   "released_at_store": null,
-   "pending": true,
+   "released_at_store": "Mon Nov 23 2026 19:25:47 GMT+0000 (Coordinated Universal Time)",
    "whatsNew": {
     "de-DE": "- Ziehe eine Datei aus der Seitenleiste „Dateien“ in den Finder, um sie zu kopieren. Auch das PDF aus der Vorschau von „Drucken und Exportieren“ lässt sich herausziehen.\n- Behoben: Wenn die Vorschau unerwartet neu startet, kehrt sie ungefähr an die Stelle zurück, an der du gelesen hast, statt nach oben zu springen.\n- Behoben: marsdawn open --background wechselt nicht mehr zum neuen Tab, auch wenn die Datei schon geöffnet ist. Ist MarsDawn ausgeblendet oder minimiert, bleibt es dabei.\n- Behoben: Solange MarsDawn nicht freigeschaltet ist, ist Ablage > „Drucken …“ in einem PDF-Fenster jetzt abgeblendet, statt verfügbar auszusehen und nichts zu tun.\n- Behoben: Im Blatt „Drucken und Exportieren“ wird nur noch das gewählte Layout mit einem Rahmen hervorgehoben.",
     "en-US": "- Drag a file from the Files sidebar to Finder to copy it. You can drag the PDF out of the Print & Export preview, too.\n- Fixed: when the preview restarts unexpectedly, it returns to about where you were reading instead of jumping to the top.\n- Fixed: marsdawn open --background no longer switches to the new tab, even when the file is already open. A hidden or minimized MarsDawn stays that way.\n- Fixed: in a PDF window, File > Print... is now dimmed while MarsDawn is locked, instead of looking available and doing nothing.\n- Fixed: in the Print & Export sheet, only the layout you chose is highlighted with an outline.",
@@ -166,8 +171,7 @@
    {
     "version": "1.0.3",
     "released": "2026-11-23",
-    "released_at_store": null,
-    "pending": true,
+    "released_at_store": "Mon Nov 23 2026 07:57:09 GMT+0000 (Coordinated Universal Time)",
     "whatsNew": {
      "de-DE": "- Auf dem iPhone sitzen die Schaltflächen „Teilen“ und „Erscheinungsbild und Thema“ jetzt in einer unteren Symbolleiste, dazwischen stehen die verbleibenden Testtage. Ein langer Dateiname wird in der Mitte gekürzt, sodass die Dateinamenerweiterung sichtbar bleibt.\n- Behoben: Das Öffnen einer Datei, die MarsDawn nicht lesen kann, ersetzt nicht mehr das geöffnete Dokument.\n- Auf dem iPad öffnet sich das Bedienfeld „Erscheinungsbild und Thema“ jetzt an seiner Schaltfläche in der Symbolleiste, im Hoch- und im Querformat.\n- Behoben: Beim Drucken wechselt eine dunkle Vorschau nicht mehr zu hellen Farben.\n- Behoben: Nachdem du MarsDawn auf dem iPhone freigeschaltet hast, schließt sich das Blatt zum Freischalten, und die Schaltfläche „MarsDawn freischalten“ bleibt nicht mehr auf der Startseite der App stehen.",
      "en-US": "- On iPhone, the Share button and the Appearance and Theme button now sit in a bottom bar, with the trial countdown between them. A long file name is shortened in the middle, so its extension stays visible.\n- Fixed: opening a file MarsDawn can't read no longer replaces the document you have open.\n- On iPad, the Appearance and Theme panel now opens from its toolbar button, in portrait and landscape.\n- Fixed: printing no longer switches a dark preview to light colors.\n- Fixed: after you unlock MarsDawn on iPhone, the unlock sheet closes and the Unlock MarsDawn button no longer stays on the home screen.",
